@@ -1,7 +1,6 @@
 # Canva design prompts — Revenue Pipeline System (Etsy)
 
-**Senior designer brief:** See `ETSY-LISTING-PACKAGE-FULL.md` §3 (mockup concepts).  
-**Canvas:** 2000 × 2000 px (Etsy listing images). **Banner:** 3360 × 840 px (shop header).
+**Senior designer brief:** **`MOCKUP-SPEC.md`** (source of truth) · this file = Canva AI prompts only.
 
 ## Brand kit (create once in Canva)
 
