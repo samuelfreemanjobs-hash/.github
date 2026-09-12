@@ -3,6 +3,10 @@
 ## Product assets
 
 - [ ] Duplicated Airtable base sanitized (`SANITIZE-BASE.md`)
+- [ ] **Consultant edition:** `TEMPLATE-CUSTOMIZATION.md` (Industry options + verticals)
+- [ ] **7 catalog rows** from `SERVICE-CATALOG-CONSULTANTS.md`
+- [ ] **3 example opportunities** from `EXAMPLE-OPPORTUNITIES.md`
+- [ ] Views from `VIEWS-TO-CREATE.md`
 - [ ] **Copy link** tested in incognito / second Airtable account
 - [ ] `{TEMPLATE_LINK}` replaced in SETUP-GUIDE + Gumroad receipt
 - [ ] `{SUPPORT_EMAIL}` set (e.g. samuelfreemanjobs@gmail.com or support@ domain)
@@ -17,7 +21,8 @@
 - [ ] Gumroad product live at **$97**
 - [ ] Receipt email includes template link + ZIP
 - [ ] (Optional) Etsy listing mirrors ZIP + PDF link inside
-- [ ] Cover + 3 gallery images uploaded
+- [ ] **5-min Loom** on Gumroad (copy base → HOT view) — see `PRODUCT-10X.md`
+- [ ] Niche copy matches `NICHE-POSITIONING.md`
 
 ## Legal / trust
 
@@ -46,7 +51,11 @@ Revenue-Pipeline-System-HUNTER-CRM-v1/
   QUICK-START-ONE-PAGER.pdf
   CLAUDE-SCORING-PROMPT.md
   CLAUDE-SCORING-PROMPT.txt
-  SERVICE-CATALOG-STARTER.md
+  SCORING-CALIBRATION.md
+  OUTREACH-TEMPLATES.md
+  FAQ.md
+  SERVICE-CATALOG-CONSULTANTS.md
+  EXAMPLE-OPPORTUNITIES.md
   LICENSE.txt                   ← 3-line personal use (optional)
 ```
 

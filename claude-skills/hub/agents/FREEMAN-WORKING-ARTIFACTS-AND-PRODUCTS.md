@@ -63,7 +63,7 @@ Each agent product includes: `agent/SOUL.md`, `DUTIES.md`, `core-config.xml`, `s
 
 | Artifact | Status | Product? | Contents |
 |----------|--------|----------|----------|
-| **HUNTER — Revenue Pipeline CRM** | SHIP | Y **$97** “Revenue Pipeline System” | Airtable base (Opportunities, Outreach, Service Catalog), 7-dim scoring, Setup Guide PDF, paste-ready Claude scoring prompt |
+| **HUNTER — Revenue Pipeline CRM** | SHIP | Y **$97** **Revenue Pipeline System (HUNTER CRM)** | Airtable base (Opportunities, Outreach, Service Catalog), 7-dim scoring, Setup Guide PDF, paste-ready Claude scoring prompt · Launch kit: `deliverables/revenue-pipeline-system/` |
 | **Freeman Intelligence — PM base** | WORKING | Y (internal / white-label) | Projects table, PM Agent triggers, health rules |
 | **Freeman Copy Studio — order Airtable** | WORKING | Internal | Order tracking |
 
@@ -102,7 +102,7 @@ Each agent product includes: `agent/SOUL.md`, `DUTIES.md`, `core-config.xml`, `s
 | Etsy business bundles | SHIP | $67–97 | Same |
 | Logistics agents | SHIP | Gumroad/own $97–297 | Same |
 | **Starter Business Kit** / **Complete Business in a Box** | SHIP (planned bundles) | Etsy | Etsy notes |
-| HUNTER digital product | SHIP | Gumroad/Etsy $97 | HUNTER |
+| HUNTER digital product | SHIP | Gumroad/Etsy $97 | **Revenue Pipeline System (HUNTER CRM)** · see `deliverables/revenue-pipeline-system/` |
 | Claude Business OS install pack | SHIP | Gumroad/Etsy/repo | claude-skills |
 
 ---

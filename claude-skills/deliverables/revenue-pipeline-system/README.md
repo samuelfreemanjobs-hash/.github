@@ -1,44 +1,38 @@
 # Revenue Pipeline System (HUNTER CRM) — launch kit
 
-**Product name (use everywhere):** **Revenue Pipeline System (HUNTER CRM)**  
-**Price:** $97 one-time · **Format:** Digital (Airtable template + docs + Claude prompt)  
-**Buyer:** B2B consultants, solo founders, agency new-business leads  
+**Product name:** **Revenue Pipeline System (HUNTER CRM)** · **v1.0 Consultant edition**  
+**Price:** $97 · **ICP:** Consultants, boutique agencies, fractionals · **$3K+ deals**
 
-## What you ship in the download
+## Niche (read first)
 
-| # | File / asset | You produce |
-|---|----------------|-------------|
-| 1 | **Airtable base** (customer copy) | Duplicate + sanitize internal base → **Share → “Anyone with the link can copy”** |
-| 2 | `SETUP-GUIDE.md` → export **PDF** | Already written here; add cover + your logo → PDF |
-| 3 | `CLAUDE-SCORING-PROMPT.md` | Include as `.md` + `.txt` in ZIP |
-| 4 | `SERVICE-CATALOG-STARTER.md` | Optional: paste into Service Catalog when buyer’s niche isn’t industrial |
-| 5 | `QUICK-START-ONE-PAGER.md` → PDF | 1-page “Day 1” |
-| 6 | `LISTING-GUMROAD.md` | Paste into Gumroad (primary) |
-| 7 | `LISTING-ETSY.md` | Optional second channel |
-| 8 | `LAUNCH-CHECKLIST.md` | Your pre-publish QA |
+**`NICHE-POSITIONING.md`** — why not generic “B2B”; who to exclude in copy.
 
-**ZIP name:** `Revenue-Pipeline-System-HUNTER-CRM-v1.zip`
+## What you ship
 
-## Your work session (customer-facing base)
+| File | Purpose |
+|------|---------|
+| `TEMPLATE-CUSTOMIZATION.md` | Duplicate base → consultant Industry tags + seed data |
+| `SERVICE-CATALOG-CONSULTANTS.md` | **Default** 7 offers (paste into template) |
+| `EXAMPLE-OPPORTUNITIES.md` | 3 fictional HOT/HIGH/WATCH rows |
+| `VIEWS-TO-CREATE.md` | Polish views before share link |
+| `SETUP-GUIDE.md` → PDF | Buyer onboarding |
+| `QUICK-START-ONE-PAGER.md` → PDF | Day 1 |
+| `CLAUDE-SCORING-PROMPT.md` + `.txt` | AI scoring |
+| `SCORING-CALIBRATION.md` | What 25 vs 15 means |
+| `OUTREACH-TEMPLATES.md` | Strategies A–F emails/DMs |
+| `FAQ.md` | Buyer support |
+| `LISTING-GUMROAD.md` | Primary channel |
+| `LISTING-ETSY.md` | Optional |
+| `LAUNCH-CHECKLIST.md` | QA |
+| `PRODUCT-10X.md` | 7.5 → 10/10 roadmap |
+| `SANITIZE-BASE.md` | Privacy / no live Freeman data |
 
-1. Open base **HUNTER — Revenue Intelligence OS** (`appfxMz1jb2MAO15G`).
-2. **Duplicate** → rename **`Revenue Pipeline System (Template)`**.
-3. **Opportunities:** delete all rows (already empty on prod — keep formulas/views).
-4. **Outreach Log:** delete all rows.
-5. **Service Catalog:** either  
-   - **Option A (recommended):** replace 7 industrial SKUs with 5 generic rows from `SERVICE-CATALOG-STARTER.md`, **or**  
-   - **Option B:** leave structure, replace copy only (remove Freeman-specific pricing if you want fully generic).
-6. Base description (Airtable settings): *“100-point B2B lead scoring + outreach log. Part of Revenue Pipeline System (HUNTER CRM).”*
-7. Create **Share link → Allow copying** → paste URL into Gumroad + Setup Guide `{TEMPLATE_LINK}`.
-8. Build ZIP (prompts + guides, **not** a CSV export of your private leads).
-9. Gumroad: upload ZIP + paste description; put template link in receipt email + product content.
+**10/10 gate:** seeded template + Loom + 1 testimonial — see `PRODUCT-10X.md`.
 
-## Internal vs product
+## Your build order
 
-| Internal (keep private) | Customer template |
-|-------------------------|-------------------|
-| Freeman Service Catalog (7 industrial offers) | Generic starter catalog or buyer-filled |
-| Live opportunities / Revenue Intel output | Empty Opportunities |
-| Your outreach history | Empty Outreach Log |
+1. `SANITIZE-BASE.md` + `TEMPLATE-CUSTOMIZATION.md`  
+2. Seed catalog + examples + views  
+3. Share link → PDFs → ZIP → Gumroad  
 
-See `SANITIZE-BASE.md`.
+**ZIP:** `Revenue-Pipeline-System-HUNTER-CRM-v1-consultant.zip`

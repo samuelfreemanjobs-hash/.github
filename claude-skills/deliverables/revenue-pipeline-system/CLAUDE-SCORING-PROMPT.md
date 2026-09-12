@@ -61,6 +61,12 @@ Paste format per lead:
 
 After all leads, list **Top 3 to contact this week** with one sentence each.
 
+## Calibration rules (consultant ICP)
+
+- If **Accessibility ≤ 4** and **Buying Signal ≤ 8**, cap recommended tier at **MEDIUM** even when pain is high.
+- **Service Fit &lt; 8** → say “disqualify or custom scope” — do not force HOT.
+- Use rubric bands from SCORING-CALIBRATION.md when unsure.
+
 ---
 
 ## Minimal run (single lead)

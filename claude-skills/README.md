@@ -61,3 +61,4 @@ Full detail in master plan.
 - `deliverables/pricing-memos/`
 - `deliverables/hub-init/`
 - `deliverables/hub-audits/`
+- `deliverables/revenue-pipeline-system/` — **Revenue Pipeline System (HUNTER CRM)** $97 launch kit

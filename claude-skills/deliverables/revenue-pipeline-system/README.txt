@@ -1,9 +1,9 @@
-Revenue Pipeline System (HUNTER CRM) — v1
+**Revenue Pipeline System (HUNTER CRM)** — v1.0 Consultant edition
 
-1. Open QUICK-START-ONE-PAGER.pdf (45-minute Day 1 plan).
-2. Open SETUP-GUIDE.pdf — use the Airtable template link on page 1.
-3. Use CLAUDE-SCORING-PROMPT.md or .txt to score leads.
+For consultants & boutique agencies ($3K+ deals).
 
-Support: replace with your email before shipping.
+1. Open QUICK-START-ONE-PAGER.pdf
+2. SETUP-GUIDE.pdf — Airtable template link on page 1
+3. CLAUDE-SCORING-PROMPT + OUTREACH-TEMPLATES + FAQ
 
-Freeman Intelligence
+Support: {SUPPORT_EMAIL}
