@@ -60,6 +60,17 @@ index 0000000..60c43c5
 +          npm run health
 +          npm run seed
 +          npm run health
+diff --git a/.gitignore b/.gitignore
+index a5799e0..cf715d2 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -8,3 +8,6 @@ data/*.json
+ !data/seed-leads.json
+ !data/gemini-spark-import.json
+ !data/gemini-spark-import-*.json
++etsy-digital-product/pdf-exports/*.pdf
++etsy-digital-product/buyer-guides/WALKTHROUGH-SOURCE.mp4
++etsy-digital-product/buyer-guides/screenshots/*-temp.*
 diff --git a/Dockerfile b/Dockerfile
 index a21dca0..cbd1bc0 100644
 --- a/Dockerfile
@@ -411,6 +422,19 @@ index 4f82a21..7e3c886 100644
  ├── n8n/                          # Automation workflows
  ├── Dockerfile + docker-compose.yml
  └── .env.example
+diff --git a/WALKTHROUGH-VIDEO.txt b/WALKTHROUGH-VIDEO.txt
+new file mode 100644
+index 0000000..9910af7
+--- /dev/null
++++ b/WALKTHROUGH-VIDEO.txt
+@@ -0,0 +1,7 @@
++Revenue Pipeline System — video walkthrough (3–5 minutes)
++
++SELLER: Replace the URL below with your unlisted YouTube/Loom link, then rebuild the Etsy ZIP (npm run build-etsy).
++
++BUYER: Open this link for a visual tour of the PDF folder, outreach pack, and CRM.
++
++VIDEO_URL=https://REPLACE_WITH_YOUR_UNLISTED_VIDEO_LINK
 diff --git a/business/BUSINESS_MODEL.md b/business/BUSINESS_MODEL.md
 index 5e36f31..208f7b3 100644
 --- a/business/BUSINESS_MODEL.md
@@ -431,10 +455,10 @@ index 5e36f31..208f7b3 100644
  ## Go-To-Market Motion
  
 diff --git a/business/LAUNCH_CHECKLIST.md b/business/LAUNCH_CHECKLIST.md
-index 0f58d70..4d48573 100644
+index 0f58d70..efcfda3 100644
 --- a/business/LAUNCH_CHECKLIST.md
 +++ b/business/LAUNCH_CHECKLIST.md
-@@ -1,10 +1,10 @@
+@@ -1,25 +1,25 @@
 -# HUNTER Intelligence — 30-Day Launch Checklist
 +# Revenue Pipeline System — 30-Day Launch Checklist
  
@@ -447,7 +471,16 @@ index 0f58d70..4d48573 100644
  - [ ] Deploy backend to Railway/Render
  - [ ] Set all env vars (Supabase, Gemini, Resend, Slack)
  - [ ] Verify `/api/health` returns all services green
-@@ -19,7 +19,7 @@
+ 
+ ### Day 2: Domain & Email
+-- [ ] Register domain (e.g., hunterintel.com)
++- [ ] Register domain (e.g., yourbrand.com)
+ - [ ] Set up Resend with verified domain
+-- [ ] Update `RESEND_FROM` to `you@hunterintel.com`
++- [ ] Update `RESEND_FROM` to `you@yourbrand.com`
+ - [ ] Deploy landing page (`frontend/index.html`)
+ - [ ] Test `/api/capture` form submission
+ 
  ### Day 3: Automation
  - [ ] Import `n8n/hunter-lead-discovery.json`
  - [ ] Import `n8n/hunter-follow-up-sequence.json`
@@ -1451,6 +1484,45 @@ index 0000000..a81f3e0
 +
 +**Updates?**  
 +If the seller offers lifetime updates, check the shop announcement; otherwise you receive the version at purchase time.
+diff --git a/etsy-digital-product/BUYER-PDF-MANIFEST.md b/etsy-digital-product/BUYER-PDF-MANIFEST.md
+new file mode 100644
+index 0000000..7a07a67
+--- /dev/null
++++ b/etsy-digital-product/BUYER-PDF-MANIFEST.md
+@@ -0,0 +1,33 @@
++# What should be PDF for Etsy buyers?
++
++Etsy customers often **never open `.md`** or run Node on day one. Ship **read-first PDFs** plus the **full app ZIP** for implementation.
++
++## Included in buyer ZIP (`00-PDF-Guides/`)
++
++| PDF | Source | Why PDF |
++|-----|--------|--------|
++| `00-PDF-Only-Path.pdf` | `buyer-guides/PDF-ONLY-PATH.md` | **No install** — outreach today |
++| `01-Quick-Start.pdf` | `START_HERE.md` + video link | Install path; links to walkthrough |
++| `02-Install-Node-Mac-Windows.pdf` | `buyer-guides/INSTALL-NODE-*.md` | Mac/Windows Node with screenshots |
++| `03-Buyer-FAQ-and-License.pdf` | FAQ + license | Policy + support |
++| `04-Outreach-Batch-1.pdf` | `content/outreach-batch-001.md` | Copy/paste emails without CRM |
++| `05`–`08` Give-Before-Ask | HTML frameworks | Email attachments ranks 1–4 |
++| `09-LinkedIn-Post-1.pdf` | `content/linkedin-post-001.md` | Optional social |
++
++## Stays **not** PDF (editable / runnable)
++
++| Format | Items |
++|--------|--------|
++| **Code** | `server.js`, `lib/`, `frontend/`, `n8n/` |
++| **Data** | `data/seed-leads.json` (CRM import) |
++| **Legal templates** | `templates/*.md` (buyers edit in Word/Google Docs) |
++| **Deep technical** | `GO_LIVE_RUNBOOK.md`, Supabase SQL |
++
++## Regenerate PDFs
++
++```bash
++npm run build-buyer-pdfs    # writes etsy-digital-product/pdf-exports/
++npm run build-etsy          # bundles pdf-exports → ZIP folder 00-PDF-Guides/
++```
++
++Seller Canva art is separate: `listing-creative/` (shop photos only).
 diff --git a/etsy-digital-product/DIGITAL-LICENSE.txt b/etsy-digital-product/DIGITAL-LICENSE.txt
 new file mode 100644
 index 0000000..1782e7c
@@ -1509,10 +1581,10 @@ index 0000000..a8610db
 +```
 diff --git a/etsy-digital-product/ETSY-LISTING.md b/etsy-digital-product/ETSY-LISTING.md
 new file mode 100644
-index 0000000..c3a6ea7
+index 0000000..d43f5ca
 --- /dev/null
 +++ b/etsy-digital-product/ETSY-LISTING.md
-@@ -0,0 +1,136 @@
+@@ -0,0 +1,140 @@
 +# Etsy listing — Revenue Pipeline System (seller reference)
 +
 +Product name everywhere: **Revenue Pipeline System** (no legacy codenames).
@@ -1565,7 +1637,8 @@ index 0000000..c3a6ea7
 +• LinkedIn post template #1
 +• Service pricing catalog, MSA/SOW templates
 +• n8n workflow JSON (lead discovery + follow-up sequences)
-+• START_HERE.md step-by-step setup (Node.js)
++• PDF guides folder (00-PDF-Guides): **no-install outreach path**, Mac/Windows Node install guide with screenshots, quick-start + video link, FAQ, outreach + 4 give-before-ask PDFs
++• START_HERE.md + full app (Node.js) when ready to install
 +
 +✅ PERFECT FOR
 +• Solo consultants & micro-agencies selling B2B systems / operations work
@@ -1587,8 +1660,8 @@ index 0000000..c3a6ea7
 +📥 AFTER PURCHASE
 +1. Download the ZIP from Etsy
 +2. Unzip
-+3. Open START_HERE.md first
-+4. Follow quick start (about 30 minutes to see CRM + landing locally)
++3. Open **00-PDF-Guides/00-PDF-Only-Path.pdf** if you want value today without installing anything
++4. Or open START_HERE.md / 01-Quick-Start.pdf when ready for the full CRM (about 30 minutes locally)
 +
 +💬 QUESTIONS
 +Message me here on Etsy — include your OS (Mac/Windows) if you’re stuck on install.
@@ -1638,30 +1711,53 @@ index 0000000..c3a6ea7
 +
 +## Listing images (suggested)
 +
++**Canva prompts:** `listing-creative/canva/CANVA-PROMPTS.md`  
++**Save exports:** `listing-creative/exports/` (seller only — not in buyer ZIP)
++
 +1. Hero: “Revenue Pipeline System — Instant Download”
-+2. Screenshot: CRM pipeline board
-+3. Checklist: What’s in the ZIP
++2. Checklist: What’s in the ZIP
++3. CRM pipeline screenshot or mockup
 +4. “White-label your brand” callout
-+5. START_HERE preview (blur personal paths if needed)
++5. “NOT A PHYSICAL ITEM” digital notice
 +
 +---
 +
 +## Seller checklist
 +
 +See `SELLER-CHECKLIST.md`
+diff --git a/etsy-digital-product/RECORD-WALKTHROUGH.md b/etsy-digital-product/RECORD-WALKTHROUGH.md
+new file mode 100644
+index 0000000..63f754d
+--- /dev/null
++++ b/etsy-digital-product/RECORD-WALKTHROUGH.md
+@@ -0,0 +1,11 @@
++# Seller: walkthrough video for buyers
++
++1. Use **`buyer-guides/WALKTHROUGH-SOURCE.mp4`** in this repo (or re-record) — ~3–5 min tour: PDF folder → landing → CRM → operator → PDF-only path.
++2. Upload **unlisted** to YouTube or Loom.
++3. Set the URL in repo root **`WALKTHROUGH-VIDEO.txt`**:
++   ```
++   VIDEO_URL=https://youtu.be/YOUR_ID
++   ```
++4. Run `npm run build-etsy` — the link is embedded in **`01-Quick-Start.pdf`** and copied to the ZIP as `WALKTHROUGH-VIDEO.txt`.
++
++Do **not** bundle the `.mp4` inside the Etsy ZIP (size limits). Link only.
 diff --git a/etsy-digital-product/SELLER-CHECKLIST.md b/etsy-digital-product/SELLER-CHECKLIST.md
 new file mode 100644
-index 0000000..04a6c3d
+index 0000000..e2939b3
 --- /dev/null
 +++ b/etsy-digital-product/SELLER-CHECKLIST.md
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,15 @@
 +# Seller checklist (you — not included in buyer ZIP)
 +
 +- [ ] Confirm listing says **Revenue Pipeline System** only (no legacy codenames)
 +- [ ] Run `npm run build-etsy` — confirm ZIP &lt; 20 MB (Etsy limit)
 +- [ ] Open ZIP as buyer: read `START_HERE.md`, run quickstart once
 +- [ ] Replace `[YOUR SHOP]` / `[YOUR BRAND]` placeholders in listing copy (`ETSY-LISTING.md`)
-+- [ ] Create 3–5 listing images (CRM screenshot, contents list, START_HERE preview)
++- [ ] Record 3–5 min walkthrough (PDF folder → outreach → CRM); upload unlisted; set `VIDEO_URL` in `WALKTHROUGH-VIDEO.txt`; `npm run build-etsy`
++- [ ] Add Mac/Windows screenshots to `buyer-guides/screenshots/` if you replace placeholders
++- [ ] Run Canva prompts from `listing-creative/canva/CANVA-PROMPTS.md` → save to `listing-creative/exports/`
++- [ ] Upload 5 listing images to Etsy (hero = image 1)
 +- [ ] Etsy listing → Digital → upload ZIP
 +- [ ] Set automatic delivery + thank-you message: "Open START_HERE.md first"
 +- [ ] Shop policies: digital refunds, license summary
@@ -1669,13 +1765,18 @@ index 0000000..04a6c3d
 +- [ ] After sale: monitor Etsy messages for "can't unzip" / Node version issues
 diff --git a/etsy-digital-product/START_HERE.md b/etsy-digital-product/START_HERE.md
 new file mode 100644
-index 0000000..7d89e28
+index 0000000..338101f
 --- /dev/null
 +++ b/etsy-digital-product/START_HERE.md
-@@ -0,0 +1,74 @@
+@@ -0,0 +1,79 @@
 +# START HERE — Revenue Pipeline System
 +
 +**Digital download · Not a physical item · White-label as [YOUR BRAND]**
++
++> **Not technical?** Open **`00-PDF-Guides/00-PDF-Only-Path.pdf`** — send outreach today with **no install**.  
++> **Prefer PDF for setup?** Use **`01-Quick-Start.pdf`** (same as this file).  
++> **Video tour:** see **`WALKTHROUGH-VIDEO.txt`** in the ZIP root (or the link inside `01-Quick-Start.pdf`).  
++> **Need Node?** **`02-Install-Node-Mac-Windows.pdf`** (Mac & Windows screenshots).
 +
 +Thank you for your purchase. This is the **Revenue Pipeline System**: CRM, lead scoring, outreach templates, landing page, and automation files you run on your own computer or cloud account.
 +
@@ -1781,6 +1882,291 @@ index 0000000..da559ab
 +```bash
 +bash etsy-digital-product/scripts/apply-brand.sh "Your Brand Name"
 +```
+diff --git a/etsy-digital-product/buyer-guides/INSTALL-NODE-MAC-WINDOWS.md b/etsy-digital-product/buyer-guides/INSTALL-NODE-MAC-WINDOWS.md
+new file mode 100644
+index 0000000..a3bfccb
+--- /dev/null
++++ b/etsy-digital-product/buyer-guides/INSTALL-NODE-MAC-WINDOWS.md
+@@ -0,0 +1,89 @@
++# Install Node.js (Mac & Windows) — for Revenue Pipeline System
++
++You need **Node.js 20 or newer** to run the CRM and landing page. Allow **15–20 minutes** the first time.
++
++Official download: **https://nodejs.org** — choose the **LTS** button (recommended).
++
++---
++
++## Check if you already have Node
++
++Open **Terminal** (Mac) or **PowerShell** (Windows) and run:
++
++```bash
++node --version
++```
++
++You need `v20.x.x` or higher. If you see that, skip to **`01-Quick-Start.pdf`**.
++
++![Terminal showing node --version v20 or higher](./screenshots/node-version-check.png)
++
++---
++
++## Mac — install steps
++
++1. Go to **https://nodejs.org** and click the green **LTS** download for macOS.  
++   ![nodejs.org LTS download button](./screenshots/mac-nodejs-download.png)
++
++2. Open the downloaded **`.pkg`** file and continue through the installer (default options are fine).
++
++3. Quit and reopen **Terminal**, then run:
++
++```bash
++node --version
++npm --version
++```
++
++Both should print version numbers.
++
++4. Unzip your Revenue Pipeline System download, open Terminal in that folder (**Finder → right‑click folder → New Terminal at Folder**, or `cd` into the path).
++
++5. Continue with **`01-Quick-Start.pdf`** (`npm ci`, `npm start`, etc.).
++
++**Stuck?** Common fix: restart the Mac after installing Node, then try `node --version` again.
++
++---
++
++## Windows — install steps
++
++1. Go to **https://nodejs.org** and click **LTS** for Windows.  
++   ![nodejs.org LTS for Windows](./screenshots/win-nodejs-download.png)
++
++2. Run the **`.msi`** installer. Accept defaults. Ensure **“Add to PATH”** stays checked.
++
++3. Close and reopen **PowerShell** (Start → type PowerShell → Enter).
++
++```powershell
++node --version
++npm --version
++```
++
++4. Unzip the product folder. In PowerShell:
++
++```powershell
++cd Downloads\revenue-pipeline-system-unzip
++```
++
++(Use your actual folder path.)
++
++5. Continue with **`01-Quick-Start.pdf`**.
++
++**Stuck?** Reboot once after install. If `node` is not recognized, reinstall Node and keep **Add to PATH** enabled.
++
++---
++
++## After Node works
++
++| Command | Purpose |
++|---------|---------|
++| `npm ci` | Install dependencies (first time only) |
++| `cp .env.example .env` | Mac/Linux — create settings file |
++| `copy .env.example .env` | Windows PowerShell — same |
++| `npm start` | Start landing + CRM |
++| `npm run seed` | Load 10 example leads |
++
++Open **http://localhost:3001/** in your browser.
++
++---
++
++*Revenue Pipeline System · see also `01-Quick-Start.pdf`*
+diff --git a/etsy-digital-product/buyer-guides/PDF-ONLY-PATH.md b/etsy-digital-product/buyer-guides/PDF-ONLY-PATH.md
+new file mode 100644
+index 0000000..77d869b
+--- /dev/null
++++ b/etsy-digital-product/buyer-guides/PDF-ONLY-PATH.md
+@@ -0,0 +1,45 @@
++# Revenue Pipeline System — PDF-only path (no install)
++
++**Use this if you are not ready to run Node.js yet.** You still get full value from the download today.
++
++---
++
++## What you can do in the next 60 minutes (no coding)
++
++| Step | Action | Where |
++|------|--------|--------|
++| 1 | Read license & FAQ | `03-Buyer-FAQ-and-License.pdf` in this folder |
++| 2 | Set your brand on emails | Replace `[YOUR BRAND]` and `[BOOKING_URL]` in outreach PDF |
++| 3 | Send outreach in order | `04-Outreach-Batch-1.pdf` — start with the HOT leads at the top |
++| 4 | Attach give-before-ask PDFs | Files `05`–`08` in this folder — one PDF per email for ranks 1–4 |
++| 5 | Post on LinkedIn | `09-LinkedIn-Post-1.pdf` — edit the sign-off to your name |
++| 6 | White-label PDF footers | Open HTML in `content/give-before-ask/` later, or use PDFs as-is for first sends |
++
++**Booking link:** Create a free **Cal.com** or **Calendly** 15-minute event. Paste that URL everywhere you see `[BOOKING_URL]`.
++
++---
++
++## Send order (same as the CRM)
++
++1. True Industries (+ PDF `05`)  
++2. Auto Metal Craft (`06`)  
++3. Barron Industries (`07`)  
++4. Fitzpatrick (`08`)  
++5. Then remaining emails in `04-Outreach-Batch-1.pdf`  
++
++---
++
++## When you are ready for the full system (CRM + landing)
++
++Open **`01-Quick-Start.pdf`** in this folder.  
++If Node is not installed, read **`02-Install-Node-Mac-Windows.pdf`** first.
++
++**Video walkthrough (optional):** see link inside `01-Quick-Start.pdf` or `WALKTHROUGH-VIDEO.txt` in the ZIP root.
++
++---
++
++## You are not missing anything
++
++The software in the ZIP is for when you want a **branded landing page, live CRM, and automation**. Many buyers start with PDF outreach, book calls, then install before scaling.
++
++*Revenue Pipeline System · digital download*
+diff --git a/etsy-digital-product/buyer-guides/screenshots/mac-nodejs-download.png b/etsy-digital-product/buyer-guides/screenshots/mac-nodejs-download.png
+new file mode 100644
+index 0000000..7aa20ba
+Binary files /dev/null and b/etsy-digital-product/buyer-guides/screenshots/mac-nodejs-download.png differ
+diff --git a/etsy-digital-product/buyer-guides/screenshots/node-version-check.png b/etsy-digital-product/buyer-guides/screenshots/node-version-check.png
+new file mode 100644
+index 0000000..b13f22e
+Binary files /dev/null and b/etsy-digital-product/buyer-guides/screenshots/node-version-check.png differ
+diff --git a/etsy-digital-product/buyer-guides/screenshots/win-nodejs-download.png b/etsy-digital-product/buyer-guides/screenshots/win-nodejs-download.png
+new file mode 100644
+index 0000000..7aa20ba
+Binary files /dev/null and b/etsy-digital-product/buyer-guides/screenshots/win-nodejs-download.png differ
+diff --git a/etsy-digital-product/listing-creative/canva/CANVA-PROMPTS.md b/etsy-digital-product/listing-creative/canva/CANVA-PROMPTS.md
+new file mode 100644
+index 0000000..dd56ab5
+--- /dev/null
++++ b/etsy-digital-product/listing-creative/canva/CANVA-PROMPTS.md
+@@ -0,0 +1,104 @@
++# Canva prompts — Revenue Pipeline System (Etsy listing images)
++
++**Seller only** — do **not** include this folder in `npm run build-etsy` (buyers get the ZIP, not your shop art).
++
++## Where files live
++
++| Purpose | Path (monorepo) | Path (.github launch hub) |
++|---------|-------------------|---------------------------|
++| Canva text prompts (this file) | `etsy-digital-product/listing-creative/canva/CANVA-PROMPTS.md` | `products/hunter-revenue-pipeline/listing-creative/canva/CANVA-PROMPTS.md` |
++| Exported PNG/JPG (you create) | `etsy-digital-product/listing-creative/exports/` | same under `products/.../exports/` |
++| Etsy copy | `etsy-digital-product/ETSY-LISTING.md` | `products/hunter-revenue-pipeline/` docs |
++
++**Workflow:** Paste each prompt into **Canva → Magic Media / Text to Image** (or **Docs → Magic Write** for layout copy), export **2000×2000 px** (Etsy recommends square), save to `listing-creative/exports/`, upload to Etsy listing (5 images).
++
++**Brand:** Revenue Pipeline System · colors: navy `#0a0e17`, blue accent `#3b82f6`, white text. No legacy codenames.
++
++---
++
++## Image 1 — Hero (thumbnail)
++
++**Filename:** `01-hero-instant-download.png`
++
++**Canva prompt:**
++
++```
++Square Etsy product thumbnail, modern dark navy tech aesthetic, bold headline text "Revenue Pipeline System", subline "Instant Digital Download", small icons for CRM pipeline, email, and dashboard, professional B2B consultant kit style, clean sans-serif typography, blue gradient accent, high contrast, no mockup laptop clutter, marketplace-ready
++```
++
++**Text overlay (if designing manually):**  
++Revenue Pipeline System · CRM + Outreach · Instant Download
++
++---
++
++## Image 2 — What’s included
++
++**Filename:** `02-whats-included-checklist.png`
++
++**Canva prompt:**
++
++```
++Square infographic checklist on dark background, title "What's Inside the ZIP", six bullet items with checkmarks: CRM Dashboard, 10 Outreach Emails, Landing Page, 4 PDF Frameworks, n8n Automation JSON, START_HERE Guide, minimalist B2B SaaS marketing style, blue and white, readable at small size
++```
++
++---
++
++## Image 3 — CRM screenshot style
++
++**Filename:** `03-crm-pipeline-mockup.png`
++
++**Canva prompt:**
++
++```
++UI mockup of a kanban sales CRM pipeline board, columns New Opportunity Outreach Sent Meeting Booked, dark mode interface, manufacturing B2B lead cards, professional software screenshot style, subtle browser frame, title banner "Pipeline CRM Included", not a real brand logo
++```
++
++*Tip:* For authenticity, screenshot `http://localhost:3001/hunter_crm.html` after `npm run seed` and drop into Canva as **Image 3** instead of AI-only.
++
++---
++
++## Image 4 — White-label
++
++**Filename:** `04-white-label-your-brand.png`
++
++**Canva prompt:**
++
++```
++Square marketing graphic, split before-after concept, left gray label "Generic", right vibrant "Your Brand", center arrow, headline "White-Label for Consultants", subtext "Set your name on emails, landing page, and templates", dark navy B2B style, trustworthy and simple
++```
++
++---
++
++## Image 5 — Not physical / license
++
++**Filename:** `05-digital-download-notice.png`
++
++**Canva prompt:**
++
++```
++Square Etsy policy-style graphic, large icon digital download cloud with ZIP file, bold text "NOT A PHYSICAL ITEM", smaller text "Personal use license · No resale of files", clean navy and blue, reassuring professional design for digital product listing
++```
++
++---
++
++## Optional — Shop banner (not a listing image)
++
++**Canva prompt:**
++
++```
++Wide Etsy shop banner, Revenue Pipeline Systems for Consultants, digital download kits, dark tech aesthetic, blue accents, minimal text, 3360 x 840 px
++```
++
++---
++
++## After export
++
++1. Save PNGs to `listing-creative/exports/`
++2. Etsy → Listing → Photos → upload images 1–5 in order above
++3. Image 1 = thumbnail (most important for search scroll)
++
++---
++
++## Align with your other kits
++
++Same pattern as **Agent 10 — Listing Mockup & Photo Brief** on `push` (`01-playbook` + optional Canva). This SKU keeps prompts next to `ETSY-LISTING.md` under `etsy-digital-product/listing-creative/` because the product ships from the monorepo, not `ai-agent-team/products/`.
+diff --git a/etsy-digital-product/listing-creative/exports/README.md b/etsy-digital-product/listing-creative/exports/README.md
+new file mode 100644
+index 0000000..4905365
+--- /dev/null
++++ b/etsy-digital-product/listing-creative/exports/README.md
+@@ -0,0 +1,11 @@
++# Listing image exports
++
++Drop Canva exports here (PNG/JPG, 2000×2000 recommended):
++
++- `01-hero-instant-download.png`
++- `02-whats-included-checklist.png`
++- `03-crm-pipeline-mockup.png`
++- `04-white-label-your-brand.png`
++- `05-digital-download-notice.png`
++
++**Not included** in the buyer ZIP (`npm run build-etsy`).
 diff --git a/etsy-digital-product/scripts/apply-brand.sh b/etsy-digital-product/scripts/apply-brand.sh
 new file mode 100755
 index 0000000..9e5e247
@@ -1797,12 +2183,117 @@ index 0000000..9e5e247
 +done
 +grep -q "^OPERATOR_BRAND=" .env 2>/dev/null && sed -i "s/^OPERATOR_BRAND=.*/OPERATOR_BRAND=${BRAND}/" .env || true
 +echo "Updated brand to: $BRAND — grep -ri HUNTER frontend content templates"
+diff --git a/etsy-digital-product/scripts/build-buyer-pdfs.sh b/etsy-digital-product/scripts/build-buyer-pdfs.sh
+new file mode 100755
+index 0000000..8001461
+--- /dev/null
++++ b/etsy-digital-product/scripts/build-buyer-pdfs.sh
+@@ -0,0 +1,99 @@
++#!/usr/bin/env bash
++# Generate buyer-facing PDFs for Etsy ZIP (run before build-etsy).
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
++ETSY="$ROOT/etsy-digital-product"
++GUIDES="$ETSY/buyer-guides"
++OUT="$ETSY/pdf-exports"
++GBA="$ROOT/content/give-before-ask"
++CHROME="${CHROME_BIN:-google-chrome}"
++
++cd "$ROOT"
++mkdir -p "$OUT"
++rm -f "$OUT"/*.pdf
++
++VIDEO_URL="https://REPLACE_WITH_YOUR_UNLISTED_VIDEO_LINK"
++if [[ -f "$ROOT/WALKTHROUGH-VIDEO.txt" ]]; then
++  v="$(grep -E '^VIDEO_URL=' "$ROOT/WALKTHROUGH-VIDEO.txt" | head -1 | cut -d= -f2-)"
++  [[ -n "$v" ]] && VIDEO_URL="$v"
++fi
++
++echo "📄 Building buyer PDFs → $OUT"
++
++mdpdf() {
++  local src="$1"
++  local dest="$2"
++  (cd "$(dirname "$src")" && npx --yes md-to-pdf "$(basename "$src")")
++  local generated="${src%.md}.pdf"
++  [[ -f "$generated" ]] || { echo "  ⚠️  no PDF for $src"; return 1; }
++  mv -f "$generated" "$dest"
++  echo "  ✅ $(basename "$dest")"
++}
++
++htmlpdf() {
++  local html="$1"
++  local dest="$2"
++  local abs
++  abs="$(cd "$(dirname "$html")" && pwd)/$(basename "$html")"
++  if ! command -v "$CHROME" >/dev/null 2>&1; then
++    echo "  ⚠️  Chrome not found — skip $(basename "$dest")"
++    return 0
++  fi
++  local udir="/tmp/chrome-pdf-$$-$(basename "$dest")"
++  timeout 45 "$CHROME" --headless=new --disable-gpu --no-sandbox \
++    --user-data-dir="$udir" \
++    --no-pdf-header-footer \
++    --print-to-pdf="$dest" "file://${abs}" 2>/dev/null || true
++  if [[ -s "$dest" ]]; then
++    echo "  ✅ $(basename "$dest")"
++  else
++    echo "  ⚠️  print failed $(basename "$html")"
++  fi
++  rm -rf "$udir"
++}
++
++mdpdf "$GUIDES/PDF-ONLY-PATH.md" "$OUT/00-PDF-Only-Path.pdf" || true
++mdpdf "$GUIDES/INSTALL-NODE-MAC-WINDOWS.md" "$OUT/02-Install-Node-Mac-Windows.pdf" || true
++
++TMP_START="$OUT/_quick-start.md"
++{
++  cat "$ETSY/START_HERE.md"
++  echo ""
++  echo "---"
++  echo ""
++  echo "## Video walkthrough (3–5 minutes)"
++  echo ""
++  if [[ "$VIDEO_URL" == *REPLACE_WITH* ]]; then
++    echo "Ask the shop owner for the walkthrough link, or see \`WALKTHROUGH-VIDEO.txt\` in the ZIP after they publish the video."
++  else
++    echo "Visual tour of the PDF folder, outreach pack, and CRM:"
++    echo ""
++    echo "**${VIDEO_URL}**"
++  fi
++} > "$TMP_START"
++mdpdf "$TMP_START" "$OUT/01-Quick-Start.pdf" || true
++rm -f "$TMP_START"
++
++TMP_FAQ="$OUT/_faq-license.md"
++{
++  echo "# Buyer FAQ"
++  cat "$ETSY/BUYER-FAQ.md"
++  echo ""
++  echo "---"
++  echo ""
++  echo "# Digital license"
++  cat "$ETSY/DIGITAL-LICENSE.txt"
++} > "$TMP_FAQ"
++mdpdf "$TMP_FAQ" "$OUT/03-Buyer-FAQ-and-License.pdf" || true
++rm -f "$TMP_FAQ"
++
++mdpdf "$ROOT/content/outreach-batch-001.md" "$OUT/04-Outreach-Batch-1.pdf" || true
++mdpdf "$ROOT/content/linkedin-post-001.md" "$OUT/09-LinkedIn-Post-1.pdf" || true
++
++htmlpdf "$GBA/true-industries-die-tryout-tracker.html" "$OUT/05-Give-Before-Ask-True-Industries.pdf"
++htmlpdf "$GBA/auto-metal-craft-ecn-laser-queue.html" "$OUT/06-Give-Before-Ask-Auto-Metal-Craft.pdf"
++htmlpdf "$GBA/barron-casting-spindle-ndt-tracker.html" "$OUT/07-Give-Before-Ask-Barron-Industries.pdf"
++htmlpdf "$GBA/fitzpatrick-spindle-cmm-queue.html" "$OUT/08-Give-Before-Ask-Fitzpatrick.pdf"
++
++count="$(ls -1 "$OUT"/*.pdf 2>/dev/null | wc -l)"
++echo "Done. ${count} PDF(s) in pdf-exports/"
 diff --git a/etsy-digital-product/scripts/build-etsy-download.sh b/etsy-digital-product/scripts/build-etsy-download.sh
 new file mode 100755
-index 0000000..0d6fe4c
+index 0000000..84032a6
 --- /dev/null
 +++ b/etsy-digital-product/scripts/build-etsy-download.sh
-@@ -0,0 +1,65 @@
+@@ -0,0 +1,81 @@
 +#!/usr/bin/env bash
 +# Build ZIP for Etsy digital download (buyer-facing).
 +set -euo pipefail
@@ -1821,15 +2312,31 @@ index 0000000..0d6fe4c
 +
 +echo "📦 Building Etsy buyer ZIP..."
 +
++# PDF guides (Etsy buyers open these first)
++if [[ -x "$ETSY/scripts/build-buyer-pdfs.sh" ]]; then
++  bash "$ETSY/scripts/build-buyer-pdfs.sh" || echo "⚠️  PDF build had warnings — continuing"
++fi
++if [[ -d "$ETSY/pdf-exports" ]] && ls "$ETSY/pdf-exports"/*.pdf >/dev/null 2>&1; then
++  mkdir -p "$STAGING/00-PDF-Guides"
++  cp "$ETSY/pdf-exports"/*.pdf "$STAGING/00-PDF-Guides/"
++  echo "  📄 Included $(ls -1 "$STAGING/00-PDF-Guides"/*.pdf | wc -l) PDF(s) in 00-PDF-Guides/"
++fi
++
++copy() { [[ -e "$ROOT/$1" ]] && cp -a "$ROOT/$1" "$STAGING/$1"; }
++GUIDES="$ETSY/buyer-guides"
++
 +# Buyer entrypoints first
 +cp "$ETSY/START_HERE.md" "$STAGING/START_HERE.md"
++copy WALKTHROUGH-VIDEO.txt
++if [[ -d "$GUIDES/screenshots" ]]; then
++  mkdir -p "$STAGING/00-PDF-Guides/screenshots"
++  cp -a "$GUIDES/screenshots"/* "$STAGING/00-PDF-Guides/screenshots/" 2>/dev/null || true
++fi
 +cp "$ETSY/DIGITAL-LICENSE.txt" "$STAGING/DIGITAL-LICENSE.txt"
 +cp "$ETSY/BUYER-FAQ.md" "$STAGING/BUYER-FAQ.md"
 +cp "$ETSY/WHITE_LABEL-BUYER.md" "$STAGING/WHITE_LABEL-BUYER.md"
 +mkdir -p "$STAGING/etsy-digital-product"
 +cp "$ETSY/WHITE_LABEL-BUYER.md" "$STAGING/etsy-digital-product/"
-+
-+copy() { [[ -e "$ROOT/$1" ]] && cp -a "$ROOT/$1" "$STAGING/$1"; }
 +
 +copy server.js
 +copy package.json
@@ -2504,7 +3011,7 @@ index 0000000..22a3c6a
 +rm -rf "$STAGING"
 +echo "✅ Done: $ZIP ($(du -h "$ZIP" | cut -f1))"
 diff --git a/package.json b/package.json
-index f539c1c..60db920 100644
+index f539c1c..623026c 100644
 --- a/package.json
 +++ b/package.json
 @@ -1,7 +1,7 @@
@@ -2516,7 +3023,7 @@ index f539c1c..60db920 100644
    "main": "server.js",
    "scripts": {
      "start": "node server.js",
-@@ -9,7 +9,10 @@
+@@ -9,7 +9,11 @@
      "setup": "bash scripts/setup.sh",
      "seed": "node scripts/seed-leads.js",
      "import-spark": "node scripts/import-spark.js",
@@ -2524,6 +3031,7 @@ index f539c1c..60db920 100644
 +    "health": "node scripts/health-check.js",
 +    "verify-launch": "bash scripts/verify-launch.sh",
 +    "build-operator-kit": "bash operator-license-kit/scripts/build-operator-kit.sh",
++    "build-buyer-pdfs": "bash etsy-digital-product/scripts/build-buyer-pdfs.sh",
 +    "build-etsy": "bash etsy-digital-product/scripts/build-etsy-download.sh"
    },
    "dependencies": {
@@ -2714,6 +3222,18 @@ index 7ed6bde..aa65ffd 100644
  
    await check('API Online', async () => {
      const res = await fetch(`${API}/health`);
+diff --git a/scripts/import-spark.js b/scripts/import-spark.js
+index 9d5d2c9..5ba4a3b 100644
+--- a/scripts/import-spark.js
++++ b/scripts/import-spark.js
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env node
+ /**
+- * Import Gemini Spark opportunity cards into HUNTER.
++ * Import Gemini Spark opportunity cards into Revenue Pipeline System.
+  * Usage: node scripts/import-spark.js [file] [API_URL]
+  */
+ const fs = require('fs');
 diff --git a/scripts/seed-leads.js b/scripts/seed-leads.js
 index 07d7a7c..1b47df5 100644
 --- a/scripts/seed-leads.js
@@ -2951,7 +3471,7 @@ index 17dbd4f..81fcd89 100644
  ---
  
 diff --git a/templates/msa-template.md b/templates/msa-template.md
-index ba75339..b2a1294 100644
+index ba75339..bc6dc51 100644
 --- a/templates/msa-template.md
 +++ b/templates/msa-template.md
 @@ -1,10 +1,10 @@
@@ -2963,7 +3483,7 @@ index ba75339..b2a1294 100644
  This Master Service Agreement ("Agreement") is entered into as of [DATE] between:
  
 -**Provider:** HUNTER Intelligence ("HUNTER")
-+**Provider:** Revenue Pipeline System ("[YOUR BRAND]")
++**Provider:** [YOUR BRAND] ("Provider")
  [Your Name / LLC Name]
  [Address]
  [Email]
