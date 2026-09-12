@@ -35,3 +35,14 @@ Re-crawl when Sam provides clone URLs (private repo or org).
 
 - New shippable file → **Artifacts** row + link **Project**
 - Quarterly sync with `FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md`
+
+## Pending sync (Zapier blocked)
+
+When **PM ARTIFACT ADD** cannot run via Zapier MCP, rows queue in **`PM-AIRTABLE-ARTIFACT-QUEUE.json`**. Apply with:
+
+```bash
+export AIRTABLE_PAT='pat...'
+python3 claude-skills/hub/agents/scripts/airtable_pm_artifact_add.py
+```
+
+Dry-run: `python3 claude-skills/hub/agents/scripts/airtable_pm_artifact_add.py --dry-run`

@@ -1,0 +1,39 @@
+{
+  "base_id": "appUuhVQHAOv31wJ1",
+  "artifacts_table_id": "tblUaFGrktRDqFyur",
+  "projects_table_id": "tblRGiHqxz0K8Q0qi",
+  "project_link_name": "Revenue Intel Agent",
+  "queued_at": "2026-09-12T22:24:00Z",
+  "sync_status": "pending",
+  "blocked_reason": "Zapier MCP task limit (billing period)",
+  "rows": [
+    {
+      "command": "PM ARTIFACT ADD",
+      "artifact_name": "FBA AI Agent Workbook (Etsy listing draft)",
+      "project": "Revenue Intel Agent",
+      "fields": {
+        "Artifact Name": "FBA AI Agent Workbook (Etsy listing draft)",
+        "Artifact Type": "Prompt pack",
+        "Artifact Status": "WORKING",
+        "Productizable": "Partial",
+        "Path or URL": "https://github.com/samuelfreemanjobs-hash/.github/blob/cursor/revenue-intel-v5-launch-d18f/claude-skills/deliverables/revenue-intel-agent-v5/build/fba-ai-agents/LISTING-ETSY-FBA-AI-AGENT-WORKBOOK.md",
+        "Repo path": "claude-skills/deliverables/revenue-intel-agent-v5/build/fba-ai-agents/LISTING-ETSY-FBA-AI-AGENT-WORKBOOK.md",
+        "Notes": "Etsy SKU draft · run runs/2026-09-12-fba-ai-agents-market-etsy.json O1 Hypothesis · $22 target"
+      }
+    },
+    {
+      "command": "PM ARTIFACT ADD",
+      "artifact_name": "Run FBA with AI Agents (KDP outline)",
+      "project": "Revenue Intel Agent",
+      "fields": {
+        "Artifact Name": "Run FBA with AI Agents (KDP outline)",
+        "Artifact Type": "Manuscript",
+        "Artifact Status": "SPEC",
+        "Productizable": "Partial",
+        "Path or URL": "https://github.com/samuelfreemanjobs-hash/.github/blob/cursor/revenue-intel-v5-launch-d18f/claude-skills/deliverables/revenue-intel-agent-v5/build/fba-ai-agents/KDP-OUTLINE-RUN-FBA-WITH-AI-AGENTS.md",
+        "Repo path": "claude-skills/deliverables/revenue-intel-agent-v5/build/fba-ai-agents/KDP-OUTLINE-RUN-FBA-WITH-AI-AGENTS.md",
+        "Notes": "KDP + Gumroad bundle · run runs/2026-09-12-fba-ai-agents-market-amazon.json O1 Validated"
+      }
+    }
+  ]
+}
