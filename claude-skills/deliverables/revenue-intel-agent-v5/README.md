@@ -1,6 +1,6 @@
-# Revenue Intel Agent v5.0 — product launch kit
+# Revenue Intel Agent — v5.0 — product launch kit
 
-**Product name:** Revenue Intel Agent v5.0  
+**Official product name:** **Revenue Intel Agent — v5.0**  
 **Codename:** Revenue Intel (Cleo ecosystem)  
 **Function:** Metro Detroit compliance & cost-recovery opportunity intelligence for B2B operators and consultants  
 **Status:** Phase 0 in progress · **Sam review gate** before Phase 1 (buyer packaging)

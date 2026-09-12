@@ -1,4 +1,4 @@
-# Phase 0 — Revenue Intel Agent v5.0 (product foundation)
+# Phase 0 — Revenue Intel Agent — v5.0 (product foundation)
 
 **Goal:** Make v5.0 **reviewable**, **version-pinned**, and **ready to package** for paying customers — without publishing listings yet.
 

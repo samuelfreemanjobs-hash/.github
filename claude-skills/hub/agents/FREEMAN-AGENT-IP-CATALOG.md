@@ -194,7 +194,7 @@
 | Clinical Revenue Systems Engineering | Scout, Closer, Dispatcher, Auditor |
 | OIS — OpExcel | 60+ tools / diagnostics |
 | TRON | Future ~5 core agents |
-| Revenue Intel Agent | Revenue Intel v5.0 |
+| Revenue Intel Agent | Revenue Intel Agent — v5.0 |
 | HUNTER | Scoring agent + CRM |
 | Marketing AI Agent — Swipe File | Email marketing agent |
 | PM Agent | Freeman PM Agent |

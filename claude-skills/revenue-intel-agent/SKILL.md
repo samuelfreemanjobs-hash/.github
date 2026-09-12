@@ -1,11 +1,11 @@
 ---
 name: revenue-intel-agent
-description: Run Revenue Intel Agent v5.0 — Metro Detroit compliance and cost-recovery opportunity research with HUNTER-ready briefs. Use when the user asks for revenue intel, compliance intel, cost recovery leads, or industrial opportunity research in southeast Michigan.
+description: Run Revenue Intel Agent — v5.0 — Metro Detroit compliance and cost-recovery opportunity research with HUNTER-ready briefs. Use when the user asks for revenue intel, compliance intel, cost recovery leads, or industrial opportunity research in southeast Michigan.
 ---
 
-# Revenue Intel Agent v5.0
+# Revenue Intel Agent — v5.0
 
-Invoke the **Revenue Intel Agent v5.0** system prompt and produce opportunity briefs aligned with HUNTER CRM.
+Invoke the **Revenue Intel Agent — v5.0** system prompt and produce opportunity briefs aligned with HUNTER CRM.
 
 ## Before you start
 

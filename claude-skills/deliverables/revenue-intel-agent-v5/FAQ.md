@@ -1,4 +1,4 @@
-# FAQ — Revenue Intel Agent v5.0
+# FAQ — Revenue Intel Agent — v5.0
 
 ## Is this a chatbot app?
 

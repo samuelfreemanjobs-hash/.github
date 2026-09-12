@@ -1,4 +1,4 @@
-# Launch checklist — Revenue Intel Agent v5.0
+# Launch checklist — Revenue Intel Agent — v5.0
 
 ## Phase 0 (review — before listing)
 

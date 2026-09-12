@@ -1,8 +1,8 @@
-# Gumroad listing — Revenue Intel Agent v5.0 (draft)
+# Gumroad listing — Revenue Intel Agent — v5.0 (draft)
 
 ## Title
 
-**Revenue Intel Agent v5.0 — Metro Detroit Compliance & Cost-Recovery Research Prompt**
+**Revenue Intel Agent — v5.0 — Metro Detroit Compliance & Cost-Recovery Research Prompt**
 
 ## Subtitle
 
@@ -20,7 +20,7 @@ Industrial B2B intel briefs for consultants · JSON + HUNTER-ready · Not legal 
 
 ## Short description
 
-Stop guessing why a Warren or Auburn Hills supplier might buy your $15K integration project. Revenue Intel Agent v5.0 is a **structured system prompt** that researches **public signals** and outputs **1–3 opportunity briefs** with evidence classes, confidence, verification questions, and HUNTER-compatible JSON.
+Stop guessing why a Warren or Auburn Hills supplier might buy your $15K integration project. Revenue Intel Agent — v5.0 is a **structured system prompt** that researches **public signals** and outputs **1–3 opportunity briefs** with evidence classes, confidence, verification questions, and HUNTER-compatible JSON.
 
 Built for automation consultants, fractional ops leaders, and industrial integrators in **Metro Detroit**.
 
@@ -41,7 +41,7 @@ Built for automation consultants, fractional ops leaders, and industrial integra
 
 ## Receipt email (template)
 
-Subject: Your Revenue Intel Agent v5.0 download
+Subject: Your Revenue Intel Agent — v5.0 download
 
 Thanks for your purchase. Your ZIP is attached.
 

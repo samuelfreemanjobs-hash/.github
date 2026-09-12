@@ -1,4 +1,4 @@
-# Product build status — Revenue Intel Agent v5.0
+# Product build status — Revenue Intel Agent — v5.0
 
 **Updated:** 2026-09-12
 

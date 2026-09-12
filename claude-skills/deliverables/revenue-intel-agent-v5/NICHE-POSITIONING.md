@@ -1,4 +1,4 @@
-# Niche positioning — Revenue Intel Agent v5.0
+# Niche positioning — Revenue Intel Agent — v5.0
 
 ## One-line promise
 
@@ -24,7 +24,7 @@
 | Product | Job |
 |---------|-----|
 | **HUNTER CRM** | Score, tier, and log outreach on **your** pipeline |
-| **Revenue Intel Agent v5.0** | **Generate** opportunity hypotheses and evidence for **new** targets |
+| **Revenue Intel Agent — v5.0** | **Generate** opportunity hypotheses and evidence for **new** targets |
 
 Bundle story (Phase 2): Intel finds the angle → HUNTER scores and tracks the deal.
 

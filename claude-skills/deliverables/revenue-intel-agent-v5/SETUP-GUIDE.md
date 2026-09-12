@@ -1,4 +1,4 @@
-# Setup guide — Revenue Intel Agent v5.0
+# Setup guide — Revenue Intel Agent — v5.0
 
 **Support:** `{SUPPORT_EMAIL}` (default: samuelfreemanjobs@gmail.com)
 

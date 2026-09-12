@@ -88,7 +88,7 @@ Each agent product includes: `agent/SOUL.md`, `DUTIES.md`, `core-config.xml`, `s
 
 | Artifact | Status | Product? | Notes |
 |----------|--------|----------|-------|
-| **Revenue Intel Agent v5.0** | WORKING | Y | Compliance/cost-recovery intel; Gem port · **Phase 0** · `claude-skills/deliverables/revenue-intel-agent-v5/` |
+| **Revenue Intel Agent — v5.0** | WORKING | Y | Compliance/cost-recovery intel; Gem port · **Phase 0** · `claude-skills/deliverables/revenue-intel-agent-v5/` |
 | **Freeman Industrial Intelligence** | PROTOTYPE | Y | 7 queue types, weekly deliverables |
 | **OIS diagnostics** | WORKING | Y | Inventory, JIT, inbound variability, etc. |
 

@@ -1,4 +1,4 @@
-# Revenue Intel Agent v5.0 — Quick start
+# Revenue Intel Agent — v5.0 — Quick start
 
 1. Paste `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.txt` into your AI project instructions.  
 2. Name one target company + city in Michigan industrial corridor.  
@@ -7,4 +7,4 @@
 5. Complete `seller_action` items before any email or call.  
 6. (Optional) Create HUNTER row using `OPPORTUNITY-BRIEF-SCHEMA.md`.
 
-**Product:** Revenue Intel Agent v5.0 · Freeman Intelligence · `{SUPPORT_EMAIL}`
+**Product:** Revenue Intel Agent — v5.0 · Freeman Intelligence · `{SUPPORT_EMAIL}`

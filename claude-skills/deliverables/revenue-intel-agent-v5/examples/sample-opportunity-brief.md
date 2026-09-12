@@ -2,7 +2,7 @@
 
 **Company:** Northline Stampings LLC *(fictional)*  
 **Site:** Sterling Heights, MI  
-**Run:** Revenue Intel Agent v5.0 (demo)
+**Run:** Revenue Intel Agent — v5.0 (demo)
 
 ## Executive summary
 
