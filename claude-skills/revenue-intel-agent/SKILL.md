@@ -1,43 +1,37 @@
 ---
 name: revenue-intel-agent
-description: Run Revenue Intel Agent — v5.0 — Metro Detroit compliance and cost-recovery opportunity research with HUNTER-ready briefs. Use when the user asks for revenue intel, compliance intel, cost recovery leads, or industrial opportunity research in southeast Michigan.
+description: Run Revenue Intel Agent — v5.0 weekly monetization briefs with gated evidence, ROI modeling, and optional JSON/CSV. Use when the user asks for revenue intel, market opportunities, weekly revenue brief, or monetization analysis for a niche and ICP.
 ---
 
 # Revenue Intel Agent — v5.0
 
-Invoke the **Revenue Intel Agent — v5.0** system prompt and produce opportunity briefs aligned with HUNTER CRM.
+Invoke the official **Revenue Intel Agent — v5.0** system prompt with a filled **runtime context** every run.
 
 ## Before you start
 
-Read these files from this repo (paths relative to `claude-skills/`):
-
 | File | Purpose |
 |------|---------|
-| `deliverables/revenue-intel-agent-v5/REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` | Full system instructions |
-| `deliverables/revenue-intel-agent-v5/OPPORTUNITY-BRIEF-SCHEMA.md` | Field definitions |
-| `deliverables/revenue-intel-agent-v5/NICHE-POSITIONING.md` | ICP and exclusions |
+| `deliverables/revenue-intel-agent-v5/REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` | Full system prompt (paste into system role) |
+| `deliverables/revenue-intel-agent-v5/RUNTIME-CONTEXT.example.yaml` | Template for `<runtime_context>` |
+| `deliverables/revenue-intel-agent-v5/OPPORTUNITY-BRIEF-SCHEMA.md` | v5 JSON + optional HUNTER mapping |
 | `hub/02-legal-finance-trust/claims-compliance.md` | Claims guardrails |
 
 ## Workflow
 
-1. **Intake** — Company name or prospecting criteria; optional service catalog from user.
-2. **Load system prompt** — Adopt the v5.0 role, rules, and output format from the system prompt file (entire body under `## ROLE` through `## START`).
-3. **Research** — Use web search when available; cite source classes per prompt rules.
-4. **Deliver** — Markdown summary + JSON `opportunities` array per schema.
-5. **Human gate** — Present `seller_action` and verification questions; do not instruct automated outreach without user approval.
+1. **Stop if missing context** — Require `today`, `niche`, and `icp`. Do not guess dates or market.
+2. **Inject `<runtime_context>`** — Copy from `RUNTIME-CONTEXT.example.yaml` (or orchestrator supply). Set `output_modes` (default `ExecutiveBriefMD` only).
+3. **Adopt system prompt** — Use the full v5.0 prompt from the `.md` file (all sections `<role>` through changelog).
+4. **User message** — Use the run template at the bottom of the system prompt file (`Niche/Market`, `ICP`).
+5. **Research** — Web search + fetch per `<research_protocol>`; respect `search_budget`.
+6. **Deliver** — Only the requested `output_modes`, in contract order. Never pad opportunity count.
+7. **Human gate** — Hypothesis items need `validation_plan`; no outreach automation without user approval.
 
 ## HUNTER handoff (optional)
 
-If the user uses HUNTER / Revenue Pipeline System, map each opportunity to:
-
-- Company, Industry, Evidence fields
-- Tier from `hunter_tier`
-- Outreach strategy letter from `outreach_strategy`
-
-Remind: pre-built intel rows belong in the **operator’s internal** base, not the customer template (`deliverables/revenue-pipeline-system/LAUNCH-CHECKLIST.md`).
+When `hunter_handoff: true` in runtime context, map validated opportunities per `OPPORTUNITY-BRIEF-SCHEMA.md`. Internal operator base only — not the customer HUNTER template.
 
 ## Quality bar
 
-- Max 3 opportunities per run
-- No fabricated fines or savings
-- Every brief includes `compliance_note` and at least one `evidence` item
+- Zero opportunities with populated `rejected` is a valid successful run
+- No fabricated hashes, undated sources, or memory-as-current-fact
+- Mandatory "What I rejected and why" in ExecutiveBriefMD

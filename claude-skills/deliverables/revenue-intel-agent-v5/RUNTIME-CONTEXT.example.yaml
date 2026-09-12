@@ -1,0 +1,32 @@
+# Inject as <runtime_context> each run. Orchestrator fills all REQUIRED fields.
+# Do not let the model infer these values.
+
+today: "2026-09-12" # REQUIRED — YYYY-MM-DD
+
+niche: "" # REQUIRED — market / vertical label
+icp: "" # REQUIRED — ideal customer profile (role, firmographics, constraints)
+
+output_modes: # Default: ExecutiveBriefMD only
+  - ExecutiveBriefMD
+  # - JSON
+  # - SummaryEmail
+  # - CSV
+  # - SheetsSpec
+
+search_budget: 24 # Max search + fetch calls this run (stop at 80% to consolidate)
+
+recency_window_days: 365
+evidence_exceptions: [] # source ids allowed outside recency window
+
+confidence_gate: 0.65 # Below → status Hypothesis + validation_plan
+
+prior_run_opportunities: [] # Headlines or ids from prior weekly runs (Novelty gate)
+
+owner_role: "" # Named role for Feasibility / Ease scoring
+owner_capabilities: "" # Stated skills, budget, tools (Ease gate)
+
+min_opportunities: 0
+max_opportunities: 5 # Soft cap; never pad to reach count
+
+# Optional HUNTER / pipeline handoff (Freeman Intelligence internal)
+hunter_handoff: false

@@ -7,7 +7,7 @@
 | Item | Status |
 |------|--------|
 | Launch kit folder `deliverables/revenue-intel-agent-v5/` | **Done** |
-| System prompt v5.0 (draft Gem port) | **Done** — Sam to diff against live Gem |
+| System prompt v5.0 (official) | **Done** — Sam-provided v5.0 + runtime template |
 | Claude skill `revenue-intel-agent/SKILL.md` | **Done** |
 | Phase 0 runbook | **Done** — execution started |
 | Review portal HTML | **Done** |

@@ -1,32 +1,35 @@
-# Opportunity brief schema — Revenue Intel → HUNTER
+# Output schema — Revenue Intel Agent — v5.0
 
-Use this when pasting intel into **HUNTER — Revenue Intelligence OS** (internal operator base).
+Canonical contract is in `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` under `<output_contract>`.
 
-## HUNTER field mapping (suggested)
+## Modes
 
-| Intel field | HUNTER / Opportunities column |
-|-------------|-------------------------------|
-| `company` | Company Name |
-| `site` | Notes (lead with “Site: …”) |
-| `vertical` | Industry |
-| `title` | Opportunity Title or Notes headline |
-| `pain_summary` + evidence | Evidence / Notes |
-| `hunter_tier` | Tier |
-| `outreach_strategy` | Outreach Strategy (A–F) |
-| `suggested_service_name` | Match row in Service Catalog |
-| `confidence` | Notes tag `[confidence: medium]` |
+| Mode | Delimiters | When |
+|------|------------|------|
+| JSON | `===JSON_START===` … `===JSON_END===` | Required if CSV or SheetsSpec requested |
+| ExecutiveBriefMD | `===BRIEF_MD_START===` … | Default |
+| SummaryEmail | `===EMAIL_START===` … | Opt-in |
+| CSV | `===CSV_START===` … | Opt-in |
+| SheetsSpec | `===SHEETS_SPEC_START===` … | Opt-in |
 
-## JSON object (canonical)
+## Core objects
 
-See `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` for the full `opportunities[]` shape.
+- `run_meta` — `today`, `niche`, `icp`, `notes`
+- `source_ledger` — dated sources with credibility scores
+- `opportunities[]` — sorted by `priority_score`; `status` Validated | Hypothesis
+- `rejected[]` — mandatory when ideas fail gates (zero-result runs still succeed)
 
-## Internal-only rule
+## Optional HUNTER CRM mapping (Freeman internal)
 
-**Do not** ship Freeman prospect names, live intel rows, or Metro Detroit target lists inside the **customer** HUNTER template ZIP. Buyers start from fictional examples (`EXAMPLE-OPPORTUNITIES.md` in HUNTER kit).
+When feeding **HUNTER — Revenue Intelligence OS** (operator base only):
 
-Operator workflow:
+| v5 field | HUNTER column (suggested) |
+|----------|---------------------------|
+| `headline` | Opportunity title / Notes headline |
+| `why_now` | Evidence |
+| `status` + `confidence` | Notes tags |
+| `owner_role` | Notes / Next Action owner |
+| `example_calc.gross_profit` | Notes (deal size signal) |
+| `priority_score` | Inform Tier (manual — no auto-equate) |
 
-1. Run Revenue Intel Agent on a target.  
-2. Human-verify `seller_action` items.  
-3. Create/update row in **internal** HUNTER base.  
-4. Run HUNTER Claude scoring prompt on the row before outreach.
+Do not ship pre-researched intel rows in the **customer** HUNTER template ZIP.

@@ -2,7 +2,7 @@
 
 **Official product name:** **Revenue Intel Agent — v5.0**  
 **Codename:** Revenue Intel (Cleo ecosystem)  
-**Function:** Metro Detroit compliance & cost-recovery opportunity intelligence for B2B operators and consultants  
+**Function:** Weekly, evidence-gated monetization briefs for a stated **niche + ICP** (runtime-injected each run)  
 **Status:** Phase 0 in progress · **Sam review gate** before Phase 1 (buyer packaging)
 
 ## What you are reviewing
@@ -11,7 +11,8 @@
 |-------|------|
 | **Agent system prompt (v5.0)** | `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` + `.txt` |
 | **Claude skill (invoke in Business OS)** | `../../revenue-intel-agent/SKILL.md` |
-| **Output schema (HUNTER handoff)** | `OPPORTUNITY-BRIEF-SCHEMA.md` |
+| **Runtime template** | `RUNTIME-CONTEXT.example.yaml` |
+| **Output schema (v5 + optional HUNTER)** | `OPPORTUNITY-BRIEF-SCHEMA.md` |
 | **Phase 0 runbook** | `PHASE-0.md` |
 | **Launch checklist** | `LAUNCH-CHECKLIST.md` |
 | **Build status** | `PRODUCT-BUILD-STATUS.md` |

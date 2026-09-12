@@ -7,7 +7,7 @@
 - [x] Opportunity schema + HUNTER handoff doc
 - [x] Review portal `review/index.html`
 - [x] Sample brief `examples/sample-opportunity-brief.md`
-- [ ] Sam: Gem delta merge if live Gem differs
+- [x] Sam: Gem v5.0 merged into repo
 - [ ] Sam: 3 dogfood targets verified
 - [ ] Sam: Phase 0 approval
 

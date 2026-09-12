@@ -10,7 +10,7 @@
 
 | Task | Owner | Status |
 |------|-------|--------|
-| Gem v5.0 exported to repo (`REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md`) | Agent (draft) + Sam (delta) | **In progress** — draft port from catalog + HUNTER industrial context |
+| Gem v5.0 exported to repo (`REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md`) | Sam paste + Agent | **Done** — official v5.0 prompt + `RUNTIME-CONTEXT.example.yaml` |
 | Version string `v5.0` in prompt header + README | Agent | **Done** |
 | Changelog stub `CHANGELOG.md` | Agent | **Done** |
 | Skill wrapper `revenue-intel-agent/SKILL.md` | Agent | **Done** |

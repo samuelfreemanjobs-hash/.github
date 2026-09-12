@@ -4,35 +4,34 @@
 
 ## What you bought
 
-A **system prompt pack** + schema for producing **compliance and cost-recovery opportunity briefs** on Metro Detroit industrial accounts — formatted for optional import into HUNTER / Revenue Pipeline System.
+The **Revenue Intel Agent — v5.0** system prompt: weekly, evidence-gated monetization briefs for any **niche + ICP** you specify. Outputs Executive Brief by default; JSON/CSV/email on request.
 
 ## 5-minute setup
 
 1. Unzip `Revenue-Intel-Agent-v5.0.zip`.
-2. Open `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.txt`.
-3. **Claude:** Project → Custom Instructions → paste entire file.  
-   **ChatGPT:** Custom instructions or GPT “Instructions” field.  
-   **Gemini:** Gem instructions (you may already have v5.0 — diff against this file).
-4. Read `NICHE-POSITIONING.md` — confirm you serve industrial B2B, not clinical/ecommerce.
-5. Run your first query:  
-   *“Target: [Company], [City MI]. My services: spreadsheet elimination and KPI dashboards. Run Revenue Intel v5.0.”*
-6. Save JSON output; human-complete every `seller_action` before outreach.
+2. Paste `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.txt` into your AI **system** role (not the user message).
+3. Each run: fill `RUNTIME-CONTEXT.example.yaml` → inject as `<runtime_context>` (orchestrator or copy into user message prefix).
+4. **Required every run:** `today`, `niche`, `icp`. The agent must stop if any are missing.
+5. Send the run template from the bottom of the system prompt:
 
-## Optional: Claude Business OS skill
+   ```
+   Run this agent for:
+   Niche/Market: …
+   ICP: …
+   ```
 
-If you use Freeman **Claude Business OS**, copy `revenue-intel-agent/SKILL.md` into your skills folder and invoke `/revenue-intel-agent`.
+6. Enable **web search + fetch** in your tool (Claude, ChatGPT, Gemini, etc.) — the prompt requires retrieved, dated sources.
 
-## HUNTER CRM users
+## Optional: Claude Business OS
 
-Use `OPPORTUNITY-BRIEF-SCHEMA.md` to map fields. Do not paste our example companies into client deliverables — verify your own targets.
+Copy `revenue-intel-agent/SKILL.md` into your skills folder → `/revenue-intel-agent`.
 
 ## License
 
-Personal / single-seat business use. No redistribution of the prompt as a competing product. See `LICENSE.txt`.
+Personal / single-seat business use. See `LICENSE.txt`.
 
 ## Not included
 
-- Live lead lists  
-- Legal or tax advice  
-- Automated scraping tools  
-- Guaranteed savings figures  
+- Guaranteed opportunity count (zero-result weeks are valid)
+- Legal/tax advice
+- Pre-built lead lists
