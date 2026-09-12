@@ -1,30 +1,14 @@
-From 8d6b9258c886be1a8e41d9c231a33963596f3201 Mon Sep 17 00:00:00 2001
-From: Cursor Agent <cursoragent@cursor.com>
-Date: Sat, 12 Sep 2026 19:14:25 +0000
-Subject: [PATCH] Prepare HUNTER Revenue Pipeline System for launch
-
-- Add GO_LIVE_RUNBOOK and project.md with launch criteria
-- Fix Docker image (content assets, seed data, wget for healthcheck)
-- Align Supabase migration docs to full + v3 outreach
-- Add verify-launch script and GitHub Actions CI
-- Refresh LAUNCH_STATUS for 2026-09-12 verification
----
- .github/workflows/ci.yml     |  36 +++++++++
- Dockerfile                   |   4 +
- GO_LIVE_RUNBOOK.md           | 150 +++++++++++++++++++++++++++++++++++
- LAUNCH_STATUS.md             |  71 ++++++++++-------
- README.md                    |  14 ++--
- business/LAUNCH_CHECKLIST.md |   4 +-
- package.json                 |   3 +-
- project.md                   |  69 ++++++++++++++++
- scripts/setup.sh             |   2 +-
- scripts/verify-launch.sh     |  46 +++++++++++
- 10 files changed, 361 insertions(+), 38 deletions(-)
- create mode 100644 .github/workflows/ci.yml
- create mode 100644 GO_LIVE_RUNBOOK.md
- create mode 100644 project.md
- create mode 100755 scripts/verify-launch.sh
-
+diff --git a/.env.example b/.env.example
+index 9c8394f..b9d05cc 100644
+--- a/.env.example
++++ b/.env.example
+@@ -1,5 +1,6 @@
+ # Backend
+ PORT=3001
++OPERATOR_BRAND=HUNTER Intelligence
+ SUPABASE_URL=https://your-project-id.supabase.co
+ # Use the anon PUBLIC key from Supabase → Settings → API (starts with eyJ...)
+ # Do NOT use the secret/service key (sb_secret_...)
 diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
 new file mode 100644
 index 0000000..60c43c5
@@ -93,10 +77,10 @@ index a21dca0..cbd1bc0 100644
  ENV PORT=3001
 diff --git a/GO_LIVE_RUNBOOK.md b/GO_LIVE_RUNBOOK.md
 new file mode 100644
-index 0000000..f45778a
+index 0000000..e4b7edc
 --- /dev/null
 +++ b/GO_LIVE_RUNBOOK.md
-@@ -0,0 +1,150 @@
+@@ -0,0 +1,163 @@
 +# HUNTER — Revenue Pipeline System · Go-Live Runbook
 +
 +**Product:** HUNTER Intelligence OS (aka **Revenue Pipeline System**)  
@@ -239,6 +223,18 @@ index 0000000..f45778a
 +
 +---
 +
++## Licensing to another operator
++
++Package a white-label copy for a licensee:
++
++```bash
++npm run build-operator-kit
++```
++
++See `operator-license-kit/README.md`, `WHITE_LABEL.md`, and `docs/HANDOFF_CHECKLIST.md`.
++
++Unified GTM (CRM + outreach + PDFs): `content/gtm/manifest.yaml` and `data/seed-leads.json`.
++
 +## Support files
 +
 +| Doc | Use |
@@ -247,6 +243,7 @@ index 0000000..f45778a
 +| `business/PRICING.md` | Service catalog alignment |
 +| `business/OPERATOR_PLAYBOOK.md` | Daily operator rhythm |
 +| `README.md` | Architecture + API index |
++| `operator-license-kit/` | Zip + white-label for licensees |
 diff --git a/LAUNCH_STATUS.md b/LAUNCH_STATUS.md
 index 9d14499..2949463 100644
 --- a/LAUNCH_STATUS.md
@@ -408,17 +405,1109 @@ index 0f58d70..defc5f8 100644
  3. `npm start`
  4. Deploy landing page
  5. Import n8n lead discovery workflow
+diff --git a/content/give-before-ask/README.md b/content/give-before-ask/README.md
+index 75bf74a..f78b10f 100644
+--- a/content/give-before-ask/README.md
++++ b/content/give-before-ask/README.md
+@@ -1,44 +1,29 @@
+-# Give-Before-Ask Assets — Launch Day
++# Give-Before-Ask Assets
+ 
+-Four 1-page operational frameworks for tomorrow's first outreach sends. Open in browser → Print → Save as PDF → attach to email.
++These four frameworks match **unified GTM ranks 1–4** in `content/gtm/manifest.yaml` and `data/seed-leads.json`. The CRM stores the path on each lead as `give_before_ask`.
+ 
+ ## Files
+ 
+-| Company | File | Attach to |
+-|---------|------|-----------|
+-| **True Industries** | `true-industries-die-tryout-tracker.html` | Roseville die tryout outreach |
+-| **Auto Metal Craft** | `auto-metal-craft-ecn-laser-queue.html` | Chuck Karch email |
+-| **Fitzpatrick Manufacturing** | `fitzpatrick-spindle-cmm-queue.html` | Sterling Heights CNC outreach |
+-| **Barron Industries** | `barron-casting-spindle-ndt-tracker.html` | Oxford foundry-to-5-axis outreach |
++| Rank | Company | File | CRM seed |
++|------|---------|------|----------|
++| 1 | True Industries | `true-industries-die-tryout-tracker.html` | ✅ |
++| 2 | Auto Metal Craft | `auto-metal-craft-ecn-laser-queue.html` | ✅ |
++| 3 | Barron Industries | `barron-casting-spindle-ndt-tracker.html` | ✅ |
++| 4 | Fitzpatrick Manufacturing | `fitzpatrick-spindle-cmm-queue.html` | ✅ |
+ 
+-## Export to PDF (30 seconds each)
++Leads **5–10** use email-only outreach (no PDF in this folder yet).
+ 
+-1. Open the `.html` file in Chrome or Edge (double-click, or drag into browser)
+-2. `Ctrl+P` (or Cmd+P) → **Save as PDF**
+-3. Margins: **Default** · Scale: **100%** · Background graphics: **ON**
+-4. Save as: `HUNTER-True-Industries-Die-Tryout-Framework.pdf` (etc.)
++## Export to PDF
+ 
+-## If deployed (after `npm start`)
++1. Open the `.html` file in Chrome or Edge
++2. `Ctrl+P` / `Cmd+P` → **Save as PDF**
++3. Background graphics: **ON**
++4. Attach to the email for that rank (copy in CRM after `npm run seed`)
++
++## When deployed
+ 
+-Assets are served at:
+ ```
+-https://YOUR-DOMAIN/content/give-before-ask/true-industries-die-tryout-tracker.html
+-https://YOUR-DOMAIN/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html
+-https://YOUR-DOMAIN/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html
+-https://YOUR-DOMAIN/content/give-before-ask/barron-casting-spindle-ndt-tracker.html
++https://YOUR-DOMAIN/content/give-before-ask/
+ ```
+ 
+-Index (all four links): `https://YOUR-DOMAIN/content/give-before-ask/`
+-
+-## Email attachment tip
+-
+-**Subject line already written in CRM.** Body addition when attaching:
+-
+-> I attached a 1-page framework showing how [company-specific hook]. Happy to walk through it in 2 minutes if useful.
+-
+-## Launch send order (tomorrow 8 AM)
+-
+-1. **True Industries** → `true-industries-die-tryout-tracker.pdf`
+-2. **Auto Metal Craft** (Chuck Karch) → `auto-metal-craft-ecn-laser-queue.pdf`
+-3. **Fitzpatrick Manufacturing** → `fitzpatrick-spindle-cmm-queue.pdf`
+-4. **Barron Industries** → `barron-casting-spindle-ndt-tracker.pdf`
++Index lists all four; paths match CRM `give_before_ask` values.
+diff --git a/content/give-before-ask/index.html b/content/give-before-ask/index.html
+index 282e247..73cb021 100644
+--- a/content/give-before-ask/index.html
++++ b/content/give-before-ask/index.html
+@@ -37,16 +37,16 @@
+ 
+   <div class="card">
+     <span class="order">Send #3</span>
+-    <h2>Fitzpatrick Manufacturing Co.</h2>
+-    <div class="meta">Sterling Heights, MI · Score 94 · CNC Telemetry · $35K</div>
+-    <a class="btn" href="fitzpatrick-spindle-cmm-queue.html" target="_blank">Open framework</a>
++    <h2>Barron Industries</h2>
++    <div class="meta">Oxford, MI · Score 95 · CNC Telemetry · $35K · unified GTM rank 3</div>
++    <a class="btn" href="barron-casting-spindle-ndt-tracker.html" target="_blank">Open framework</a>
+   </div>
+ 
+   <div class="card">
+     <span class="order">Send #4</span>
+-    <h2>Barron Industries</h2>
+-    <div class="meta">Oxford, MI · Score 95 · CNC Telemetry · $35K</div>
+-    <a class="btn" href="barron-casting-spindle-ndt-tracker.html" target="_blank">Open framework</a>
++    <h2>Fitzpatrick Manufacturing Co.</h2>
++    <div class="meta">Sterling Heights, MI · Score 94 · CNC Telemetry · $35K · unified GTM rank 4</div>
++    <a class="btn" href="fitzpatrick-spindle-cmm-queue.html" target="_blank">Open framework</a>
+   </div>
+ 
+   <p style="margin-top:24px;font-size:0.85rem;color:#94a3b8;">HUNTER Intelligence · Give-before-ask operational frameworks · Aug 2026</p>
+diff --git a/content/gtm/manifest.yaml b/content/gtm/manifest.yaml
+new file mode 100644
+index 0000000..56837fc
+--- /dev/null
++++ b/content/gtm/manifest.yaml
+@@ -0,0 +1,68 @@
++# Single source of truth — CRM seed, outreach order, and marketing attachments
++# Regenerate outreach copy: content/outreach-batch-001.md (kept in sync manually from this file)
++version: 2
++updated: 2026-09-12
++booking_placeholder: "[BOOKING_URL]"
++brand_placeholder: "[OPERATOR_BRAND]"
++
++send_order:
++  - rank: 1
++    company: True Industries, Inc.
++    tier: HOT
++    target_score: 95
++    attach_pdf: content/give-before-ask/true-industries-die-tryout-tracker.html
++  - rank: 2
++    company: Auto Metal Craft
++    tier: HOT
++    target_score: 95
++    attach_pdf: content/give-before-ask/auto-metal-craft-ecn-laser-queue.html
++  - rank: 3
++    company: Barron Industries
++    tier: HOT
++    target_score: 95
++    attach_pdf: content/give-before-ask/barron-casting-spindle-ndt-tracker.html
++  - rank: 4
++    company: Fitzpatrick Manufacturing Co.
++    tier: HOT
++    target_score: 94
++    attach_pdf: content/give-before-ask/fitzpatrick-spindle-cmm-queue.html
++  - rank: 5
++    company: Great Lakes Aerospace Components
++    tier: HOT
++    target_score: 91
++    attach_pdf: null
++  - rank: 6
++    company: Heartland 3PL Logistics
++    tier: HIGH
++    target_score: 82
++    attach_pdf: null
++  - rank: 7
++    company: Midwest Stamping & Tool
++    tier: HIGH
++    target_score: 81
++    attach_pdf: null
++  - rank: 8
++    company: Titan Metal Works
++    tier: HIGH
++    target_score: 80
++    attach_pdf: null
++  - rank: 9
++    company: Carolina Fabrication Group
++    tier: HIGH
++    target_score: 79
++    attach_pdf: null
++  - rank: 10
++    company: Atlas Wire Technologies
++    tier: HIGH
++    target_score: 78
++    attach_pdf: null
++
++content_map:
++  linkedin:
++    - content/linkedin-post-001.md
++  outreach_master:
++    - content/outreach-batch-001.md
++  give_before_ask_hub:
++    - content/give-before-ask/index.html
++  operator_playbook:
++    - business/OPERATOR_PLAYBOOK.md
+diff --git a/content/outreach-batch-001.md b/content/outreach-batch-001.md
+index 4a8c262..36c62cb 100644
+--- a/content/outreach-batch-001.md
++++ b/content/outreach-batch-001.md
+@@ -1,220 +1,64 @@
+-# Outreach Batch #1 — 10 Leads Ready to Send
++# Unified Outreach Batch #1 — 10 Leads
+ 
+-**Status:** ✅ Copy/paste into CRM Outreach tab or send via Resend  
+-**Booking link:** Replace `[BOOKING_URL]` with your Cal.com/Calendly link
++**Source of truth:** `data/seed-leads.json` + `content/gtm/manifest.yaml`  
++**Status:** Ready — replace `[BOOKING_URL]` via `BOOKING_URL` in `.env` (seed substitutes automatically)  
++**Brand:** set `OPERATOR_BRAND` in `.env` for white-label sign-off
+ 
+----
+-
+-## 1. Precision CNC Solutions — Score 84 (HIGH)
+-
+-**To:** vp.ops@precisioncnc.com  
+-**Subject:** I noticed something about your CMM queue
+-
+-Hi,
+-
+-I've been analyzing CNC operations in Grand Rapids and noticed Precision CNC is likely managing CMM queue tracking through spreadsheets — a pattern I see at most shops your size before they bridge spindle telemetry to quality.
+-
+-Three shops in Michigan just connected their CMM queue to live machine data and cut inspection wait times by 40%.
+-
+-Would you be open to a 15-min diagnostic? No pitch — I'll share what I found about your operation specifically.
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
+-HUNTER Intelligence
+-
+----
+-
+-## 2. Midwest Stamping & Tool — Score 81 (HIGH)
+-
+-**To:** plant.manager@midweststamping.com  
+-**Subject:** I found an opportunity at Midwest Stamping
+-
+-Hi,
+-
+-With your recent Tier 1 supplier award and Q4 OEM launch timeline, die tryout milestone tracking becomes critical — and email chains aren't going to cut it at your volume.
+-
+-I found an opportunity to give your customers a live progress portal and cut tryout cycle time by 25%.
+-
+-15 minutes to walk through what this could look like for Midwest Stamping?
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
+-
+----
+-
+-## 3. Heartland 3PL Logistics — Score 82 (HIGH)
+-
+-**To:** director.ops@heartland3pl.com  
+-**Subject:** I ran a quick audit on Heartland 3PL
+-
+-Hi,
+-
+-Expanding to 3 facilities means cross-dock exceptions that used to be manageable by phone are now slipping through — especially VMI buffer breaches that customers discover before you do.
+-
+-I ran a quick audit on operations like yours. The SLA compliance gap typically costs $180K–$320K annually at your scale.
+-
+-Worth 15 minutes to see the specific numbers for Heartland?
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
+-
+----
+-
+-## 4. Atlas Wire Technologies — Score 78 (HIGH)
+-
+-**To:** quality@atlaswiretech.com  
+-**Subject:** I noticed something about your QA data flow
+-
+-Hi,
+-
+-AS9100 certification means your continuity test data can't afford transcription errors — but most harness shops I work with still manually re-type bench results into COAs.
+-
+-I noticed Atlas likely has QA data across 4 disconnected systems. There's a faster way.
+-
+-15-min diagnostic call? I'll show you what a zero-transcription QA pipeline looks like.
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++| Rank | Company | Tier | PDF attachment |
++|------|---------|------|----------------|
++| 1 | True Industries, Inc. | HOT | `give-before-ask/true-industries-die-tryout-tracker.html` → PDF |
++| 2 | Auto Metal Craft | HOT | `auto-metal-craft-ecn-laser-queue.html` → PDF |
++| 3 | Barron Industries | HOT | `barron-casting-spindle-ndt-tracker.html` → PDF |
++| 4 | Fitzpatrick Manufacturing Co. | HOT | `fitzpatrick-spindle-cmm-queue.html` → PDF |
++| 5 | Great Lakes Aerospace Components | HOT | — |
++| 6 | Heartland 3PL Logistics | HIGH | — |
++| 7 | Midwest Stamping & Tool | HIGH | — |
++| 8 | Titan Metal Works | HIGH | — |
++| 9 | Carolina Fabrication Group | HIGH | — |
++| 10 | Atlas Wire Technologies | HIGH | — |
+ 
+----
+-
+-## 5. Superior Tool & Die — Score 66 (MEDIUM)
+-
+-**To:** owner@superiortooldie.com  
+-**Subject:** I mocked up what this could look like for Superior Tool & Die
+-
+-Hi,
+-
+-Family-owned shops with 30+ years of history often run on 10–15 spreadsheets the owner built themselves. They work — until they don't.
++**CRM:** Run `npm run seed` — outreach subject/body and `give_before_ask` paths load into each lead.
+ 
+-I mocked up what a single live operational system could look like for Superior Tool & Die, replacing the weekly manual reports with real-time visibility.
+-
+-Worth a quick look? 15 minutes, no obligation.
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++**Hub:** http://localhost:3001/content/give-before-ask/ (ranks 1–4)
+ 
+ ---
+ 
+-## 6. Carolina Fabrication Group — Score 79 (HIGH)
+-
+-**To:** ops@carolinafab.com  
+-**Subject:** Your competitors are upgrading their RFQ intake
+-
+-Hi,
++## 1. True Industries, Inc. — HOT (95)
+ 
+-Three steel fabrication shops in the Southeast just launched RFQ spec ingestion engines on their websites — prospects upload specs, quotes route automatically. Meanwhile, most shops still lose inbound leads to competitors with modern web presence.
++**To:** vp.operations@trueindustries.com  
++**Subject:** I attached a 1-page tryout tracker for True Industries  
++**Attach:** PDF from `true-industries-die-tryout-tracker.html`
+ 
+-Carolina Fabrication's growth in commercial construction makes this timely.
+-
+-15 minutes to show you what the upgrade path looks like?
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++(See CRM Outreach tab for full body after seed.)
+ 
+ ---
+ 
+-## 7. Apex Injection Molding — Score 67 (MEDIUM)
+-
+-**To:** gm@apexinjection.com  
+-**Subject:** I found three things about Apex's operations
+-
+-Hi,
++## 2. Auto Metal Craft — HOT (95)
+ 
+-Medical device molding shops face a unique challenge: leadership needs real-time plant performance data, but downtime reasons are still logged on paper travelers.
+-
+-Three things I found about operations like Apex's that typically cost $150K+ annually in invisible friction.
+-
+-Happy to share the analysis — 15 minutes, no pitch.
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++**To:** ckarch@autometalcraft.com  
++**Subject:** ECN laser queue — quick framework for Auto Metal Craft  
++**Attach:** PDF from `auto-metal-craft-ecn-laser-queue.html`
+ 
+ ---
+ 
+-## 8. Great Lakes Aerospace Components — Score 91 (HOT) 🔥
+-
+-**To:** vp.manufacturing@glaerospace.com  
+-**Subject:** CMM queue bottleneck — 2-day inspection delays
++## 3. Barron Industries — HOT (95)
+ 
+-Hi,
+-
+-NADCAP shops with defense contracts can't afford 2-day CMM queue delays — but that's exactly what happens when spindle telemetry and quality inspection aren't connected.
+-
+-Great Lakes Aerospace scores high on every dimension I track for this specific fix. The ROI on a telemetry-to-CMM bridge typically pays back in 6 weeks.
+-
+-This is time-sensitive given your contract pipeline. 15 minutes this week?
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++**To:** ops@barronindustries.com  
++**Subject:** Foundry-to-5-axis — spindle & NDT tracker for Barron  
++**Attach:** PDF from `barron-casting-spindle-ndt-tracker.html`
+ 
+ ---
+ 
+-## 9. Valley Distribution Services — Score 68 (MEDIUM)
+-
+-**To:** warehouse.mgr@valleydistribution.com  
+-**Subject:** I noticed something about your inventory counts
+-
+-Hi,
+-
+-E-commerce fulfillment at 200K sq ft with inventory counts in Excel updated nightly means you're always operating on yesterday's data. Pick accuracy issues follow.
+-
+-I noticed this pattern at Valley Distribution — there's a 2-week fix that eliminates the spreadsheet entirely.
+-
+-15-min call to walk through it?
++## 4. Fitzpatrick Manufacturing Co. — HOT (94)
+ 
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
++**To:** plant.manager@fitzpatrickmfg.com  
++**Subject:** CMM queue + spindle bridge — framework for Fitzpatrick  
++**Attach:** PDF from `fitzpatrick-spindle-cmm-queue.html`
+ 
+ ---
+ 
+-## 10. Titan Metal Works — Score 80 (HIGH)
+-
+-**To:** president@titanmetalworks.com  
+-**Subject:** I mocked up an executive dashboard for Titan
+-
+-Hi,
+-
+-Infrastructure project awards mean rapid growth — and growth breaks job costing spread across 3 systems. Your estimator's standalone spreadsheet is the canary in the coal mine.
+-
+-I mocked up what a real-time WIP visibility dashboard could look like for Titan Metal Works leadership.
++## 5–10. Great Lakes Aerospace through Atlas Wire
+ 
+-Worth 15 minutes to review?
+-
+-Book here: [BOOKING_URL]
+-
+-Best,
+-[Your Name]
+-
+----
++Full copy lives in `data/seed-leads.json` (`outreachSubject` / `outreachBody`). After `npm run seed`, open **CRM → Outreach** on each lead or use `POST /api/outreach/batch` with `dryRun: true`.
+ 
+-## Send Order (Priority)
+-
+-1. 🔥 Great Lakes Aerospace (91) — send first
+-2. Precision CNC Solutions (84)
+-3. Heartland 3PL (82)
+-4. Midwest Stamping (81)
+-5. Titan Metal Works (80)
+-6. Carolina Fabrication (79)
+-7. Atlas Wire (78)
+-8. Valley Distribution (68)
+-9. Apex Injection (67)
+-10. Superior Tool & Die (66)
++**Send order:** ranks 5 → 10 per `content/gtm/manifest.yaml`.
+diff --git a/data/seed-leads.json b/data/seed-leads.json
+index 8f21d07..7d246ea 100644
+--- a/data/seed-leads.json
++++ b/data/seed-leads.json
+@@ -1,31 +1,92 @@
+ [
+   {
+-    "company": "Precision CNC Solutions",
+-    "url": "https://precisioncnc.com",
+-    "location": "Grand Rapids, MI",
++    "company": "True Industries, Inc.",
++    "url": "https://trueindustries.com",
++    "location": "Roseville, MI",
++    "industry": "Tier II Automotive Stamping",
++    "employeeCount": 240,
++    "decisionMaker": "vp.operations@trueindustries.com",
++    "estimatedValue": 28000,
++    "scoreBreakdown": { "problemSeverity": 24, "buyingSignal": 18, "abilityToPay": 12, "serviceFit": 15, "accessibility": 9, "urgency": 12, "competitivePressure": 5 },
++    "detectedProblems": ["Die tryout milestones tracked in email chains", "No customer-facing tryout progress portal", "PPAP deadlines at risk from lost approvals"],
++    "evidenceSignals": "Tier 1 program awards; active tooling engineer hiring.",
++    "matchedService": "Die Tryout Milestone & Tooling Validation Bridge",
++    "outreachStrategy": "B",
++    "giveBeforeAsk": "/content/give-before-ask/true-industries-die-tryout-tracker.html",
++    "outreachSubject": "I attached a 1-page tryout tracker for True Industries",
++    "outreachBody": "Hi,\n\nStamping shops in Roseville are losing tryout approvals in email chains — especially with PPAP deadlines tightening.\n\nI attached a 1-page framework (Progressive Die Tryout Hit Log) you can use internally or share with OEM customers as a live progress view.\n\nHappy to walk through it in 15 minutes — no pitch, just the operational picture.\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #1 — attach give-before-ask PDF"
++  },
++  {
++    "company": "Auto Metal Craft",
++    "url": "https://autometalcraft.com",
++    "location": "Oak Park, MI",
++    "industry": "Laser Cutting & Fabrication",
++    "employeeCount": 120,
++    "decisionMaker": "ckarch@autometalcraft.com",
++    "estimatedValue": 28000,
++    "scoreBreakdown": { "problemSeverity": 24, "buyingSignal": 18, "abilityToPay": 11, "serviceFit": 15, "accessibility": 10, "urgency": 12, "competitivePressure": 5 },
++    "detectedProblems": ["ECN-to-laser queue managed in spreadsheets", "No single view of revision-controlled nest files", "Laser backlog invisible to sales"],
++    "evidenceSignals": "Chuck Karch listed on leadership; mixed automotive and industrial book.",
++    "matchedService": "Die Tryout Milestone & Tooling Validation Bridge",
++    "outreachStrategy": "C",
++    "giveBeforeAsk": "/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html",
++    "outreachSubject": "ECN laser queue — quick framework for Auto Metal Craft",
++    "outreachBody": "Hi Chuck,\n\nI mapped how ECN revisions typically pile up in front of laser cells when nesting files live outside the revision record.\n\nAttached is a 1-page ECN → laser queue framework teams use to cut rework loops.\n\nOpen to 15 minutes to see if it fits your floor?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #2 — attach give-before-ask PDF"
++  },
++  {
++    "company": "Barron Industries",
++    "url": "https://barronindustries.com",
++    "location": "Oxford, MI",
++    "industry": "Investment Casting & CNC",
++    "employeeCount": 200,
++    "decisionMaker": "ops@barronindustries.com",
++    "estimatedValue": 35000,
++    "scoreBreakdown": { "problemSeverity": 24, "buyingSignal": 17, "abilityToPay": 13, "serviceFit": 15, "accessibility": 9, "urgency": 12, "competitivePressure": 5 },
++    "detectedProblems": ["Spindle load not tied to NDT hold points", "Foundry-to-5-axis handoffs tracked manually", "Quality holds discovered late in shift"],
++    "evidenceSignals": "Aerospace and defense casting programs; multi-process footprint.",
++    "matchedService": "CNC Spindle Telemetry & CMM Queue Bridge",
++    "outreachStrategy": "A",
++    "giveBeforeAsk": "/content/give-before-ask/barron-casting-spindle-ndt-tracker.html",
++    "outreachSubject": "Foundry-to-5-axis — spindle & NDT tracker for Barron",
++    "outreachBody": "Hi,\n\nShops running casting plus 5-axis often lose hours when spindle anomalies and NDT holds aren't on the same timeline.\n\nI attached a 1-page tracker that ties spindle events to NDT checkpoints — teams use it before investing in full telemetry.\n\n15-minute walkthrough?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #3 — attach give-before-ask PDF"
++  },
++  {
++    "company": "Fitzpatrick Manufacturing Co.",
++    "url": "https://fitzpatrickmfg.com",
++    "location": "Sterling Heights, MI",
+     "industry": "CNC Machining",
+-    "employeeCount": 175,
+-    "decisionMaker": "vp.ops@precisioncnc.com",
+-    "scoreBreakdown": { "problemSeverity": 22, "buyingSignal": 16, "abilityToPay": 11, "serviceFit": 14, "accessibility": 9, "urgency": 8, "competitivePressure": 4 },
+-    "detectedProblems": ["Manual CMM queue tracking via spreadsheet", "No real-time spindle monitoring", "Production reports take 3+ hours weekly"],
+-    "evidenceSignals": "Hiring CNC programmer + quality inspector. Website mentions ISO 9001 but no digital quality dashboard.",
++    "employeeCount": 165,
++    "decisionMaker": "plant.manager@fitzpatrickmfg.com",
++    "estimatedValue": 35000,
++    "scoreBreakdown": { "problemSeverity": 23, "buyingSignal": 17, "abilityToPay": 12, "serviceFit": 15, "accessibility": 9, "urgency": 11, "competitivePressure": 7 },
++    "detectedProblems": ["CMM queue disconnected from spindle telemetry", "Inspection wait times not visible to production", "Manual OEE spreadsheets"],
++    "evidenceSignals": "Sterling Heights CNC cluster; ISO programs; capacity expansion signals.",
+     "matchedService": "CNC Spindle Telemetry & CMM Queue Bridge",
+     "outreachStrategy": "A",
+-    "notes": "Seed lead — HOT target. Tier 3 service fit."
++    "giveBeforeAsk": "/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html",
++    "outreachSubject": "CMM queue + spindle bridge — framework for Fitzpatrick",
++    "outreachBody": "Hi,\n\nSterling Heights CNC shops often run CMM queues in spreadsheets while spindle data stays in the machine — so bottlenecks show up two days late.\n\nAttached is a 1-page spindle ↔ CMM queue framework you can pilot on one cell.\n\nWorth 15 minutes to review?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #4 — attach give-before-ask PDF"
+   },
+   {
+-    "company": "Midwest Stamping & Tool",
+-    "url": "https://midweststamping.com",
+-    "location": "Toledo, OH",
+-    "industry": "Tier II Automotive Stamping",
+-    "employeeCount": 320,
+-    "decisionMaker": "plant.manager@midweststamping.com",
+-    "scoreBreakdown": { "problemSeverity": 20, "buyingSignal": 14, "abilityToPay": 12, "serviceFit": 13, "accessibility": 8, "urgency": 9, "competitivePressure": 3 },
+-    "detectedProblems": ["Die tryout milestones tracked in email chains", "No customer-facing progress portal", "OEM launch deadline Q4"],
+-    "evidenceSignals": "Recent Tier 1 supplier award. Active job postings for tooling engineer.",
+-    "matchedService": "Die Tryout Milestone & Tooling Validation Bridge",
++    "company": "Great Lakes Aerospace Components",
++    "url": "https://glaerospace.com",
++    "location": "Cleveland, OH",
++    "industry": "Aerospace Components",
++    "employeeCount": 280,
++    "decisionMaker": "vp.manufacturing@glaerospace.com",
++    "estimatedValue": 35000,
++    "scoreBreakdown": { "problemSeverity": 23, "buyingSignal": 17, "abilityToPay": 12, "serviceFit": 14, "accessibility": 8, "urgency": 12, "competitivePressure": 5 },
++    "detectedProblems": ["CMM queue bottleneck causing 2-day inspection delays", "Spindle vibration issues caught too late", "No telemetry-to-quality bridge"],
++    "evidenceSignals": "NADCAP accredited. Defense contract announcements on website.",
++    "matchedService": "CNC Spindle Telemetry & CMM Queue Bridge",
+     "outreachStrategy": "B",
+-    "notes": "Seed lead — HIGH. OEM deadline creates urgency."
++    "outreachSubject": "CMM queue bottleneck — 2-day inspection delays",
++    "outreachBody": "Hi,\n\nNADCAP shops with defense contracts can't afford 2-day CMM queue delays — but that's exactly what happens when spindle telemetry and quality inspection aren't connected.\n\nGreat Lakes Aerospace scores high on every dimension I track for this specific fix. The ROI on a telemetry-to-CMM bridge typically pays back in 6 weeks.\n\nThis is time-sensitive given your contract pipeline. 15 minutes this week?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #5 — outreach only (no PDF yet)"
+   },
+   {
+     "company": "Heartland 3PL Logistics",
+@@ -34,40 +95,49 @@
+     "industry": "3PL Warehousing",
+     "employeeCount": 450,
+     "decisionMaker": "director.ops@heartland3pl.com",
++    "estimatedValue": 32000,
+     "scoreBreakdown": { "problemSeverity": 21, "buyingSignal": 15, "abilityToPay": 13, "serviceFit": 14, "accessibility": 8, "urgency": 7, "competitivePressure": 4 },
+     "detectedProblems": ["Cross-dock exceptions managed via phone calls", "VMI buffer breaches discovered after customer complaints", "No SLA compliance dashboard"],
+     "evidenceSignals": "Expanded to 3 facilities in 2025. Website lists major retail clients.",
+     "matchedService": "3PL Cross-Dock & VMI Buffer Exception Dashboard",
+     "outreachStrategy": "E",
+-    "notes": "Seed lead — HIGH. Multi-facility = complex exception management."
++    "outreachSubject": "I ran a quick audit on Heartland 3PL",
++    "outreachBody": "Hi,\n\nExpanding to 3 facilities means cross-dock exceptions that used to be manageable by phone are now slipping through — especially VMI buffer breaches that customers discover before you do.\n\nI ran a quick audit on operations like yours. The SLA compliance gap typically costs $180K–$320K annually at your scale.\n\nWorth 15 minutes to see the specific numbers for Heartland?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #6"
+   },
+   {
+-    "company": "Atlas Wire Technologies",
+-    "url": "https://atlaswiretech.com",
+-    "location": "Nashville, TN",
+-    "industry": "Wire Harness Assembly",
+-    "employeeCount": 140,
+-    "decisionMaker": "quality@atlaswiretech.com",
+-    "scoreBreakdown": { "problemSeverity": 19, "buyingSignal": 13, "abilityToPay": 10, "serviceFit": 13, "accessibility": 7, "urgency": 6, "competitivePressure": 3 },
+-    "detectedProblems": ["Continuity test results manually transcribed to COA", "No defect pattern analysis across lots", "QA data in 4 disconnected systems"],
+-    "evidenceSignals": "AS9100 certified. Serves aerospace and automotive.",
+-    "matchedService": "Wire Harness Continuity & QA Ingestion Engine",
+-    "outreachStrategy": "A",
+-    "notes": "Seed lead — HIGH. Aerospace QA = high stakes."
++    "company": "Midwest Stamping & Tool",
++    "url": "https://midweststamping.com",
++    "location": "Toledo, OH",
++    "industry": "Tier II Automotive Stamping",
++    "employeeCount": 320,
++    "decisionMaker": "plant.manager@midweststamping.com",
++    "estimatedValue": 28000,
++    "scoreBreakdown": { "problemSeverity": 20, "buyingSignal": 14, "abilityToPay": 12, "serviceFit": 13, "accessibility": 8, "urgency": 9, "competitivePressure": 5 },
++    "detectedProblems": ["Die tryout milestones tracked in email chains", "No customer-facing progress portal", "OEM launch deadline Q4"],
++    "evidenceSignals": "Recent Tier 1 supplier award. Active job postings for tooling engineer.",
++    "matchedService": "Die Tryout Milestone & Tooling Validation Bridge",
++    "outreachStrategy": "B",
++    "outreachSubject": "I found an opportunity at Midwest Stamping",
++    "outreachBody": "Hi,\n\nWith your recent Tier 1 supplier award and Q4 OEM launch timeline, die tryout milestone tracking becomes critical — and email chains aren't going to cut it at your volume.\n\nI found an opportunity to give your customers a live progress portal and cut tryout cycle time by 25%.\n\n15 minutes to walk through what this could look like for Midwest Stamping?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #7"
+   },
+   {
+-    "company": "Superior Tool & Die",
+-    "url": "https://superiortooldie.com",
+-    "location": "Detroit, MI",
+-    "industry": "Tool & Die Validation",
+-    "employeeCount": 85,
+-    "decisionMaker": "owner@superiortooldie.com",
+-    "scoreBreakdown": { "problemSeverity": 18, "buyingSignal": 12, "abilityToPay": 8, "serviceFit": 12, "accessibility": 9, "urgency": 5, "competitivePressure": 2 },
+-    "detectedProblems": ["12 production spreadsheets with conflicting data", "No single source of truth for job costing", "Owner still runs weekly reports manually"],
+-    "evidenceSignals": "Family-owned, 30+ years. Website shows traditional shop floor photos.",
+-    "matchedService": "Spreadsheet Elimination System",
++    "company": "Titan Metal Works",
++    "url": "https://titanmetalworks.com",
++    "location": "Chattanooga, TN",
++    "industry": "Heavy Steel Fabrication",
++    "employeeCount": 155,
++    "decisionMaker": "president@titanmetalworks.com",
++    "estimatedValue": 24000,
++    "scoreBreakdown": { "problemSeverity": 20, "buyingSignal": 15, "abilityToPay": 10, "serviceFit": 12, "accessibility": 8, "urgency": 8, "competitivePressure": 7 },
++    "detectedProblems": ["Job costing spread across 3 systems", "No real-time WIP visibility for leadership", "Estimator uses standalone spreadsheet disconnected from ERP"],
++    "evidenceSignals": "Infrastructure project awards listed on website. Hiring project managers.",
++    "matchedService": "KPI Command Center & Executive Dashboard Sprint",
+     "outreachStrategy": "D",
+-    "notes": "Seed lead — MEDIUM. Classic spreadsheet chaos profile."
++    "outreachSubject": "I mocked up an executive dashboard for Titan",
++    "outreachBody": "Hi,\n\nInfrastructure project awards mean rapid growth — and growth breaks job costing spread across 3 systems. Your estimator's standalone spreadsheet is the canary in the coal mine.\n\nI mocked up what a real-time WIP visibility dashboard could look like for Titan Metal Works leadership.\n\nWorth 15 minutes to review?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #8"
+   },
+   {
+     "company": "Carolina Fabrication Group",
+@@ -76,67 +146,31 @@
+     "industry": "Heavy Steel Fabrication",
+     "employeeCount": 210,
+     "decisionMaker": "ops@carolinafab.com",
+-    "scoreBreakdown": { "problemSeverity": 17, "buyingSignal": 14, "abilityToPay": 11, "serviceFit": 11, "accessibility": 8, "urgency": 7, "competitivePressure": 3 },
++    "estimatedValue": 15000,
++    "scoreBreakdown": { "problemSeverity": 17, "buyingSignal": 14, "abilityToPay": 11, "serviceFit": 11, "accessibility": 8, "urgency": 11, "competitivePressure": 7 },
+     "detectedProblems": ["RFQ specs received via email with no structured intake", "Website outdated — losing inbound leads to competitors", "No conversion tracking on quote requests"],
+     "evidenceSignals": "Growing commercial construction pipeline. Hiring welders and estimators.",
+     "matchedService": "Conversion Website Sprint + RFQ Spec Ingestion Engine",
+     "outreachStrategy": "C",
+-    "notes": "Seed lead — HIGH. Website + RFQ = quick win entry point."
+-  },
+-  {
+-    "company": "Apex Injection Molding",
+-    "url": "https://apexinjection.com",
+-    "location": "Charlotte, NC",
+-    "industry": "Precision Injection Molding",
+-    "employeeCount": 95,
+-    "decisionMaker": "gm@apexinjection.com",
+-    "scoreBreakdown": { "problemSeverity": 16, "buyingSignal": 11, "abilityToPay": 8, "serviceFit": 10, "accessibility": 7, "urgency": 5, "competitivePressure": 2 },
+-    "detectedProblems": ["No executive dashboard for plant performance", "Downtime reasons logged on paper travelers", "Monthly KPI reports compiled manually"],
+-    "evidenceSignals": "Medical device molding capability. Clean room operations.",
+-    "matchedService": "KPI Command Center & Executive Dashboard Sprint",
+-    "outreachStrategy": "F",
+-    "notes": "Seed lead — MEDIUM. Medical molding = quality focus."
+-  },
+-  {
+-    "company": "Great Lakes Aerospace Components",
+-    "url": "https://glaerospace.com",
+-    "location": "Cleveland, OH",
+-    "industry": "Aerospace Components",
+-    "employeeCount": 280,
+-    "decisionMaker": "vp.manufacturing@glaerospace.com",
+-    "scoreBreakdown": { "problemSeverity": 23, "buyingSignal": 17, "abilityToPay": 12, "serviceFit": 14, "accessibility": 8, "urgency": 9, "competitivePressure": 4 },
+-    "detectedProblems": ["CMM queue bottleneck causing 2-day inspection delays", "Spindle vibration issues caught too late", "No telemetry-to-quality bridge"],
+-    "evidenceSignals": "NADCAP accredited. Defense contract announcements on website.",
+-    "matchedService": "CNC Spindle Telemetry & CMM Queue Bridge",
+-    "outreachStrategy": "B",
+-    "notes": "Seed lead — HOT. Defense contracts = high urgency."
++    "outreachSubject": "Your competitors are upgrading their RFQ intake",
++    "outreachBody": "Hi,\n\nThree steel fabrication shops in the Southeast just launched RFQ spec ingestion engines on their websites — prospects upload specs, quotes route automatically. Meanwhile, most shops still lose inbound leads to competitors with modern web presence.\n\nCarolina Fabrication's growth in commercial construction makes this timely.\n\n15 minutes to show you what the upgrade path looks like?\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #9"
+   },
+   {
+-    "company": "Valley Distribution Services",
+-    "url": "https://valleydistribution.com",
+-    "location": "Columbus, OH",
+-    "industry": "3PL Warehousing",
+-    "employeeCount": 180,
+-    "decisionMaker": "warehouse.mgr@valleydistribution.com",
+-    "scoreBreakdown": { "problemSeverity": 15, "buyingSignal": 10, "abilityToPay": 9, "serviceFit": 11, "accessibility": 7, "urgency": 4, "competitivePressure": 2 },
+-    "detectedProblems": ["Inventory counts in Excel updated nightly", "No real-time pick accuracy tracking", "Customer reports assembled manually every Monday"],
+-    "evidenceSignals": "E-commerce fulfillment focus. 200K sq ft facility.",
+-    "matchedService": "Spreadsheet Elimination System",
++    "company": "Atlas Wire Technologies",
++    "url": "https://atlaswiretech.com",
++    "location": "Nashville, TN",
++    "industry": "Wire Harness Assembly",
++    "employeeCount": 140,
++    "decisionMaker": "quality@atlaswiretech.com",
++    "estimatedValue": 22000,
++    "scoreBreakdown": { "problemSeverity": 19, "buyingSignal": 13, "abilityToPay": 10, "serviceFit": 13, "accessibility": 7, "urgency": 9, "competitivePressure": 7 },
++    "detectedProblems": ["Continuity test results manually transcribed to COA", "No defect pattern analysis across lots", "QA data in 4 disconnected systems"],
++    "evidenceSignals": "AS9100 certified. Serves aerospace and automotive.",
++    "matchedService": "Wire Harness Continuity & QA Ingestion Engine",
+     "outreachStrategy": "A",
+-    "notes": "Seed lead — MEDIUM. E-commerce 3PL with spreadsheet pain."
+-  },
+-  {
+-    "company": "Titan Metal Works",
+-    "url": "https://titanmetalworks.com",
+-    "location": "Chattanooga, TN",
+-    "industry": "Heavy Steel Fabrication",
+-    "employeeCount": 155,
+-    "decisionMaker": "president@titanmetalworks.com",
+-    "scoreBreakdown": { "problemSeverity": 20, "buyingSignal": 15, "abilityToPay": 10, "serviceFit": 12, "accessibility": 8, "urgency": 8, "competitivePressure": 3 },
+-    "detectedProblems": ["Job costing spread across 3 systems", "No real-time WIP visibility for leadership", "Estimator uses standalone spreadsheet disconnected from ERP"],
+-    "evidenceSignals": "Infrastructure project awards listed on website. Hiring project managers.",
+-    "matchedService": "KPI Command Center & Executive Dashboard Sprint",
+-    "outreachStrategy": "D",
+-    "notes": "Seed lead — HIGH. Infrastructure boom = growth pain."
++    "outreachSubject": "I noticed something about your QA data flow",
++    "outreachBody": "Hi,\n\nAS9100 certification means your continuity test data can't afford transcription errors — but most harness shops I work with still manually re-type bench results into COAs.\n\nI noticed Atlas likely has QA data across 4 disconnected systems. There's a faster way.\n\n15-min diagnostic call? I'll show you what a zero-transcription QA pipeline looks like.\n\nBook here: [BOOKING_URL]\n\nBest,\n[OPERATOR_BRAND]",
++    "notes": "Unified GTM #10"
+   }
+ ]
+diff --git a/operator-license-kit/LICENSE_TERMS_TEMPLATE.md b/operator-license-kit/LICENSE_TERMS_TEMPLATE.md
+new file mode 100644
+index 0000000..763b6a1
+--- /dev/null
++++ b/operator-license-kit/LICENSE_TERMS_TEMPLATE.md
+@@ -0,0 +1,38 @@
++# Operator license — terms outline (template only)
++
++**Not legal advice.** Have counsel adapt this before signing.
++
++## Grant
++
++Licensor grants Licensee a **non-exclusive**, **non-transferable** license to deploy and operate one (1) production instance of the HUNTER Revenue Pipeline codebase for Licensee's own sales and delivery operations.
++
++## Restrictions
++
++- No resale of the software as a hosted multi-tenant SaaS without separate agreement.
++- No removal of proprietary notices in `operator-license-kit/` unless replaced with Licensee branding per `WHITE_LABEL.md`.
++- Source may not be published publicly if marked confidential in the signed deal.
++
++## Fees
++
++- [ ] Initial license fee: $________
++- [ ] Optional monthly support: $________ / mo
++- [ ] Revenue share (if any): ___% of [gross project revenue / margin]
++
++## Support
++
++As defined in `docs/SUPPORT_BOUNDARIES.md` and the signed SOW.
++
++## Term
++
++- Start: ___________
++- Renewal: annual unless terminated with ___ days notice
++
++## Data
++
++Licensee owns all lead and customer data in their Supabase project. Licensor has no access unless under a separate DPA.
++
++## Signatures
++
++Licensor: _________________________ Date: _______
++
++Licensee: _________________________ Date: _______
+diff --git a/operator-license-kit/MANIFEST.yaml b/operator-license-kit/MANIFEST.yaml
+new file mode 100644
+index 0000000..b24b9ed
+--- /dev/null
++++ b/operator-license-kit/MANIFEST.yaml
+@@ -0,0 +1,61 @@
++# Paths included in dist/hunter-operator-license-kit-*.zip (relative to repo root)
++kit_version: 1
++product: hunter-revenue-pipeline-operator-license
++
++include:
++  runtime:
++    - server.js
++    - package.json
++    - package-lock.json
++    - Dockerfile
++    - docker-compose.yml
++    - railway.json
++    - lib/
++    - frontend/
++    - scripts/setup.sh
++    - scripts/seed-leads.js
++    - scripts/health-check.js
++    - scripts/verify-launch.sh
++    - scripts/import-spark.js
++    - .env.example
++
++  data:
++    - data/seed-leads.json
++    # Exclude live data/*.json (operator's pipeline)
++
++  database:
++    - supabase/migration-full.sql
++    - supabase/migration-v3-outreach.sql
++
++  automation:
++    - n8n/
++
++  gtm:
++    - content/gtm/manifest.yaml
++    - content/outreach-batch-001.md
++    - content/linkedin-post-001.md
++    - content/give-before-ask/
++
++  business:
++    - business/
++    - templates/
++    - prompts/
++
++  docs:
++    - README.md
++    - GO_LIVE_RUNBOOK.md
++    - LAUNCH_STATUS.md
++    - project.md
++    - operator-license-kit/README.md
++    - operator-license-kit/WHITE_LABEL.md
++    - operator-license-kit/LICENSE_TERMS_TEMPLATE.md
++    - operator-license-kit/docs/HANDOFF_CHECKLIST.md
++    - operator-license-kit/docs/SUPPORT_BOUNDARIES.md
++    - operator-license-kit/config/brand.env.example
++
++exclude:
++  - node_modules/
++  - .env
++  - data/leads.json
++  - data/gemini-spark-import*.json
++  - .git/
+diff --git a/operator-license-kit/README.md b/operator-license-kit/README.md
+new file mode 100644
+index 0000000..c3378ae
+--- /dev/null
++++ b/operator-license-kit/README.md
+@@ -0,0 +1,39 @@
++# HUNTER Revenue Pipeline — Operator License Kit
++
++This folder defines how to **license the pipeline to another operator** (agency, solo consultant, franchisee). You are not selling them manufacturing projects—you are handing off **software + GTM playbooks** they run under their own brand.
++
++## What the licensee receives
++
++| Layer | Description |
++|-------|-------------|
++| **Runtime** | Node API, CRM, operator dashboard, landing page |
++| **Automation** | n8n workflow JSON (discovery + follow-up) |
++| **GTM** | Unified 10-lead batch, give-before-ask PDFs, LinkedIn post #1 |
++| **Delivery** | Service catalog, MSA/SOW templates, pricing sheet |
++| **Docs** | Go-live runbook, white-label checklist, handoff checklist |
++
++## Build the zip (from repo root)
++
++```bash
++./operator-license-kit/scripts/build-operator-kit.sh
++```
++
++Output: `dist/hunter-operator-license-kit-YYYYMMDD.zip`
++
++Ship that zip + a **license agreement** you define (see `LICENSE_TERMS_TEMPLATE.md`—not legal advice).
++
++## Onboarding flow (you → licensee)
++
++1. Sign operator license (fee + support terms).
++2. Send zip + `config/brand.env.example` filled with their brand.
++3. Licensee runs `scripts/apply-white-label.sh` (optional automation).
++4. Licensee deploys per `GO_LIVE_RUNBOOK.md` with **their** Supabase, Resend, Cal.com.
++5. Handoff call: CRM tour, seed batch, first 4 PDF sends.
++
++## Support boundaries
++
++See `docs/SUPPORT_BOUNDARIES.md` — define what you fix vs what they own (keys, domain, compliance).
++
++## File index
++
++See `MANIFEST.yaml` for every path included in the zip.
+diff --git a/operator-license-kit/WHITE_LABEL.md b/operator-license-kit/WHITE_LABEL.md
+new file mode 100644
+index 0000000..22a5ea6
+--- /dev/null
++++ b/operator-license-kit/WHITE_LABEL.md
+@@ -0,0 +1,57 @@
++# White-label checklist
++
++Replace **HUNTER** / **HUNTER Intelligence** with the licensee's brand. Test in browser + one test email after changes.
++
++## Environment (required)
++
++| Variable | Example | Used for |
++|----------|---------|----------|
++| `OPERATOR_BRAND` | `Acme Ops Intelligence` | Email sign-off, seed outreach bodies |
++| `RESEND_FROM` | `Acme Ops <hello@acmeops.com>` | Outbound email |
++| `BOOKING_URL` | Cal.com / Calendly link | Landing, outreach, CRM |
++| `PUBLIC_URL` | `https://pipeline.acmeops.com` | Webhooks, links in n8n |
++
++Copy from `operator-license-kit/config/brand.env.example` into `.env`.
++
++## Files to edit (brand strings)
++
++| File | What to change |
++|------|----------------|
++| `frontend/index.html` | Logo text, hero, footer, meta title/description |
++| `frontend/operator.html` | Title, greeting label if hardcoded |
++| `frontend/hunter_crm.html` | Header product name (optional rename file) |
++| `content/give-before-ask/*.html` | Footer line "HUNTER Intelligence" |
++| `content/give-before-ask/index.html` | Title + footer |
++| `content/linkedin-post-001.md` | Sign-off / DM CTA (if they use as-is) |
++| `lib/outreach-engine.js` | Default `RESEND_FROM` fallback string |
++| `lib/proposal-engine.js` | "HUNTER Intelligence" in system prompts |
++| `lib/spark-import.js` | Default email sign-off |
++| `templates/msa-template.md` | Provider legal name |
++| `templates/sow-template.md` | Provider name in header |
++| `business/*.md` | Positioning (optional—often kept as internal reference) |
++| `package.json` | `name` / `description` (cosmetic) |
++
++## Optional rename (advanced)
++
++| Item | Note |
++|------|------|
++| Repo / Railway service name | Operator's choice |
++| `hunter_crm.html` → `crm.html` | Update nav links in all HTML |
++| Domain path `/content/give-before-ask/` | Can stay; only customer-facing PDFs matter |
++
++## Do **not** white-label without lawyer review
++
++- `templates/msa-template.md` — governing law, liability caps
++- `templates/sow-template.md` — payment terms
++- `LICENSE_TERMS_TEMPLATE.md` — your license to **them**
++
++## Verify after white-label
++
++```bash
++npm run verify-launch
++npm start
++npm run seed
++npm run health
++```
++
++Open landing + CRM; send one `POST /api/outreach/send` with `dryRun` or Resend test mode.
+diff --git a/operator-license-kit/config/brand.env.example b/operator-license-kit/config/brand.env.example
+new file mode 100644
+index 0000000..68415b5
+--- /dev/null
++++ b/operator-license-kit/config/brand.env.example
+@@ -0,0 +1,6 @@
++# Copy values into root .env after white-label
++OPERATOR_BRAND=Acme Ops Intelligence
++RESEND_FROM=Acme Ops <hello@acmeops.com>
++BOOKING_URL=https://cal.com/acme/15min-diagnostic
++PUBLIC_URL=https://pipeline.acmeops.com
++REVENUE_TARGET_MONTHLY=50000
+diff --git a/operator-license-kit/docs/HANDOFF_CHECKLIST.md b/operator-license-kit/docs/HANDOFF_CHECKLIST.md
+new file mode 100644
+index 0000000..e8ca9e4
+--- /dev/null
++++ b/operator-license-kit/docs/HANDOFF_CHECKLIST.md
+@@ -0,0 +1,30 @@
++# Licensee handoff checklist (licensor completes)
++
++## Before zip ships
++
++- [ ] `build-operator-kit.sh` run on tagged release commit
++- [ ] `MANIFEST.yaml` matches zip contents
++- [ ] License agreement signed (or sent for signature)
++- [ ] `brand.env.example` pre-filled with licensee name + domain placeholders
++
++## Kickoff call (60 min)
++
++- [ ] Walk landing → CRM → operator dashboard
++- [ ] Run `npm run seed` together; confirm 10 leads + ranks 1–4 `give_before_ask`
++- [ ] Export one give-before-ask PDF live
++- [ ] Show `content/gtm/manifest.yaml` send order
++- [ ] Import n8n workflows; set `hunterApiUrl` to their `PUBLIC_URL/api`
++
++## Licensee completes within 7 days
++
++- [ ] Supabase migrations applied
++- [ ] Production deploy + `PUBLIC_URL`
++- [ ] Resend domain verified
++- [ ] `BOOKING_URL` live on landing
++- [ ] First 4 outreach emails sent (with PDFs)
++- [ ] LinkedIn post #1 published (optional)
++
++## Success signal (30 days)
++
++- [ ] ≥1 diagnostic call booked **or** ≥1 proposal generated in CRM
++- [ ] Licensee not blocked on keys you were supposed to provision
+diff --git a/operator-license-kit/docs/SUPPORT_BOUNDARIES.md b/operator-license-kit/docs/SUPPORT_BOUNDARIES.md
+new file mode 100644
+index 0000000..08b3ff5
+--- /dev/null
++++ b/operator-license-kit/docs/SUPPORT_BOUNDARIES.md
+@@ -0,0 +1,24 @@
++# Support boundaries (operator license)
++
++Define in the signed license. Suggested split:
++
++## Licensor typically supports
++
++- Bug fixes in shipped kit version (security, broken API routes)
++- One upgrade window per quarter (merge patch, release notes)
++- Office hours: ___ hrs/month for deploy questions
++
++## Licensee owns
++
++- Supabase, Railway/Render, domain, DNS, SSL
++- Resend deliverability, SPF/DKIM, CAN-SPAM / outreach compliance
++- Apify / n8n costs and ToS
++- Gemini API usage and content of AI-generated proposals
++- Manufacturing outreach content customization beyond provided batch
++- Tax, contracts with **their** end customers (MSA/SOW with their legal name)
++
++## Out of scope unless SOW
++
++- Custom integrations to licensee ERP/MES
++- New service SKUs in catalog
++- 24/7 on-call for licensee production
+diff --git a/operator-license-kit/scripts/apply-white-label.sh b/operator-license-kit/scripts/apply-white-label.sh
+new file mode 100755
+index 0000000..2e92bb8
+--- /dev/null
++++ b/operator-license-kit/scripts/apply-white-label.sh
+@@ -0,0 +1,16 @@
++#!/usr/bin/env bash
++# Quick brand swap — review diff before commit. Not exhaustive; see WHITE_LABEL.md
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
++BRAND="${1:?Usage: $0 'New Brand Name'}"
++FROM="${2:-HUNTER Intelligence}"
++
++cd "$ROOT"
++echo "Replacing '$FROM' → '$BRAND' in key customer-facing files..."
++for f in frontend/index.html content/give-before-ask/index.html lib/spark-import.js; do
++  [[ -f "$f" ]] && sed -i "s/${FROM}/${BRAND}/g" "$f" && echo "  ✅ $f"
++done
++if [[ -f .env ]]; then
++  sed -i "s/^OPERATOR_BRAND=.*/OPERATOR_BRAND=${BRAND}/" .env || echo "OPERATOR_BRAND=${BRAND}" >> .env
++fi
++echo "Done. Run grep -r 'HUNTER' frontend content templates business for remaining strings."
+diff --git a/operator-license-kit/scripts/build-operator-kit.sh b/operator-license-kit/scripts/build-operator-kit.sh
+new file mode 100755
+index 0000000..22a3c6a
+--- /dev/null
++++ b/operator-license-kit/scripts/build-operator-kit.sh
+@@ -0,0 +1,57 @@
++#!/usr/bin/env bash
++# Build operator license zip from repo root.
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
++KIT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
++STAGING="$ROOT/dist/kit-staging"
++OUT="$ROOT/dist"
++DATE="$(date +%Y%m%d)"
++ZIP="$OUT/hunter-operator-license-kit-${DATE}.zip"
++
++cd "$ROOT"
++mkdir -p "$STAGING" "$OUT"
++
++echo "📦 Staging operator license kit..."
++rm -rf "$STAGING"
++mkdir -p "$STAGING"
++
++copy_path() {
++  local rel="$1"
++  if [[ -e "$ROOT/$rel" ]]; then
++    mkdir -p "$STAGING/$(dirname "$rel")"
++    cp -a "$ROOT/$rel" "$STAGING/$rel"
++  else
++    echo "  ⚠️  missing (skipped): $rel"
++  fi
++}
++
++# Core runtime
++copy_path server.js
++copy_path package.json
++copy_path package-lock.json
++copy_path Dockerfile
++copy_path docker-compose.yml
++copy_path railway.json
++copy_path .env.example
++cp -a "$ROOT/lib" "$STAGING/lib"
++cp -a "$ROOT/frontend" "$STAGING/frontend"
++cp -a "$ROOT/scripts" "$STAGING/scripts"
++mkdir -p "$STAGING/data"
++copy_path data/seed-leads.json
++cp -a "$ROOT/supabase" "$STAGING/supabase"
++cp -a "$ROOT/n8n" "$STAGING/n8n"
++cp -a "$ROOT/content" "$STAGING/content"
++cp -a "$ROOT/business" "$STAGING/business"
++cp -a "$ROOT/templates" "$STAGING/templates"
++cp -a "$ROOT/prompts" "$STAGING/prompts"
++cp -a "$KIT_DIR" "$STAGING/operator-license-kit"
++copy_path README.md
++copy_path GO_LIVE_RUNBOOK.md
++copy_path LAUNCH_STATUS.md
++copy_path project.md
++
++echo "📎 Creating $ZIP"
++rm -f "$ZIP"
++(cd "$STAGING" && zip -rq "$ZIP" .)
++rm -rf "$STAGING"
++echo "✅ Done: $ZIP ($(du -h "$ZIP" | cut -f1))"
 diff --git a/package.json b/package.json
-index f539c1c..4d9fd7f 100644
+index f539c1c..83afdef 100644
 --- a/package.json
 +++ b/package.json
-@@ -9,7 +9,8 @@
+@@ -9,7 +9,9 @@
      "setup": "bash scripts/setup.sh",
      "seed": "node scripts/seed-leads.js",
      "import-spark": "node scripts/import-spark.js",
 -    "health": "node scripts/health-check.js"
 +    "health": "node scripts/health-check.js",
-+    "verify-launch": "bash scripts/verify-launch.sh"
++    "verify-launch": "bash scripts/verify-launch.sh",
++    "build-operator-kit": "bash operator-license-kit/scripts/build-operator-kit.sh"
    },
    "dependencies": {
      "@google/generative-ai": "^0.15.0",
@@ -562,6 +1651,69 @@ index 0000000..59a4b78
 +echo ""
 +echo "⚠️  $FAIL issue(s) — fix before go-live"
 +exit 1
--- 
-2.43.0
-
+diff --git a/server.js b/server.js
+index 08283ce..a98a2f5 100644
+--- a/server.js
++++ b/server.js
+@@ -339,6 +339,12 @@ app.post('/api/leads', async (req, res) => {
+     const breakdown = req.body.scoreBreakdown || scoredData.scoreBreakdown;
+     const totalScore = Object.values(breakdown).reduce((a, b) => a + b, 0);
+     const tier = getTier(totalScore);
++    const brand = process.env.OPERATOR_BRAND || 'HUNTER Intelligence';
++    const booking = process.env.BOOKING_URL || '[BOOKING_URL]';
++    const strategy = STRATEGIES.find(s => s.id === (req.body.outreachStrategy || scoredData.outreachStrategy)) || STRATEGIES[0];
++    const bodyTemplate = req.body.outreachBody
++      || scoredData.outreachBody
++      || `${strategy.prefix}\n\nHi,\n\nWould you be open to a 15-min diagnostic call? Book here: ${booking}\n\nBest,\n${brand}`;
+ 
+     const lead = {
+       id: crypto.randomUUID(),
+@@ -353,16 +359,16 @@ app.post('/api/leads', async (req, res) => {
+       score_breakdown: breakdown,
+       tier: tier.label,
+       stage: 'New Opportunity',
+-      estimated_value: req.body.estimatedValue || 50000,
++      estimated_value: req.body.estimatedValue || req.body.estimated_value || 50000,
+       value_range: `$${((req.body.estimatedValue || 50000) - 5000).toLocaleString()} – $${((req.body.estimatedValue || 50000) + 10000).toLocaleString()}`,
+       matched_service: req.body.matchedService || scoredData.recommendedService || SERVICE_NAMES[0],
+       detected_problems: req.body.detectedProblems || scoredData.detectedProblems || ['Operational inefficiency detected'],
+       evidence_signals: req.body.evidenceSignals || scoredData.evidenceSignals || 'AI-enriched lead',
+-      give_before_ask: req.body.giveBeforeAsk || 'Custom diagnostic asset',
++      give_before_ask: req.body.giveBeforeAsk || req.body.give_before_ask || 'Custom diagnostic asset',
+       diagnostic: req.body.diagnostic || scoredData.diagnostic || `${tier.emoji} ${company} scores ${totalScore} — ${tier.label} tier.`,
+       outreach_strategy: req.body.outreachStrategy || scoredData.outreachStrategy || STRATEGIES[0].id,
+       outreach_subject: req.body.outreachSubject || scoredData.outreachSubject || `AI Opportunity: ${company}`,
+-      outreach_body: req.body.outreachBody || scoredData.outreachBody || `Hi Team,\n\nI found an opportunity for ${company} to optimize operations.\n\nBest,\nHUNTER`,
++      outreach_body: bodyTemplate.replace(/\[BOOKING_URL\]/g, booking).replace(/\[OPERATOR_BRAND\]/g, brand),
+       notes: req.body.notes || 'Created via API.',
+       last_activity: new Date().toISOString(),
+       created_at: new Date().toISOString()
+@@ -640,6 +646,10 @@ app.post('/api/seed', async (req, res) => {
+       const totalScore = Object.values(breakdown).reduce((a, b) => a + b, 0);
+       const tier = getTier(totalScore);
+       const strategy = STRATEGIES.find(s => s.id === seed.outreachStrategy) || STRATEGIES[0];
++      const brand = process.env.OPERATOR_BRAND || 'HUNTER Intelligence';
++      const booking = process.env.BOOKING_URL || '[BOOKING_URL]';
++      const bodyTemplate = seed.outreachBody
++        || `${strategy.prefix}\n\nHi,\n\nI've been analyzing ${seed.industry} operations in ${seed.location} and identified specific opportunities at ${seed.company}.\n\nWould you be open to a 15-min diagnostic call? Book here: ${booking}\n\nBest,\n${brand}`;
+       const lead = {
+         id: crypto.randomUUID(),
+         company: seed.company,
+@@ -652,13 +662,14 @@ app.post('/api/seed', async (req, res) => {
+         score_breakdown: breakdown,
+         tier: tier.label,
+         stage: 'New Opportunity',
+-        estimated_value: 50000,
++        estimated_value: seed.estimatedValue || 50000,
+         matched_service: seed.matchedService,
+         detected_problems: seed.detectedProblems,
+         evidence_signals: seed.evidenceSignals,
++        give_before_ask: seed.giveBeforeAsk || seed.give_before_ask || 'Custom diagnostic asset',
+         outreach_strategy: seed.outreachStrategy,
+-        outreach_subject: `${strategy.prefix} ${seed.company}`,
+-        outreach_body: `${strategy.prefix}\n\nHi,\n\nI've been analyzing ${seed.industry} operations in ${seed.location} and identified specific opportunities at ${seed.company}.\n\nWould you be open to a 15-min diagnostic call? Book here: ${process.env.BOOKING_URL || '[BOOKING_URL]'}\n\nBest,\nHUNTER Intelligence`,
++        outreach_subject: seed.outreachSubject || `${strategy.prefix} ${seed.company}`,
++        outreach_body: bodyTemplate.replace(/\[BOOKING_URL\]/g, booking).replace(/\[OPERATOR_BRAND\]/g, brand),
+         notes: seed.notes,
+         last_activity: new Date().toISOString(),
+         created_at: new Date().toISOString()
