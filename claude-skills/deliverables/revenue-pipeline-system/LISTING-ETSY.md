@@ -1,10 +1,12 @@
 # Etsy listing — Revenue Pipeline System (HUNTER CRM)
 
-Etsy is secondary to Gumroad for this SKU (B2B buyers expect PDF + links). Use if you already drive traffic on Etsy.
+**→ Paste-ready copy:** **`ETSY-PRODUCT-COPY.md`**  
+**→ Full listing + names + FAQ:** **`ETSY-LISTING-PACKAGE-FULL.md`**  
+**→ Canva prompts (5 images + banner):** **`CANVA-DESIGN-PROMPTS.md`**
 
-## Title (140 chars max)
+Etsy is secondary to Gumroad for this SKU. Use if you already drive traffic on Etsy.
 
-Revenue Pipeline System HUNTER CRM Airtable B2B Lead Scoring Template Claude Prompt Digital Download
+## Quick reference (see ETSY-PRODUCT-COPY for full text)
 
 ## Price
 
