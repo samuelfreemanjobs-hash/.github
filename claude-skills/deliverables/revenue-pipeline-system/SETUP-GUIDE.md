@@ -2,16 +2,19 @@
 
 **Version 1.0 · Freeman Intelligence**
 
-Turn scattered B2B leads into a **scored pipeline** you can prioritize every week — without a full CRM implementation.
+Turn scattered **high-ticket B2B leads** (consultants, boutique agencies, fractional operators) into a **scored pipeline** you can prioritize every week — without a full CRM implementation.
+
+**Edition:** v1.0 — Consultant / agency (see `TEMPLATE-CUSTOMIZATION.md` if Industry options look industrial).
 
 ---
 
 ## What you get
 
-1. **Airtable template** — 3 tables: **Opportunities**, **Outreach Log**, **Service Catalog**
+1. **Airtable template** — 3 tables: **Opportunities**, **Outreach Log**, **Service Catalog** (pre-seeded consultant catalog + 3 example leads if you use our template build)
 2. **100-point scoring model** — 7 dimensions, auto **Tier** (HOT / HIGH / MEDIUM / WATCH)
 3. **Claude scoring prompt** — paste intel; get dimension scores + outreach angles
 4. **This guide**
+5. **Bonus docs in ZIP:** outreach templates (A–F), scoring calibration, FAQ
 
 **Template link (replace before publish):** `{TEMPLATE_LINK}`
 
@@ -32,10 +35,12 @@ You do **not** need Airtable paid tier for basic use; paid features are optional
 
 Open **Service Catalog**. Each row is a **productized service** you might sell.
 
-- Edit the sample rows **or** replace them with your real packages.
+- The shipped template uses **`SERVICE-CATALOG-CONSULTANTS.md`** (7 rows). Replace with your real packages.
 - **Solves Problems** and **Ideal Buying Signals** help Claude (and you) match leads later.
 
 Rule: if you change offer copy, you only touch **Service Catalog** — not old lead rows.
+
+**Examples:** See pre-loaded fictional companies in **Opportunities** (Northline, Meridian, Harborview) — delete when you’re ready.
 
 ---
 

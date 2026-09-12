@@ -6,7 +6,7 @@
 
 ## Tagline (subtitle)
 
-100-point B2B lead scoring in Airtable + Claude prompt — prioritize who to call first.
+For consultants & boutique agencies: 100-point lead scoring in Airtable + Claude — know who to call first ($3K+ deals).
 
 ## Price
 
@@ -37,22 +37,29 @@
 
 ## Description (paste)
 
-**Stop guessing which B2B lead to chase.**
+**Stop guessing which prospect deserves your Monday.**
 
-The **Revenue Pipeline System (HUNTER CRM)** is a lightweight revenue stack for consultants, founders, and small agencies who outgrew spreadsheets but don’t want Salesforce weight.
+The **Revenue Pipeline System (HUNTER CRM)** is a lightweight revenue stack for **consultants, boutique agencies, and fractional operators** selling **$3K+ projects and retainers** — not for ecommerce or teams already living in Salesforce.
 
 ### What’s inside
 
-- **Copyable Airtable base** — Opportunities, Outreach Log, Service Catalog  
-- **7-dimension scoring (0–100)** with auto tiers: HOT · HIGH · MEDIUM · WATCH  
-- **Paste-ready Claude prompt** to score leads from real evidence (job posts, site intel, your notes)  
-- **Setup Guide PDF** + Quick Start one-pager  
+- **Copyable Airtable base** — Opportunities, Outreach Log, Service Catalog (consultant edition + example HOT/HIGH/WATCH rows)
+- **7-dimension scoring (0–100)** with auto tiers: HOT · HIGH · MEDIUM · WATCH
+- **Paste-ready Claude prompt** + **scoring calibration guide**
+- **Outreach templates** (6 strategies) + **Setup Guide** + Quick Start PDF
+- **FAQ**
 
 ### Built for
 
-- B2B consultants and solo founders  
-- Agency new-business / outbound  
-- Anyone running “ICP in my head” instead of a pipeline  
+- **B2B consultants** and **boutique agencies** (&lt;~20 people)  
+- **Fractional** CMO/CRO/RevOps selling retainers  
+- Founders who do high-ticket sales themselves  
+
+### Not for
+
+- B2C / ecommerce  
+- Enterprise sales teams with dedicated RevOps  
+- Buyers who want scraped lead lists  
 
 ### Requirements
 
@@ -100,10 +107,14 @@ Reply to this email if the template link fails.
 
 ---
 
-## Optional upsell (later)
+## Optional upsell (Gumroad order bump)
 
-- $197: 30-min pipeline setup call  
-- Bundle with HUNTER-adjacent Etsy agents
+| Bump | Price | Deliverable |
+|------|-------|-------------|
+| **Score my top 5** | +$47 | 30-min call; you score their leads live |
+| **Industrial catalog pack** | +$27 | v1.1 — your 7 industrial services (later) |
+
+See `PRODUCT-10X.md` for full roadmap.
 
 ## Pre-launch QA
 
