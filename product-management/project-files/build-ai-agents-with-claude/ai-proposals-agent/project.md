@@ -1,52 +1,64 @@
 # AI Proposals Agent™
 
-> **Deploy target:** `https://github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude` → `ai-proposals-agent/project.md`
+**Last updated:** 2026-09-12  
+**Completion:** 45% (9/20 tasks)
 
-| Field | Value |
-|-------|-------|
-| **id** | `ai-proposals-agent` |
-| **tagline** | Every number traces. |
-| **owner** | Sam Freeman |
-| **status** | scaffold |
-| **completion %** | 52 |
-| **heat** | hot |
-| **launch rank** | 1 |
-| **last verified** | 2026-09-12 |
+## Overview
 
-## Location
+B2B single-agent SaaS for logistics BD teams in the Detroit corridor: ingest RFPs, extract requirements, deterministic pricing/compliance, agent-generated narrative, export proposal bundles. "Done" = paying pilot on Professional tier with full golden fixture runs green and staging deploy.
 
-- **Repo:** https://github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude
-- **Path:** `ai-proposals-agent/`
+## Audience & success
 
-## ICP & wedge
+- **For:** Logistics BD, sales, and solutions teams responding to RFPs (Metro Detroit corridor).
+- **Success metric:** 1 paying customer or 3 signed pilots with LOI within 90 days of launch.
+- **Urgency:** High — lead SKU for Freeman agent suite.
 
-Logistics BD, sales, and solutions teams (Detroit corridor).
+## Stack & constraints
 
-Logistics RFP proposals in ~75 minutes with auditable pricing and compliance.
+- **Stack:** Python deterministic core, agent + skills, frontend/UI, deploy docs; factory spec in `saas-factory/products/ai-proposals-agent.yaml`.
+- **Constraints:** No model-generated numerics in binding fields; compliance fail-closed; schema violation HALT.
 
-## Architecture
+## Tasks
 
-- **Type:** single-agent
+- [x] Factory product spec validated
+- [x] Scaffold tree (agent, skills, backend, scripts)
+- [x] Golden test runner — component logic green
+- [x] Frontend + UI present
+- [x] Deployment guide drafted
+- [x] Pricing tiers defined in spec
+- [x] Skills pack (5 skills) present
+- [x] Deterministic modules stubbed/implementing
+- [x] README + verify command documented
+- [ ] Knowledge base configured for full golden fixtures
+- [ ] Full golden fixture run green end-to-end
+- [ ] Staging deploy (Railway/cloud) with secrets
+- [ ] Pilot customer workflow (intake → export) dogfooded once
+- [ ] Production deploy + monitoring
+- [ ] Sales one-pager + demo Loom
+- [ ] Billing (Stripe) wired to tiers
+- [ ] First external pilot signed
+- [ ] First paying customer
+- [ ] Onboarding checklist for Professional tier
+- [ ] Support/runbook for HALT cases
 
-## Hard rules
+## Decisions
 
-- No generated numerics in binding fields.
-- Compliance fail-closed.
-- Schema violation is HALT.
+| Date | Decision |
+|------|----------|
+| 2026-09-12 | Portfolio registry: launch rank #1 B2B lane |
 
-## Evidence (why this %)
+## Blockers & open questions
 
-Golden test runner GREEN for component logic; frontend+ui present; KB required for full fixture runs.
+- KB content/source for golden fixtures not configured in audit environment.
+- [TBD] Primary pilot account name and RFP sample for demo.
 
-## Blockers
+## Portfolio cross-ref
 
-Configured knowledge base for golden fixtures; production deploy; first pilot customer.
+- **Registry id:** `ai-proposals-agent`
+- **Repo / path:** https://github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude — `ai-proposals-agent/`
+- **Branch:** `main`
 
-## Next ship (one slice)
+## Gaps [TBD]
 
-Wire KB + run full golden fixtures; deploy `ai-proposals-agent/deploy` to staging; record 1 Loom demo for logistics ICP.
-
-## Links
-
-- Spec: `saas-factory/products/ai-proposals-agent.yaml`
-- Verify: `cd ai-proposals-agent && python3 scripts/run_golden_tests.py`
+- Live deploy URL
+- Pilot customer identity

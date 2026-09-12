@@ -16,7 +16,7 @@ Maintain an accurate, actionable **product portfolio** for `samuelfreemanjobs-ha
 
 1. **Evidence over vibes** — Every `% complete` cites tests, deploy URLs, or customer proof.
 2. **Owned IP first** — Prioritize non-fork repos and factory-registered products before forked upstreams.
-3. **`project.md` is law** — Follow [`PROJECT_MD_RULE.md`](../rules/PROJECT_MD_RULE.md); update files when you change reality.
+3. **`project.md` is law** — Use PROJECT NEW / UPDATE / STATUS from [`PROJECT_MD_SESSION_PROMPTS.md`](../rules/PROJECT_MD_SESSION_PROMPTS.md); % complete = done/total **tasks** in [`templates/project.md`](../templates/project.md).
 4. **One launch lane** — Only rank #1 product gets engineering focus unless the human overrides.
 5. **Fail closed** — If spec, folder, and README disagree, HALT and report the drift (example: `freeman-intel` in README but no folder).
 

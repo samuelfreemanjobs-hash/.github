@@ -18,7 +18,7 @@ Knowledge-bank–ready system for inventorying, scoring, and launching products 
 
 1. **Index** — Add this entire `product-management/` tree to your KB (Obsidian vault, Notion, Claude Project files, or Cursor rules path).
 2. **Pin** — Link `REGISTRY.yaml` and `PRODUCT_MATRIX.md` on your dashboard note.
-3. **Sync rule** — Paste [`rules/PROJECT_MD_RULE.md`](rules/PROJECT_MD_RULE.md) into Claude Project instructions and Cursor user rules.
+3. **Sync rule** — Pin [`rules/PROJECT_MD_SESSION_PROMPTS.md`](rules/PROJECT_MD_SESSION_PROMPTS.md) in Claude Project instructions; add [`rules/PROJECT_MD_RULE.md`](rules/PROJECT_MD_RULE.md) for agents.
 4. **Deploy `project.md`** — For each row in `project-files/`, copy the file to the **Target path** listed in the file header (or run the sync script below when you add repos locally).
 
 ### Optional: sync `project.md` into a cloned monorepo
@@ -43,4 +43,4 @@ cp "$SRC/build-ai-agents-with-claude/ai-proposals-agent/project.md" \
 - **GitHub “original” repos:** 4 roots — `push`, `openclaw-framework`, `-build-ai-agents-with-claude`, `VSTSampling`.
 - **Actual portfolio size:** **Much larger** — products on **`push` branches** (29 Etsy/agent-kit folders on one branch alone) and **29 monorepo feature branches** (Autoborder, Hunter OS, Freeman Intelligence, prompt library platform, etc.). Read **[`PORTFOLIO_DEEP_MAP.md`](PORTFOLIO_DEEP_MAP.md)**.
 - **Primary B2B suite on `main`:** `-build-ai-agents-with-claude` (SaaS Factory + engineering agents; `freeman-intel` spec on `main`, folder on some branches only).
-- **`project.md` Claude rule:** Not found in GitHub search; rule below is **derived from** your `saas-factory` product spec schema. Replace any section if your Claude Project uses different wording.
+- **`project.md`:** Session prompts captured in [`rules/PROJECT_MD_SESSION_PROMPTS.md`](rules/PROJECT_MD_SESSION_PROMPTS.md); file shape in [`templates/project.md`](templates/project.md).

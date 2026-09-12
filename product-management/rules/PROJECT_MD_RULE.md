@@ -1,56 +1,49 @@
-# Rule: `project.md` (portfolio governance)
+# Rule: `project.md` (session + file standard)
 
-> **Provenance:** Intended as your Claude “new rule.” No matching file was found in public GitHub code search on 2026-09-12. This rule is **aligned with** `saas-factory/schemas/product-spec.schema.json` and your monorepo README principles.
+**Authoritative session prompts:** [`PROJECT_MD_SESSION_PROMPTS.md`](PROJECT_MD_SESSION_PROMPTS.md) (VARIANT 1 / 2 / 3).
 
-## When agents MUST read `project.md`
+**File template:** [`../templates/project.md`](../templates/project.md).
 
-Before planning, coding, refactoring, or estimating on **any product**, the agent MUST:
+## Purpose
 
-1. Read that product’s `project.md` at the repo path in **Location**.
-2. Treat **Hard rules** and **Status** as binding unless the human explicitly overrides in the current message.
-3. Update `project.md` **Completion %** and **Last verified** when the agent finishes a meaningful slice of work.
+`project.md` is the **single source of truth per product** for humans and agents: scope, tasks, % complete, decisions, and blockers. It is created with **PROJECT NEW** and maintained with **PROJECT UPDATE** or **PROJECT STATUS**.
 
-## Required location
+## When agents MUST use it
 
-Each sellable product or product-ready project keeps **one** `project.md` at:
+1. **Start of session** — If the user pastes `project.md` or says PROJECT NEW/UPDATE/STATUS, follow the matching variant in `PROJECT_MD_SESSION_PROMPTS.md`.
+2. **Before coding** — Read `project.md` at the product root (see location below).
+3. **End of meaningful work** — User should run **PROJECT UPDATE** (or agent proposes update) with a bullet list of what changed; recalculate **% from tasks** (`done / total × 100`).
 
-```
-<repo-root>/<product-path>/project.md
-```
+## Where the file lives
 
-Examples:
+| Layout | Path |
+|--------|------|
+| Single-product repo | `<repo-root>/project.md` |
+| Monorepo SKU | `<repo-root>/<product-folder>/project.md` |
+| `push` branch kits | `ai-agent-team/products/<kit-name>/project.md` |
+| Branch-only MVP | On that branch, at the product’s top-level folder (e.g. `autoborder/project.md`) |
 
-- `samuelfreemanjobs-hash/-build-ai-agents-with-claude/ai-proposals-agent/project.md`
-- `samuelfreemanjobs-hash/VSTSampling/project.md`
+Commit `project.md` **with the code** it describes.
 
-Meta-systems (e.g. SaaS Factory) use the same pattern at their root: `saas-factory/project.md`.
+## Standard template sections
 
-## Required sections (in order)
+1. **Overview** — one paragraph (from PROJECT NEW description)
+2. **Audience & success** — ICP, metric, urgency
+3. **Stack & constraints**
+4. **Tasks** — checkbox list; **% complete derived only from this list** unless user overrides
+5. **Decisions** — dated log
+6. **Blockers & open questions**
+7. **Portfolio cross-ref** (optional) — link to `REGISTRY.yaml` id for CRO/matrix
+8. **Gaps [TBD]** — from PROJECT NEW when info is missing
 
-1. **Identity** — `id`, `name`, `tagline`, `owner`
-2. **Location** — GitHub repo URL + path inside repo
-3. **Status** — `concept` | `design` | `scaffold` | `mvp` | `production` (matches factory enum)
-4. **Completion %** — 0–100 with **evidence** (tests, deploy, paying users)
-5. **ICP & wedge** — who pays and why now
-6. **Architecture** — `single-agent` | `multi-agent` | `hybrid`
-7. **Pipeline** — stages with `agent` | `deterministic` | `human` | `export`
-8. **Hard rules** — fail-closed behaviors (no invented numerics, HALT on schema, etc.)
-9. **Launch** — `heat` (cold/warm/hot), `launch_rank`, `blockers`, `next_ship`
-10. **Links** — spec YAML, README, deploy guide, golden tests command
+## Factory / B2B agent products (extra context)
 
-## Scoring `% complete` (standard rubric)
-
-| Signal | Weight |
-|--------|--------|
-| Product spec validated (`saas-factory validate`) | 10% |
-| Scaffold tree present | 10% |
-| Deterministic modules + golden tests green | 25% |
-| Skills + agent prompts complete | 15% |
-| API/UI deployable | 20% |
-| Production deploy + first external user | 20% |
-
-Adjust with a one-line justification in `project.md` under **Evidence**.
+For SKUs in `-build-ai-agents-with-claude`, also keep the **YAML spec** in `saas-factory/products/*.yaml` as technical canon (pipeline, hard_rules). `project.md` is the **execution and launch** view; the spec is the **product definition**. Do not contradict `hard_rules` in the spec.
 
 ## Portfolio registry
 
-The master list lives in [`../REGISTRY.yaml`](../REGISTRY.yaml). Any new product MUST be added there before work begins.
+Master list: [`../REGISTRY.yaml`](../REGISTRY.yaml). Add a row when PROJECT NEW creates a new product; set **Portfolio cross-ref** in `project.md`.
+
+## Relation to earlier audit rubric
+
+Portfolio audits may still use **evidence-based** estimates (tests, deploy) in `REGISTRY.yaml` / `PRODUCT_MATRIX.md`. When both exist, **tasks in `project.md` win for day-to-day %**; sync registry on weekly CRO review.

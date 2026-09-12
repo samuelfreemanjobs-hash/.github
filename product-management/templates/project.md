@@ -1,53 +1,47 @@
-# {{name}}
+# [Project name]
 
-| Field | Value |
-|-------|-------|
-| **id** | `{{id}}` |
-| **tagline** | {{tagline}} |
-| **owner** | Sam Freeman |
-| **status** | {{status}} |
-| **completion %** | {{completion_pct}} |
-| **heat** | {{heat}} |
-| **launch rank** | {{launch_rank}} |
-| **last verified** | {{last_verified}} |
+**Last updated:** YYYY-MM-DD  
+**Completion:** [N]% ([done]/[total] tasks)
 
-## Location
+## Overview
 
-- **Repo:** https://github.com/samuelfreemanjobs-hash/{{repo}}
-- **Path:** `{{path}}`
+[One paragraph: what this is, who it's for, what "done" looks like, stack, urgency, value.]
 
-## ICP & wedge
+## Audience & success
 
-{{icp}}
+- **For:** [ICP / user]
+- **Success metric:** [e.g. 5 booked calls in 30 days]
+- **Urgency:** [low | medium | high]
 
-{{wedge}}
+## Stack & constraints
 
-## Architecture
+- **Stack:** [languages, hosting, integrations]
+- **Constraints:** [e.g. no backend, fail-closed pricing, etc.]
 
-- **Type:** {{architecture}}
+## Tasks
 
-## Pipeline
+<!-- % complete = round(100 * done / total). Count only leaf tasks below. -->
 
-{{pipeline_table}}
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
 
-## Hard rules
+## Decisions
 
-{{hard_rules}}
+| Date | Decision |
+|------|----------|
+| YYYY-MM-DD | [e.g. Use Tally instead of Zapier for forms] |
 
-## Evidence (why this %)
+## Blockers & open questions
 
-{{evidence}}
+- [Blocker or question]
 
-## Blockers
+## Portfolio cross-ref (optional)
 
-{{blockers}}
+- **Registry id:** `[id]` — see `product-management/REGISTRY.yaml` in `.github` KB
+- **Repo / path:** [url and folder]
+- **Branch (if not main):** [branch name or `main`]
 
-## Next ship (one slice)
+## Gaps [TBD]
 
-{{next_ship}}
-
-## Links
-
-- Spec: `{{spec_path}}`
-- README: `{{readme_path}}`
-- Verify: `{{verify_command}}`
+- [Anything the agent could not fill yet]

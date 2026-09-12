@@ -147,6 +147,66 @@ products:
     spec: null
     verify: "n/a — repo empty"
 
+portfolio_lines:
+  - id: push-etsy-agent-kits
+    name: Etsy / digital agent kit library
+    repo: push
+    branch: cursor/etsy-store-automation-f219
+    path: ai-agent-team/products/
+    sku_count: 29
+    completion_pct: 70
+    heat: hot
+  - id: push-product-creation-sop
+    name: 15-Min Product Creation SOP (+ ChiroBook, LocalBook)
+    repo: push
+    branch: claude/product-creation-template-ogygnk
+    path: ./
+    completion_pct: 55
+    heat: warm
+  - id: monorepo-prompt-library
+    name: Scraped prompt library platform
+    repo: "-build-ai-agents-with-claude"
+    branch: gh-pages
+    path: public/
+    completion_pct: 75
+    heat: warm
+    note: "~1,352 prompts per gh-pages tip commit"
+  - id: autoborder-comply
+    name: Autoborder Comply
+    repo: "-build-ai-agents-with-claude"
+    branch: cursor/autoborder-comply-mvp-cc89
+    path: autoborder/
+    completion_pct: 45
+    heat: warm
+  - id: autonomous-hunter-os
+    name: Autonomous Hunter OS
+    repo: "-build-ai-agents-with-claude"
+    branch: cursor/autonomous-hunter-os-54da
+    path: ./
+    completion_pct: 50
+    heat: warm
+  - id: freeman-intelligence-wris
+    name: Freeman Intelligence (WRIS)
+    repo: "-build-ai-agents-with-claude"
+    branch: cursor/freeman-intelligence-wris-64d3
+    path: freeman-intelligence/
+    completion_pct: 55
+    heat: hot
+  - id: medflow-os
+    name: MedFlow OS playbook + n8n runtime
+    repo: push
+    branch: cursor/n8n-ea-runtime-3e82
+    path: ai-agent-team/docs/medflow/
+    completion_pct: 40
+    heat: warm
+  - id: manuscript-master
+    name: Manuscript Master + KDP agent
+    repo: push
+    branch: cursor/manuscript-master-agent-ea28
+    path: ai-agent-team/prompts/manuscript-master/
+    completion_pct: 55
+    heat: warm
+
 productizable_forks:
   # Not owned IP — track only if you differentiate; see REPO_CATALOG.md
   - id: marketing-ai-studio
