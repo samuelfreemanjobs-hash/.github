@@ -24,7 +24,8 @@
 
 | Remote | Result |
 |--------|--------|
-| `-build-ai-agents-with-claude` | **Crawled** — 6 product dirs; 20 artifact rows seeded |
+| `-build-ai-agents-with-claude` | **Crawled** — 6 product dirs; docs + SaaS factory |
+| `God-Of-Prompt`, `claude-os` | **Verified public** — artifact rows added 2026-09-12 |
 | `TheFreemanFix` | **Not found** on `samuelfreemanjobs-hash` (404) — placeholder rows from PM |
 | Clinical / `rev-systems-os.html` | **Not found** on public GitHub — rows from PM stack |
 

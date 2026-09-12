@@ -15,6 +15,7 @@ Copy this folder into your machine:
 |-------|---------|---------|
 | `business-os-install/` | `/business-os-install` | One-time folder + skills setup |
 | `business-hub-init/` | `/business-hub-init` | Fill hub sections 1–8 |
+| `business-hub-audit/` | `/business-hub-audit` | 4 Cs score + 30-day plan |
 | `ad-pack-from-offer/` | `/ad-pack-from-offer` | Multi-agent ad pack |
 | `pwa-idea-to-spec/` | `/pwa-idea-to-spec` | Idea → PWA/app spec |
 | `pricing-positioning-memo/` | `/pricing-positioning-memo` | Pricing + positioning decision memo |
@@ -32,6 +33,7 @@ Copy this folder into your machine:
 | 7 Operating rules | `hub/07-operating-rules/` |
 | 8 Human roles | `hub/08-human-roles/` |
 | Agents | `hub/agents/REGISTRY.md` |
+| PM + artifacts | `hub/agents/PM-AGENT-COMMANDS.md` · `hub/agents/AIRTABLE-ARTIFACTS.md` |
 
 ## Heavy OS extras (same pack)
 
