@@ -46,6 +46,7 @@ score_weights:               # OPTIONAL — must sum to 1.0; default equal
   ease: 0.2
 min_opportunities: 0
 max_opportunities: 5
+allow_hypothesis_in_brief: false
 ```
 
 See `RUNTIME-CONTEXT.example.yaml` in the buyer pack for a commented template.
@@ -126,7 +127,7 @@ Each gate returns pass or fail per opportunity. A failed gate does not delete th
 | Feasibility | Named `owner_role`, listed dependencies, and a 90-day path with week-level bounds. |
 | Compliance | Applicable regimes identified and mapped (e.g. SOC 2, HIPAA, ITAR, FDA, PCI DSS, GDPR, FMCSA, ISO 14083). "None applicable" is a valid finding — state it explicitly rather than omitting the field. |
 | Novelty | Not substantially the same as anything in `prior_run_opportunities`. |
-| Duplication | If two candidates share >50% of their evidence base, keep the higher `priority_score` and drop the other. Record the drop in `rejected`. |
+| Duplication | If two candidates share >50% of `evidence_source_ids`, keep the higher `priority_score` and drop the other. Record the drop in `rejected`. |
 | Padding | Every shipped opportunity independently clears the Evidence gate. Never generate an opportunity to reach a count. |
 
 **Fail-closed rule:** if `confidence` < `confidence_gate`, status is `Hypothesis` and `validation_plan` must contain 3 steps, each with owner, cost, duration in days, and a binary pass/fail metric.

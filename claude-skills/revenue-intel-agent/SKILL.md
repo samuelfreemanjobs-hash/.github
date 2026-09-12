@@ -1,9 +1,9 @@
 ---
 name: revenue-intel-agent
-description: Run Revenue Intel Agent — v5.0 weekly monetization briefs with gated evidence, ROI modeling, and optional JSON/CSV. Use when the user asks for revenue intel, market opportunities, weekly revenue brief, or monetization analysis for a niche and ICP.
+description: Run Revenue Intel Agent — v5.1 weekly monetization briefs with gated evidence, ROI modeling, and optional JSON/CSV. Use when the user asks for revenue intel, market opportunities, weekly revenue brief, or monetization analysis for a niche and ICP.
 ---
 
-# Revenue Intel Agent — v5.0
+# Revenue Intel Agent — v5.1
 
 Invoke the official **Revenue Intel Agent — v5.0** system prompt with a filled **runtime context** every run.
 

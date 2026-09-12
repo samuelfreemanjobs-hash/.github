@@ -10,9 +10,10 @@ The **Revenue Intel Agent — v5.0** system prompt: weekly, evidence-gated monet
 
 1. Unzip `Revenue-Intel-Agent-v5.0.zip`.
 2. Paste `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.txt` into your AI **system** role (not the user message).
-3. Each run: fill `RUNTIME-CONTEXT.example.yaml` → inject as `<runtime_context>` (orchestrator or copy into user message prefix).
-4. **Required every run:** `today`, `niche`, `icp`. The agent must stop if any are missing.
-5. Send the run template from the bottom of the system prompt:
+3. Each run: fill `RUNTIME-CONTEXT.example.yaml` (or `python3 scripts/apply_presets.py --brief client_facing`) → inject as `<runtime_context>`.
+4. **Brief profile:** default `client_facing` — see `DESIGN-TENSION-CONFIDENCE.md` if unsure (`internal_lab` for your own research weeks).
+5. **Required every run:** `today`, `niche`, `icp`. The agent must stop if any are missing.
+6. Send the run template from the bottom of the system prompt:
 
    ```
    Run this agent for:
@@ -20,7 +21,8 @@ The **Revenue Intel Agent — v5.0** system prompt: weekly, evidence-gated monet
    ICP: …
    ```
 
-6. Enable **web search + fetch** in your tool (Claude, ChatGPT, Gemini, etc.) — the prompt requires retrieved, dated sources.
+7. Enable **web search + fetch** in your tool (Claude, ChatGPT, Gemini, etc.) — the prompt requires retrieved, dated sources.
+8. Before sharing externally: `python3 scripts/validate_run.py your-run.json` (optional but recommended).
 
 ## Optional: Claude Business OS
 

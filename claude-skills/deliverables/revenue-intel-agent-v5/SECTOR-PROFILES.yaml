@@ -1,0 +1,46 @@
+# Optional runtime: sector_profile: automotive_supplier
+# Agent must check listed regimes; add sector-specific evidence seeds.
+
+automotive_supplier:
+  label: Automotive tier 1–3 / stamping / tier-2 suppliers
+  compliance_focus:
+    - Customer contractual quality (IATF 16949 flows, PPAP, traceability)
+    - OTIF / premium freight / ASN-EDI / routing guides
+    - Export / ITAR only if defense work is evidenced — do not assume
+  evidence_query_seeds:
+    - OTIF chargebacks automotive
+    - routing guide ASN supplier
+    - IATF 16949 audit news
+  regimes_default: "Map customer contractual + FMCSA only if logistics-owned fleet evidenced; else state None applicable for HIPAA/FDA unless site is medical"
+
+industrial_manufacturing:
+  label: General industrial / metal fab / tooling
+  compliance_focus:
+    - ISO 9001 customer audits
+    - Environmental (stormwater, air permits) as consulting trigger only
+    - Machine safety / lockout as ops trigger — not legal advice
+  evidence_query_seeds:
+    - manufacturing labor shortage skilled trades
+    - ISO 9001 surveillance audit
+  regimes_default: "SOC 2 only if selling SaaS to site; otherwise explicit None applicable unless evidence"
+
+freight_3pl:
+  label: Freight / 3PL / cross-dock
+  compliance_focus:
+    - FMCSA / driver compliance
+    - Customer SLA / OTIF at dock
+    - ISO 14083 only if shipper program requires
+  evidence_query_seeds:
+    - cross dock labor turnover
+    - FMCSA enforcement 2026
+  regimes_default: "FMCSA when carrier authority evidenced"
+
+consultant_b2b:
+  label: B2B consultant / agency (meta — selling to the above)
+  compliance_focus:
+    - No HIPAA/PCI unless client vertical requires
+    - Professional liability / MSA terms — trigger only, not advice
+  evidence_query_seeds:
+    - fractional COO demand manufacturing
+    - B2B services price pressure
+  regimes_default: "Typically none applicable; state explicitly"

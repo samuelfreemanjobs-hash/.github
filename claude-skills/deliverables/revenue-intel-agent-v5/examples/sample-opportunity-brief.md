@@ -1,50 +1,42 @@
-# Sample opportunity brief (fictional)
+# Sample run — Revenue Intel Agent — v5.1 (fictional)
 
-**Company:** Northline Stampings LLC *(fictional)*  
-**Site:** Sterling Heights, MI  
-**Run:** Revenue Intel Agent — v5.0 (demo)
+This example matches `fixtures/valid-sample-run.json` and passes `scripts/validate_run.py`.
 
-## Executive summary
+## Executive brief excerpt
 
-Northline shows public hiring for **EDI coordinator** and **supplier quality** roles while advertising ISO 9001 and IATF 16949. That pattern often correlates with **customer routing-guide pressure** and **manual ASN/spreadsheet workflows** — a fit for spreadsheet elimination + KPI command center offers. Confidence **medium** until verified on a discovery call.
+===BRIEF_MD_START===
 
-## JSON (excerpt)
+# Weekly Revenue Brief — Automotive tier-2 stamping suppliers / Fractional ops consultant — 2026-09-12
 
-```json
-{
-  "opportunities": [
-    {
-      "company": "Northline Stampings LLC",
-      "site": "Sterling Heights, MI",
-      "vertical": "Automotive stamping",
-      "title": "Routing-guide / ASN manual choke point",
-      "category": "compliance",
-      "pain_summary": "Quality and EDI hiring plus tier-2 supplier profile suggests customer compliance workload may outpace systems integration.",
-      "evidence": [
-        {
-          "claim": "Careers page lists EDI Coordinator (2026)",
-          "source_class": "company_site",
-          "source_note": "Fictional demo — replace with live URL when dogfooding"
-        }
-      ],
-      "estimated_deal_shape": "$12K–$25K dashboard + $1K/mo support",
-      "confidence": "medium",
-      "hunter_tier": "HIGH",
-      "outreach_strategy": "B",
-      "suggested_service_name": "KPI Command Center & Executive Dashboard Sprint",
-      "seller_action": [
-        "Confirm top 3 OEM customers and chargeback history on call",
-        "Ask which EDI translator and ASN error rate they track"
-      ],
-      "verification_questions": [
-        "Where do routing guide updates live today?",
-        "Who owns OTIF reporting weekly?"
-      ],
-      "disqualifiers": [
-        "ERP rollout in next 90 days with SI already selected"
-      ],
-      "compliance_note": "Not legal/tax advice; verify with qualified professionals."
-    }
-  ]
-}
+## Bottom line
+
+One **Validated** opportunity: OTIF reporting still lives in spreadsheets for many tier-2 stampers while OEM enforcement is documented in 2026 trade press. A single dashboard sprint is modeled at **$31,500** 90-day gross profit (conservative inputs). No other candidates cleared Evidence this week.
+
+## Pick of the week
+
+**OTIF reporting spreadsheet elimination for tier-2 stamper**
+
+- Dated external pressure: 2026-03-15 trade coverage on OTIF enforcement into contract cycles.
+- Fits catalog offer: KPI Command Center & Executive Dashboard Sprint.
+
+## What I rejected and why
+
+**Generic AI chatbot for plant floor** — vendor-only evidence; failed Evidence and Bias gates.
+
+## Sources
+
+- Sample OEM supplier quality manual excerpt • Fictional OEM • 2025-11-01 • primary
+- Industry week — OTIF pressure on stampers • Fictional Trade Press • 2026-03-15 • secondary
+- Michigan manufacturing employment report • Fictional State Agency • 2026-06-01 • primary
+
+===BRIEF_MD_END===
+
+## JSON
+
+Full payload: `../fixtures/valid-sample-run.json`
+
+Validate:
+
+```bash
+python3 ../scripts/validate_run.py ../fixtures/valid-sample-run.json
 ```

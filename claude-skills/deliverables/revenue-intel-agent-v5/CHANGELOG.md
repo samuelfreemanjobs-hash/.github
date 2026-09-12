@@ -15,6 +15,13 @@
 - Replaced draft Metro-Detroit-only prompt with official **Revenue Intel Agent — v5.0** (v4.1 → v5.0 changelog included)
 - Added `RUNTIME-CONTEXT.example.yaml`
 
+### v5.1 tooling (2026-09-12)
+
+- `scripts/validate_run.py` + fixtures + CI workflow
+- `BRIEF-PROFILES.yaml` (`client_facing` default), `SECTOR-PROFILES.yaml`
+- `DESIGN-TENSION-CONFIDENCE.md`, `TWO-PASS-ORCHESTRATION.md`
+- `scripts/apply_presets.py`, v5.1 sample brief + fixture
+
 ### Pending Sam input
 
 - Price SKU confirmation

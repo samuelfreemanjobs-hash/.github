@@ -38,3 +38,7 @@ max_opportunities: 5
 allow_hypothesis_in_brief: false # if false, brief is Validated-only or empty + rejected
 
 hunter_handoff: false
+
+# Presets (see BRIEF-PROFILES.yaml, DESIGN-TENSION-CONFIDENCE.md)
+brief_profile: client_facing # client_facing | internal_lab | balanced
+# sector_profile: automotive_supplier

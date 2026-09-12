@@ -12,6 +12,10 @@
 | **Agent system prompt (v5.0)** | `REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` + `.txt` |
 | **Claude skill (invoke in Business OS)** | `../../revenue-intel-agent/SKILL.md` |
 | **Runtime template** | `RUNTIME-CONTEXT.example.yaml` |
+| **Brief presets** | `BRIEF-PROFILES.yaml` + `DESIGN-TENSION-CONFIDENCE.md` |
+| **Sector presets** | `SECTOR-PROFILES.yaml` |
+| **Validator** | `scripts/validate_run.py` · `scripts/run_validation_tests.sh` |
+| **Two-pass mode** | `TWO-PASS-ORCHESTRATION.md` |
 | **Output schema (v5 + optional HUNTER)** | `OPPORTUNITY-BRIEF-SCHEMA.md` |
 | **Phase 0 runbook** | `PHASE-0.md` |
 | **Launch checklist** | `LAUNCH-CHECKLIST.md` |

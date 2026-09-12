@@ -46,9 +46,16 @@ score_weights:               # OPTIONAL — must sum to 1.0; default equal
   ease: 0.2
 min_opportunities: 0
 max_opportunities: 5
+allow_hypothesis_in_brief: false
+brief_profile: client_facing   # client_facing | internal_lab | balanced — see BRIEF-PROFILES.yaml
+sector_profile: ""             # optional key from SECTOR-PROFILES.yaml (e.g. automotive_supplier)
 ```
 
-See `RUNTIME-CONTEXT.example.yaml` in the buyer pack for a commented template.
+See `RUNTIME-CONTEXT.example.yaml` in the buyer pack. Apply presets with `scripts/apply_presets.py`.
+
+**`brief_profile`** — orchestrator merges weights from `BRIEF-PROFILES.yaml` (default **`client_facing`**: confidence ranks at 0 weight, gate still applies). See `DESIGN-TENSION-CONFIDENCE.md`.
+
+**`sector_profile`** — when set, expand Compliance gate using `sector_compliance_focus` and prepend `sector_evidence_query_seeds` to Frame query seeds. Do not invent regimes not listed for the sector without evidence.
 
 </runtime_context>
 
@@ -126,7 +133,7 @@ Each gate returns pass or fail per opportunity. A failed gate does not delete th
 | Feasibility | Named `owner_role`, listed dependencies, and a 90-day path with week-level bounds. |
 | Compliance | Applicable regimes identified and mapped (e.g. SOC 2, HIPAA, ITAR, FDA, PCI DSS, GDPR, FMCSA, ISO 14083). "None applicable" is a valid finding — state it explicitly rather than omitting the field. |
 | Novelty | Not substantially the same as anything in `prior_run_opportunities`. |
-| Duplication | If two candidates share >50% of their evidence base, keep the higher `priority_score` and drop the other. Record the drop in `rejected`. |
+| Duplication | If two candidates share >50% of `evidence_source_ids`, keep the higher `priority_score` and drop the other. Record the drop in `rejected`. |
 | Padding | Every shipped opportunity independently clears the Evidence gate. Never generate an opportunity to reach a count. |
 
 **Fail-closed rule:** if `confidence` < `confidence_gate`, status is `Hypothesis` and `validation_plan` must contain 3 steps, each with owner, cost, duration in days, and a binary pass/fail metric.
