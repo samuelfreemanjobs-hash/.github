@@ -13,6 +13,9 @@ Invoke the official **Revenue Intel Agent — v5.0** system prompt with a filled
 |------|---------|
 | `deliverables/revenue-intel-agent-v5/REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md` | Full system prompt (paste into system role) |
 | `deliverables/revenue-intel-agent-v5/RUNTIME-CONTEXT.example.yaml` | Template for `<runtime_context>` |
+| `deliverables/revenue-intel-agent-v5/BRIEF-PROFILES.yaml` | `client_facing` vs `internal_lab` presets |
+| `deliverables/revenue-intel-agent-v5/DESIGN-TENSION-CONFIDENCE.md` | When to use which profile |
+| `deliverables/revenue-intel-agent-v5/scripts/validate_run.py` | Post-run JSON validation |
 | `deliverables/revenue-intel-agent-v5/OPPORTUNITY-BRIEF-SCHEMA.md` | v5 JSON + optional HUNTER mapping |
 | `hub/02-legal-finance-trust/claims-compliance.md` | Claims guardrails |
 
