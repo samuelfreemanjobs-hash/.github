@@ -1,0 +1,2939 @@
+From 633f4120e8354994a8fc87aed493fb0a574744c8 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Sat, 12 Sep 2026 12:30:07 +0000
+Subject: [PATCH] Add project.md for all 28 Etsy digital product SKUs
+
+Official project template: Scope, Outcome, Done/To Do, Artifacts.
+Progress from checkbox sections. Branch cursor/etsy-store-automation-f219.
+---
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../agent-06-ad-copy-agent-kit/project.md     | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../agent-08-copy-swipe-agent-kit/project.md  | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../project.md                                | 98 +++++++++++++++++++
+ .../ai-client-onboarding-agent-kit/project.md | 98 +++++++++++++++++++
+ .../products/ai-ops-agent-library/project.md  | 92 +++++++++++++++++
+ .../business-in-a-box-starter/project.md      | 92 +++++++++++++++++
+ .../products/copywriting-templates/project.md | 92 +++++++++++++++++
+ .../marketing-command-center-excel/project.md | 92 +++++++++++++++++
+ .../postcard-direct-mail-pack/project.md      | 92 +++++++++++++++++
+ .../top-10-ai-agents-bundle/project.md        | 92 +++++++++++++++++
+ .../top-20-ai-agents-bundle/project.md        | 92 +++++++++++++++++
+ 28 files changed, 2702 insertions(+)
+ create mode 100644 ai-agent-team/products/agent-01-etsy-listing-seo-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-02-social-content-machine-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-03-marketing-planner-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-04-client-onboarding-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-05-email-sequence-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-06-ad-copy-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-07-sales-proposal-discovery-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-08-copy-swipe-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-09-pod-design-prompt-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-10-listing-mockup-photo-brief-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-11-customer-support-reply-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-12-sop-operations-doc-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-13-lead-magnet-opt-in-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-14-direct-mail-campaign-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-15-brand-voice-messaging-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-16-blog-seo-article-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-17-business-in-a-box-orchestrator-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-18-ai-ops-admin-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-19-etsy-shop-analytics-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/agent-20-coach-consultant-professional-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/ai-client-onboarding-agent-kit/project.md
+ create mode 100644 ai-agent-team/products/ai-ops-agent-library/project.md
+ create mode 100644 ai-agent-team/products/business-in-a-box-starter/project.md
+ create mode 100644 ai-agent-team/products/copywriting-templates/project.md
+ create mode 100644 ai-agent-team/products/marketing-command-center-excel/project.md
+ create mode 100644 ai-agent-team/products/postcard-direct-mail-pack/project.md
+ create mode 100644 ai-agent-team/products/top-10-ai-agents-bundle/project.md
+ create mode 100644 ai-agent-team/products/top-20-ai-agents-bundle/project.md
+
+diff --git a/ai-agent-team/products/agent-01-etsy-listing-seo-agent-kit/project.md b/ai-agent-team/products/agent-01-etsy-listing-seo-agent-kit/project.md
+new file mode 100644
+index 0000000..eb5537d
+--- /dev/null
++++ b/ai-agent-team/products/agent-01-etsy-listing-seo-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 01 — Etsy Listing SEO
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Etsy sellers who need a repeatable weekly SEO loop for listings. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-01-etsy-listing-seo-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Buyers run playbook + 10 workflows to optimize titles, tags, and descriptions.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Etsy / digital download ($19–49 SKU); bundle upsell to Top 10/20.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-01-etsy-listing-seo-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-01-etsy-listing-seo-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 01 — Etsy Listing SEO — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-01-etsy-listing-seo-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-02-social-content-machine-agent-kit/project.md b/ai-agent-team/products/agent-02-social-content-machine-agent-kit/project.md
+new file mode 100644
+index 0000000..ce799b6
+--- /dev/null
++++ b/ai-agent-team/products/agent-02-social-content-machine-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 02 — Social Content Machine
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Creators batching on-brand social posts. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-02-social-content-machine-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Buyer can produce a week of content from one brief.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Social media freelancers and Etsy shop owners promoting listings.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-02-social-content-machine-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-02-social-content-machine-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 02 — Social Content Machine — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-02-social-content-machine-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-03-marketing-planner-agent-kit/project.md b/ai-agent-team/products/agent-03-marketing-planner-agent-kit/project.md
+new file mode 100644
+index 0000000..9f7577d
+--- /dev/null
++++ b/ai-agent-team/products/agent-03-marketing-planner-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 03 — Marketing Planner
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Small businesses without a formal marketing plan. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-03-marketing-planner-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++90-day campaign plan + ties to Marketing Command Center.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++SMB owners; pairs with Excel command center SKU.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-03-marketing-planner-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-03-marketing-planner-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 03 — Marketing Planner — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-03-marketing-planner-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-04-client-onboarding-agent-kit/project.md b/ai-agent-team/products/agent-04-client-onboarding-agent-kit/project.md
+new file mode 100644
+index 0000000..f7e41f1
+--- /dev/null
++++ b/ai-agent-team/products/agent-04-client-onboarding-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 04 — Client Onboarding
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 36%
++
++---
++
++## Scope
++
++Service businesses losing time on messy onboarding. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-04-client-onboarding-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++SOP + workflows + tracker for new clients.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Agencies, consultants, coaches.
++
++---
++
++## ✅ Done
++
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Complete `01-playbook/`
++- [ ] Complete `02-workflows/`
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-04-client-onboarding-agent-kit/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/agent-04-client-onboarding-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 04 — Client Onboarding — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-04-client-onboarding-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-05-email-sequence-agent-kit/project.md b/ai-agent-team/products/agent-05-email-sequence-agent-kit/project.md
+new file mode 100644
+index 0000000..5ed4c39
+--- /dev/null
++++ b/ai-agent-team/products/agent-05-email-sequence-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 05 — Email Sequence
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Marketers needing sequences fast. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-05-email-sequence-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Draft nurture/launch sequences with workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Course creators, Etsy sellers with email lists.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-05-email-sequence-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-05-email-sequence-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 05 — Email Sequence — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-05-email-sequence-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-06-ad-copy-agent-kit/project.md b/ai-agent-team/products/agent-06-ad-copy-agent-kit/project.md
+new file mode 100644
+index 0000000..c9d276e
+--- /dev/null
++++ b/ai-agent-team/products/agent-06-ad-copy-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 06 — Ad Copy
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Paid ads without a copy system. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-06-ad-copy-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Ad variants per platform from workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++DTC and local service advertisers.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-06-ad-copy-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-06-ad-copy-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 06 — Ad Copy — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-06-ad-copy-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-07-sales-proposal-discovery-agent-kit/project.md b/ai-agent-team/products/agent-07-sales-proposal-discovery-agent-kit/project.md
+new file mode 100644
+index 0000000..75a7d88
+--- /dev/null
++++ b/ai-agent-team/products/agent-07-sales-proposal-discovery-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 07 — Sales Proposal & Discovery
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Consultants writing proposals after calls. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-07-sales-proposal-discovery-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Discovery → proposal draft with traceable sections.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++B2B solo consultants.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-07-sales-proposal-discovery-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-07-sales-proposal-discovery-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 07 — Sales Proposal & Discovery — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-07-sales-proposal-discovery-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-08-copy-swipe-agent-kit/project.md b/ai-agent-team/products/agent-08-copy-swipe-agent-kit/project.md
+new file mode 100644
+index 0000000..1342cbf
+--- /dev/null
++++ b/ai-agent-team/products/agent-08-copy-swipe-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 08 — Copy Swipe File
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Writers who need starters not blank pages. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-08-copy-swipe-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++50 templates + agent workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Copywriters and Etsy digital buyers.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-08-copy-swipe-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-08-copy-swipe-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 08 — Copy Swipe File — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-08-copy-swipe-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-09-pod-design-prompt-agent-kit/project.md b/ai-agent-team/products/agent-09-pod-design-prompt-agent-kit/project.md
+new file mode 100644
+index 0000000..d7bbce7
+--- /dev/null
++++ b/ai-agent-team/products/agent-09-pod-design-prompt-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 09 — POD Design Prompt
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++POD sellers needing design prompts. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-09-pod-design-prompt-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Prompt systems for print-ready art briefs.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++POD / Etsy print-on-demand.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-09-pod-design-prompt-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-09-pod-design-prompt-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 09 — POD Design Prompt — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-09-pod-design-prompt-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-10-listing-mockup-photo-brief-agent-kit/project.md b/ai-agent-team/products/agent-10-listing-mockup-photo-brief-agent-kit/project.md
+new file mode 100644
+index 0000000..a9bbfd2
+--- /dev/null
++++ b/ai-agent-team/products/agent-10-listing-mockup-photo-brief-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 10 — Listing Mockup & Photo Brief
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Sellers with weak listing visuals. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-10-listing-mockup-photo-brief-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Photo briefs + mockup guidance per SKU.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Etsy and marketplace sellers.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-10-listing-mockup-photo-brief-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-10-listing-mockup-photo-brief-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 10 — Listing Mockup & Photo Brief — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-10-listing-mockup-photo-brief-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-11-customer-support-reply-agent-kit/project.md b/ai-agent-team/products/agent-11-customer-support-reply-agent-kit/project.md
+new file mode 100644
+index 0000000..f8162d8
+--- /dev/null
++++ b/ai-agent-team/products/agent-11-customer-support-reply-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 11 — Customer Support Reply
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Shop owners drowning in buyer messages. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-11-customer-support-reply-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Reply drafts aligned to policies.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Etsy, Shopify micro-sellers.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-11-customer-support-reply-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-11-customer-support-reply-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 11 — Customer Support Reply — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-11-customer-support-reply-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-12-sop-operations-doc-agent-kit/project.md b/ai-agent-team/products/agent-12-sop-operations-doc-agent-kit/project.md
+new file mode 100644
+index 0000000..a8b23a9
+--- /dev/null
++++ b/ai-agent-team/products/agent-12-sop-operations-doc-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 12 — SOP & Operations Doc
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Operators documenting how work gets done. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-12-sop-operations-doc-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++SOP drafts from workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Ops leads in small teams.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-12-sop-operations-doc-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-12-sop-operations-doc-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 12 — SOP & Operations Doc — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-12-sop-operations-doc-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-13-lead-magnet-opt-in-agent-kit/project.md b/ai-agent-team/products/agent-13-lead-magnet-opt-in-agent-kit/project.md
+new file mode 100644
+index 0000000..e4c2bcc
+--- /dev/null
++++ b/ai-agent-team/products/agent-13-lead-magnet-opt-in-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 13 — Lead Magnet & Opt-in
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Businesses need list growth assets. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-13-lead-magnet-opt-in-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Lead magnet + opt-in copy.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Coaches, local services.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-13-lead-magnet-opt-in-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-13-lead-magnet-opt-in-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 13 — Lead Magnet & Opt-in — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-13-lead-magnet-opt-in-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-14-direct-mail-campaign-agent-kit/project.md b/ai-agent-team/products/agent-14-direct-mail-campaign-agent-kit/project.md
+new file mode 100644
+index 0000000..1ec348d
+--- /dev/null
++++ b/ai-agent-team/products/agent-14-direct-mail-campaign-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 14 — Direct Mail Campaign
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Local businesses running postcards. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-14-direct-mail-campaign-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Campaign workflow + postcard pack tie-in.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Local retail / services.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-14-direct-mail-campaign-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-14-direct-mail-campaign-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 14 — Direct Mail Campaign — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-14-direct-mail-campaign-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-15-brand-voice-messaging-agent-kit/project.md b/ai-agent-team/products/agent-15-brand-voice-messaging-agent-kit/project.md
+new file mode 100644
+index 0000000..8bf6ba6
+--- /dev/null
++++ b/ai-agent-team/products/agent-15-brand-voice-messaging-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 15 — Brand Voice & Messaging
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Inconsistent brand copy. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-15-brand-voice-messaging-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Voice guide + message house.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Rebrand projects.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-15-brand-voice-messaging-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-15-brand-voice-messaging-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 15 — Brand Voice & Messaging — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-15-brand-voice-messaging-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-16-blog-seo-article-agent-kit/project.md b/ai-agent-team/products/agent-16-blog-seo-article-agent-kit/project.md
+new file mode 100644
+index 0000000..23fb830
+--- /dev/null
++++ b/ai-agent-team/products/agent-16-blog-seo-article-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 16 — Blog & SEO Article
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Sites needing SEO articles without hiring. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-16-blog-seo-article-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Article workflow from keyword to draft.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Bloggers, niche site owners.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-16-blog-seo-article-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-16-blog-seo-article-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 16 — Blog & SEO Article — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-16-blog-seo-article-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-17-business-in-a-box-orchestrator-agent-kit/project.md b/ai-agent-team/products/agent-17-business-in-a-box-orchestrator-agent-kit/project.md
+new file mode 100644
+index 0000000..d19719d
+--- /dev/null
++++ b/ai-agent-team/products/agent-17-business-in-a-box-orchestrator-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 17 — Business-in-a-Box Orchestrator
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++New founders overwhelmed by tools. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-17-business-in-a-box-orchestrator-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Orchestrates other agent kits into one path.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Starter entrepreneurs.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-17-business-in-a-box-orchestrator-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-17-business-in-a-box-orchestrator-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 17 — Business-in-a-Box Orchestrator — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-17-business-in-a-box-orchestrator-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-18-ai-ops-admin-agent-kit/project.md b/ai-agent-team/products/agent-18-ai-ops-admin-agent-kit/project.md
+new file mode 100644
+index 0000000..231f82b
+--- /dev/null
++++ b/ai-agent-team/products/agent-18-ai-ops-admin-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 18 — AI Ops & Admin
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Back-office tasks done ad hoc. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-18-ai-ops-admin-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++50 ops workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Virtual assistants and founders.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-18-ai-ops-admin-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-18-ai-ops-admin-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 18 — AI Ops & Admin — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-18-ai-ops-admin-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-19-etsy-shop-analytics-agent-kit/project.md b/ai-agent-team/products/agent-19-etsy-shop-analytics-agent-kit/project.md
+new file mode 100644
+index 0000000..e58540d
+--- /dev/null
++++ b/ai-agent-team/products/agent-19-etsy-shop-analytics-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 19 — Etsy Shop Analytics
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Sellers who don't act on stats. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-19-etsy-shop-analytics-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Interpret Etsy stats → action list.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Etsy power sellers.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-19-etsy-shop-analytics-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-19-etsy-shop-analytics-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 19 — Etsy Shop Analytics — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-19-etsy-shop-analytics-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/agent-20-coach-consultant-professional-agent-kit/project.md b/ai-agent-team/products/agent-20-coach-consultant-professional-agent-kit/project.md
+new file mode 100644
+index 0000000..7760b41
+--- /dev/null
++++ b/ai-agent-team/products/agent-20-coach-consultant-professional-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# Agent 20 — Coach & Consultant Professional
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
++
++---
++
++## Scope
++
++Coaches packaging IP. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-20-coach-consultant-professional-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Client delivery workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Coaches and consultants.
++
++---
++
++## ✅ Done
++
++- [x] Playbook (SOP) present in `01-playbook/`
++- [x] Workflows pack present in `02-workflows/`
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/agent-20-coach-consultant-professional-agent-kit/01-playbook/ | Complete |
++| Build output ZIP | ai-agent-team/dist/agent-20-coach-consultant-professional-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Agent 20 — Coach & Consultant Professional — playbook + workflows (this kit)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-agent-20-coach-consultant-professional-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/ai-client-onboarding-agent-kit/project.md b/ai-agent-team/products/ai-client-onboarding-agent-kit/project.md
+new file mode 100644
+index 0000000..a788796
+--- /dev/null
++++ b/ai-agent-team/products/ai-client-onboarding-agent-kit/project.md
+@@ -0,0 +1,98 @@
++# AI Client Onboarding Agent Kit
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 36%
++
++---
++
++## Scope
++
++Legacy standalone onboarding SKU. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/ai-client-onboarding-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Same outcomes as Agent 04 packaging.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Service businesses.
++
++---
++
++## ✅ Done
++
++- [x] Examples / excellence v2 present in `04-examples/`
++- [x] Implementation guide present in `05-implementation/`
++- [x] Artifacts & scorecards present in `07-artifacts/`
++- [x] Vertical variants present in `08-verticals/`
++- [x] Video scripts present in `09-video-scripts/`
++
++---
++
++## ☐ To Do
++
++- [ ] Complete `01-playbook/`
++- [ ] Complete `02-workflows/`
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/ai-client-onboarding-agent-kit/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/ai-client-onboarding-agent-kit.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Multiple agents (bundle)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-ai-client-onboarding-agent-kit`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/ai-ops-agent-library/project.md b/ai-agent-team/products/ai-ops-agent-library/project.md
+new file mode 100644
+index 0000000..0b3bb44
+--- /dev/null
++++ b/ai-agent-team/products/ai-ops-agent-library/project.md
+@@ -0,0 +1,92 @@
++# AI Ops Agent Library (50)
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Library of ops workflows. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/ai-ops-agent-library/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++ZIP of 50 workflows.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Ops / VA market.
++
++---
++
++## ✅ Done
++
++- [x] Source content files in product folder
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/ai-ops-agent-library/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/ai-ops-agent-library.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Multiple agents (bundle)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-ai-ops-agent-library`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/business-in-a-box-starter/project.md b/ai-agent-team/products/business-in-a-box-starter/project.md
+new file mode 100644
+index 0000000..43ea09c
+--- /dev/null
++++ b/ai-agent-team/products/business-in-a-box-starter/project.md
+@@ -0,0 +1,92 @@
++# Business-in-a-Box Starter Bundle
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Entry bundle for new businesses. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/business-in-a-box-starter/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Assembled ZIP from multiple kits.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Bundle revenue on Etsy.
++
++---
++
++## ✅ Done
++
++- [x] Source content files in product folder
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/business-in-a-box-starter/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/business-in-a-box-starter.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Multiple agents (bundle)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-business-in-a-box-starter`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/copywriting-templates/project.md b/ai-agent-team/products/copywriting-templates/project.md
+new file mode 100644
+index 0000000..9764a43
+--- /dev/null
++++ b/ai-agent-team/products/copywriting-templates/project.md
+@@ -0,0 +1,92 @@
++# 50 Copywriting Templates
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Template-only SKU. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/copywriting-templates/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++50 business copy templates.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Low-ticket Etsy buyers.
++
++---
++
++## ✅ Done
++
++- [x] Source content files in product folder
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/copywriting-templates/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/copywriting-templates.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- None (asset/template SKU)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-copywriting-templates`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/marketing-command-center-excel/project.md b/ai-agent-team/products/marketing-command-center-excel/project.md
+new file mode 100644
+index 0000000..adf78e4
+--- /dev/null
++++ b/ai-agent-team/products/marketing-command-center-excel/project.md
+@@ -0,0 +1,92 @@
++# Marketing Command Center
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Excel planning system. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/marketing-command-center-excel/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Living spreadsheet for campaigns.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Agent 03 companion.
++
++---
++
++## ✅ Done
++
++- [x] Source content files in product folder
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/marketing-command-center-excel/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/marketing-command-center-excel.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- None (asset/template SKU)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-marketing-command-center-excel`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/postcard-direct-mail-pack/project.md b/ai-agent-team/products/postcard-direct-mail-pack/project.md
+new file mode 100644
+index 0000000..b13e1e5
+--- /dev/null
++++ b/ai-agent-team/products/postcard-direct-mail-pack/project.md
+@@ -0,0 +1,92 @@
++# Postcard Direct-Mail Pack
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Postcard templates. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/postcard-direct-mail-pack/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Print-ready direct mail assets.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Agent 14 companion.
++
++---
++
++## ✅ Done
++
++- [x] Source content files in product folder
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/postcard-direct-mail-pack/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/postcard-direct-mail-pack.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- None (asset/template SKU)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-postcard-direct-mail-pack`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/top-10-ai-agents-bundle/project.md b/ai-agent-team/products/top-10-ai-agents-bundle/project.md
+new file mode 100644
+index 0000000..3218606
+--- /dev/null
++++ b/ai-agent-team/products/top-10-ai-agents-bundle/project.md
+@@ -0,0 +1,92 @@
++# Top 10 AI Agents Bundle
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Bundle agents 1–10. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/top-10-ai-agents-bundle/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Single ZIP purchase.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Higher AOV Etsy listing.
++
++---
++
++## ✅ Done
++
++- [x] Bundle contains 10 agent folders
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/top-10-ai-agents-bundle/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/top-10-ai-agents-bundle.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Multiple agents (bundle)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-top-10-ai-agents-bundle`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+diff --git a/ai-agent-team/products/top-20-ai-agents-bundle/project.md b/ai-agent-team/products/top-20-ai-agents-bundle/project.md
+new file mode 100644
+index 0000000..46391dd
+--- /dev/null
++++ b/ai-agent-team/products/top-20-ai-agents-bundle/project.md
+@@ -0,0 +1,92 @@
++# Top 20 AI Agents Bundle
++
++**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 12%
++
++---
++
++## Scope
++
++Full catalog bundle. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/top-20-ai-agents-bundle/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
++
++---
++
++## Proposed Outcome
++
++Single ZIP all agents.
++
++**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
++
++---
++
++## Opportunity Value
++
++Flagship Etsy bundle.
++
++---
++
++## ✅ Done
++
++- [x] Bundle contains 20 agent folders
++
++---
++
++## ☐ To Do
++
++- [ ] Replace [YOUR BRAND] placeholders in buyer copy
++- [ ] Run npm run products:build — ZIP in dist/
++- [ ] Verify ZIP under Etsy file size limit
++- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
++- [ ] Listing images / Canva art (optional)
++- [ ] Upload digital download on Etsy
++- [ ] Buyer smoke test (unzip + README)
++
++---
++
++## Stack
++
++- Markdown playbooks & workflows in repo
++- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
++- Optional: Canva API, n8n (branch integrations)
++
++---
++
++## Artifacts
++
++| Artifact | Path / Link | Status |
++|----------|-------------|--------|
++| Playbook | products/top-20-ai-agents-bundle/01-playbook/ | Draft |
++| Build output ZIP | ai-agent-team/dist/top-20-ai-agents-bundle.zip | [TBD] |
++| Etsy listing | [TBD URL] | [TBD] |
++
++---
++
++## AI Agents Created
++
++- Multiple agents (bundle)
++
++---
++
++## Alternative Uses / Re-Niching
++
++- White-label for agencies ([YOUR BRAND])
++- Vertical-specific packs under `08-verticals/`
++- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
++
++---
++
++## API Keys Needed
++
++- None for buyer ZIP contents
++- Canva / Etsy API only if using branch automation scripts
++
++---
++
++## Notes
++
++- Registry id: `push-etsy-top-20-ai-agents-bundle`
++- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
++- [TBD] Final Etsy listing URL and price
++
++---
++
++*[YOUR BRAND] · project.md — updated 2026-09-12*
+-- 
+2.43.0
+
