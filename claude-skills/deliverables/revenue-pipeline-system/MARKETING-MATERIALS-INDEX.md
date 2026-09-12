@@ -15,7 +15,7 @@
 | **`LISTING-ETSY.md`** | Pointer to paste files |
 | **`NICHE-POSITIONING.md`** | ICP and angles |
 
-**Hero on Image 1 (Architect v4):** *Which Prospect Deserves Your Monday?*  
+**Hero on Image 1 (Architect v4):** *Know who's HOT before Monday.* (Caples question stays in listing body.)  
 **Etsy search title field:** `ETSY-PRODUCT-COPY.md`
 
 **Rule:** Any listing with visuals → ship **`MOCKUP-SPEC.md`** alongside copy.

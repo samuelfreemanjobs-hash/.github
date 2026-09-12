@@ -30,7 +30,7 @@ Minimal professional B2B digital product cover, square 2000x2000, dark navy back
 
 | Element | Copy |
 |---------|------|
-| Headline | Which Prospect Deserves Your Monday? |
+| Headline | Know who's HOT before Monday. |
 | Product line | Revenue Pipeline System |
 | Subhead | (HUNTER CRM) · Airtable + Claude |
 | Bullets | 100-pt lead score · HOT / HIGH tiers · Outreach log |

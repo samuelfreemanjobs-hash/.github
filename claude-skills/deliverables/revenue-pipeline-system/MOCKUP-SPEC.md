@@ -63,7 +63,7 @@
 
 ### Image 1 — Hero (thumbnail)
 
-**Purpose:** Search click-through; Caples hook + product name.
+**Purpose:** Search click-through; 8-word spine + product name (readable at ~300px).
 
 **Layout**
 
@@ -75,10 +75,10 @@
 
 | Zone | Text |
 |------|------|
-| Headline | Which Prospect Deserves Your Monday? |
+| Headline | Know who's HOT before Monday. |
 | Product line | Revenue Pipeline System |
 | Subline | (HUNTER CRM) · Airtable + Claude |
-| Bullets | 100-pt lead score · HOT / HIGH tiers · Outreach log |
+| Bullets | 100-pt score · 7 dimensions · ~45 min setup |
 | Footer | Consultant edition · Instant digital download |
 | Accent | 4 px amber bar under headline |
 
@@ -245,5 +245,6 @@ Wide Etsy shop banner, navy background, subtle grid pattern, professional B2B co
 | Date | Change |
 |------|--------|
 | 2026-09-12 | v1 — Architect hero headline; 5-frame Etsy set + banner |
+| 2026-09-12 | v1.1 — Hero = 8-word spine; bullets = spec facts |
 
 **Rule for all Freeman digital SKUs:** Create **`MOCKUP-SPEC.md`** alongside copy whenever listing visuals are in scope.

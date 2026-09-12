@@ -7,7 +7,7 @@
 | **SKU** | Revenue Pipeline System (HUNTER CRM) v1.0 Consultant |
 | **Price** | $97 · Etsy + Gumroad |
 | **Brand** | Navy `#0F172A` · White · Amber `#D97706` · Inter/DM Sans |
-| **Hero headline** | Which Prospect Deserves Your Monday? |
+| **Hero headline** | Know who's HOT before Monday. |
 | **Product line** | Revenue Pipeline System (HUNTER CRM) |
 
 ## Deliver 6 PNGs

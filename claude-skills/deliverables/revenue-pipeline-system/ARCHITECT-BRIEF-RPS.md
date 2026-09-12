@@ -10,5 +10,5 @@
 **Schwartz stage:** **Problem-Aware → Solution-Aware** (feel pipeline pain; may not know scored Airtable + AI rubric exists).  
 **Market sophistication:** Stage 3–4 (many templates/CRMs; differentiate on **7-dimension rubric + HOT tiers + outreach log**).  
 **Trackable CTA:** Purchase → open ZIP → QUICK-START PDF → copy Airtable from SETUP-GUIDE page 1 → score 5 leads in 45 min.  
-**Proof policy:** Fictional demo companies only; no fabricated reviews/stats. `[PROOF NEEDED]` for live testimonials until beta quotes exist.  
+**Proof policy:** Frank Kern **mechanism + identity** in listing copy; **credibility = product specs & logic** (rubric math, tiers, 45-min setup, evidence-only rule). Fictional demo companies only. No fabricated reviews, stats, or testimonials.  
 **Never do:** Guaranteed revenue · fake urgency · enterprise CRM replacement claims · scraped leads promise.

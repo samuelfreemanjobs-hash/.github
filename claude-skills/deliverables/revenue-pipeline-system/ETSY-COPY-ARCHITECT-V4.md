@@ -1,6 +1,7 @@
 # Etsy copy — The Architect (Galactic v4) · Revenue Pipeline System
 
 Diagnostics: Problem-Aware / Solution-Aware · Sophistication 3–4 · T3 listing body · T1 headlines.  
+**Persuasion frame:** Frank Kern **mechanism + identity** (install one scoring layer; no income story). **Proof:** product **specs & logic** — no testimonials, no fabricated stats.  
 CTA: Instant download → Setup Guide page 1 → copy Airtable → score 5 leads (45 min).
 
 ---
@@ -15,7 +16,9 @@ CTA: Instant download → Setup Guide page 1 → copy Airtable → score 5 leads
 | 4 | **Forty-five minutes to ranked leads.** |
 | 5 | **Airtable pipeline with a brain.** |
 
-**Winner for Etsy thumbnail line:** **Know who's HOT before Monday.**
+**Winner (thumbnail + listing spine):** **Know who's HOT before Monday.**
+
+Caples question (*Which prospect deserves your Monday?*) stays in **description / bullets** — not on Image 1 (too long for 300px thumb).
 
 ---
 
@@ -32,16 +35,18 @@ CTA: Instant download → Setup Guide page 1 → copy Airtable → score 5 leads
 9. **Instant Download: Consultant Pipeline Template + Claude Scoring Prompt**  
 10. **Before You Send Another Cold Email — Score the Account**
 
-**Etsy title field (search, 139 chars — keep keywords):**
+**Etsy title field (search, ≤140 chars — HUNTER in product name, not title):**
 
 ```
-Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Digital Download HUNTER
+Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Priority Digital Download
 ```
 
-**On-image hero (Caples #1 shortened):**
+*(139 characters — “Priority” replaces dropped codename for search.)*
+
+**On-image hero (8-word spine + product):**
 
 ```
-Which Prospect Deserves Your Monday?
+Know who's HOT before Monday.
 Revenue Pipeline System (HUNTER CRM)
 ```
 
@@ -50,22 +55,33 @@ Revenue Pipeline System (HUNTER CRM)
 ## Opening hook (first 2 lines — Sugarman slide)
 
 ```
-Every prospect feels "kind of good" until you score them. This kit gives you an Airtable pipeline + Claude rubric so each lead earns a 0–100 score and a tier: HOT · HIGH · MEDIUM · WATCH — then you log outreach so you never double-email the same COO.
-Instant download: Setup Guide PDF (Airtable copy link on page 1), Quick Start, scoring prompt, outreach templates — built for consultants selling $3K+ deals, not for ecommerce or Salesforce teams.
+Know who's HOT before Monday — without a Salesforce rollout. Copy an Airtable pipeline + Claude rubric: each lead gets 0–100 points, a tier (HOT · HIGH · MEDIUM · WATCH), and a logged outreach trail so you don't re-pitch the same decision-maker.
+Instant download for consultants on $3K+ deals: Setup Guide PDF (Airtable copy link page 1), Quick Start (~45 min Day 1), scoring prompt, templates — not for B2C or enterprise CRM migrations.
 ```
 
 ---
 
-## Full Etsy description (DRAFT → use after EDITOR pass)
+## Full Etsy description (DRAFT → ship)
+
+**Hook**  
+Every prospect feels "kind of good" until you score them. **Which prospect deserves your Monday?** That's a math question — not a willpower question.
+
+**The mechanism (Frank Kern — one belief to install)**  
+When every row in your sheet has the same priority, call order defaults to **recency and noise**. This kit installs one layer: **evidence → weighted score → tier → sort**. Same hour on your calendar; different input: numbers you can defend.
+
+**Three outcomes (before you open the ZIP)**  
+1. **Rank** — 0–100 from seven weighted dimensions (rubric + Claude prompt; evidence only).  
+2. **Sort** — HOT · HIGH · MEDIUM · WATCH with thresholds in Airtable (not manual highlighting).  
+3. **Log** — Outreach Log so touches are dated; no accidental double-email to the same champion.
 
 **Problem**  
-You research. You write. You still don't know who deserves the call. Spreadsheets hide priority. Real CRMs eat months. So you treat every lead like it's equal — and equal is expensive.
+You research. You write. Spreadsheets hide priority. Heavy CRMs eat months. So you treat leads as equal — and equal is expensive in time.
 
 **Agitate**  
-Monday goes to the loud account, not the ready one. You re-pitch someone who already ghosted. You skip the quiet company that was actually HOT because nothing in your sheet screamed "now." That's not a discipline problem. It's a **scoring** problem.
+Monday goes to the loud account, not the ready one. You re-pitch someone who already ghosted. You skip the quiet company that was actually HOT because nothing in your sheet said "now." That's not a discipline problem. It's a **scoring** problem.
 
 **Solve**  
-**Revenue Pipeline System (HUNTER CRM)** — Consultant edition by Freeman Intelligence. Copy an Airtable base (link in **SETUP-GUIDE.pdf**). Paste your offers. Add evidence. Run the **Claude scoring prompt**. Sort by tier. Log every touch in **Outreach Log**.
+**Revenue Pipeline System (HUNTER CRM)** — Consultant edition by Freeman Intelligence. Copy the Airtable base (link in **SETUP-GUIDE.pdf**). Paste your offers. Add evidence. Run the **Claude scoring prompt**. Sort by tier. Log every touch.
 
 **What you download (ZIP)**  
 - SETUP-GUIDE.pdf — **Airtable copy link page 1**  
@@ -75,15 +91,25 @@ Monday goes to the loud account, not the ready one. You re-pitch someone who alr
 - SERVICE-CATALOG-CONSULTANTS.md · EXAMPLE-OPPORTUNITIES.md (fictional demos)  
 - README.txt · LICENSE.txt  
 
-**How scoring works (reason-why)**  
-Seven dimensions, 100 points: Problem Severity · Buying Signal · Ability to Pay · Service Fit · Accessibility · Urgency · Competitive Pressure.  
-Tiers: **HOT ≥90 · HIGH ≥75 · MEDIUM ≥60 · WATCH** below that. Formulas live in Airtable — not vibes.
+**Facts & specs (reason-why — verifiable in the kit)**  
+
+| Spec | Detail |
+|------|--------|
+| Score range | 0–100 (seven dimensions; weights sum to 100) |
+| Dimensions | Problem Severity 25 · Buying Signal 20 · Ability to Pay 15 · Service Fit 15 · Accessibility 10 · Urgency 10 · Competitive Pressure 5 |
+| Tiers | HOT ≥90 · HIGH ≥75 · MEDIUM ≥60 · WATCH &lt;60 |
+| Airtable objects | Opportunities · Outreach Log · Service Catalog |
+| Day 1 setup | ~45 minutes (Quick Start) |
+| Scoring rule | Evidence only — prompt instructs no invented facts |
+| ICP | Consultants / boutique agencies (&lt;~20) / fractionals on **$3K+** projects & retainers |
+
+Scores are **decision support**, not revenue guarantees. Demo companies in examples are **fictional**.
 
 **Built for**  
-Management consultants · boutique agencies (&lt;~20 people) · fractional CMO/CRO/RevOps · founders who still carry high-ticket sales.
+Management consultants · boutique agencies · fractional CMO/CRO/RevOps · founders who still carry high-ticket sales.
 
 **Not for**  
-B2C · enterprise Salesforce shops · buyers who want scraped lists · anyone buying a revenue guarantee. Scores are **decision support**, not promises. `[PROOF NEEDED: customer testimonials when available]`
+B2C · enterprise Salesforce shops · buyers who want scraped lists · anyone buying a revenue guarantee.
 
 **Requirements**  
 Airtable account · Claude or similar LLM · ~45 minutes Day 1 · no code.
@@ -103,13 +129,13 @@ Questions: message the shop or **samuelfreemanjobs@gmail.com** (order #).
 | Dimension | Score | Note |
 |-----------|-------|------|
 | Clarity | 9 | One offer, one path |
-| Hook | 9 | Caples + 8-word spine |
-| Proof | 7 | Honest; no fake social proof |
+| Hook | 9 | 8-word spine on hero; Caples in body |
+| Proof | 9 | Spec table + logic; no fake social proof |
 | CTA | 9 | Step sequence |
-| Voice | 9 | Single Architect tone |
+| Voice | 9 | Mechanism + identity (Kern), Architect tone |
 | Compliance | 9 | No income claims |
 
-**Average ≥ 8.0** — ship to Etsy description after you swap `[PROOF NEEDED]` when testimonials exist.
+**Average ≥ 8.0** — ship to Etsy description.
 
 ---
 
@@ -135,8 +161,8 @@ pipeline management
 
 ## Canva hero text (Architect-aligned)
 
-**Headline:** Which Prospect Deserves Your Monday?  
+**Headline:** Know who's HOT before Monday.  
 **Sub:** Revenue Pipeline System (HUNTER CRM)  
 **Bar:** 100-point score · HOT / HIGH tiers · Instant download  
 
-See `CANVA-DESIGN-PROMPTS.md` for AI image prompts; swap Image 1 overlay to this headline set.
+See `CANVA-DESIGN-PROMPTS.md` for AI image prompts; Image 1 uses this headline set.

@@ -8,7 +8,7 @@
 ## Title (139 / 140 characters)
 
 ```
-Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Digital Download HUNTER
+Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Priority Digital Download
 ```
 
 ---
@@ -38,8 +38,8 @@ pipeline management
 ## Opening hook (first 2 lines)
 
 ```
-Stop guessing which prospect deserves your Monday. Copy an Airtable pipeline built for consultants selling $3K+ deals — 100-point scoring, HOT/HIGH tiers, and outreach logging (no code).
-Instant download: Setup Guide PDF, Quick Start, Claude scoring prompt, outreach templates + Airtable copy link inside your PDF.
+Know who's HOT before Monday — Airtable pipeline + Claude rubric for consultants on $3K+ deals. Every lead: 0–100 score, HOT/HIGH tier, outreach log (no code).
+Instant download: Setup Guide PDF (Airtable copy link page 1), Quick Start (~45 min), scoring prompt, templates.
 ```
 
 ---
@@ -50,11 +50,17 @@ Paste everything between the lines into Etsy **Description**.
 
 ---BEGIN---
 
-**Stop guessing which prospect deserves your Monday.**
+**Know who's HOT before Monday.**
 
-You research companies, write outreach, and still aren’t sure who is actually worth a call. Spreadsheets hide priority. Heavy CRMs take months. This kit gives you a **lightweight B2B pipeline in Airtable** plus a **structured Claude prompt** so every lead gets a **0–100 score** and a clear tier: **HOT · HIGH · MEDIUM · WATCH**.
+Which prospect deserves your call? When every lead has the same priority in a spreadsheet, you sort by noise — not fit. This kit adds one mechanism: **evidence → score → tier → sort**.
 
-**Revenue Pipeline System (HUNTER CRM)** — v1.0 **Consultant edition** by Freeman Intelligence. Built for **consultants, boutique agencies, and fractional operators** selling **$3K+ projects and retainers**. Not for ecommerce or enterprise Salesforce teams.
+**Three things you get (outcomes, not file list)**
+
+1. **Rank** — 0–100 from seven weighted dimensions (Claude prompt + calibration docs; evidence only).  
+2. **Sort** — HOT · HIGH · MEDIUM · WATCH with thresholds in Airtable.  
+3. **Log** — Outreach Log so you don't double-email the same decision-maker.
+
+**Revenue Pipeline System (HUNTER CRM)** — v1.0 **Consultant edition** by Freeman Intelligence. Built for **consultants, boutique agencies, and fractional operators** on **$3K+ projects and retainers**. Not for ecommerce or enterprise Salesforce teams.
 
 **WHAT YOU GET (instant download ZIP)**
 
@@ -62,9 +68,16 @@ You research companies, write outreach, and still aren’t sure who is actually 
 - QUICK-START-ONE-PAGER.pdf — Day 1 (~45 min)
 - CLAUDE-SCORING-PROMPT (.md + .txt)
 - SCORING-CALIBRATION.md · OUTREACH-TEMPLATES.md · FAQ.md
-- SERVICE-CATALOG-CONSULTANTS.md · EXAMPLE-OPPORTUNITIES.md
+- SERVICE-CATALOG-CONSULTANTS.md · EXAMPLE-OPPORTUNITIES.md (fictional demos)
 - README.txt · LICENSE.txt
 - Copyable Airtable base (Opportunities, Outreach Log, Service Catalog)
+
+**FACTS & SPECS (in the template — not marketing hype)**
+
+- **100 points** across 7 dimensions (weights: 25 · 20 · 15 · 15 · 10 · 10 · 5)
+- **Tiers:** HOT ≥90 · HIGH ≥75 · MEDIUM ≥60 · WATCH below 60
+- **Tables:** Opportunities · Outreach Log · Service Catalog
+- **Scoring rule:** evidence only (no invented facts in the prompt)
 
 **HOW IT WORKS**
 
@@ -74,13 +87,9 @@ You research companies, write outreach, and still aren’t sure who is actually 
 4. Run the Claude prompt → paste scores into Airtable  
 5. Work HOT/HIGH first; log every touch in Outreach Log  
 
-**7 DIMENSIONS (100 points)** — Problem Severity · Buying Signal · Ability to Pay · Service Fit · Accessibility · Urgency · Competitive Pressure  
-
-**TIERS** — HOT ≥90 · HIGH ≥75 · MEDIUM ≥60 · WATCH below 60  
-
 **REQUIREMENTS** — Airtable account + Claude (or similar). No coding.
 
-**NOT INCLUDED** — Lead lists, email automation, CRM migration, revenue guarantees.
+**NOT INCLUDED** — Lead lists, email automation, CRM migration, revenue guarantees. Scores = decision support.
 
 **LICENSE** — Single business use. Do not resell the template as a competing product.
 
@@ -106,4 +115,4 @@ You research companies, write outreach, and still aren’t sure who is actually 
 
 ## Shop announcement (optional, 1 line)
 
-New: **Revenue Pipeline System (HUNTER CRM)** — Airtable + Claude scoring for consultants ($3K+ deals). Instant download.
+New: **Revenue Pipeline System (HUNTER CRM)** — Know who's HOT before Monday. Airtable + Claude scoring ($3K+ deals). Instant download.

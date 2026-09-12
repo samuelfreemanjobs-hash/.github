@@ -37,10 +37,10 @@ Suggested pattern:
 
 ### Title (140 characters max)
 
-**Character count: 139**
+**Character count: 139** (codename **HUNTER CRM** stays in product name on-image / in ZIP — not in Etsy title)
 
 ```
-Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Digital Download HUNTER
+Airtable B2B Lead Scoring Template Consultant CRM 100-Point Claude AI Prompt Sales Pipeline Priority Digital Download
 ```
 
 ### Price
