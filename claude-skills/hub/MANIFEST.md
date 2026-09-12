@@ -20,6 +20,7 @@ Use this to avoid stale or missing context.
 | 07/operating-rules.md | ○ | ● | ○ | ● | ● |
 | 08/human-roles.md | ○ | ○ | ○ | ● | ○ |
 | agents/REGISTRY.md | ○ | ○ | ○ | ● | ● |
+| agents/PM-AGENT-COMMANDS.md | ○ | ○ | ○ | ○ | ● |
 
 ● = load when running skill · ○ = optional / section agent only
 
