@@ -14,6 +14,10 @@ Upload **`dist/revenue-pipeline-system-etsy-digital.zip`**.
 
 `etsy-digital-product/ETSY-LISTING.md` in the monorepo — full title, description, tags, thank-you message.
 
-## Buyer entrypoint
+## Buyer entrypoints
 
-`START_HERE.md` at the root of the ZIP.
+- **No install:** `00-PDF-Guides/00-PDF-Only-Path.pdf`
+- **Full stack:** `START_HERE.md` or `00-PDF-Guides/01-Quick-Start.pdf` (includes walkthrough link when `VIDEO_URL` is set)
+- **Node help:** `00-PDF-Guides/02-Install-Node-Mac-Windows.pdf`
+
+Seller video workflow: `etsy-digital-product/RECORD-WALKTHROUGH.md` in the monorepo.
