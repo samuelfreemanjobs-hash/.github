@@ -62,3 +62,5 @@ Full detail in master plan.
 - `deliverables/hub-init/`
 - `deliverables/hub-audits/`
 - `deliverables/revenue-pipeline-system/` — **Revenue Pipeline System (HUNTER CRM)** $97 launch kit
+- `deliverables/revenue-intel-agent-v5/` — **Revenue Intel Agent v5.0** (Phase 0 productization)
+- `revenue-intel-agent/SKILL.md` — invoke `/revenue-intel-agent`

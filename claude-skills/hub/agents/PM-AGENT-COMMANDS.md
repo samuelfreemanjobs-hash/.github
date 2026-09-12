@@ -34,6 +34,7 @@ Use these phrases in chat so any agent with Airtable (Zapier MCP or Airtable MCP
 | HIGH | PM Agent — Proactive Project Intelligence | YELLOW | 30 | PHASE 3: pm-agent-system-prompt |
 | MEDIUM | Agent IP Registry | GREEN | 70 | Paste TheFreemanFix + Clinical git URLs |
 | MEDIUM | HUNTER — Revenue Pipeline CRM | GREEN | 90 | List $97 product on Gumroad/Etsy |
+| MEDIUM | Revenue Intel Agent | YELLOW | 35 | **Phase 0:** Sam review portal + Gem delta merge |
 
 **Portfolio:** 15 active-ish rows · **Revenue unlock (human):** Clinical calls > Copy outreach > Etsy listings > HUNTER $97 listing.
 
