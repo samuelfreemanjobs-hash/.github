@@ -1,0 +1,25 @@
+# PM build list (repo mirror)
+
+> **Source of truth:** Airtable Freeman Intelligence — PM · **Projects** `tblRGiHqxz0K8Q0qi`  
+> When Zapier is available, agents apply rows via **PM ADD** / **PM UPDATE** / **PM ARTIFACT ADD**.  
+> This file is the offline queue until sync.
+
+## Queue
+
+| Added | Priority | Project | Build item | Next action | Repo / run |
+|-------|----------|---------|------------|-------------|------------|
+| 2026-09-12 | HIGH | **Revenue Intel Agent** | **Etsy Shop Revenue Brief SKU** — Weekly brief agent for Etsy digital product sellers ($24 Etsy, v5.1 edition) | Draft Etsy listing + 1-page “paste from Shop Stats” guide · target live **2026-09-19** | `deliverables/revenue-intel-agent-v5/runs/2026-09-12-etsy-shop-revenue-brief.json` |
+| 2026-09-12 | MEDIUM | **Revenue Intel Agent** | Stats vs bank fee paragraph add-on (Hypothesis O2) | Dogfood with real Stats + Payments export | Same run JSON · O2 |
+| 2026-09-12 | MEDIUM | **Etsy Digital Agents Store** | List **Etsy Shop Revenue Brief Agent** (channel) | After listing copy approved · link from store hub | Shares SKU with Revenue Intel |
+
+## Airtable paste (Sam — when API blocked)
+
+**PM UPDATE:** Revenue Intel Agent — Next Action = `Build Etsy Shop Revenue Brief SKU: listing + Stats paste guide (Validated run 2026-09-12) · due 2026-09-19`
+
+**PM UPDATE:** Revenue Intel Agent — % Complete = `45` (was 35)
+
+**PM UPDATE:** Revenue Intel Agent — Notes = append: `ICP locked: Etsy digital product sellers · Niche: Etsy shop revenue brief · Market: Etsy · Validated O1 in runs/2026-09-12-etsy-shop-revenue-brief.json`
+
+**PM ARTIFACT ADD:** Etsy Shop Revenue Brief Agent (Etsy SKU) → Revenue Intel Agent · Path = `claude-skills/deliverables/revenue-intel-agent-v5/runs/2026-09-12-etsy-shop-revenue-brief.json`
+
+**PM UPDATE:** Etsy Digital Agents Store — Next Action = `Add Etsy Shop Revenue Brief Agent listing to first-5 Etsy queue`

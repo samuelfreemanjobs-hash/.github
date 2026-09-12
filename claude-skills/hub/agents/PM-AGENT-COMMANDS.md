@@ -29,12 +29,13 @@ Use these phrases in chat so any agent with Airtable (Zapier MCP or Airtable MCP
 | CRITICAL | Clinical Revenue Systems Engineering | RED | 20 | 5 secret-shopper calls (after 5pm) |
 | HIGH | OIS — OpExcel (Automotive AI) | YELLOW | 25 | LinkedIn + 50-target prospect list |
 | HIGH | Agent Ecosystem + Agents Explained Book | GREEN | 50 | Ch.6 + Linear in Cursor MCP |
-| HIGH | Etsy Digital Agents Store | YELLOW | 40 | First 5 Etsy listings |
+| HIGH | Etsy Digital Agents Store | YELLOW | 40 | First 5 Etsy listings (incl. Shop Revenue Brief Agent) |
 | HIGH | Freeman Copy Studio | GREEN | 65 | Dripify 20 connections/day |
 | HIGH | PM Agent — Proactive Project Intelligence | YELLOW | 30 | PHASE 3: pm-agent-system-prompt |
 | MEDIUM | Agent IP Registry | GREEN | 70 | Paste TheFreemanFix + Clinical git URLs |
 | MEDIUM | HUNTER — Revenue Pipeline CRM | GREEN | 90 | List $97 product on Gumroad/Etsy |
-| MEDIUM | Revenue Intel Agent | YELLOW | 35 | **Phase 0:** Sam review portal + Gem delta merge |
+| MEDIUM | Revenue Intel Agent | YELLOW | 45 | **BUILD:** Etsy Shop Revenue Brief SKU — listing + Stats paste guide (due 2026-09-19) |
+| MEDIUM | Etsy Digital Agents Store | YELLOW | 40 | Queue: Etsy Shop Revenue Brief Agent listing (after copy) |
 
 **Portfolio:** 15 active-ish rows · **Revenue unlock (human):** Clinical calls > Copy outreach > Etsy listings > HUNTER $97 listing.
 
@@ -42,4 +43,4 @@ Use these phrases in chat so any agent with Airtable (Zapier MCP or Airtable MCP
 
 **Sam-only:** private repo URLs, sales calls, Etsy publish, legal/HIPAA sign-off, Dripify/Stripe live tweaks.
 
-See also [AIRTABLE-ARTIFACTS.md](./AIRTABLE-ARTIFACTS.md) and [FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md](./FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md).
+See also [AIRTABLE-ARTIFACTS.md](./AIRTABLE-ARTIFACTS.md), [PM-BUILD-LIST.md](./PM-BUILD-LIST.md), and [FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md](./FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md).

@@ -30,7 +30,8 @@
 |------|-------|--------|
 | Review portal HTML | Agent | **Done** |
 | Example run: 1 sample opportunity brief (`examples/sample-opportunity-brief.md`) | Agent | **Done** |
-| Dogfood: Sam runs 3 real Metro Detroit targets | Sam | **Not started** |
+| Dogfood: Sam runs 3 real Metro Detroit targets | Sam | **In progress** — Etsy shop revenue brief run Validated (2026-09-12) |
+| PM build list: Etsy Shop Revenue Brief SKU | Agent | **Queued** — `hub/agents/PM-BUILD-LIST.md` |
 
 ## 0.4 Commercial prep (no public listing yet)
 
