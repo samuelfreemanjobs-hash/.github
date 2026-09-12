@@ -1,0 +1,27 @@
+# Vector / RAG ingest scope (Tier M3)
+
+version: 1
+refresh:
+  cron: "0 9 * * 0"   # weekly Sunday 09:00 local — manual ok
+  on_hub_git_commit: true
+
+include:
+  - hub/01-identity-strategy/**
+  - hub/03-product-delivery/**
+  - hub/05-marketing-growth/**
+  - deliverables/ad-packs/**
+  - deliverables/pricing-memos/**
+  - projects/*/docs/**
+
+exclude:
+  - hub/02-legal-finance-trust/**   # enable after redaction review
+  - memory/session-logs/**
+  - "**/*.env*"
+
+chunking:
+  max_tokens: 512
+  overlap: 64
+
+promotion:
+  require_human: true
+  candidate_source: memory/session-logs/
