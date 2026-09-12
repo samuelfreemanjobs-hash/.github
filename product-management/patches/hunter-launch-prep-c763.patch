@@ -77,10 +77,10 @@ index a21dca0..cbd1bc0 100644
  ENV PORT=3001
 diff --git a/GO_LIVE_RUNBOOK.md b/GO_LIVE_RUNBOOK.md
 new file mode 100644
-index 0000000..e4b7edc
+index 0000000..35528bb
 --- /dev/null
 +++ b/GO_LIVE_RUNBOOK.md
-@@ -0,0 +1,163 @@
+@@ -0,0 +1,173 @@
 +# HUNTER — Revenue Pipeline System · Go-Live Runbook
 +
 +**Product:** HUNTER Intelligence OS (aka **Revenue Pipeline System**)  
@@ -223,15 +223,25 @@ index 0000000..e4b7edc
 +
 +---
 +
-+## Licensing to another operator
++## Selling on Etsy (digital download)
 +
-+Package a white-label copy for a licensee:
++Build the file you upload to Etsy:
++
++```bash
++npm run build-etsy
++# → dist/hunter-revenue-pipeline-etsy-digital.zip
++```
++
++Listing copy, tags, and seller checklist: `etsy-digital-product/ETSY-LISTING.md`  
++Buyer opens **`START_HERE.md`** inside the ZIP (not included in listing upload separately).
++
++## Wholesale / custom operator license
 +
 +```bash
 +npm run build-operator-kit
 +```
 +
-+See `operator-license-kit/README.md`, `WHITE_LABEL.md`, and `docs/HANDOFF_CHECKLIST.md`.
++See `operator-license-kit/README.md` (B2B, not standard Etsy).
 +
 +Unified GTM (CRM + outreach + PDFs): `content/gtm/manifest.yaml` and `data/seed-leads.json`.
 +
@@ -1114,6 +1124,457 @@ index 8f21d07..7d246ea 100644
 +    "notes": "Unified GTM #10"
    }
  ]
+diff --git a/etsy-digital-product/BUYER-FAQ.md b/etsy-digital-product/BUYER-FAQ.md
+new file mode 100644
+index 0000000..a81f3e0
+--- /dev/null
++++ b/etsy-digital-product/BUYER-FAQ.md
+@@ -0,0 +1,22 @@
++# Buyer FAQ (include in listing or shop policies)
++
++**Is this a physical product?**  
++No. Instant digital download (ZIP). Etsy will provide a download link after purchase.
++
++**Do I need to code?**  
++Basic comfort with Terminal/command line helps. Steps are copy-paste in START_HERE.md. No coding required for the first local test.
++
++**What do I need to pay monthly?**  
++Optional: Supabase free tier, Railway/Render (~$5+), Resend, Gemini API. You can test locally with $0.
++
++**Can I sell this on Etsy again?**  
++No. See DIGITAL-LICENSE.txt — use it to run **your** consulting pipeline, not to resell the files.
++
++**What niche is this for?**  
++Built for **operational intelligence / systems consulting** targeting manufacturers (CNC, stamping, 3PL, etc.). Rebrand and adapt copy for your niche.
++
++**Refunds?**  
++Per your shop policy. Digital items are usually non-refundable once downloaded (Etsy policy).
++
++**Updates?**  
++If the seller offers lifetime updates, check the shop announcement; otherwise you receive the version at purchase time.
+diff --git a/etsy-digital-product/DIGITAL-LICENSE.txt b/etsy-digital-product/DIGITAL-LICENSE.txt
+new file mode 100644
+index 0000000..ffbf2b4
+--- /dev/null
++++ b/etsy-digital-product/DIGITAL-LICENSE.txt
+@@ -0,0 +1,22 @@
++HUNTER REVENUE PIPELINE SYSTEM — DIGITAL DOWNLOAD LICENSE
++
++Copyright (c) [YOUR SHOP LEGAL NAME]. All rights reserved.
++
++GRANT
++You may use this download for your own business, consulting practice, or internal operations.
++
++PERMITTED
++- Deploy one production instance for yourself or your company
++- White-label branding (your name, domain, emails)
++- Use templates and marketing content to sell services to your end clients
++- Modify code for your own use
++
++NOT PERMITTED
++- Resell, redistribute, or share the ZIP or source files
++- List this product (or substantially the same files) on Etsy, Gumroad, or other marketplaces
++- Claim original authorship of the underlying system for resale as a template pack
++
++NO WARRANTY
++Software and templates are provided "as is." You are responsible for compliance with email laws (CAN-SPAM, GDPR where applicable), contracts with your clients, and API terms (Google, Resend, Supabase, etc.).
++
++Questions: contact the seller via Etsy messages.
+diff --git a/etsy-digital-product/ETSY-KEYWORD-PASS.md b/etsy-digital-product/ETSY-KEYWORD-PASS.md
+new file mode 100644
+index 0000000..b11f27c
+--- /dev/null
++++ b/etsy-digital-product/ETSY-KEYWORD-PASS.md
+@@ -0,0 +1,31 @@
++# Etsy SEO keyword pass
++
++**Primary phrase:** revenue pipeline CRM digital download  
++**Secondary:** consultant sales system, B2B outreach templates, AI lead scoring kit
++
++## Title keywords (use 2–3)
++
++- revenue pipeline
++- CRM kit
++- digital download
++- consultant / agency
++- outreach templates
++- lead generation
++
++## First 160 characters of description (mobile preview)
++
++```
++Instant download revenue pipeline: CRM, 10 outreach emails, landing page, n8n automation. White-label for YOUR consulting brand. Not physical.
++```
++
++## Attributes to set in Etsy
++
++- Digital file: Yes  
++- Craft type: N/A — digital  
++- Occasion: Business startup / Small business  
++
++## Avoid (policy / confusion)
++
++- Do not claim "passive income guaranteed"
++- Do not say "fully hosted SaaS included" (buyer brings their own hosting)
++- Do not use trademarked tool names in title except as "works with Supabase/Cal.com" in description body
+diff --git a/etsy-digital-product/ETSY-LISTING.md b/etsy-digital-product/ETSY-LISTING.md
+new file mode 100644
+index 0000000..21bfe93
+--- /dev/null
++++ b/etsy-digital-product/ETSY-LISTING.md
+@@ -0,0 +1,109 @@
++# Etsy listing copy — HUNTER Revenue Pipeline System
++
++Use for **Digital download** listing. Replace `[YOUR SHOP]` and `[PRICE]`. Not legal advice.
++
++---
++
++## Listing type
++
++- **Category:** Digital downloads → Business & marketing → Templates / Software (pick closest)
++- **Delivery:** Automatic digital download (upload ZIP from `npm run build-etsy`)
++- **Personalization:** Off (or "Optional message" for buyer brand name only)
++
++---
++
++## Title (140 chars max)
++
++```
++Revenue Pipeline CRM Kit | AI Lead Scoring Outreach Templates | Consultant Digital Download
++```
++
++Alt shorter:
++
++```
++Sales Pipeline System Digital Download | CRM + Email Templates | AI Consultant Kit
++```
++
++---
++
++## Price guidance
++
++| Tier | Suggested | Notes |
++|------|-----------|--------|
++| Launch | $47–$79 | Volume + reviews |
++| Standard | $97–$149 | Matches "business system" kits |
++| Premium | $197+ | Bundle with 1-page video walkthrough |
++
++---
++
++## Description (paste into Etsy)
++
++```
++⚡ INSTANT DOWNLOAD — NOT A PHYSICAL ITEM
++
++Run your own revenue pipeline: CRM, lead scoring, outreach emails, landing page, and automation workflows — built for consultants and agencies who sell operational / systems work (manufacturing-friendly examples included).
++
++✅ WHAT'S INSIDE
++• Node.js revenue pipeline app (CRM + operator dashboard + landing page)
++• 10 pre-written leads with email copy + 4 give-before-ask PDF frameworks
++• LinkedIn post template, pricing catalog, MSA/SOW templates
++• n8n workflow JSON (lead discovery + follow-up)
++• Step-by-step START_HERE + go-live runbook
++
++✅ YOU CAN
++• White-label with YOUR brand ([YOUR BRAND] in docs)
++• Deploy on Railway/Render + Supabase
++• Use templates to sell diagnostics and projects to your clients
++
++❌ YOU CANNOT
++• Resell or re-upload this ZIP on Etsy or other marketplaces (personal/small business license)
++
++📋 REQUIREMENTS
++Computer with Node.js 20+. Optional: free Supabase, Cal.com, Resend, Gemini API keys for full automation.
++
++📥 AFTER PURCHASE
++Download the ZIP → open START_HERE.md → npm ci → npm start → npm run seed.
++
++Questions? Message [YOUR SHOP] on Etsy.
++
++© [YOUR SHOP] — digital product license included in download.
++```
++
++---
++
++## Tags (13)
++
++```
++sales pipeline
++crm template
++consultant kit
++digital download
++email templates
++lead generation
++ai business
++notion alternative
++small business
++marketing kit
++outreach template
++b2b sales
++automation workflow
++```
++
++---
++
++## Shop section
++
++Create section: **Revenue & CRM Systems** or file under existing **AI Agent Kits**.
++
++---
++
++## Files to upload
++
++1. `dist/hunter-revenue-pipeline-etsy-digital.zip` (from `npm run build-etsy`)
++2. Optional: 5 listing images (Canva) — mock CRM screenshot, folder tree, "what's included" checklist
++
++---
++
++## Seller checklist
++
++See `SELLER-CHECKLIST.md`
+diff --git a/etsy-digital-product/SELLER-CHECKLIST.md b/etsy-digital-product/SELLER-CHECKLIST.md
+new file mode 100644
+index 0000000..007a566
+--- /dev/null
++++ b/etsy-digital-product/SELLER-CHECKLIST.md
+@@ -0,0 +1,11 @@
++# Seller checklist (you — not included in buyer ZIP)
++
++- [ ] Run `npm run build-etsy` — confirm ZIP &lt; 20 MB (Etsy limit)
++- [ ] Open ZIP as buyer: read `START_HERE.md`, run quickstart once
++- [ ] Replace `[YOUR SHOP]` / `[YOUR BRAND]` placeholders in listing copy (`ETSY-LISTING.md`)
++- [ ] Create 3–5 listing images (CRM screenshot, contents list, START_HERE preview)
++- [ ] Etsy listing → Digital → upload ZIP
++- [ ] Set automatic delivery + thank-you message: "Open START_HERE.md first"
++- [ ] Shop policies: digital refunds, license summary
++- [ ] Optional: add SKU to `product-management/ETSY_KITS_MANIFEST.yaml` in portfolio repo
++- [ ] After sale: monitor Etsy messages for "can't unzip" / Node version issues
+diff --git a/etsy-digital-product/START_HERE.md b/etsy-digital-product/START_HERE.md
+new file mode 100644
+index 0000000..f7cd149
+--- /dev/null
++++ b/etsy-digital-product/START_HERE.md
+@@ -0,0 +1,97 @@
++# START HERE — HUNTER Revenue Pipeline System
++
++**Digital download · Not a physical item · For [YOUR BRAND] consulting use**
++
++Thank you for your purchase. This kit is a **complete revenue pipeline** you run on your own computer or cloud account: CRM, lead scoring, outreach templates, landing page, and automation workflows.
++
++---
++
++## What you received
++
++| Part | Location in this folder |
++|------|-------------------------|
++| **App** (API + CRM + landing) | Repo root: `server.js`, `frontend/`, `lib/` |
++| **10 ready-made leads + emails** | `data/seed-leads.json` → run `npm run seed` |
++| **PDF outreach assets (4 accounts)** | `content/give-before-ask/` |
++| **LinkedIn post #1** | `content/linkedin-post-001.md` |
++| **Go-live steps** | `GO_LIVE_RUNBOOK.md` |
++| **Pricing & services (white-label)** | `business/PRICING.md`, `templates/` |
++| **n8n automation** | `n8n/` |
++
++---
++
++## Quick start (30 minutes)
++
++### 1. Requirements
++
++- Computer with **Node.js 20+** ([nodejs.org](https://nodejs.org))
++- Free **Supabase** account (production CRM) — optional for first test
++- Optional: **Gemini**, **Resend**, **Cal.com** keys (see `.env.example`)
++
++### 2. Install
++
++```bash
++npm ci
++cp .env.example .env
++```
++
++Edit `.env`:
++
++- `OPERATOR_BRAND=[YOUR BRAND]` — your name on emails
++- `BOOKING_URL=` your Cal.com or Calendly link
++
++### 3. Run
++
++```bash
++npm start
++```
++
++Open in your browser:
++
++- **Landing page:** http://localhost:3001/
++- **CRM:** http://localhost:3001/hunter_crm.html
++- **Your dashboard:** http://localhost:3001/operator.html
++
++### 4. Load the pipeline
++
++```bash
++npm run seed
++```
++
++You should see **10 leads** with outreach copy already loaded (ranks 1–4 include give-before-ask PDF links).
++
++### 5. Verify
++
++```bash
++npm run health
++```
++
++---
++
++## Brand this kit
++
++Replace **[YOUR BRAND]** everywhere. Full checklist: `etsy-digital-product/WHITE_LABEL-BUYER.md`.
++
++Minimum: `OPERATOR_BRAND` in `.env` + `frontend/index.html` logo/hero.
++
++---
++
++## Deploy for real clients (optional)
++
++Follow **`GO_LIVE_RUNBOOK.md`** — Railway/Render, Supabase, Resend, n8n.
++
++---
++
++## License
++
++Read **`DIGITAL-LICENSE.txt`** in this folder. Personal and small-business use only; **do not resell or re-list these files on Etsy or elsewhere.**
++
++---
++
++## Support
++
++This is a self-serve digital product. Use `npm run health` and `GO_LIVE_RUNBOOK.md` first.
++
++If your listing promised email support, contact the shop at the address on your Etsy receipt.
++
++**Enjoy building your pipeline — [YOUR BRAND]**
+diff --git a/etsy-digital-product/WHITE_LABEL-BUYER.md b/etsy-digital-product/WHITE_LABEL-BUYER.md
+new file mode 100644
+index 0000000..96cc577
+--- /dev/null
++++ b/etsy-digital-product/WHITE_LABEL-BUYER.md
+@@ -0,0 +1,30 @@
++# White-label for Etsy buyers
++
++Set **your** consulting brand — not "HUNTER" — before you go live.
++
++## Required (.env)
++
++```
++OPERATOR_BRAND=Your Name or Agency
++RESEND_FROM=Your Brand <you@yourdomain.com>
++BOOKING_URL=https://cal.com/you/diagnostic
++PUBLIC_URL=https://your-deployed-url.com
++```
++
++## Customer-facing files
++
++| File | Change |
++|------|--------|
++| `frontend/index.html` | Logo, headline, footer |
++| `frontend/hunter_crm.html` | Header title (optional) |
++| `content/give-before-ask/*.html` | Footer line |
++| `templates/msa-template.md` | Your legal entity as Provider |
++| `business/PRICING.md` | Your prices (optional) |
++
++## Optional helper
++
++```bash
++bash etsy-digital-product/scripts/apply-brand.sh "Your Brand Name"
++```
++
++Then search the repo for remaining "HUNTER" strings.
+diff --git a/etsy-digital-product/scripts/apply-brand.sh b/etsy-digital-product/scripts/apply-brand.sh
+new file mode 100755
+index 0000000..9e5e247
+--- /dev/null
++++ b/etsy-digital-product/scripts/apply-brand.sh
+@@ -0,0 +1,10 @@
++#!/usr/bin/env bash
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
++BRAND="${1:?Usage: $0 'Your Brand'}"
++cd "$ROOT"
++for f in frontend/index.html etsy-digital-product/START_HERE.md; do
++  [[ -f "$f" ]] && sed -i "s/\[YOUR BRAND\]/${BRAND}/g" "$f"
++done
++grep -q "^OPERATOR_BRAND=" .env 2>/dev/null && sed -i "s/^OPERATOR_BRAND=.*/OPERATOR_BRAND=${BRAND}/" .env || true
++echo "Updated brand to: $BRAND — grep -ri HUNTER frontend content templates"
+diff --git a/etsy-digital-product/scripts/build-etsy-download.sh b/etsy-digital-product/scripts/build-etsy-download.sh
+new file mode 100755
+index 0000000..193d689
+--- /dev/null
++++ b/etsy-digital-product/scripts/build-etsy-download.sh
+@@ -0,0 +1,65 @@
++#!/usr/bin/env bash
++# Build ZIP for Etsy digital download (buyer-facing).
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
++ETSY="$ROOT/etsy-digital-product"
++STAGING="$ROOT/dist/etsy-staging"
++OUT="$ROOT/dist"
++DATE="$(date +%Y%m%d)"
++ZIP="$OUT/hunter-revenue-pipeline-etsy-digital.zip"
++MAX_MB=20
++
++cd "$ROOT"
++mkdir -p "$STAGING" "$OUT"
++rm -rf "$STAGING"
++mkdir -p "$STAGING"
++
++echo "📦 Building Etsy buyer ZIP..."
++
++# Buyer entrypoints first
++cp "$ETSY/START_HERE.md" "$STAGING/START_HERE.md"
++cp "$ETSY/DIGITAL-LICENSE.txt" "$STAGING/DIGITAL-LICENSE.txt"
++cp "$ETSY/BUYER-FAQ.md" "$STAGING/BUYER-FAQ.md"
++cp "$ETSY/WHITE_LABEL-BUYER.md" "$STAGING/WHITE_LABEL-BUYER.md"
++mkdir -p "$STAGING/etsy-digital-product"
++cp "$ETSY/WHITE_LABEL-BUYER.md" "$STAGING/etsy-digital-product/"
++
++copy() { [[ -e "$ROOT/$1" ]] && cp -a "$ROOT/$1" "$STAGING/$1"; }
++
++copy server.js
++copy package.json
++copy package-lock.json
++copy .env.example
++copy Dockerfile
++copy docker-compose.yml
++copy railway.json
++copy README.md
++copy GO_LIVE_RUNBOOK.md
++copy LAUNCH_STATUS.md
++
++cp -a "$ROOT/lib" "$STAGING/lib"
++cp -a "$ROOT/frontend" "$STAGING/frontend"
++cp -a "$ROOT/scripts" "$STAGING/scripts"
++mkdir -p "$STAGING/data"
++copy data/seed-leads.json
++cp -a "$ROOT/supabase" "$STAGING/supabase"
++cp -a "$ROOT/n8n" "$STAGING/n8n"
++cp -a "$ROOT/content" "$STAGING/content"
++cp -a "$ROOT/business" "$STAGING/business"
++cp -a "$ROOT/templates" "$STAGING/templates"
++cp -a "$ROOT/prompts" "$STAGING/prompts"
++cp -a "$ETSY/scripts" "$STAGING/etsy-digital-product/scripts"
++
++# Exclude seller-only assets (listing copy stays in repo, not in buyer zip)
++# ETSY-LISTING.md, SELLER-CHECKLIST.md, ETSY-KEYWORD-PASS.md — NOT copied
++
++rm -f "$ZIP"
++(cd "$STAGING" && zip -rq "$ZIP" .)
++rm -rf "$STAGING"
++
++SIZE_MB="$(du -m "$ZIP" | cut -f1)"
++echo "✅ $ZIP (${SIZE_MB} MB)"
++if [[ "$SIZE_MB" -gt "$MAX_MB" ]]; then
++  echo "❌ Over Etsy ${MAX_MB}MB limit — trim content or split download"
++  exit 1
++fi
 diff --git a/operator-license-kit/LICENSE_TERMS_TEMPLATE.md b/operator-license-kit/LICENSE_TERMS_TEMPLATE.md
 new file mode 100644
 index 0000000..763b6a1
@@ -1227,13 +1688,15 @@ index 0000000..b24b9ed
 +  - .git/
 diff --git a/operator-license-kit/README.md b/operator-license-kit/README.md
 new file mode 100644
-index 0000000..c3378ae
+index 0000000..a325437
 --- /dev/null
 +++ b/operator-license-kit/README.md
-@@ -0,0 +1,39 @@
-+# HUNTER Revenue Pipeline — Operator License Kit
+@@ -0,0 +1,41 @@
++# HUNTER Revenue Pipeline — Operator / wholesale kit
 +
-+This folder defines how to **license the pipeline to another operator** (agency, solo consultant, franchisee). You are not selling them manufacturing projects—you are handing off **software + GTM playbooks** they run under their own brand.
++**Primary channel: Etsy digital download** — use `etsy-digital-product/` and `npm run build-etsy`.
++
++This folder is for **direct B2B operator licenses** (custom deals, not the standard Etsy ZIP). Etsy buyers get `DIGITAL-LICENSE.txt` and `START_HERE.md` instead of a signed operator agreement.
 +
 +## What the licensee receives
 +
@@ -1497,17 +1960,18 @@ index 0000000..22a3c6a
 +rm -rf "$STAGING"
 +echo "✅ Done: $ZIP ($(du -h "$ZIP" | cut -f1))"
 diff --git a/package.json b/package.json
-index f539c1c..83afdef 100644
+index f539c1c..4218ac9 100644
 --- a/package.json
 +++ b/package.json
-@@ -9,7 +9,9 @@
+@@ -9,7 +9,10 @@
      "setup": "bash scripts/setup.sh",
      "seed": "node scripts/seed-leads.js",
      "import-spark": "node scripts/import-spark.js",
 -    "health": "node scripts/health-check.js"
 +    "health": "node scripts/health-check.js",
 +    "verify-launch": "bash scripts/verify-launch.sh",
-+    "build-operator-kit": "bash operator-license-kit/scripts/build-operator-kit.sh"
++    "build-operator-kit": "bash operator-license-kit/scripts/build-operator-kit.sh",
++    "build-etsy": "bash etsy-digital-product/scripts/build-etsy-download.sh"
    },
    "dependencies": {
      "@google/generative-ai": "^0.15.0",

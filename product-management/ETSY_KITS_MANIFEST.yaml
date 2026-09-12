@@ -5,7 +5,17 @@ branch: cursor/etsy-store-automation-f219
 repo: push
 path_prefix: ai-agent-team/products
 build_command: "cd ai-agent-team && npm run products:build"
-kit_count: 28
+kit_count: 29
+
+# Monorepo branch (not under push/ai-agent-team) — build with npm run build-etsy
+standalone_digital:
+  - slug: hunter-revenue-pipeline-etsy-digital
+    display_name: HUNTER Revenue Pipeline System (CRM + Outreach)
+    repo: "-build-ai-agents-with-claude"
+    branch: cursor/hunter-launch-prep-c763
+    build_command: "npm run build-etsy"
+    output_zip: dist/hunter-revenue-pipeline-etsy-digital.zip
+    seller_docs: etsy-digital-product/ETSY-LISTING.md
 
 kits:
   - slug: agent-01-etsy-listing-seo-agent-kit
