@@ -156,4 +156,26 @@ Move stages only when the **event** happened (not when you *hope* it will).
 | Claude scores feel off | Refresh Service Catalog in prompt; tighten Evidence Signals |
 | Too many WATCH leads | Raise threshold; focus on HIGH+ only for outbound |
 
+---
+
+## 7. One question (30 seconds — helps us improve v1.1)
+
+After you’ve copied the base (or if you decided **not** to use Airtable), send **one line** to **samuelfreemanjobs@gmail.com** with subject **`RPS feedback`**.
+
+**Question:** *If this pipeline lived in one other tool instead of (or alongside) Airtable, which would you want?*
+
+Reply with **one** of these (or name your own):
+
+| Option | Meaning |
+|--------|---------|
+| **Airtable** | This is fine — keep improving Airtable |
+| **Notion** | I want pages + pipeline in Notion |
+| **Google Sheets** | Spreadsheet-only is enough |
+| **Light CRM** | Folk, Attio, Pipedrive, HubSpot, etc. |
+| **Other** | One tool name in the reply body |
+
+Optional second line: what almost stopped you from using the template (confusing setup, missing feature, etc.).
+
+We read every reply. It steers the next edition (Notion pack, CRM import guide, etc.) — no marketing list unless you ask to hear about updates.
+
 **You’re live.** Next: add 10 real prospects and score them this week.
