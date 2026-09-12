@@ -1,30 +1,19 @@
-# HUNTER on Etsy — digital product
+# Revenue Pipeline System — Etsy digital product
+
+Product name on all listings: **Revenue Pipeline System** (no legacy codenames).
 
 ## Build upload file
-
-In the monorepo (after applying `hunter-launch-prep-c763` patch):
 
 ```bash
 npm run build-etsy
 ```
 
-Upload **`dist/hunter-revenue-pipeline-etsy-digital.zip`** to the Etsy listing (auto digital delivery).
+Upload **`dist/revenue-pipeline-system-etsy-digital.zip`**.
 
-## Seller docs (keep in repo — not inside buyer ZIP)
+## Listing copy (seller)
 
-| File | Purpose |
-|------|---------|
-| `etsy-digital-product/ETSY-LISTING.md` | Title, description, tags |
-| `etsy-digital-product/ETSY-KEYWORD-PASS.md` | SEO pass |
-| `etsy-digital-product/SELLER-CHECKLIST.md` | Pre-launch |
-| `etsy-digital-product/SELLER-CHECKLIST.md` | Post-build QA |
+`etsy-digital-product/ETSY-LISTING.md` in the monorepo — full title, description, tags, thank-you message.
 
-## Buyer gets
+## Buyer entrypoint
 
-- `START_HERE.md` (root of ZIP)
-- `DIGITAL-LICENSE.txt` — no resale / no re-listing on Etsy
-- Full pipeline app + unified GTM (`data/seed-leads.json`)
-
-## Wholesale
-
-Custom operator deals: `npm run build-operator-kit` + `operator-license-kit/` (separate from Etsy SKU).
+`START_HERE.md` at the root of the ZIP.
