@@ -1,7 +1,9 @@
 # Product Matrix (CRO / PM view)
 
 **As of:** 2026-09-12  
-**Portfolio:** 4 original repos · 6 factory-registered agent products · ~136 forks (see [`REPO_CATALOG.md`](REPO_CATALOG.md))
+**Portfolio:** 4 GitHub root repos · **50+ branch-hosted products** (see [`PORTFOLIO_DEEP_MAP.md`](PORTFOLIO_DEEP_MAP.md)) · 6 factory agents on monorepo `main` · ~136 forks
+
+> **Correction:** An earlier pass used only the non-fork list and missed your **`push` branch warehouse** (Etsy kits, MedFlow, Manuscript Master, ChiroBook, etc.) and **monorepo branch companies** (Autoborder, Freeman Intelligence, Hunter OS, prompt library platform).
 
 ## Executive summary
 
@@ -9,7 +11,17 @@ Your **near-term revenue** is concentrated in one monorepo: [`-build-ai-agents-w
 
 ---
 
-## Launch order (ranked)
+## Parallel revenue lanes (pick one primary per quarter)
+
+| Lane | Anchor location | SKUs | Notes |
+|------|-----------------|------|-------|
+| **B2B agents** | monorepo `main` | Proposals + factory + engineering agents | Highest ACV |
+| **Digital / Etsy** | `push` @ `cursor/etsy-store-automation-f219` | 29 kits + bundles | Fastest to cash if storefront live |
+| **Prompt platform** | monorepo @ `gh-pages` / `cursor/*-prompt-library-*` | 1,352+ prompts scraped | SEO + lead gen |
+| **Vertical MVPs** | monorepo branches | Autoborder, Freeman Intelligence, Hunter OS, Luxury Outlet | Need merge or release tag |
+| **Creator tools** | `push` branches | Manuscript Master, book manuscript, MedFlow docs | IP + authority |
+
+## Launch order (ranked) — B2B lane (unchanged priority)
 
 | Rank | Product | Where (repo / path) | % complete | Heat | Status | Why this order |
 |------|---------|---------------------|------------|------|--------|----------------|
@@ -23,6 +35,31 @@ Your **near-term revenue** is concentrated in one monorepo: [`-build-ai-agents-w
 | 8 | **VST Sampling Factory** | `VSTSampling` / root | **78%** | Warm | mvp | Niche desktop tool; blocked on Reaper/MPC hardware validation |
 | 9 | **AI Agent Team** | `push` / `ai-agent-team/` | **35%** | Cold | scaffold | Generic Gemini+Supabase API—rebrand or merge into factory demo |
 | — | **OpenClaw Framework** | `openclaw-framework` | **0%** | Cold | concept | Empty repo—archive or populate from `openclaw` fork |
+
+### Fast-cash lane (if B2B pilot slips)
+
+| Rank | Product | Where | % | Heat |
+|------|---------|-------|---|------|
+| FC-1 | **Top-10 / Top-20 AI Agents Bundle** | `push` @ `cursor/etsy-store-automation-f219` / `ai-agent-team/products/` | ~70% | Hot |
+| FC-2 | **Prompt library (live)** | monorepo @ `gh-pages` | ~75% | Warm |
+| FC-3 | **Product Creation SOP + templates** | `push` @ `claude/product-creation-template-ogygnk` | ~55% | Warm |
+
+---
+
+## Branch-only products (high value — not on `main`)
+
+| Product | Branch | % (est.) |
+|---------|--------|----------|
+| Autoborder Comply | `cursor/autoborder-comply-mvp-cc89` | 45% |
+| Autonomous Hunter OS | `cursor/autonomous-hunter-os-54da` | 50% |
+| Freeman Intelligence (WRIS) | `cursor/freeman-intelligence-wris-64d3` | 55% |
+| Freeman Method | `cursor/freeman-method-tools-c134` | 40% |
+| Luxury Bedroom Outlet | `cursor/luxury-bedroom-outlet-46d5` | 45% |
+| The Architect Agent | `cursor/the-architect-agent-0050` | 50% |
+| Logistics Marketing Factory | `cursor/logistics-marketing-factory-c9f0` | 35% |
+| QA Engineer Agent | `cursor/complete-monorepo-64d3` | 42% |
+
+Full branch list: [`PORTFOLIO_DEEP_MAP.md`](PORTFOLIO_DEEP_MAP.md).
 
 ---
 

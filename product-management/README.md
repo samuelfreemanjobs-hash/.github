@@ -38,8 +38,9 @@ cp "$SRC/build-ai-agents-with-claude/ai-proposals-agent/project.md" \
 2. **Wednesday** — CRO review: adjust `launch_rank` and `heat` in matrix.
 3. **Friday** — Ship one “launch slice” on rank #1 product only.
 
-## Audit notes (2026-09-12)
+## Audit notes (2026-09-12, revised)
 
-- **Original repos (you own the IP):** 4 — `push`, `openclaw-framework`, `-build-ai-agents-with-claude`, `VSTSampling`.
-- **Primary product suite:** `-build-ai-agents-with-claude` (SaaS Factory + 6 agent products; `freeman-intel` spec exists, folder not scaffolded yet).
-- **`project.md` Claude rule:** Not found in GitHub search; rule below is **derived from** your `saas-factory` product spec schema and monorepo conventions. Replace any section if your Claude Project uses different wording.
+- **GitHub “original” repos:** 4 roots — `push`, `openclaw-framework`, `-build-ai-agents-with-claude`, `VSTSampling`.
+- **Actual portfolio size:** **Much larger** — products on **`push` branches** (29 Etsy/agent-kit folders on one branch alone) and **29 monorepo feature branches** (Autoborder, Hunter OS, Freeman Intelligence, prompt library platform, etc.). Read **[`PORTFOLIO_DEEP_MAP.md`](PORTFOLIO_DEEP_MAP.md)**.
+- **Primary B2B suite on `main`:** `-build-ai-agents-with-claude` (SaaS Factory + engineering agents; `freeman-intel` spec on `main`, folder on some branches only).
+- **`project.md` Claude rule:** Not found in GitHub search; rule below is **derived from** your `saas-factory` product spec schema. Replace any section if your Claude Project uses different wording.

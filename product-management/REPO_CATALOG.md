@@ -1,16 +1,14 @@
-wrote catalog 167
-log — samuelfreemanjobs-hash
+# GitHub repo catalog — samuelfreemanjobs-hash
 
 Generated: 2026-09-12. Total repos: 140.
 
 ## Legend
 
-- **ORIGINAL** — non-fork; treat as owned IP first.
+- **ORIGINAL (GitHub flag)** — `isFork: false` on GitHub. Only **4** repos — **not** a complete inventory of what you built.
+- **BRANCH PORTFOLIO** — Most SKUs live on branches in [`push`](https://github.com/samuelfreemanjobs-hash/push) and [`-build-ai-agents-with-claude`](https://github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude). See **[`PORTFOLIO_DEEP_MAP.md`](PORTFOLIO_DEEP_MAP.md)** and **[`PUSH_PRODUCT_INDEX.md`](PUSH_PRODUCT_INDEX.md)**.
+- **FORK** — Upstream clone; may still be part of your GTM stack if you added unique commits or use it as a deployment target.
 
-- **FORK** — upstream clone; productize only if you have a differentiated fork commit history.
-
-
-## Original (owned IP)
+## Original (GitHub non-fork roots only)
 
 | Repo | Description |
 |------|-------------|

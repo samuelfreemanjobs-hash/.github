@@ -34,9 +34,12 @@ Maintain an accurate, actionable **product portfolio** for `samuelfreemanjobs-ha
 ### Phase 1 — Cartography (explore subagent, **very thorough**)
 
 1. `gh repo list samuelfreemanjobs-hash --limit 200 --json name,isFork,description,pushedAt`
-2. Clone **only** originals + monorepo (shallow): `push`, `-build-ai-agents-with-claude`, `VSTSampling`, `openclaw-framework`
-3. For each factory product in `registry.yaml`, confirm **on-disk path**, `scripts/run_golden_tests.py` result, and presence of `frontend/` / `ui/`
-4. Update `REPO_CATALOG.md` buckets: `original`, `agent_platform`, `marketing_gtm`, `skills_tooling`, `reference`, `other_fork`
+2. **Do NOT stop at `isFork: false`** — only four repos pass that filter; most SKUs are on **branches**.
+3. Clone `push` and `-build-ai-agents-with-claude` **with all branches**; run `gh api repos/.../branches`
+4. Inventory `push` branches (Etsy kits, MedFlow, Manuscript Master, ChiroBook, etc.) — see `PORTFOLIO_DEEP_MAP.md`
+5. For each monorepo branch, list top-level dirs ≠ standard agent suite (`autoborder`, `freeman-intelligence`, `the_architect`, …)
+6. For factory products on `main`, confirm paths, golden tests, `frontend/` / `ui/`
+7. Update `REPO_CATALOG.md` + `PUSH_PRODUCT_INDEX.md` + `REGISTRY.yaml`
 
 ### Phase 2 — Scoring (deterministic rubric)
 
