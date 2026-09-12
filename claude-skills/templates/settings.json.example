@@ -1,0 +1,14 @@
+{
+  "_comment": "Optional Phase B+. Not required for install. Add servers one at a time.",
+  "mcpServers": {
+    "filesystem": {
+      "_note": "Often built-in for Claude Code project root"
+    },
+    "github": {
+      "_note": "Enable when /pwa-idea-to-spec leads to repos — OAuth via Claude Code MCP UI"
+    }
+  },
+  "permissions": {
+    "_note": "Set deny rules for prod paths if desired — see Claude Code docs"
+  }
+}

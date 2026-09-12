@@ -1,21 +1,25 @@
 # Claude business OS — skills & hub
 
+**Start:** [START-HERE.md](START-HERE.md) · **Install:** [INSTALL-PROMPT.md](INSTALL-PROMPT.md) · **MVP only:** [docs/MVP-REQUIRED.md](docs/MVP-REQUIRED.md) · **Full plan:** [docs/HEAVY-OS-MASTER-PLAN.md](docs/HEAVY-OS-MASTER-PLAN.md)
+
 Copy this folder into your machine:
 
 ```text
 ~/.claude/skills/          ← each skill subfolder (SKILL.md inside)
-~/claude-hub/hub/          ← or ./hub/ in a business repo (templates)
+~/claude-business/hub/     ← canonical hub (or Obsidian vault)
 ```
 
 ## Skills
 
 | Skill | Command | Purpose |
 |-------|---------|---------|
-| `ad-pack-from-offer/` | `/ad-pack-from-offer` | Multi-agent ad pack from one offer |
-| `business-hub-init/` | `/business-hub-init` | Fill hub sections 1–8 via interview |
-| `business-hub-audit/` | `/business-hub-audit` | 4 Cs score + backlog |
+| `business-os-install/` | `/business-os-install` | One-time folder + skills setup |
+| `business-hub-init/` | `/business-hub-init` | Fill hub sections 1–8 |
+| `ad-pack-from-offer/` | `/ad-pack-from-offer` | Multi-agent ad pack |
+| `pwa-idea-to-spec/` | `/pwa-idea-to-spec` | Idea → PWA/app spec |
+| `pricing-positioning-memo/` | `/pricing-positioning-memo` | Pricing + positioning decision memo |
 
-## Hub layout
+## Hub (sections 1–8)
 
 | Section | Folder |
 |---------|--------|
@@ -29,16 +33,29 @@ Copy this folder into your machine:
 | 8 Human roles | `hub/08-human-roles/` |
 | Agents | `hub/agents/REGISTRY.md` |
 
-## Recommended order
+## Heavy OS extras (same pack)
 
-1. Copy `hub/` → your `HUB_PATH`
-2. Add `CLAUDE-snippet.md` to your user `CLAUDE.md`
-3. Run **`/business-hub-init`** (greenfield)
-4. Run **`/business-hub-audit`**
-5. Run **`/ad-pack-from-offer`** on a real offer
+| Path | Purpose |
+|------|---------|
+| `docs/MISSION-CONTROL-SPEC.md` | Phase D dashboard |
+| `memory/ingest-manifest.yaml` | RAG scope (Tier M3) |
+| `hooks/README.md` | Session hooks |
+| `cadence/rituals.md` | Weekly / monthly / quarterly |
 
-## Deliverables (created by skills)
+## Phases (summary)
+
+1. **A** — hub init + audit + one ad pack  
+2. **B** — PWA spec + pricing memo + MCP GitHub/analytics + hooks  
+3. **C** — Obsidian + RAG + cadence discipline  
+4. **D** — mission control UI + task MCP writes (gated)  
+5. **E** — more workflow skills  
+
+Full detail in master plan.
+
+## Deliverables
 
 - `deliverables/ad-packs/`
+- `deliverables/pwa-specs/`
+- `deliverables/pricing-memos/`
 - `deliverables/hub-init/`
 - `deliverables/hub-audits/`
