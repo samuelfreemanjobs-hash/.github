@@ -1,47 +1,78 @@
-# [Project name]
+# [PROJECT NAME]
 
-**Last updated:** YYYY-MM-DD  
-**Completion:** [N]% ([done]/[total] tasks)
+**Date:** YYYY-MM-DD  |  **Urgency:** [CRITICAL / HIGH / MEDIUM / LOW]  |  **Progress:** 0%
 
-## Overview
+---
 
-[One paragraph: what this is, who it's for, what "done" looks like, stack, urgency, value.]
+## Scope
 
-## Audience & success
+[What is this project? What problem does it solve? Keep it to 3–5 sentences.]
 
-- **For:** [ICP / user]
-- **Success metric:** [e.g. 5 booked calls in 30 days]
-- **Urgency:** [low | medium | high]
+---
 
-## Stack & constraints
+## Proposed Outcome
 
-- **Stack:** [languages, hosting, integrations]
-- **Constraints:** [e.g. no backend, fail-closed pricing, etc.]
+[What does success look like when this is done?]
 
-## Tasks
+**For:** [Who is this for — customer segment, internal use, platform]
 
-<!-- % complete = round(100 * done / total). Count only leaf tasks below. -->
+---
 
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
+## Opportunity Value
 
-## Decisions
+[Revenue potential, strategic value, time saved, or market opportunity. Be specific if possible.]
 
-| Date | Decision |
-|------|----------|
-| YYYY-MM-DD | [e.g. Use Tally instead of Zapier for forms] |
+---
 
-## Blockers & open questions
+## ✅ Done
 
-- [Blocker or question]
+- [x] [Completed item]
 
-## Portfolio cross-ref (optional)
+---
 
-- **Registry id:** `[id]` — see `product-management/REGISTRY.yaml` in `.github` KB
-- **Repo / path:** [url and folder]
-- **Branch (if not main):** [branch name or `main`]
+## ☐ To Do
 
-## Gaps [TBD]
+- [ ] [Next action]
 
-- [Anything the agent could not fill yet]
+---
+
+## Stack
+
+- [Tool / framework / platform]
+
+---
+
+## Artifacts
+
+| Artifact | Path / Link | Status |
+|----------|-------------|--------|
+| [Name] | [path or URL] | [Draft / Live / Complete] |
+
+---
+
+## AI Agents Created
+
+- [Agent name and purpose — or "None"]
+
+---
+
+## Alternative Uses / Re-Niching
+
+- [Other verticals, audiences, or pivots this could serve]
+
+---
+
+## API Keys Needed
+
+- [Service name — never paste the actual key here]
+- None
+
+---
+
+## Notes
+
+[Anything else relevant: blockers, decisions made, context for future sessions.]
+
+---
+
+*[Brand] · project.md — updated YYYY-MM-DD*

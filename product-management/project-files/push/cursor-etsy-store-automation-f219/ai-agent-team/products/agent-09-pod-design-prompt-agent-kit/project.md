@@ -1,58 +1,98 @@
 # Agent 09 — POD Design Prompt
 
-**Last updated:** 2026-09-12  
-**Completion:** 50% (7/14 tasks)
+**Date:** 2026-09-12  |  **Urgency:** MEDIUM  |  **Progress:** 50%
 
-## Overview
+---
 
-Etsy digital product: Print-on-demand design prompt systems. Shippable as a ZIP via `npm run products:build`. Lives on branch `cursor/etsy-store-automation-f219` under `ai-agent-team/products/agent-09-pod-design-prompt-agent-kit/`. Done = branded ZIP uploaded to Etsy with listing live.
+## Scope
 
-## Audience & success
+POD sellers needing design prompts. Digital product shipped as a ZIP from `ai-agent-team` on branch `cursor/etsy-store-automation-f219`, path `products/agent-09-pod-design-prompt-agent-kit/`. Buyers get structured playbooks and AI workflows they run in Claude/Cursor.
 
-- **For:** Etsy / digital-product buyers (solopreneurs, Etsy sellers, micro-agencies).
-- **Success metric:** Listing live + first 3 sales without buyer support tickets.
-- **Urgency:** Warm — part of Top 20 catalog; bundle upsell available.
+---
 
-## Stack & constraints
+## Proposed Outcome
 
-- **Stack:** Markdown playbooks/workflows in repo; build via `ai-agent-team` npm scripts; optional Canva/n8n integrations on branch.
-- **Constraints:** Replace `[YOUR BRAND]` before publish; Etsy file size limits; no false IP claims.
+Prompt systems for print-ready art briefs.
 
-## Tasks
+**For:** Etsy and Gumroad-style digital buyers (solopreneurs, micro-agencies, shop owners).
 
-- [x] Playbook (SOP) complete and on-brand
-- [x] Workflows (10) complete and tested
-- [x] Examples / excellence v2 pack
-- [x] Implementation / setup guide
-- [x] Artifacts & scorecards
-- [x] Vertical variants documented
-- [x] Video scripts for listing/sales
-- [ ] Replace [YOUR BRAND] and buyer-facing placeholders
-- [ ] Run `npm run products:build` — ZIP in `dist/`
-- [ ] Verify ZIP size under Etsy digital download limits
-- [ ] Etsy listing copy from ETSY-KEYWORD-PASS.md applied
-- [ ] Canva listing art from CANVA-ART-PROMPTS.md (optional)
-- [ ] Upload digital download on Etsy listing
-- [ ] Smoke-test buyer unzip + README clarity
+---
 
-## Decisions
+## Opportunity Value
 
-| Date | Decision |
-|------|----------|
-| 2026-09-12 | project.md generated via PROJECT NEW bulk pass |
+POD / Etsy print-on-demand.
 
-## Blockers & open questions
+---
 
-- [TBD] Final Etsy shop URL and listing ID for this SKU
-- [TBD] Brand name replacing `[YOUR BRAND]`
+## ✅ Done
 
-## Portfolio cross-ref
+- [x] Playbook (SOP) present in `01-playbook/`
+- [x] Workflows pack present in `02-workflows/`
+- [x] Examples / excellence v2 present in `04-examples/`
+- [x] Implementation guide present in `05-implementation/`
+- [x] Artifacts & scorecards present in `07-artifacts/`
+- [x] Vertical variants present in `08-verticals/`
+- [x] Video scripts present in `09-video-scripts/`
 
-- **Registry id:** `push-etsy-agent-09-pod-design-prompt-agent-kit`
-- **Repo / path:** https://github.com/samuelfreemanjobs-hash/push — `ai-agent-team/products/{slug}/`
-- **Branch:** `cursor/etsy-store-automation-f219`
+---
 
-## Gaps [TBD]
+## ☐ To Do
 
-- Etsy listing price and thumbnail assets
-- Post-launch support policy for buyers
+- [ ] Replace [YOUR BRAND] placeholders in buyer copy
+- [ ] Run npm run products:build — ZIP in dist/
+- [ ] Verify ZIP under Etsy file size limit
+- [ ] Apply Etsy listing copy (ETSY-KEYWORD-PASS.md)
+- [ ] Listing images / Canva art (optional)
+- [ ] Upload digital download on Etsy
+- [ ] Buyer smoke test (unzip + README)
+
+---
+
+## Stack
+
+- Markdown playbooks & workflows in repo
+- `npm run products:build` / `agents:generate` (see `ai-agent-team/docs/TOP-20-AI-AGENTS.md`)
+- Optional: Canva API, n8n (branch integrations)
+
+---
+
+## Artifacts
+
+| Artifact | Path / Link | Status |
+|----------|-------------|--------|
+| Playbook | products/agent-09-pod-design-prompt-agent-kit/01-playbook/ | Complete |
+| Build output ZIP | ai-agent-team/dist/agent-09-pod-design-prompt-agent-kit.zip | [TBD] |
+| Etsy listing | [TBD URL] | [TBD] |
+
+---
+
+## AI Agents Created
+
+- Agent 09 — POD Design Prompt — playbook + workflows (this kit)
+
+---
+
+## Alternative Uses / Re-Niching
+
+- White-label for agencies ([YOUR BRAND])
+- Vertical-specific packs under `08-verticals/`
+- Bundle upsell: Top 10 / Top 20 / Business-in-a-Box
+
+---
+
+## API Keys Needed
+
+- None for buyer ZIP contents
+- Canva / Etsy API only if using branch automation scripts
+
+---
+
+## Notes
+
+- Registry id: `push-etsy-agent-09-pod-design-prompt-agent-kit`
+- Repo: https://github.com/samuelfreemanjobs-hash/push — branch `cursor/etsy-store-automation-f219`
+- [TBD] Final Etsy listing URL and price
+
+---
+
+*[YOUR BRAND] · project.md — updated 2026-09-12*

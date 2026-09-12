@@ -90,4 +90,6 @@ Give me a 3-line status summary: what's done, what's next, and any blockers or o
   - **Single-product repo:** repository root (e.g. `VSTSampling/project.md`).
   - **Monorepo / branch product:** folder root for that product (e.g. `ai-proposals-agent/project.md`, or `ai-agent-team/products/agent-01-.../project.md`).
 
-**Standard template:** [`../templates/project.md`](../templates/project.md)
+**Standard template:** [`../templates/project.md`](../templates/project.md) — sections: Scope, Proposed Outcome, Opportunity Value, ✅ Done / ☐ To Do, Stack, Artifacts, AI Agents Created, Alternative Uses, API Keys Needed, Notes.
+
+**Progress %:** `round(100 × done / (done + todo))` from checkbox lines only. Put missing info in **Notes** as `[TBD]` (VARIANT 1).

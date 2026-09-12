@@ -1,64 +1,103 @@
 # AI Proposals Agent™
 
-**Last updated:** 2026-09-12  
-**Completion:** 45% (9/20 tasks)
+**Date:** 2026-09-12  |  **Urgency:** HIGH  |  **Progress:** 45%
 
-## Overview
+---
 
-B2B single-agent SaaS for logistics BD teams in the Detroit corridor: ingest RFPs, extract requirements, deterministic pricing/compliance, agent-generated narrative, export proposal bundles. "Done" = paying pilot on Professional tier with full golden fixture runs green and staging deploy.
+## Scope
 
-## Audience & success
+B2B single-agent SaaS for logistics BD teams: RFP intake, requirement extraction, deterministic pricing and compliance, narrative generation, exportable proposal bundles. Built in `-build-ai-agents-with-claude/ai-proposals-agent/` with factory spec and golden tests.
 
-- **For:** Logistics BD, sales, and solutions teams responding to RFPs (Metro Detroit corridor).
-- **Success metric:** 1 paying customer or 3 signed pilots with LOI within 90 days of launch.
-- **Urgency:** High — lead SKU for Freeman agent suite.
+---
 
-## Stack & constraints
+## Proposed Outcome
 
-- **Stack:** Python deterministic core, agent + skills, frontend/UI, deploy docs; factory spec in `saas-factory/products/ai-proposals-agent.yaml`.
-- **Constraints:** No model-generated numerics in binding fields; compliance fail-closed; schema violation HALT.
+One paying pilot or three LOI pilots on Professional tier; full golden runs green; staging deploy live.
 
-## Tasks
+**For:** Logistics BD / solutions teams (Detroit corridor ICP).
 
-- [x] Factory product spec validated
-- [x] Scaffold tree (agent, skills, backend, scripts)
+---
+
+## Opportunity Value
+
+$497–$2,497/mo tiers in spec; anchor revenue SKU for Freeman agent suite.
+
+---
+
+## ✅ Done
+
+- [x] Factory spec validated
+- [x] Scaffold tree + skills + backend
 - [x] Golden test runner — component logic green
 - [x] Frontend + UI present
 - [x] Deployment guide drafted
-- [x] Pricing tiers defined in spec
-- [x] Skills pack (5 skills) present
-- [x] Deterministic modules stubbed/implementing
-- [x] README + verify command documented
-- [ ] Knowledge base configured for full golden fixtures
-- [ ] Full golden fixture run green end-to-end
-- [ ] Staging deploy (Railway/cloud) with secrets
-- [ ] Pilot customer workflow (intake → export) dogfooded once
+- [x] Pricing tiers in YAML spec
+- [x] Skills pack (5 skills)
+- [x] Deterministic modules in progress
+- [x] README + verify command
+
+---
+
+## ☐ To Do
+
+- [ ] Configure KB for full golden fixtures
+- [ ] End-to-end golden run green
+- [ ] Staging deploy
+- [ ] Pilot customer dogfood (intake → export)
 - [ ] Production deploy + monitoring
 - [ ] Sales one-pager + demo Loom
-- [ ] Billing (Stripe) wired to tiers
-- [ ] First external pilot signed
+- [ ] Stripe billing wired
 - [ ] First paying customer
 - [ ] Onboarding checklist for Professional tier
-- [ ] Support/runbook for HALT cases
+- [ ] HALT/runbook for support
 
-## Decisions
+---
 
-| Date | Decision |
-|------|----------|
-| 2026-09-12 | Portfolio registry: launch rank #1 B2B lane |
+## Stack
 
-## Blockers & open questions
+- Python deterministic core, agent + skills
+- React/UI, Railway/deploy per docs
+- `saas-factory/products/ai-proposals-agent.yaml`
 
-- KB content/source for golden fixtures not configured in audit environment.
-- [TBD] Primary pilot account name and RFP sample for demo.
+---
 
-## Portfolio cross-ref
+## Artifacts
 
-- **Registry id:** `ai-proposals-agent`
-- **Repo / path:** https://github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude — `ai-proposals-agent/`
-- **Branch:** `main`
+| Artifact | Path / Link | Status |
+|----------|-------------|--------|
+| Product spec | saas-factory/products/ai-proposals-agent.yaml | Complete |
+| Golden tests | ai-proposals-agent/scripts/run_golden_tests.py | Partial |
+| Deploy guide | ai-proposals-agent/docs/deployment-guide.md | Draft |
 
-## Gaps [TBD]
+---
 
-- Live deploy URL
-- Pilot customer identity
+## AI Agents Created
+
+- AI Proposals Agent™ — RFP → proposal with traced numerics
+
+---
+
+## Alternative Uses / Re-Niching
+
+- Other vertical RFPs beyond logistics (new spec via SaaS Factory)
+- Bundle with Software Developer / Architect agents
+
+---
+
+## API Keys Needed
+
+- LLM provider keys for agent runtime
+- Deploy host secrets (Railway/etc.)
+- [TBD] Stripe
+
+---
+
+## Notes
+
+- Registry: `ai-proposals-agent`
+- Fail-closed pricing/compliance per factory hard_rules
+- [TBD] Pilot account name
+
+---
+
+*Freeman · project.md — updated 2026-09-12*
