@@ -1,6 +1,6 @@
 # Rule: `project.md` (session + file standard)
 
-**Session prompts:** [`PROJECT_MD_SESSION_PROMPTS.md`](PROJECT_MD_SESSION_PROMPTS.md) (VARIANT 1 / 2 / 3).
+**Session prompts:** [`project-prompt.md`](project-prompt.md) (VARIANT 1 / 2 / 3).
 
 **File template:** [`../templates/project.md`](../templates/project.md) (official layout).
 
