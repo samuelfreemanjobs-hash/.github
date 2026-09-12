@@ -1,0 +1,171 @@
+# Freeman portfolio registry — update weekly
+# Schema version: 1
+updated: 2026-09-12
+owner: Sam Freeman
+github_org: samuelfreemanjobs-hash
+
+scoring_rubric: product-management/rules/PROJECT_MD_RULE.md
+
+products:
+  - id: ai-proposals-agent
+    name: AI Proposals Agent™
+    tier: revenue_core
+    repo: "-build-ai-agents-with-claude"
+    path: ai-proposals-agent/
+    project_md: product-management/project-files/build-ai-agents-with-claude/ai-proposals-agent/project.md
+    deploy_target: ai-proposals-agent/project.md
+    status: scaffold
+    completion_pct: 52
+    heat: hot
+    launch_rank: 1
+    spec: saas-factory/products/ai-proposals-agent.yaml
+    verify: "cd ai-proposals-agent && python3 scripts/run_golden_tests.py"
+
+  - id: saas-factory
+    name: SaaS Factory
+    tier: platform
+    repo: "-build-ai-agents-with-claude"
+    path: saas-factory/
+    project_md: product-management/project-files/build-ai-agents-with-claude/saas-factory/project.md
+    deploy_target: saas-factory/project.md
+    status: mvp
+    completion_pct: 65
+    heat: hot
+    launch_rank: 2
+    spec: saas-factory/products/registry.yaml
+    verify: "cd saas-factory && pip install -e '.[dev]' && saas-factory validate"
+
+  - id: freeman-intel
+    name: Freeman Intel
+    tier: revenue_core
+    repo: "-build-ai-agents-with-claude"
+    path: freeman-intel/
+    project_md: product-management/project-files/build-ai-agents-with-claude/freeman-intel/project.md
+    deploy_target: freeman-intel/project.md
+    status: design
+    completion_pct: 18
+    heat: hot
+    launch_rank: 3
+    spec: saas-factory/products/freeman-intel.yaml
+    verify: "saas-factory show freeman-intel && saas-factory scaffold freeman-intel -o /tmp --dry-run"
+
+  - id: software-developer-agent
+    name: Software Developer Agent™
+    tier: suite_upsell
+    repo: "-build-ai-agents-with-claude"
+    path: software-developer-agent/
+    project_md: product-management/project-files/build-ai-agents-with-claude/software-developer-agent/project.md
+    deploy_target: software-developer-agent/project.md
+    status: scaffold
+    completion_pct: 42
+    heat: warm
+    launch_rank: 4
+    spec: saas-factory/products/software-developer-agent.yaml
+    verify: "cd software-developer-agent && python3 scripts/run_golden_tests.py"
+
+  - id: principal-software-engineer
+    name: Principal Software Engineer Agent™
+    tier: suite_upsell
+    repo: "-build-ai-agents-with-claude"
+    path: principal-software-engineer/
+    project_md: product-management/project-files/build-ai-agents-with-claude/principal-software-engineer/project.md
+    deploy_target: principal-software-engineer/project.md
+    status: scaffold
+    completion_pct: 42
+    heat: warm
+    launch_rank: 5
+    spec: saas-factory/products/principal-software-engineer.yaml
+    verify: "cd principal-software-engineer && python3 scripts/run_golden_tests.py"
+
+  - id: software-architect
+    name: Software Architect Agent™
+    tier: suite_upsell
+    repo: "-build-ai-agents-with-claude"
+    path: software-architect/
+    project_md: product-management/project-files/build-ai-agents-with-claude/software-architect/project.md
+    deploy_target: software-architect/project.md
+    status: scaffold
+    completion_pct: 42
+    heat: warm
+    launch_rank: 6
+    spec: saas-factory/products/software-architect.yaml
+    verify: "cd software-architect && python3 scripts/run_golden_tests.py"
+
+  - id: engineering-manager-agent
+    name: Engineering Manager Agent™
+    tier: suite_upsell
+    repo: "-build-ai-agents-with-claude"
+    path: engineering-manager-agent/
+    project_md: product-management/project-files/build-ai-agents-with-claude/engineering-manager-agent/project.md
+    deploy_target: engineering-manager-agent/project.md
+    status: scaffold
+    completion_pct: 42
+    heat: warm
+    launch_rank: 7
+    spec: saas-factory/products/engineering-manager-agent.yaml
+    verify: "cd engineering-manager-agent && python3 scripts/run_golden_tests.py"
+
+  - id: vst-sampling-factory
+    name: VST Sampling Factory
+    tier: niche_saas
+    repo: VSTSampling
+    path: ./
+    project_md: product-management/project-files/VSTSampling/project.md
+    deploy_target: project.md
+    status: mvp
+    completion_pct: 78
+    heat: warm
+    launch_rank: 8
+    spec: null
+    verify: "pytest tests -q"
+
+  - id: ai-agent-team
+    name: AI Agent Team (Gemini API)
+    tier: internal_demo
+    repo: push
+    path: ai-agent-team/
+    project_md: product-management/project-files/push/ai-agent-team/project.md
+    deploy_target: ai-agent-team/project.md
+    status: scaffold
+    completion_pct: 35
+    heat: cold
+    launch_rank: 9
+    spec: null
+    verify: "cd ai-agent-team && npm test || npm run dev"
+
+  - id: openclaw-framework
+    name: OpenClaw Framework
+    tier: placeholder
+    repo: openclaw-framework
+    path: ./
+    project_md: product-management/project-files/openclaw-framework/project.md
+    deploy_target: project.md
+    status: concept
+    completion_pct: 0
+    heat: cold
+    launch_rank: 99
+    spec: null
+    verify: "n/a — repo empty"
+
+productizable_forks:
+  # Not owned IP — track only if you differentiate; see REPO_CATALOG.md
+  - id: marketing-ai-studio
+    repo: marketing-ai-studio
+    heat: warm
+    note: FastAPI + ADK + React; 70+ agents — potential GTM demo shell
+  - id: openclaw-marketing-skills
+    repo: openclaw-marketing-skills
+    heat: warm
+    note: 38 CRO/copy/SEO skills — bundle with agent suite GTM
+  - id: god-of-prompt
+    repo: God-Of-Prompt
+    heat: warm
+    note: Prompt generator product — cross-sell to proposals agent
+  - id: ai-business-skills
+    repo: ai-business-skills
+    heat: warm
+    note: 63 bilingual marketing skills — content GTM engine
+  - id: openclaw-mission-control
+    repo: openclaw-mission-control
+    heat: cold
+    note: Orchestration UI — integrate after core agents ship
