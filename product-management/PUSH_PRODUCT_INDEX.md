@@ -60,6 +60,17 @@ Manifest: [`ETSY_KITS_MANIFEST.yaml`](ETSY_KITS_MANIFEST.yaml)
 Sync script: [`scripts/sync-etsy-project-md-to-push.sh`](scripts/sync-etsy-project-md-to-push.sh)
 
 ```bash
+# Option A — copy from KB (after merging .github PR)
 chmod +x product-management/scripts/sync-etsy-project-md-to-push.sh
 ./product-management/scripts/sync-etsy-project-md-to-push.sh /path/to/push
+
+# Option B — apply pre-made git patch (one commit, 28 files)
+git clone https://github.com/samuelfreemanjobs-hash/push
+cd push
+chmod +x /path/to/.github/product-management/scripts/apply-etsy-project-md-patch.sh
+/path/to/.github/product-management/scripts/apply-etsy-project-md-patch.sh .
+git push -u origin HEAD:cursor/etsy-project-md-1753
+# Open PR: base cursor/etsy-store-automation-f219 ← head cursor/etsy-project-md-1753
 ```
+
+> Cloud agents can push to `.github` but may not have write access to `push`. Patch: [`patches/push-etsy-project-md-28files.patch`](patches/push-etsy-project-md-28files.patch).
