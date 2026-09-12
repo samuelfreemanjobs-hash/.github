@@ -1,0 +1,114 @@
+{
+  "run_meta": {
+    "run_id": "run-2026-09-12-fba-ai-agents-ebay",
+    "today": "2026-09-12",
+    "niche": "how to run Amazon FBA with AI agents",
+    "icp": "solo business owners, startups, side hustlers, Amazon sellers",
+    "market": "eBay",
+    "cadence": "ad_hoc",
+    "brief_profile": "client_facing",
+    "confidence_gate": 0.65,
+    "score_weights": { "confidence": 0.0, "urgency": 0.25, "revenue_potential": 0.35, "icp_fit": 0.25, "ease": 0.15 },
+    "notes": "eBay: Classified Ad + Information Products; high insertion fee economics."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "Can You Sell Digital Products on eBay in 2026",
+      "publisher": "ZIK Analytics",
+      "url": "https://www.zikanalytics.com/blog/can-you-sell-digital-products-on-ebay/",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.7,
+      "bias_note": "Sells eBay research tool"
+    },
+    {
+      "id": "S2",
+      "title": "How to Sell Digital Products on eBay",
+      "publisher": "TopBubbleIndex",
+      "url": "https://www.topbubbleindex.com/blog/how-to-sell-digital-products-on-ebay/",
+      "publication_date": "2025-06-01",
+      "source_type": "secondary",
+      "credibility_score": 0.68,
+      "bias_note": null
+    },
+    {
+      "id": "S3",
+      "title": "Selling Digital Products on eBay",
+      "publisher": "LiveAbout",
+      "url": "https://www.liveabout.com/dos-and-don-ts-for-selling-digital-goods-on-ebay-1140532",
+      "public_content": "classified ad / information products",
+      "publication_date": "2024-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.65,
+      "bias_note": null
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "High-ticket Classified Ad guide ($47+) — 'Amazon FBA AI Agent Playbook' PDF",
+      "status": "Hypothesis",
+      "mapped_offer": "Information product",
+      "evidence_source_ids": ["S1", "S2", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.36,
+      "score_breakdown": {
+        "urgency_value": 0.2,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "arithmetic": "0.25*0.2+0.35*0.2+0.25*0.6+0.15*0.6=0.36",
+        "priority_score": 0.36
+      },
+      "confidence": 0.61,
+      "urgency_label": "Low",
+      "why_now": "eBay allows digital guides via Everything Else → Information Products + Classified Ad with clear electronic delivery (S1,S2,S3); economics require price above ~$40 to absorb ~$10 insertion fees cited by sellers.",
+      "owner_role": "Sam Freeman",
+      "timeline_weeks": { "min": 3, "max": 8 },
+      "dependencies": ["PayPal/digital seller verification", "Delivery SOP via email within 24h"],
+      "compliance_regimes": ["eBay electronically delivered items policy", "Copyright on all included prompts"],
+      "offer": "PDF + email support 7 days",
+      "wedge": "Amazon FBA agent niche underserved vs generic make-money PDFs",
+      "channels": ["eBay Classified Ad", "Cross-link from Gumroad"],
+      "example_calc": {
+        "inputs": { "units": 8, "price_per_unit": 47, "variable_cost_per_unit": 6, "fixed_cost_90d": 120 },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "8*(47-6)-120=208",
+        "gross_profit": 208
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 170.4 },
+        { "case": "units_minus_20pct", "gross_profit": 142.4 }
+      ],
+      "evidence": [
+        { "source_id": "S2", "claim_supported": "Digital ebooks/guides use Classified Ad in Information Products", "fact_date": "2025-06-01" },
+        { "source_id": "S1", "claim_supported": "Must state digital delivery; policy-driven format", "fact_date": "2026-01-01" }
+      ],
+      "validation_plan": [
+        { "step": "List one Classified Ad at $47; track insertion fee", "owner": "Sam", "cost_usd": 10, "duration_days": 30, "metric": "pass if 1 sale or 50 qualified messages" },
+        { "step": "Compare CAC vs Etsy for same PDF", "owner": "Sam", "cost_usd": 0, "duration_days": 30, "metric": "pass if eBay CPA < Etsy" },
+        { "step": "Kill channel if 0 sales after 2 renewals", "owner": "Sam", "cost_usd": 0, "duration_days": 60, "metric": "pass/fail binary" }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "eBay as primary growth channel for this ICP",
+      "reason": "Low urgency, classified-ad friction, insertion fees; Amazon sellers discover on Amazon/YouTube first.",
+      "gates_failed": ["ICPFit"]
+    },
+    {
+      "headline": "Buy It Now digital listing without Classified Ad",
+      "reason": "Policy mismatch for typical digital delivery (S2).",
+      "gates_failed": ["Compliance"]
+    }
+  ]
+}

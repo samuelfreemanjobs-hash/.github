@@ -1,0 +1,120 @@
+{
+  "run_meta": {
+    "run_id": "run-2026-09-12-fba-ai-agents-amazon",
+    "today": "2026-09-12",
+    "niche": "how to run Amazon FBA with AI agents",
+    "icp": "solo business owners, startups, side hustlers, Amazon sellers",
+    "market": "Amazon",
+    "cadence": "ad_hoc",
+    "brief_profile": "client_facing",
+    "confidence_gate": 0.65,
+    "score_weights": { "confidence": 0.0, "urgency": 0.25, "revenue_potential": 0.35, "icp_fit": 0.25, "ease": 0.15 },
+    "notes": "Amazon channel: KDP + education + services; not third-party FBA digital downloads."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "Selling software and digital goods (Seller Central help)",
+      "publisher": "Amazon Seller Central",
+      "url": "https://sellercentral.amazon.com/help/hub/reference/G200386270",
+      "publication_date": "2024-01-01",
+      "source_type": "primary",
+      "credibility_score": 0.95,
+      "bias_note": null
+    },
+    {
+      "id": "S2",
+      "title": "SellerSheet — certified SP-API MCP gateway",
+      "publisher": "SellerSheet",
+      "url": "https://www.sellersheetai.com/",
+      "publication_date": "2026-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.45,
+      "bias_note": "Commercial MCP product"
+    },
+    {
+      "id": "S3",
+      "title": "agentcentral — Amazon seller MCP",
+      "publisher": "agentcentral",
+      "url": "https://agentcentral.to/",
+      "publication_date": "2026-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.45,
+      "bias_note": "Commercial MCP product"
+    },
+    {
+      "id": "S4",
+      "title": "How to Sell on Amazon FBA: Complete Guide for 2026",
+      "publisher": "AF Commerce",
+      "url": "https://www.afcommerce.com/amazon-fba/",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.68,
+      "bias_note": null
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "KDP + Gumroad 'Run FBA with AI Agents' system book — route marketplace traffic to MCP setup playbooks",
+      "status": "Validated",
+      "mapped_offer": "Revenue Intel / education SKU",
+      "evidence_source_ids": ["S1", "S4", "S2"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.56,
+      "score_breakdown": {
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 1.0,
+        "ease_value": 0.6,
+        "arithmetic": "0.25*0.6+0.35*0.2+0.25*1+0.15*0.6=0.56",
+        "priority_score": 0.56
+      },
+      "confidence": 0.76,
+      "urgency_label": "Medium",
+      "why_now": "Third-party sellers cannot sell standalone digital downloads on Amazon (S1); KDP/ebooks are the compliant education path. FBA ops + official API/MCP gateways (S2) create a timely 'agents + spreadsheet approval' story for side hustlers (S4).",
+      "owner_role": "Sam Freeman",
+      "timeline_weeks": { "min": 4, "max": 10 },
+      "dependencies": ["KDP manuscript or licensed adaptation", "Disclose affiliate/partner links to MCP vendors"],
+      "compliance_regimes": ["Amazon KDP content guidelines", "Amazon brand / trademark rules in examples"],
+      "offer": "Kindle + optional Gumroad video bundle: weekly FBA agent rituals",
+      "wedge": "Human-in-loop sheet approval vs 'black box' automation hype",
+      "channels": ["Amazon KDP", "YouTube Shorts", "Seller forums"],
+      "example_calc": {
+        "inputs": { "units": 40, "price_per_unit": 27, "variable_cost_per_unit": 8, "fixed_cost_90d": 200 },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "40*(27-8)-200=560",
+        "gross_profit": 560
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 452 },
+        { "case": "units_minus_20pct", "gross_profit": 408 }
+      ],
+      "evidence": [
+        { "source_id": "S1", "claim_supported": "Standalone digital downloads restricted for most third-party sellers", "fact_date": "2024-01-01" },
+        { "source_id": "S4", "claim_supported": "FBA model: listing, inbound, PPC, account health — ops-heavy for ICP", "fact_date": "2026-01-01" },
+        { "source_id": "S2", "claim_supported": "MCP + SP-API path exists for agent-driven FBA workflows", "fact_date": "2026-01-01" }
+      ],
+      "validation_plan": []
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "List downloadable 'AI agent prompt ZIP' as FBA digital product",
+      "reason": "Violates Amazon digital goods policy for third-party sellers (S1).",
+      "gates_failed": ["Compliance", "Feasibility"]
+    },
+    {
+      "headline": "Compete head-on with SellerSheet/agentcentral SaaS",
+      "reason": "90-day build infeasible vs funded API gateways (S2,S3).",
+      "gates_failed": ["Feasibility"]
+    }
+  ]
+}
