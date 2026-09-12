@@ -31,8 +31,8 @@
 
 ## Your build order
 
-1. `SANITIZE-BASE.md` + `TEMPLATE-CUSTOMIZATION.md`  
-2. Seed catalog + examples + views  
-3. Share link → PDFs → ZIP → Gumroad  
+1. **`BUILD-AIRTABLE-IN-10-MIN.md`** (Path A: duplicate HUNTER → import CSVs → share link)  
+2. Paste share URL into Gumroad receipt + re-export PDFs if needed  
+3. Upload **`Revenue-Pipeline-System-HUNTER-CRM-v1-consultant.zip`** to Gumroad  
 
-**ZIP:** `Revenue-Pipeline-System-HUNTER-CRM-v1-consultant.zip`
+See **`PRODUCT-BUILD-STATUS.md`** for what was/wasn't created via API.
