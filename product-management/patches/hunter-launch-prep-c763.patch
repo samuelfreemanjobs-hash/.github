@@ -1,14 +1,23 @@
 diff --git a/.env.example b/.env.example
-index 9c8394f..b9d05cc 100644
+index 9c8394f..9f47a1d 100644
 --- a/.env.example
 +++ b/.env.example
 @@ -1,5 +1,6 @@
  # Backend
  PORT=3001
-+OPERATOR_BRAND=HUNTER Intelligence
++OPERATOR_BRAND=Your Brand Name
  SUPABASE_URL=https://your-project-id.supabase.co
  # Use the anon PUBLIC key from Supabase → Settings → API (starts with eyJ...)
  # Do NOT use the secret/service key (sb_secret_...)
+@@ -7,7 +8,7 @@ SUPABASE_ANON_KEY=your_supabase_anon_public_key
+ GEMINI_API_KEY=your_gemini_api_key
+ DEEPSEEK_API_KEY=your_deepseek_api_key
+ RESEND_API_KEY=your_resend_api_key
+-RESEND_FROM=HUNTER Intelligence <hunter@yourdomain.com>
++RESEND_FROM=Your Brand <hello@yourdomain.com>
+ SLACK_WEBHOOK=https://hooks.slack.com/services/xxx/xxx/xxx
+ REVENUE_TARGET_MONTHLY=50000
+ BOOKING_URL=https://cal.com/your-name/15min-diagnostic
 diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
 new file mode 100644
 index 0000000..60c43c5
@@ -77,13 +86,13 @@ index a21dca0..cbd1bc0 100644
  ENV PORT=3001
 diff --git a/GO_LIVE_RUNBOOK.md b/GO_LIVE_RUNBOOK.md
 new file mode 100644
-index 0000000..35528bb
+index 0000000..ff7aed8
 --- /dev/null
 +++ b/GO_LIVE_RUNBOOK.md
 @@ -0,0 +1,173 @@
-+# HUNTER — Revenue Pipeline System · Go-Live Runbook
++# Revenue Pipeline System — Revenue Pipeline System · Go-Live Runbook
 +
-+**Product:** HUNTER Intelligence OS (aka **Revenue Pipeline System**)  
++**Product:** Revenue Pipeline System (aka **Revenue Pipeline System**)  
 +**Repo branch:** `cursor/autonomous-hunter-os-54da` (launch prep: `cursor/hunter-launch-prep-c763`)  
 +**Last verified:** 2026-09-12 — `npm run health` passes on local JSON storage with 10 seeded leads.
 +
@@ -170,7 +179,7 @@ index 0000000..35528bb
 +## Phase 3 — Email & domain (Resend)
 +
 +1. Verify sending domain in Resend.
-+2. Set `RESEND_FROM=HUNTER Intelligence <you@yourdomain.com>`.
++2. Set `RESEND_FROM=Revenue Pipeline System <you@yourdomain.com>`.
 +3. Configure Resend webhook → `POST {PUBLIC_URL}/api/webhooks/resend`  
 +   See `docs/RESEND_WEBHOOK.md`.
 +
@@ -229,7 +238,7 @@ index 0000000..35528bb
 +
 +```bash
 +npm run build-etsy
-+# → dist/hunter-revenue-pipeline-etsy-digital.zip
++# → dist/revenue-pipeline-system-etsy-digital.zip
 +```
 +
 +Listing copy, tags, and seller checklist: `etsy-digital-product/ETSY-LISTING.md`  
@@ -255,12 +264,12 @@ index 0000000..35528bb
 +| `README.md` | Architecture + API index |
 +| `operator-license-kit/` | Zip + white-label for licensees |
 diff --git a/LAUNCH_STATUS.md b/LAUNCH_STATUS.md
-index 9d14499..2949463 100644
+index 9d14499..389c5d4 100644
 --- a/LAUNCH_STATUS.md
 +++ b/LAUNCH_STATUS.md
 @@ -1,30 +1,41 @@
 -# Launch Status — HUNTER Intelligence OS
-+# Launch Status — HUNTER Intelligence OS (Revenue Pipeline System)
++# Launch Status — Revenue Pipeline System (Revenue Pipeline System)
  
 -Last updated: 2026-08-29
 +Last updated: **2026-09-12**  
@@ -355,22 +364,31 @@ index 9d14499..2949463 100644
  
  ## System URLs (Local)
 diff --git a/README.md b/README.md
-index 4f82a21..cd1d7e8 100644
+index 4f82a21..7e3c886 100644
 --- a/README.md
 +++ b/README.md
 @@ -1,8 +1,10 @@
 -# Autonomous HUNTER OS — Complete Business Operating System
-+# Autonomous HUNTER OS — Revenue Pipeline System
++# Autonomous Revenue Pipeline System — Revenue Pipeline System
  
  **One person. Full autonomous revenue machine. Launch-ready.**
  
 -HUNTER Intelligence is a complete business-in-a-box for solo operators selling operational intelligence to mid-market manufacturers. Every system — sales, delivery, finance, marketing, operations — is built, automated, and ready to profit.
-+HUNTER Intelligence (aka **Revenue Pipeline System**) is a complete business-in-a-box for solo operators selling operational intelligence to mid-market manufacturers.
++Revenue Pipeline System (aka **Revenue Pipeline System**) is a complete business-in-a-box for solo operators selling operational intelligence to mid-market manufacturers.
 +
 +**Go-live:** start with [`GO_LIVE_RUNBOOK.md`](GO_LIVE_RUNBOOK.md) · status snapshot in [`LAUNCH_STATUS.md`](LAUNCH_STATUS.md). Every system — sales, delivery, finance, marketing, operations — is built, automated, and ready to profit.
  
  ## What You Get
  
+@@ -28,7 +30,7 @@ HUNTER Intelligence is a complete business-in-a-box for solo operators selling o
+           ▼                        ▼                        ▼
+    ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+    │  DISCOVER   │         │   SELL      │         │  DELIVER    │
+-   │  n8n+Apify  │────────▶│  HUNTER CRM │────────▶│  Projects   │
++   │  n8n+Apify  │────────▶│  pipeline CRM │────────▶│  Projects   │
+    │  LinkedIn   │         │  Proposals  │         │  Invoices   │
+    └─────────────┘         │  Diagnostics│         └─────────────┘
+                            └──────┬──────┘
 @@ -48,7 +50,7 @@ npm install
  cp .env.example .env   # Fill in all keys
  
@@ -393,11 +411,34 @@ index 4f82a21..cd1d7e8 100644
  ├── n8n/                          # Automation workflows
  ├── Dockerfile + docker-compose.yml
  └── .env.example
+diff --git a/business/BUSINESS_MODEL.md b/business/BUSINESS_MODEL.md
+index 5e36f31..208f7b3 100644
+--- a/business/BUSINESS_MODEL.md
++++ b/business/BUSINESS_MODEL.md
+@@ -1,4 +1,4 @@
+-# HUNTER Intelligence — Business Model
++# Revenue Pipeline System — Business Model
+ 
+ ## One-Liner
+ AI-powered operational intelligence for mid-market manufacturers — we find friction, score opportunities, and deliver systems that eliminate it.
+@@ -62,7 +62,7 @@ $4,500/mo ongoing optimization after project delivery
+ 2. **Give-Before-Ask** — Free diagnostic reports that demonstrate expertise before asking for money
+ 3. **Speed** — 2-4 week delivery vs. 3-6 month consulting engagements
+ 4. **Vertical Focus** — Deep manufacturing expertise, not generalist IT
+-5. **Autonomous Pipeline** — n8n + HUNTER OS runs discovery, scoring, outreach 24/7
++5. **Autonomous Pipeline** — n8n + Revenue Pipeline System runs discovery, scoring, outreach 24/7
+ 
+ ## Go-To-Market Motion
+ 
 diff --git a/business/LAUNCH_CHECKLIST.md b/business/LAUNCH_CHECKLIST.md
-index 0f58d70..defc5f8 100644
+index 0f58d70..4d48573 100644
 --- a/business/LAUNCH_CHECKLIST.md
 +++ b/business/LAUNCH_CHECKLIST.md
-@@ -4,7 +4,7 @@
+@@ -1,10 +1,10 @@
+-# HUNTER Intelligence — 30-Day Launch Checklist
++# Revenue Pipeline System — 30-Day Launch Checklist
+ 
+ ## Week 1: Foundation (Days 1–7)
  
  ### Day 1: Infrastructure
  - [ ] Create Supabase project
@@ -406,6 +447,24 @@ index 0f58d70..defc5f8 100644
  - [ ] Deploy backend to Railway/Render
  - [ ] Set all env vars (Supabase, Gemini, Resend, Slack)
  - [ ] Verify `/api/health` returns all services green
+@@ -19,7 +19,7 @@
+ ### Day 3: Automation
+ - [ ] Import `n8n/hunter-lead-discovery.json`
+ - [ ] Import `n8n/hunter-follow-up-sequence.json`
+-- [ ] Configure Apify token + HUNTER API URL in n8n
++- [ ] Configure Apify token + pipeline API URL in n8n
+ - [ ] Run manual test — verify leads appear in CRM
+ - [ ] Connect Slack webhook — verify HOT alerts
+ 
+@@ -57,7 +57,7 @@
+ - [ ] Follow up all Week 1 outreach (Day 7 follow-up)
+ 
+ ### Day 11–12: Deliver (if deal closed)
+-- [ ] Convert lead in HUNTER OS
++- [ ] Convert lead in Revenue Pipeline System
+ - [ ] Send deposit invoice
+ - [ ] Kickoff call with client
+ - [ ] Begin delivery using service SOP prompts
 @@ -92,7 +92,7 @@
  If you need to launch TODAY with the minimum:
  
@@ -415,6 +474,71 @@ index 0f58d70..defc5f8 100644
  3. `npm start`
  4. Deploy landing page
  5. Import n8n lead discovery workflow
+diff --git a/business/OPERATOR_PLAYBOOK.md b/business/OPERATOR_PLAYBOOK.md
+index 0ee7902..7e2407f 100644
+--- a/business/OPERATOR_PLAYBOOK.md
++++ b/business/OPERATOR_PLAYBOOK.md
+@@ -1,4 +1,4 @@
+-# HUNTER Intelligence — Solo Operator Playbook
++# Revenue Pipeline System — Solo Operator Playbook
+ 
+ You are the only human. The system does everything else. Your job: **decide, sell, deliver oversight, collect money.**
+ 
+@@ -7,7 +7,7 @@ You are the only human. The system does everything else. Your job: **decide, sel
+ ### Morning Block (45 min) — Revenue
+ 1. Open Operator Dashboard (`/operator.html`)
+ 2. Review daily briefing — act on every HIGH/CRITICAL alert
+-3. Send outreach to all HOT leads (pre-written by HUNTER, you personalize 1 line)
++3. Send outreach to all HOT leads (pre-written by the system, you personalize 1 line)
+ 4. Follow up on active proposals (call or email, same day)
+ 5. Check inbound captures from landing page
+ 
+@@ -17,7 +17,7 @@ You are the only human. The system does everything else. Your job: **decide, sel
+ 8. Send client a progress update (template in `/templates/`)
+ 
+ ### Evening Block (15 min) — Finance
+-9. Mark paid invoices in HUNTER OS
++9. Mark paid invoices in Revenue Pipeline System
+ 10. Chase overdue invoices (automated reminder already sent)
+ 11. Review tomorrow's calendar
+ 
+@@ -40,7 +40,7 @@ You are the only human. The system does everything else. Your job: **decide, sel
+ | Reply received | Book 15-min diagnostic within 48 hours. |
+ | Diagnostic delivered | Follow up in 3 days with proposal offer. |
+ | Proposal sent | Follow up Day 3, Day 7, Day 14. Then move to nurture. |
+-| Deal closed | Convert in HUNTER OS → auto-creates client, project, deposit invoice. |
++| Deal closed | Convert in Revenue Pipeline System → auto-creates client, project, deposit invoice. |
+ | Project complete | Deliver final invoice, pitch retainer same day. |
+ 
+ ## What the System Handles (You Don't)
+diff --git a/business/PRICING.md b/business/PRICING.md
+index eb2a576..8d59fa9 100644
+--- a/business/PRICING.md
++++ b/business/PRICING.md
+@@ -1,4 +1,4 @@
+-# HUNTER Intelligence — Pricing & Service Catalog
++# Revenue Pipeline System — Pricing & Service Catalog
+ 
+ ## Service Packages
+ 
+@@ -28,7 +28,7 @@
+ 
+ | Plan | Price | Includes |
+ |------|-------|----------|
+-| HUNTER Operations Retainer | $4,500/mo | 2 optimization sprints/mo, priority support, quarterly ROI report |
++| Operations Retainer | $4,500/mo | 2 optimization sprints/mo, priority support, quarterly ROI report |
+ 
+ **Offer retainer at project close:** "Keep the system optimized and evolving — most clients add this after the first project."
+ 
+@@ -40,7 +40,7 @@
+ 
+ ## Payment Terms
+ 
+-- **50% deposit** on signing (invoice sent via HUNTER OS)
++- **50% deposit** on signing (invoice sent via Revenue Pipeline System)
+ - **50% on delivery** (net 7 days)
+ - Retainer billed monthly, net 15
+ - No discounts on first project — value is demonstrated via diagnostic
 diff --git a/content/give-before-ask/README.md b/content/give-before-ask/README.md
 index 75bf74a..f78b10f 100644
 --- a/content/give-before-ask/README.md
@@ -482,11 +606,86 @@ index 75bf74a..f78b10f 100644
 -3. **Fitzpatrick Manufacturing** → `fitzpatrick-spindle-cmm-queue.pdf`
 -4. **Barron Industries** → `barron-casting-spindle-ndt-tracker.pdf`
 +Index lists all four; paths match CRM `give_before_ask` values.
+diff --git a/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html b/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html
+index 1ea0d3b..89d1b50 100644
+--- a/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html
++++ b/content/give-before-ask/auto-metal-craft-ecn-laser-queue.html
+@@ -8,7 +8,7 @@
+ <body>
+   <div class="header">
+     <div>
+-      <div class="brand">HUNTER Intelligence</div>
++      <div class="brand">[YOUR BRAND]</div>
+       <div class="title">Prototype ECN Revision &amp; Laser Trim Fixture Queue Board</div>
+       <div class="subtitle">Prepared for Auto Metal Craft · Oak Park, MI</div>
+     </div>
+@@ -99,7 +99,7 @@
+   </div>
+ 
+   <div class="footer">
+-    <span>HUNTER Intelligence · Operational Diagnostic Framework</span>
++    <span>[YOUR BRAND] · Operational Diagnostic Framework</span>
+     <span>Not for distribution · 70+ yr Oak Park prototype stamper</span>
+   </div>
+ </body>
+diff --git a/content/give-before-ask/barron-casting-spindle-ndt-tracker.html b/content/give-before-ask/barron-casting-spindle-ndt-tracker.html
+index 0cb4bea..a33f179 100644
+--- a/content/give-before-ask/barron-casting-spindle-ndt-tracker.html
++++ b/content/give-before-ask/barron-casting-spindle-ndt-tracker.html
+@@ -8,7 +8,7 @@
+ <body>
+   <div class="header">
+     <div>
+-      <div class="brand">HUNTER Intelligence</div>
++      <div class="brand">[YOUR BRAND]</div>
+       <div class="title">Investment Casting Shell-to-Spindle Stage-Gate &amp; NDT Compliance Tracker</div>
+       <div class="subtitle">Prepared for Barron Industries · Oxford, MI</div>
+     </div>
+@@ -103,7 +103,7 @@
+   </div>
+ 
+   <div class="footer">
+-    <span>HUNTER Intelligence · Operational Diagnostic Framework</span>
++    <span>[YOUR BRAND] · Operational Diagnostic Framework</span>
+     <span>Not for distribution · Up to 250 lb investment castings</span>
+   </div>
+ </body>
+diff --git a/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html b/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html
+index 02ae515..cadaa53 100644
+--- a/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html
++++ b/content/give-before-ask/fitzpatrick-spindle-cmm-queue.html
+@@ -8,7 +8,7 @@
+ <body>
+   <div class="header">
+     <div>
+-      <div class="brand">HUNTER Intelligence</div>
++      <div class="brand">[YOUR BRAND]</div>
+       <div class="title">Multi-Axis Spindle Utilization &amp; CMM Inspection Queue Visualizer</div>
+       <div class="subtitle">Prepared for Fitzpatrick Manufacturing Co. · Sterling Heights, MI</div>
+     </div>
+@@ -107,7 +107,7 @@
+   </div>
+ 
+   <div class="footer">
+-    <span>HUNTER Intelligence · Operational Diagnostic Framework</span>
++    <span>[YOUR BRAND] · Operational Diagnostic Framework</span>
+     <span>Not for distribution · Aerospace / defense / robotics mix</span>
+   </div>
+ </body>
 diff --git a/content/give-before-ask/index.html b/content/give-before-ask/index.html
-index 282e247..73cb021 100644
+index 282e247..a241f1f 100644
 --- a/content/give-before-ask/index.html
 +++ b/content/give-before-ask/index.html
-@@ -37,16 +37,16 @@
+@@ -3,7 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>HUNTER — Launch Day Give-Before-Ask Assets</title>
++  <title>Revenue Pipeline System — Give-Before-Ask Assets</title>
+   <style>
+     body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1a1a2e; }
+     h1 { font-size: 1.5rem; color: #1e3a5f; }
+@@ -37,18 +37,18 @@
  
    <div class="card">
      <span class="order">Send #3</span>
@@ -508,7 +707,32 @@ index 282e247..73cb021 100644
 +    <a class="btn" href="fitzpatrick-spindle-cmm-queue.html" target="_blank">Open framework</a>
    </div>
  
-   <p style="margin-top:24px;font-size:0.85rem;color:#94a3b8;">HUNTER Intelligence · Give-before-ask operational frameworks · Aug 2026</p>
+-  <p style="margin-top:24px;font-size:0.85rem;color:#94a3b8;">HUNTER Intelligence · Give-before-ask operational frameworks · Aug 2026</p>
++  <p style="margin-top:24px;font-size:0.85rem;color:#94a3b8;">[YOUR BRAND] · Give-before-ask operational frameworks</p>
+ </body>
+ </html>
+diff --git a/content/give-before-ask/true-industries-die-tryout-tracker.html b/content/give-before-ask/true-industries-die-tryout-tracker.html
+index bf8e84a..854587a 100644
+--- a/content/give-before-ask/true-industries-die-tryout-tracker.html
++++ b/content/give-before-ask/true-industries-die-tryout-tracker.html
+@@ -8,7 +8,7 @@
+ <body>
+   <div class="header">
+     <div>
+-      <div class="brand">HUNTER Intelligence</div>
++      <div class="brand">[YOUR BRAND]</div>
+       <div class="title">Progressive Die Tryout Hit Log &amp; First-Panel Buyoff Tracker</div>
+       <div class="subtitle">Prepared for True Industries, Inc. · Roseville, MI</div>
+     </div>
+@@ -103,7 +103,7 @@
+   </div>
+ 
+   <div class="footer">
+-    <span>HUNTER Intelligence · Operational Diagnostic Framework</span>
++    <span>[YOUR BRAND] · Operational Diagnostic Framework</span>
+     <span>Not for distribution · trueindustries.com context</span>
+   </div>
+ </body>
 diff --git a/content/gtm/manifest.yaml b/content/gtm/manifest.yaml
 new file mode 100644
 index 0000000..56837fc
@@ -1124,6 +1348,81 @@ index 8f21d07..7d246ea 100644
 +    "notes": "Unified GTM #10"
    }
  ]
+diff --git a/docs/RESEND_WEBHOOK.md b/docs/RESEND_WEBHOOK.md
+index b5cd1b0..be7492d 100644
+--- a/docs/RESEND_WEBHOOK.md
++++ b/docs/RESEND_WEBHOOK.md
+@@ -1,10 +1,10 @@
+ # Resend Webhook Setup
+ 
+-HUNTER auto-updates pipeline stages when prospects open or click your emails.
++The Revenue Pipeline System auto-updates pipeline stages when prospects open or click your emails.
+ 
+ ## Setup (5 minutes)
+ 
+-1. Deploy HUNTER with a public URL (Railway, Render, etc.)
++1. Deploy the Revenue Pipeline System with a public URL (Railway, Render, etc.)
+ 2. Set `PUBLIC_URL` in `.env` (e.g. `https://hunter-production.up.railway.app`)
+ 3. In [Resend Dashboard](https://resend.com/webhooks) → **Add Webhook**
+ 4. **Endpoint URL:** `https://your-domain.com/api/webhooks/resend`
+@@ -17,7 +17,7 @@ HUNTER auto-updates pipeline stages when prospects open or click your emails.
+ 
+ ## What happens automatically
+ 
+-| Event | HUNTER Action |
++| Event | System action |
+ |-------|---------------|
+ | `email.opened` (1st time) | Log status → `opened`, Slack alert |
+ | `email.opened` (2nd+ time) | Move lead to **Diagnostic Ready**, Slack alert |
+diff --git a/docs/SPARK_WEBHOOK.md b/docs/SPARK_WEBHOOK.md
+index ecf5740..99d3f38 100644
+--- a/docs/SPARK_WEBHOOK.md
++++ b/docs/SPARK_WEBHOOK.md
+@@ -1,6 +1,6 @@
+-# Gemini Spark → HUNTER Webhook
++# Gemini Spark → Revenue Pipeline System Webhook
+ 
+-Auto-import Gemini Spark opportunity cards into HUNTER after each daily run.
++Auto-import Gemini Spark opportunity cards into the pipeline after each daily run.
+ 
+ ## Endpoint
+ 
+@@ -63,11 +63,11 @@ The importer accepts any of these shapes:
+ 
+ Also supported: `opportunities`, `leads`, `cards`, `outreach_queue`.
+ 
+-## What HUNTER does on import
++## What Revenue Pipeline System does on import
+ 
+-1. Maps Spark fields → HUNTER lead schema
++1. Maps Spark fields → Revenue Pipeline System lead schema
+ 2. **Deduplicates** by company name (skips existing leads)
+-3. Uses **HUNTER catalog pricing** (not Spark's low estimates)
++3. Uses **Revenue Pipeline System catalog pricing** (not Spark's low estimates)
+ 4. Preserves Spark outreach subject/body when provided
+ 5. Slack alert for **HOT** leads (score ≥ 90)
+ 6. Sets `source: gemini-spark` on imported leads
+@@ -119,7 +119,7 @@ Re-running the same payload skips duplicates:
+ 
+ ## Field mapping reference
+ 
+-| Spark field | HUNTER field |
++| Spark field | pipeline field |
+ |-------------|--------------|
+ | `company` / `Company` | `company` |
+ | `location` | `location` |
+@@ -138,9 +138,9 @@ Re-running the same payload skips duplicates:
+ 
+ ## Pricing note
+ 
+-Spark often estimates $3.5K–$9K. HUNTER maps to the real catalog:
++Spark often estimates $3.5K–$9K. Revenue Pipeline System maps to the real catalog:
+ 
+-| Service | HUNTER price |
++| Service | catalog price |
+ |---------|--------------|
+ | Spreadsheet Elimination | $18,500 |
+ | KPI Command Center | $24,000 |
 diff --git a/etsy-digital-product/BUYER-FAQ.md b/etsy-digital-product/BUYER-FAQ.md
 new file mode 100644
 index 0000000..a81f3e0
@@ -1154,11 +1453,11 @@ index 0000000..a81f3e0
 +If the seller offers lifetime updates, check the shop announcement; otherwise you receive the version at purchase time.
 diff --git a/etsy-digital-product/DIGITAL-LICENSE.txt b/etsy-digital-product/DIGITAL-LICENSE.txt
 new file mode 100644
-index 0000000..ffbf2b4
+index 0000000..1782e7c
 --- /dev/null
 +++ b/etsy-digital-product/DIGITAL-LICENSE.txt
 @@ -0,0 +1,22 @@
-+HUNTER REVENUE PIPELINE SYSTEM — DIGITAL DOWNLOAD LICENSE
++REVENUE PIPELINE SYSTEM — DIGITAL DOWNLOAD LICENSE
 +
 +Copyright (c) [YOUR SHOP LEGAL NAME]. All rights reserved.
 +
@@ -1166,166 +1465,184 @@ index 0000000..ffbf2b4
 +You may use this download for your own business, consulting practice, or internal operations.
 +
 +PERMITTED
-+- Deploy one production instance for yourself or your company
-+- White-label branding (your name, domain, emails)
-+- Use templates and marketing content to sell services to your end clients
++- Deploy for yourself or your company
++- White-label with your brand on landing, emails, and templates
++- Use materials to sell services to your end clients
 +- Modify code for your own use
 +
 +NOT PERMITTED
 +- Resell, redistribute, or share the ZIP or source files
 +- List this product (or substantially the same files) on Etsy, Gumroad, or other marketplaces
-+- Claim original authorship of the underlying system for resale as a template pack
++- Pass off the system as your own template product for resale
 +
 +NO WARRANTY
-+Software and templates are provided "as is." You are responsible for compliance with email laws (CAN-SPAM, GDPR where applicable), contracts with your clients, and API terms (Google, Resend, Supabase, etc.).
++Provided "as is." You are responsible for email laws, client contracts, and third-party API terms.
 +
-+Questions: contact the seller via Etsy messages.
++Contact: Etsy messages to [YOUR SHOP NAME].
 diff --git a/etsy-digital-product/ETSY-KEYWORD-PASS.md b/etsy-digital-product/ETSY-KEYWORD-PASS.md
 new file mode 100644
-index 0000000..b11f27c
+index 0000000..a8610db
 --- /dev/null
 +++ b/etsy-digital-product/ETSY-KEYWORD-PASS.md
-@@ -0,0 +1,31 @@
-+# Etsy SEO keyword pass
+@@ -0,0 +1,22 @@
++# Etsy SEO — Revenue Pipeline System
 +
-+**Primary phrase:** revenue pipeline CRM digital download  
-+**Secondary:** consultant sales system, B2B outreach templates, AI lead scoring kit
++**Primary:** revenue pipeline system digital download  
++**Secondary:** consultant CRM kit, B2B outreach templates, sales pipeline automation
 +
-+## Title keywords (use 2–3)
++## Title must include
 +
-+- revenue pipeline
-+- CRM kit
-+- digital download
-+- consultant / agency
-+- outreach templates
-+- lead generation
++- revenue pipeline OR sales pipeline
++- digital download OR instant download
++- consultant OR agency OR B2B
 +
-+## First 160 characters of description (mobile preview)
++## Do not use in public listing
++
++- Legacy internal codenames
++- “Fully hosted SaaS included” (buyer self-hosts)
++- Guaranteed income claims
++
++## Mobile preview (first ~160 chars of description)
 +
 +```
-+Instant download revenue pipeline: CRM, 10 outreach emails, landing page, n8n automation. White-label for YOUR consulting brand. Not physical.
++Instant download: Revenue Pipeline System — CRM, 10 outreach emails, landing page, automation JSON. White-label for YOUR brand. Not a physical item.
 +```
-+
-+## Attributes to set in Etsy
-+
-+- Digital file: Yes  
-+- Craft type: N/A — digital  
-+- Occasion: Business startup / Small business  
-+
-+## Avoid (policy / confusion)
-+
-+- Do not claim "passive income guaranteed"
-+- Do not say "fully hosted SaaS included" (buyer brings their own hosting)
-+- Do not use trademarked tool names in title except as "works with Supabase/Cal.com" in description body
 diff --git a/etsy-digital-product/ETSY-LISTING.md b/etsy-digital-product/ETSY-LISTING.md
 new file mode 100644
-index 0000000..21bfe93
+index 0000000..c3a6ea7
 --- /dev/null
 +++ b/etsy-digital-product/ETSY-LISTING.md
-@@ -0,0 +1,109 @@
-+# Etsy listing copy — HUNTER Revenue Pipeline System
+@@ -0,0 +1,136 @@
++# Etsy listing — Revenue Pipeline System (seller reference)
 +
-+Use for **Digital download** listing. Replace `[YOUR SHOP]` and `[PRICE]`. Not legal advice.
-+
-+---
-+
-+## Listing type
-+
-+- **Category:** Digital downloads → Business & marketing → Templates / Software (pick closest)
-+- **Delivery:** Automatic digital download (upload ZIP from `npm run build-etsy`)
-+- **Personalization:** Off (or "Optional message" for buyer brand name only)
++Product name everywhere: **Revenue Pipeline System** (no legacy codenames).
 +
 +---
 +
-+## Title (140 chars max)
++## Listing settings
++
++- **Type:** Digital download · automatic delivery
++- **NOT physical** — state clearly in title or first line
++- **Upload:** `dist/revenue-pipeline-system-etsy-digital.zip` (`npm run build-etsy`)
++
++---
++
++## Title options (max 140 characters)
++
++**Recommended:**
 +
 +```
-+Revenue Pipeline CRM Kit | AI Lead Scoring Outreach Templates | Consultant Digital Download
++Revenue Pipeline System Digital Download | CRM Lead Scoring Email Templates | Consultant Kit
 +```
 +
-+Alt shorter:
++**Alternate:**
 +
 +```
-+Sales Pipeline System Digital Download | CRM + Email Templates | AI Consultant Kit
++Sales Pipeline CRM Kit Instant Download | B2B Outreach Templates | AI Lead Scoring System
 +```
 +
 +---
 +
-+## Price guidance
++## Price (your choice)
 +
-+| Tier | Suggested | Notes |
-+|------|-----------|--------|
-+| Launch | $47–$79 | Volume + reviews |
-+| Standard | $97–$149 | Matches "business system" kits |
-+| Premium | $197+ | Bundle with 1-page video walkthrough |
++- Launch: $47–$79  
++- Standard: $97–$149  
++- Premium: $197+ (add video walkthrough or 1:1 setup call as bonus in description)
 +
 +---
 +
-+## Description (paste into Etsy)
++## Description (copy/paste for Etsy)
 +
 +```
-+⚡ INSTANT DOWNLOAD — NOT A PHYSICAL ITEM
++⚡ INSTANT DIGITAL DOWNLOAD — NOT A PHYSICAL ITEM
 +
-+Run your own revenue pipeline: CRM, lead scoring, outreach emails, landing page, and automation workflows — built for consultants and agencies who sell operational / systems work (manufacturing-friendly examples included).
++The Revenue Pipeline System is a complete consultant-ready revenue stack: CRM, lead scoring, outreach emails, client landing page, and automation workflow files — so you can run pipeline under YOUR brand.
 +
-+✅ WHAT'S INSIDE
-+• Node.js revenue pipeline app (CRM + operator dashboard + landing page)
-+• 10 pre-written leads with email copy + 4 give-before-ask PDF frameworks
-+• LinkedIn post template, pricing catalog, MSA/SOW templates
-+• n8n workflow JSON (lead discovery + follow-up)
-+• Step-by-step START_HERE + go-live runbook
++✅ WHAT YOU GET
++• Revenue Pipeline app (CRM + operator dashboard + landing page)
++• 10 pre-loaded leads with ready-to-send email copy
++• 4 give-before-ask PDF frameworks (open HTML → print to PDF → attach to email)
++• LinkedIn post template #1
++• Service pricing catalog, MSA/SOW templates
++• n8n workflow JSON (lead discovery + follow-up sequences)
++• START_HERE.md step-by-step setup (Node.js)
 +
-+✅ YOU CAN
-+• White-label with YOUR brand ([YOUR BRAND] in docs)
-+• Deploy on Railway/Render + Supabase
-+• Use templates to sell diagnostics and projects to your clients
++✅ PERFECT FOR
++• Solo consultants & micro-agencies selling B2B systems / operations work
++• Anyone who wants a pipeline without building CRM + outreach from scratch
++• White-label: set your brand in .env and landing page
 +
-+❌ YOU CANNOT
-+• Resell or re-upload this ZIP on Etsy or other marketplaces (personal/small business license)
++✅ EXAMPLES INCLUDED
++Manufacturing-friendly sample leads (CNC, stamping, 3PL, etc.). Rebrand and adapt for your niche.
++
++❌ LICENSE — PLEASE READ
++Personal & small-business use. You may deploy for yourself and sell SERVICES to your clients.
++You may NOT resell, redistribute, or re-list this ZIP on Etsy, Gumroad, or other marketplaces.
 +
 +📋 REQUIREMENTS
-+Computer with Node.js 20+. Optional: free Supabase, Cal.com, Resend, Gemini API keys for full automation.
++• Computer with Node.js 20+ (free)
++• Optional: Supabase (free tier), Cal.com, Resend, Google Gemini API for full automation
++• Basic comfort copy-pasting terminal commands (START_HERE walks you through)
 +
 +📥 AFTER PURCHASE
-+Download the ZIP → open START_HERE.md → npm ci → npm start → npm run seed.
++1. Download the ZIP from Etsy
++2. Unzip
++3. Open START_HERE.md first
++4. Follow quick start (about 30 minutes to see CRM + landing locally)
 +
-+Questions? Message [YOUR SHOP] on Etsy.
++💬 QUESTIONS
++Message me here on Etsy — include your OS (Mac/Windows) if you’re stuck on install.
 +
-+© [YOUR SHOP] — digital product license included in download.
++© [YOUR SHOP NAME] — digital license included in download (DIGITAL-LICENSE.txt).
 +```
 +
 +---
 +
-+## Tags (13)
++## 13 tags
 +
 +```
-+sales pipeline
++revenue pipeline
 +crm template
-+consultant kit
 +digital download
++consultant kit
++sales pipeline
 +email templates
 +lead generation
-+ai business
-+notion alternative
-+small business
-+marketing kit
-+outreach template
 +b2b sales
-+automation workflow
++outreach template
++small business
++marketing automation
++notion alternative
++ai business tools
 +```
 +
 +---
 +
-+## Shop section
++## Digital file thank-you message (Etsy)
 +
-+Create section: **Revenue & CRM Systems** or file under existing **AI Agent Kits**.
++```
++Thanks for your purchase! This is a DIGITAL download — not a physical product.
++
++Open START_HERE.md in the ZIP first, then run the quick start.
++
++Need help? Reply to this message with your operating system (Mac or Windows).
++```
 +
 +---
 +
-+## Files to upload
++## Shop policies snippet
 +
-+1. `dist/hunter-revenue-pipeline-etsy-digital.zip` (from `npm run build-etsy`)
-+2. Optional: 5 listing images (Canva) — mock CRM screenshot, folder tree, "what's included" checklist
++Digital goods: license is non-transferable; no resale of files; buyer responsible for their own client contracts and email compliance (CAN-SPAM, etc.).
++
++---
++
++## Listing images (suggested)
++
++1. Hero: “Revenue Pipeline System — Instant Download”
++2. Screenshot: CRM pipeline board
++3. Checklist: What’s in the ZIP
++4. “White-label your brand” callout
++5. START_HERE preview (blur personal paths if needed)
 +
 +---
 +
@@ -1334,12 +1651,13 @@ index 0000000..21bfe93
 +See `SELLER-CHECKLIST.md`
 diff --git a/etsy-digital-product/SELLER-CHECKLIST.md b/etsy-digital-product/SELLER-CHECKLIST.md
 new file mode 100644
-index 0000000..007a566
+index 0000000..04a6c3d
 --- /dev/null
 +++ b/etsy-digital-product/SELLER-CHECKLIST.md
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,12 @@
 +# Seller checklist (you — not included in buyer ZIP)
 +
++- [ ] Confirm listing says **Revenue Pipeline System** only (no legacy codenames)
 +- [ ] Run `npm run build-etsy` — confirm ZIP &lt; 20 MB (Etsy limit)
 +- [ ] Open ZIP as buyer: read `START_HERE.md`, run quickstart once
 +- [ ] Replace `[YOUR SHOP]` / `[YOUR BRAND]` placeholders in listing copy (`ETSY-LISTING.md`)
@@ -1351,41 +1669,40 @@ index 0000000..007a566
 +- [ ] After sale: monitor Etsy messages for "can't unzip" / Node version issues
 diff --git a/etsy-digital-product/START_HERE.md b/etsy-digital-product/START_HERE.md
 new file mode 100644
-index 0000000..f7cd149
+index 0000000..7d89e28
 --- /dev/null
 +++ b/etsy-digital-product/START_HERE.md
-@@ -0,0 +1,97 @@
-+# START HERE — HUNTER Revenue Pipeline System
+@@ -0,0 +1,74 @@
++# START HERE — Revenue Pipeline System
 +
-+**Digital download · Not a physical item · For [YOUR BRAND] consulting use**
++**Digital download · Not a physical item · White-label as [YOUR BRAND]**
 +
-+Thank you for your purchase. This kit is a **complete revenue pipeline** you run on your own computer or cloud account: CRM, lead scoring, outreach templates, landing page, and automation workflows.
++Thank you for your purchase. This is the **Revenue Pipeline System**: CRM, lead scoring, outreach templates, landing page, and automation files you run on your own computer or cloud account.
 +
 +---
 +
 +## What you received
 +
-+| Part | Location in this folder |
-+|------|-------------------------|
-+| **App** (API + CRM + landing) | Repo root: `server.js`, `frontend/`, `lib/` |
-+| **10 ready-made leads + emails** | `data/seed-leads.json` → run `npm run seed` |
-+| **PDF outreach assets (4 accounts)** | `content/give-before-ask/` |
-+| **LinkedIn post #1** | `content/linkedin-post-001.md` |
-+| **Go-live steps** | `GO_LIVE_RUNBOOK.md` |
-+| **Pricing & services (white-label)** | `business/PRICING.md`, `templates/` |
-+| **n8n automation** | `n8n/` |
++| Part | Location |
++|------|----------|
++| App (API + CRM + landing) | `server.js`, `frontend/`, `lib/` |
++| 10 leads + email copy | `data/seed-leads.json` → `npm run seed` |
++| PDF outreach assets (4 leads) | `content/give-before-ask/` |
++| LinkedIn post #1 | `content/linkedin-post-001.md` |
++| Go-live guide | `GO_LIVE_RUNBOOK.md` |
++| Pricing & contracts | `business/PRICING.md`, `templates/` |
++| Automation | `n8n/` |
 +
 +---
 +
 +## Quick start (30 minutes)
 +
-+### 1. Requirements
++### Requirements
 +
-+- Computer with **Node.js 20+** ([nodejs.org](https://nodejs.org))
-+- Free **Supabase** account (production CRM) — optional for first test
-+- Optional: **Gemini**, **Resend**, **Cal.com** keys (see `.env.example`)
++- **Node.js 20+**
++- Optional: Supabase, Gemini, Resend, Cal.com (see `.env.example`)
 +
-+### 2. Install
++### Install & run
 +
 +```bash
 +npm ci
@@ -1394,73 +1711,51 @@ index 0000000..f7cd149
 +
 +Edit `.env`:
 +
-+- `OPERATOR_BRAND=[YOUR BRAND]` — your name on emails
++- `OPERATOR_BRAND=[YOUR BRAND]`
 +- `BOOKING_URL=` your Cal.com or Calendly link
-+
-+### 3. Run
 +
 +```bash
 +npm start
 +```
 +
-+Open in your browser:
++Open:
 +
-+- **Landing page:** http://localhost:3001/
-+- **CRM:** http://localhost:3001/hunter_crm.html
-+- **Your dashboard:** http://localhost:3001/operator.html
-+
-+### 4. Load the pipeline
++- Landing: http://localhost:3001/
++- CRM: http://localhost:3001/hunter_crm.html
++- Dashboard: http://localhost:3001/operator.html
 +
 +```bash
 +npm run seed
-+```
-+
-+You should see **10 leads** with outreach copy already loaded (ranks 1–4 include give-before-ask PDF links).
-+
-+### 5. Verify
-+
-+```bash
 +npm run health
 +```
 +
 +---
 +
-+## Brand this kit
++## Branding
 +
-+Replace **[YOUR BRAND]** everywhere. Full checklist: `etsy-digital-product/WHITE_LABEL-BUYER.md`.
-+
-+Minimum: `OPERATOR_BRAND` in `.env` + `frontend/index.html` logo/hero.
-+
-+---
-+
-+## Deploy for real clients (optional)
-+
-+Follow **`GO_LIVE_RUNBOOK.md`** — Railway/Render, Supabase, Resend, n8n.
++See `WHITE_LABEL-BUYER.md`. Set **your** name — not the product name — on client-facing emails unless you sell as “Revenue Pipeline System.”
 +
 +---
 +
 +## License
 +
-+Read **`DIGITAL-LICENSE.txt`** in this folder. Personal and small-business use only; **do not resell or re-list these files on Etsy or elsewhere.**
++Read `DIGITAL-LICENSE.txt`. No resale or re-listing of these files on Etsy or elsewhere.
 +
 +---
 +
 +## Support
 +
-+This is a self-serve digital product. Use `npm run health` and `GO_LIVE_RUNBOOK.md` first.
-+
-+If your listing promised email support, contact the shop at the address on your Etsy receipt.
-+
-+**Enjoy building your pipeline — [YOUR BRAND]**
++Self-serve: `GO_LIVE_RUNBOOK.md` and `npm run health`.  
++Contact the shop via Etsy messages if your listing includes support.
 diff --git a/etsy-digital-product/WHITE_LABEL-BUYER.md b/etsy-digital-product/WHITE_LABEL-BUYER.md
 new file mode 100644
-index 0000000..96cc577
+index 0000000..da559ab
 --- /dev/null
 +++ b/etsy-digital-product/WHITE_LABEL-BUYER.md
-@@ -0,0 +1,30 @@
-+# White-label for Etsy buyers
+@@ -0,0 +1,28 @@
++# White-label — Revenue Pipeline System
 +
-+Set **your** consulting brand — not "HUNTER" — before you go live.
++The **product name** is Revenue Pipeline System. **Your clients** should see **[YOUR BRAND]** on emails and the landing page.
 +
 +## Required (.env)
 +
@@ -1471,23 +1766,21 @@ index 0000000..96cc577
 +PUBLIC_URL=https://your-deployed-url.com
 +```
 +
-+## Customer-facing files
++## Edit these files
 +
 +| File | Change |
 +|------|--------|
 +| `frontend/index.html` | Logo, headline, footer |
-+| `frontend/hunter_crm.html` | Header title (optional) |
-+| `content/give-before-ask/*.html` | Footer line |
-+| `templates/msa-template.md` | Your legal entity as Provider |
++| `frontend/hunter_crm.html` | Header title |
++| `content/give-before-ask/*.html` | `.brand` and footer — use [YOUR BRAND] |
++| `templates/msa-template.md` | Provider name |
 +| `business/PRICING.md` | Your prices (optional) |
 +
-+## Optional helper
++## Helper
 +
 +```bash
 +bash etsy-digital-product/scripts/apply-brand.sh "Your Brand Name"
 +```
-+
-+Then search the repo for remaining "HUNTER" strings.
 diff --git a/etsy-digital-product/scripts/apply-brand.sh b/etsy-digital-product/scripts/apply-brand.sh
 new file mode 100755
 index 0000000..9e5e247
@@ -1506,7 +1799,7 @@ index 0000000..9e5e247
 +echo "Updated brand to: $BRAND — grep -ri HUNTER frontend content templates"
 diff --git a/etsy-digital-product/scripts/build-etsy-download.sh b/etsy-digital-product/scripts/build-etsy-download.sh
 new file mode 100755
-index 0000000..193d689
+index 0000000..0d6fe4c
 --- /dev/null
 +++ b/etsy-digital-product/scripts/build-etsy-download.sh
 @@ -0,0 +1,65 @@
@@ -1518,7 +1811,7 @@ index 0000000..193d689
 +STAGING="$ROOT/dist/etsy-staging"
 +OUT="$ROOT/dist"
 +DATE="$(date +%Y%m%d)"
-+ZIP="$OUT/hunter-revenue-pipeline-etsy-digital.zip"
++ZIP="$OUT/revenue-pipeline-system-etsy-digital.zip"
 +MAX_MB=20
 +
 +cd "$ROOT"
@@ -1575,9 +1868,260 @@ index 0000000..193d689
 +  echo "❌ Over Etsy ${MAX_MB}MB limit — trim content or split download"
 +  exit 1
 +fi
+diff --git a/frontend/hunter_crm.html b/frontend/hunter_crm.html
+index 8711688..439da1d 100644
+--- a/frontend/hunter_crm.html
++++ b/frontend/hunter_crm.html
+@@ -3,7 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>HUNTER Intelligence OS</title>
++  <title>Revenue Pipeline System</title>
+   <style>
+     :root {
+       --bg: #0a0e17;
+@@ -300,7 +300,7 @@
+ </head>
+ <body>
+   <aside class="sidebar">
+-    <div class="logo">HUNTER</div>
++    <div class="logo">Revenue Pipeline</div>
+     <div class="logo-sub">AUTONOMOUS OS</div>
+     <nav>
+       <div class="nav-item active" data-view="dashboard"><span>📊</span> <span>Dashboard</span></div>
+diff --git a/frontend/index.html b/frontend/index.html
+index b010d6b..358806e 100644
+--- a/frontend/index.html
++++ b/frontend/index.html
+@@ -3,7 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>HUNTER Intelligence — Operational Intelligence for Manufacturers</title>
++  <title>Revenue Pipeline System — Operational Intelligence for Manufacturers</title>
+   <meta name="description" content="We find operational friction in mid-market manufacturers and eliminate it in 2-4 weeks. Free diagnostic.">
+   <style>
+     :root { --bg:#0a0e17; --surface:#111827; --border:#2a3548; --text:#e8edf5; --muted:#8896ab; --accent:#3b82f6; --accent2:#6366f1; --success:#22c55e; }
+@@ -46,7 +46,7 @@
+ </head>
+ <body>
+   <nav>
+-    <div class="logo">HUNTER</div>
++    <div class="logo">RPS</div>
+     <div class="nav-links">
+       <a href="#services">Services</a>
+       <a href="#process">Process</a>
+@@ -102,7 +102,7 @@
+   </section>
+ 
+   <footer>
+-    <p>HUNTER Intelligence &mdash; Operational Intelligence for Manufacturers</p>
++    <p>Revenue Pipeline System &mdash; Operational Intelligence for Manufacturers</p>
+     <p style="margin-top:8px"><a href="/operator.html" style="color:var(--muted)">Operator Dashboard</a> &middot; <a href="/hunter_crm.html" style="color:var(--muted)">CRM</a></p>
+   </footer>
+ 
+diff --git a/frontend/operator.html b/frontend/operator.html
+index 0275cba..c8e3468 100644
+--- a/frontend/operator.html
++++ b/frontend/operator.html
+@@ -3,7 +3,7 @@
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>HUNTER — Operator Command Center</title>
++  <title>Revenue Pipeline System — Operator Command Center</title>
+   <style>
+     :root { --bg:#0a0e17; --surface:#111827; --surface2:#1a2234; --border:#2a3548; --text:#e8edf5; --muted:#8896ab; --accent:#3b82f6; --hot:#ef4444; --success:#22c55e; --warn:#eab308; }
+     * { box-sizing:border-box; margin:0; padding:0; }
+diff --git a/lib/outreach-engine.js b/lib/outreach-engine.js
+index a4e724b..6f2cb80 100644
+--- a/lib/outreach-engine.js
++++ b/lib/outreach-engine.js
+@@ -62,7 +62,7 @@ async function sendOutreachEmail({ store, resend, lead, to, subject, body, strat
+   }
+ 
+   const { data, error } = await resend.emails.send({
+-    from: process.env.RESEND_FROM || 'HUNTER Intelligence <hunter@yourdomain.com>',
++    from: process.env.RESEND_FROM || 'Your Brand <hello@yourdomain.com>',
+     to: [to],
+     subject: finalSubject,
+     text: finalBody,
+diff --git a/lib/proposal-engine.js b/lib/proposal-engine.js
+index 412cad6..b4d0572 100644
+--- a/lib/proposal-engine.js
++++ b/lib/proposal-engine.js
+@@ -4,7 +4,7 @@ function buildProposalPrompt(lead, service, options = {}) {
+   const svc = typeof service === 'string' ? (getServiceById(service) || getServiceByName(service)) : service;
+   if (!svc) throw new Error('Service not found');
+ 
+-  return `You are a senior solutions architect at HUNTER Intelligence, writing a winning proposal for a mid-market manufacturer.
++  return `You are a senior solutions architect at the operator's firm, writing a winning proposal for a mid-market manufacturer.
+ 
+ CLIENT:
+ - Company: ${lead.company}
+@@ -14,7 +14,7 @@ CLIENT:
+ - Decision Maker: ${lead.decision_maker || lead.decisionMaker || 'Operations Leader'}
+ - Detected Problems: ${(lead.detected_problems || lead.detectedProblems || []).join('; ')}
+ - Evidence: ${lead.evidence_signals || lead.evidenceSignals || 'AI-analyzed operational data'}
+-- HUNTER Score: ${lead.score || 'N/A'} (${lead.tier || 'N/A'} tier)
++- Pipeline score: ${lead.score || 'N/A'} (${lead.tier || 'N/A'} tier)
+ 
+ PROPOSED SERVICE: ${svc.name}
+ - Investment: ${svc.priceRange || '$' + svc.price.toLocaleString()}
+@@ -30,7 +30,7 @@ Write a professional proposal with these sections:
+ 3. PROPOSED SOLUTION (scope, deliverables, timeline)
+ 4. INVESTMENT (pricing table with line items)
+ 5. ROI PROJECTION (quantified savings/returns within 90 days)
+-6. WHY HUNTER (3 differentiators — speed, manufacturing focus, AI-powered diagnostics)
++6. WHY US (3 differentiators — speed, manufacturing focus, AI-powered diagnostics)
+ 7. NEXT STEPS (sign, kickoff call, Week 1 plan)
+ 8. TERMS (50% upfront, 50% on delivery, 30-day warranty)
+ 
+@@ -39,7 +39,7 @@ Format as clean markdown. Be direct — manufacturing leaders respect brevity.`;
+ }
+ 
+ function buildDiagnosticPrompt(lead) {
+-  return `You are HUNTER Intelligence, an operational diagnostics firm for mid-market manufacturers.
++  return `You are the operator's firm, an operational diagnostics firm for mid-market manufacturers.
+ 
+ Analyze this company and produce a diagnostic report they would receive BEFORE any sales pitch.
+ 
+@@ -56,7 +56,7 @@ Produce a diagnostic report with:
+ 2. TOP 3 FRICTION POINTS (specific, not generic — reference their industry)
+ 3. ESTIMATED ANNUAL COST OF INACTION ($ range based on company size)
+ 4. QUICK WINS (2 things they could fix this week without hiring anyone)
+-5. STRATEGIC RECOMMENDATION (which HUNTER service fits best and why)
++5. STRATEGIC RECOMMENDATION (which service package fits best and why)
+ 6. 90-DAY ROI PROJECTION (if they act now)
+ 
+ This is a GIVE-BEFORE-ASK asset. Be genuinely helpful. No hard sell.
+diff --git a/lib/routes-business.js b/lib/routes-business.js
+index 5c63839..f5a4edd 100644
+--- a/lib/routes-business.js
++++ b/lib/routes-business.js
+@@ -164,7 +164,7 @@ function registerBusinessRoutes(app, { store, genAI, resend, sendSlackNotificati
+         id: crypto.randomUUID(),
+         client_id: client.id,
+         project_id: project.id,
+-        invoice_number: `HUNTER-${Date.now().toString(36).toUpperCase()}`,
++        invoice_number: `RPS-${Date.now().toString(36).toUpperCase()}`,
+         amount: Math.round(service.price * 0.5),
+         description: `50% deposit — ${service.name}`,
+         status: 'sent',
+@@ -337,7 +337,7 @@ async function createCapturedLead(store, { company, email, industry, challenge }
+ }
+ 
+ function buildFallbackProposal(lead, service) {
+-  return `# Proposal: ${service.name}\n\n## Executive Summary\n${lead.company} is experiencing operational friction in ${lead.industry || 'manufacturing'}. HUNTER Intelligence proposes the ${service.name} to eliminate manual processes and deliver measurable ROI within 90 days.\n\n## Situation Analysis\n${(lead.detected_problems || ['Manual processes detected']).join('. ')}.\n\n## Proposed Solution\n${service.deliverables.map(d => `- ${d}`).join('\n')}\n\n## Investment\n**${service.name}**: $${service.price.toLocaleString()}\nTimeline: ${service.duration}\n\n## ROI Projection\n${service.roi}\n\n## Next Steps\n1. Sign proposal\n2. 50% deposit ($${Math.round(service.price / 2).toLocaleString()})\n3. Kickoff within 5 business days`;
++  return `# Proposal: ${service.name}\n\n## Executive Summary\n${lead.company} is experiencing operational friction in ${lead.industry || 'manufacturing'}. We propose the ${service.name} to eliminate manual processes and deliver measurable ROI within 90 days.\n\n## Situation Analysis\n${(lead.detected_problems || ['Manual processes detected']).join('. ')}.\n\n## Proposed Solution\n${service.deliverables.map(d => `- ${d}`).join('\n')}\n\n## Investment\n**${service.name}**: $${service.price.toLocaleString()}\nTimeline: ${service.duration}\n\n## ROI Projection\n${service.roi}\n\n## Next Steps\n1. Sign proposal\n2. 50% deposit ($${Math.round(service.price / 2).toLocaleString()})\n3. Kickoff within 5 business days`;
+ }
+ 
+ function buildFallbackDiagnostic(lead) {
+diff --git a/lib/services-catalog.js b/lib/services-catalog.js
+index fe00d6d..d0d8ebb 100644
+--- a/lib/services-catalog.js
++++ b/lib/services-catalog.js
+@@ -129,7 +129,7 @@ const SERVICES = [
+ 
+ const RETAINER = {
+   id: 'ops-retainer',
+-  name: 'HUNTER Operations Retainer',
++  name: 'Operations Retainer',
+   tagline: 'Ongoing optimization, monitoring, and iteration',
+   price: 4500,
+   priceRange: '$3,500 – $6,000/mo',
+diff --git a/lib/spark-import.js b/lib/spark-import.js
+index 5082d9f..396d429 100644
+--- a/lib/spark-import.js
++++ b/lib/spark-import.js
+@@ -139,7 +139,7 @@ function mapSparkCardToLead(card, { getTier, bookingUrl }) {
+   const outreachSubject = pick(card, ['outreachSubject', 'outreach_subject', 'subject', 'emailSubject', 'email_subject'])
+     || `${strategy.prefix} ${company}`;
+   const outreachBody = pick(card, ['outreachBody', 'outreach_body', 'message', 'messageDraft', 'message_draft', 'emailBody', 'email_body'])
+-    || `${strategy.prefix}\n\nHi,\n\nI've been analyzing ${industry} operations in ${location} and identified specific opportunities at ${company}.\n\nWould you be open to a 15-min diagnostic call? Book here: ${bookingUrl || '[BOOKING_URL]'}\n\nBest,\nHUNTER Intelligence`;
++    || `${strategy.prefix}\n\nHi,\n\nI've been analyzing ${industry} operations in ${location} and identified specific opportunities at ${company}.\n\nWould you be open to a 15-min diagnostic call? Book here: ${bookingUrl || '[BOOKING_URL]'}\n\nBest,\n${process.env.OPERATOR_BRAND || 'Your Brand'}`;
+ 
+   const notes = [
+     pick(card, ['notes', 'Notes', 'summary']),
+diff --git a/n8n/README.md b/n8n/README.md
+index a151935..689b30f 100644
+--- a/n8n/README.md
++++ b/n8n/README.md
+@@ -1,6 +1,6 @@
+-# HUNTER n8n Lead Discovery Workflow
++# Revenue Pipeline n8n Lead Discovery Workflow
+ 
+-Automatically discovers manufacturing companies via LinkedIn (Apify), scores them with HUNTER's Gemini engine, and creates leads in Supabase.
++Automatically discovers manufacturing companies via LinkedIn (Apify), scores them with Revenue Pipeline System's Gemini engine, and creates leads in Supabase.
+ 
+ ## Workflow Overview
+ 
+@@ -15,14 +15,14 @@ Daily 6AM / Manual / Webhook
+          ↓
+     Normalize → Deduplicate against existing leads
+          ↓
+-    HUNTER POST /api/leads (auto-scores each lead)
++    Revenue Pipeline System POST /api/leads (auto-scores each lead)
+          ↓
+     HOT leads → Slack alert + daily summary report
+ ```
+ 
+ ## Prerequisites
+ 
+-1. **HUNTER OS backend** running with Supabase configured (`npm start`)
++1. **Revenue Pipeline System backend** running with Supabase configured (`npm start`)
+ 2. **n8n** instance — [n8n.io](https://n8n.io) cloud or self-hosted
+ 3. **Apify account** — [apify.com](https://apify.com) (free tier works for testing)
+ 4. **Slack webhook** (optional) — for HOT lead alerts
+@@ -35,7 +35,7 @@ Daily 6AM / Manual / Webhook
+ 
+ | Field | Value |
+ |-------|-------|
+-| `hunterApiUrl` | Your HUNTER API URL (e.g. `https://your-app.railway.app/api`) |
++| `hunterApiUrl` | Your pipeline API URL (e.g. `https://your-app.railway.app/api`) |
+ | `apifyToken` | Apify API token from [console.apify.com/account/integrations](https://console.apify.com/account/integrations) |
+ | `apifyActorId` | LinkedIn scraper actor (default: `harvestapi~linkedin-company-search`) |
+ | `slackWebhook` | Slack incoming webhook URL |
+@@ -56,7 +56,7 @@ Click **Test workflow** in n8n to run immediately without waiting for the schedu
+ 
+ ### 3. Webhook Push
+ 
+-Push a single company directly into HUNTER:
++Push a single company directly into the pipeline:
+ 
+ ```bash
+ curl -X POST https://your-n8n.app/webhook/hunter-discover \
+@@ -71,7 +71,7 @@ curl -X POST https://your-n8n.app/webhook/hunter-discover \
+   }'
+ ```
+ 
+-The webhook bypasses Apify and sends the company directly to HUNTER for auto-scoring.
++The webhook bypasses Apify and sends the company directly to Revenue Pipeline System for auto-scoring.
+ 
+ ## Apify Setup
+ 
+@@ -117,7 +117,7 @@ Two notification types:
+ - **HOT Alert** — Fires immediately when a discovered lead scores ≥90
+ - **Daily Report** — Summary after each run: total created, HOT/HIGH counts, company list
+ 
+-HUNTER's backend also sends its own HOT lead Slack notification on `POST /api/leads`, so you may get duplicate alerts for HOT leads. Disable one if preferred.
++Revenue Pipeline System's backend also sends its own HOT lead Slack notification on `POST /api/leads`, so you may get duplicate alerts for HOT leads. Disable one if preferred.
+ 
+ ## Customizing Search Targets
+ 
+@@ -147,7 +147,7 @@ This creates 25 search queries (5 industries × 5 locations) per daily run.
+ 
+ | Issue | Fix |
+ |-------|-----|
+-| `503 Supabase not configured` | Set `SUPABASE_URL` and `SUPABASE_ANON_KEY` in HUNTER backend `.env` |
++| `503 Supabase not configured` | Set `SUPABASE_URL` and `SUPABASE_ANON_KEY` in system backend `.env` |
+ | Apify timeout | Increase `waitForFinish` in the Apify HTTP node (default: 120s) |
+ | Empty results | Check Apify actor input format; try a different actor |
+ | All duplicates | Normal — means companies already exist in pipeline |
 diff --git a/operator-license-kit/LICENSE_TERMS_TEMPLATE.md b/operator-license-kit/LICENSE_TERMS_TEMPLATE.md
 new file mode 100644
-index 0000000..763b6a1
+index 0000000..210d5f6
 --- /dev/null
 +++ b/operator-license-kit/LICENSE_TERMS_TEMPLATE.md
 @@ -0,0 +1,38 @@
@@ -1587,7 +2131,7 @@ index 0000000..763b6a1
 +
 +## Grant
 +
-+Licensor grants Licensee a **non-exclusive**, **non-transferable** license to deploy and operate one (1) production instance of the HUNTER Revenue Pipeline codebase for Licensee's own sales and delivery operations.
++Licensor grants Licensee a **non-exclusive**, **non-transferable** license to deploy and operate one (1) production instance of the Revenue Pipeline codebase for Licensee's own sales and delivery operations.
 +
 +## Restrictions
 +
@@ -1688,11 +2232,11 @@ index 0000000..b24b9ed
 +  - .git/
 diff --git a/operator-license-kit/README.md b/operator-license-kit/README.md
 new file mode 100644
-index 0000000..a325437
+index 0000000..ae862c3
 --- /dev/null
 +++ b/operator-license-kit/README.md
 @@ -0,0 +1,41 @@
-+# HUNTER Revenue Pipeline — Operator / wholesale kit
++# Revenue Pipeline — Operator / wholesale kit
 +
 +**Primary channel: Etsy digital download** — use `etsy-digital-product/` and `npm run build-etsy`.
 +
@@ -1735,13 +2279,13 @@ index 0000000..a325437
 +See `MANIFEST.yaml` for every path included in the zip.
 diff --git a/operator-license-kit/WHITE_LABEL.md b/operator-license-kit/WHITE_LABEL.md
 new file mode 100644
-index 0000000..22a5ea6
+index 0000000..023d5fd
 --- /dev/null
 +++ b/operator-license-kit/WHITE_LABEL.md
 @@ -0,0 +1,57 @@
 +# White-label checklist
 +
-+Replace **HUNTER** / **HUNTER Intelligence** with the licensee's brand. Test in browser + one test email after changes.
++Replace **HUNTER** / **Revenue Pipeline System** with the licensee's brand. Test in browser + one test email after changes.
 +
 +## Environment (required)
 +
@@ -1761,11 +2305,11 @@ index 0000000..22a5ea6
 +| `frontend/index.html` | Logo text, hero, footer, meta title/description |
 +| `frontend/operator.html` | Title, greeting label if hardcoded |
 +| `frontend/hunter_crm.html` | Header product name (optional rename file) |
-+| `content/give-before-ask/*.html` | Footer line "HUNTER Intelligence" |
++| `content/give-before-ask/*.html` | Footer line "Revenue Pipeline System" |
 +| `content/give-before-ask/index.html` | Title + footer |
 +| `content/linkedin-post-001.md` | Sign-off / DM CTA (if they use as-is) |
 +| `lib/outreach-engine.js` | Default `RESEND_FROM` fallback string |
-+| `lib/proposal-engine.js` | "HUNTER Intelligence" in system prompts |
++| `lib/proposal-engine.js` | "Revenue Pipeline System" in system prompts |
 +| `lib/spark-import.js` | Default email sign-off |
 +| `templates/msa-template.md` | Provider legal name |
 +| `templates/sow-template.md` | Provider name in header |
@@ -1960,9 +2504,18 @@ index 0000000..22a3c6a
 +rm -rf "$STAGING"
 +echo "✅ Done: $ZIP ($(du -h "$ZIP" | cut -f1))"
 diff --git a/package.json b/package.json
-index f539c1c..4218ac9 100644
+index f539c1c..60db920 100644
 --- a/package.json
 +++ b/package.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "hunter-autonomous-os",
+   "version": "1.0.0",
+-  "description": "HUNTER Revenue Intelligence OS — Autonomous Lead Scoring & Outreach",
++  "description": "Revenue Pipeline System — CRM, lead scoring, and outreach for consultants",
+   "main": "server.js",
+   "scripts": {
+     "start": "node server.js",
 @@ -9,7 +9,10 @@
      "setup": "bash scripts/setup.sh",
      "seed": "node scripts/seed-leads.js",
@@ -1977,11 +2530,11 @@ index f539c1c..4218ac9 100644
      "@google/generative-ai": "^0.15.0",
 diff --git a/project.md b/project.md
 new file mode 100644
-index 0000000..f54a7a8
+index 0000000..4912ebc
 --- /dev/null
 +++ b/project.md
 @@ -0,0 +1,69 @@
-+# HUNTER Intelligence OS (Revenue Pipeline System)
++# Revenue Pipeline System (Revenue Pipeline System)
 +
 +**Date:** 2026-09-12  |  **Urgency:** HIGH  |  **Progress:** 85%
 +
@@ -1997,7 +2550,7 @@ index 0000000..f54a7a8
 +
 +Production deployment with live pipeline (10+ leads), booking link on landing, first outreach batch sent, and n8n discovery running daily. “Launched” = ≥1 diagnostic booked or ≥1 proposal sent—not merely deployed.
 +
-+**For:** Samuel Freeman / HUNTER Intelligence GTM
++**For:** Samuel Freeman / Revenue Pipeline System GTM
 +
 +---
 +
@@ -2050,6 +2603,136 @@ index 0000000..f54a7a8
 +
 +`github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude`  
 +Branches: `cursor/autonomous-hunter-os-54da` (base), `cursor/hunter-launch-prep-c763` (launch prep)
+diff --git a/prompts/discovery-call.md b/prompts/discovery-call.md
+index 0d3eda2..f26c2e0 100644
+--- a/prompts/discovery-call.md
++++ b/prompts/discovery-call.md
+@@ -1,12 +1,12 @@
+ # Discovery Call Script (15 Minutes)
+ 
+ ## Pre-Call (2 min)
+-- Pull up lead in HUNTER CRM — review score, problems, diagnostic
++- Pull up lead in pipeline CRM — review score, problems, diagnostic
+ - Have diagnostic report ready to screen-share if generated
+ - Goal: qualify fit, deliver value, book proposal — NOT close on this call
+ 
+ ## Opening (2 min)
+-"Thanks for taking 15 minutes. I run HUNTER Intelligence — we help mid-market manufacturers eliminate operational friction. I did some research on {{company}} before this call. Mind if I share what I found?"
++"Thanks for taking 15 minutes. I run Revenue Pipeline System — we help mid-market manufacturers eliminate operational friction. I did some research on {{company}} before this call. Mind if I share what I found?"
+ 
+ *[Share top friction point from diagnostic or score]*
+ 
+@@ -30,12 +30,12 @@ Ask 3-4 of these based on their industry:
+ ## Close (3 min)
+ "Based on what you've shared, I think {{matched_service}} is the right fit. I'll put together a specific proposal with scope, timeline, and ROI projection — you'll have it within 48 hours. Does that work?"
+ 
+-If yes → update lead stage to "Proposal Active" in HUNTER OS
++If yes → update lead stage to "Proposal Active" in Revenue Pipeline System
+ If maybe → deliver diagnostic report, follow up in 3 days
+ If no → ask "What would need to be true for this to be a priority?" — note and nurture
+ 
+ ## Post-Call (5 min)
+-1. Update lead notes in HUNTER CRM
++1. Update lead notes in pipeline CRM
+ 2. Generate proposal: `POST /api/proposals/generate`
+ 3. Send calendar invite for proposal review call
+ 4. Slack yourself a reminder to follow up in 48hrs
+diff --git a/prompts/linkedin-content.md b/prompts/linkedin-content.md
+index 399dd84..e28a6ef 100644
+--- a/prompts/linkedin-content.md
++++ b/prompts/linkedin-content.md
+@@ -6,11 +6,11 @@ Generate 3 posts per week using these templates. Post Tuesday, Thursday, Saturda
+ 
+ ## Prompt
+ 
+-You are a manufacturing operations expert who writes LinkedIn posts for HUNTER Intelligence. Write a post that:
++You are a manufacturing operations expert who writes LinkedIn posts for Revenue Pipeline System. Write a post that:
+ 
+ 1. Opens with a bold, specific claim or question about manufacturing operations
+ 2. Shares one concrete insight, story, or data point
+-3. Relates to a pain point HUNTER solves (spreadsheets, manual QA, no KPIs, disconnected systems)
++3. Relates to a pain point your brand solves (spreadsheets, manual QA, no KPIs, disconnected systems)
+ 4. Ends with a soft CTA (comment, DM, or link to free diagnostic)
+ 5. 150-250 words. No hashtags in body (add 3-5 at end only).
+ 6. Tone: direct, experienced, zero corporate speak
+@@ -38,7 +38,7 @@ You are a manufacturing operations expert who writes LinkedIn posts for HUNTER I
+ - "Link in comments for a free 15-min operational intelligence diagnostic."
+ 
+ ## Rules
+-- Never mention HUNTER more than once per post
++- Never mention your brand more than once per post
+ - Always include a manufacturing-specific detail (OEE, CMM, cross-dock, tryout, harness continuity)
+ - No engagement bait ("like if you agree")
+ - Write like you actually ran a plant, not like a marketer
+diff --git a/prompts/outreach-master.md b/prompts/outreach-master.md
+index d63694c..93eb4f6 100644
+--- a/prompts/outreach-master.md
++++ b/prompts/outreach-master.md
+@@ -1,17 +1,17 @@
+ # Outreach Master Prompt
+ 
+-Use this prompt to generate personalized outreach for any HUNTER-scored lead.
++Use this prompt to generate personalized outreach for any pipeline-scored lead.
+ 
+ ---
+ 
+-You are a revenue intelligence specialist at HUNTER Intelligence. Write a cold outreach email for a manufacturing decision maker.
++You are a revenue intelligence specialist at Revenue Pipeline System. Write a cold outreach email for a manufacturing decision maker.
+ 
+ ## Lead Data
+ - Company: {{company}}
+ - Industry: {{industry}}
+ - Location: {{location}}
+ - Decision Maker: {{decision_maker}}
+-- HUNTER Score: {{score}} ({{tier}})
++- Pipeline score: {{score}} ({{tier}})
+ - Detected Problems: {{detected_problems}}
+ - Evidence: {{evidence_signals}}
+ - Matched Service: {{matched_service}}
+diff --git a/scripts/health-check.js b/scripts/health-check.js
+index 7ed6bde..aa65ffd 100644
+--- a/scripts/health-check.js
++++ b/scripts/health-check.js
+@@ -1,9 +1,9 @@
+ #!/usr/bin/env node
+ /**
+- * Validate all HUNTER OS services and integrations.
++ * Validate all Revenue Pipeline System services and integrations.
+  * Usage: node scripts/health-check.js [API_URL]
+  */
+-const API = process.argv[2] || process.env.HUNTER_API_URL || 'http://localhost:3001/api';
++const API = process.argv[2] || process.env.REVENUE_PIPELINE_API_URL || process.env.HUNTER_API_URL || 'http://localhost:3001/api';
+ 
+ const checks = [];
+ 
+@@ -19,7 +19,7 @@ async function check(name, fn) {
+ }
+ 
+ async function run() {
+-  console.log(`\n🔍 HUNTER Health Check — ${API}\n`);
++  console.log(`\n🔍 Revenue Pipeline health Check — ${API}\n`);
+ 
+   await check('API Online', async () => {
+     const res = await fetch(`${API}/health`);
+diff --git a/scripts/seed-leads.js b/scripts/seed-leads.js
+index 07d7a7c..1b47df5 100644
+--- a/scripts/seed-leads.js
++++ b/scripts/seed-leads.js
+@@ -1,12 +1,12 @@
+ #!/usr/bin/env node
+ /**
+- * Seed 10 manufacturing leads into HUNTER OS.
++ * Seed 10 manufacturing leads into Revenue Pipeline System.
+  * Usage: node scripts/seed-leads.js [API_URL]
+  */
+ const fs = require('fs');
+ const path = require('path');
+ 
+-const API = process.argv[2] || process.env.HUNTER_API_URL || 'http://localhost:3001/api';
++const API = process.argv[2] || process.env.REVENUE_PIPELINE_API_URL || process.env.HUNTER_API_URL || 'http://localhost:3001/api';
+ const seeds = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/seed-leads.json'), 'utf8'));
+ 
+ async function seed() {
 diff --git a/scripts/setup.sh b/scripts/setup.sh
 index 27bc44b..2d8fa70 100755
 --- a/scripts/setup.sh
@@ -2116,14 +2799,52 @@ index 0000000..59a4b78
 +echo "⚠️  $FAIL issue(s) — fix before go-live"
 +exit 1
 diff --git a/server.js b/server.js
-index 08283ce..a98a2f5 100644
+index 08283ce..a45f073 100644
 --- a/server.js
 +++ b/server.js
+@@ -64,7 +64,7 @@ async function scoreCompany(companyData) {
+     try {
+       const response = await axios.get(url, {
+         timeout: 10000,
+-        headers: { 'User-Agent': 'HUNTER-Intelligence/1.0' }
++        headers: { 'User-Agent': 'Revenue-Pipeline-System/1.0' }
+       });
+       const html = response.data;
+       const text = String(html).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').slice(0, 8000);
+@@ -149,7 +149,7 @@ Return ONLY JSON:
+       diagnostic: `${tier.emoji} ${name} scores ${totalScore} — ${tier.label} tier opportunity. Focus on ${recommendedService}.`,
+       outreachStrategy: strategy.id,
+       outreachSubject: `${strategy.prefix} ${name}`,
+-      outreachBody: `${strategy.prefix}\n\nHi [Decision Maker],\n\nI've been tracking ${industry || 'manufacturing'} in ${location || 'your region'} and noticed an opportunity to optimize ${recommendedService}.\n\nWould you be open to a 15-min diagnostic call?\n\nBest,\nHUNTER Intelligence`
++      outreachBody: `${strategy.prefix}\n\nHi [Decision Maker],\n\nI've been tracking ${industry || 'manufacturing'} in ${location || 'your region'} and noticed an opportunity to optimize ${recommendedService}.\n\nWould you be open to a 15-min diagnostic call?\n\nBest,\nRevenue Pipeline System`
+     };
+   } catch (error) {
+     console.error('Gemini scoring error:', error.message);
+@@ -184,7 +184,7 @@ function buildFallbackScore(name, industry, location, employeeCount) {
+     diagnostic: `${tier.emoji} ${name} scores ${totalScore} — ${tier.label} tier opportunity. Focus on ${SERVICE_NAMES[0]}.`,
+     outreachStrategy: strategy.id,
+     outreachSubject: `${strategy.prefix} ${name}`,
+-    outreachBody: `${strategy.prefix}\n\nHi [Decision Maker],\n\nI've been tracking ${industry || 'manufacturing'} in ${location || 'your region'} and noticed an opportunity to optimize ${SERVICE_NAMES[0]}.\n\nWould you be open to a 15-min diagnostic call?\n\nBest,\nHUNTER Intelligence`
++    outreachBody: `${strategy.prefix}\n\nHi [Decision Maker],\n\nI've been tracking ${industry || 'manufacturing'} in ${location || 'your region'} and noticed an opportunity to optimize ${SERVICE_NAMES[0]}.\n\nWould you be open to a 15-min diagnostic call?\n\nBest,\nRevenue Pipeline System`
+   };
+ }
+ 
+@@ -194,8 +194,8 @@ async function sendSlackNotification(message) {
+   try {
+     await axios.post(SLACK_WEBHOOK, {
+       text: message,
+-      username: 'HUNTER Intelligence',
+-      icon_emoji: ':hunter:'
++      username: 'Revenue Pipeline System',
++      icon_emoji: ":chart_with_upwards_trend:"
+     });
+   } catch (e) {
+     console.error('Slack error:', e.message);
 @@ -339,6 +339,12 @@ app.post('/api/leads', async (req, res) => {
      const breakdown = req.body.scoreBreakdown || scoredData.scoreBreakdown;
      const totalScore = Object.values(breakdown).reduce((a, b) => a + b, 0);
      const tier = getTier(totalScore);
-+    const brand = process.env.OPERATOR_BRAND || 'HUNTER Intelligence';
++    const brand = process.env.OPERATOR_BRAND || 'Revenue Pipeline System';
 +    const booking = process.env.BOOKING_URL || '[BOOKING_URL]';
 +    const strategy = STRATEGIES.find(s => s.id === (req.body.outreachStrategy || scoredData.outreachStrategy)) || STRATEGIES[0];
 +    const bodyTemplate = req.body.outreachBody
@@ -2156,7 +2877,7 @@ index 08283ce..a98a2f5 100644
        const totalScore = Object.values(breakdown).reduce((a, b) => a + b, 0);
        const tier = getTier(totalScore);
        const strategy = STRATEGIES.find(s => s.id === seed.outreachStrategy) || STRATEGIES[0];
-+      const brand = process.env.OPERATOR_BRAND || 'HUNTER Intelligence';
++      const brand = process.env.OPERATOR_BRAND || 'Revenue Pipeline System';
 +      const booking = process.env.BOOKING_URL || '[BOOKING_URL]';
 +      const bodyTemplate = seed.outreachBody
 +        || `${strategy.prefix}\n\nHi,\n\nI've been analyzing ${seed.industry} operations in ${seed.location} and identified specific opportunities at ${seed.company}.\n\nWould you be open to a 15-min diagnostic call? Book here: ${booking}\n\nBest,\n${brand}`;
@@ -2181,3 +2902,122 @@ index 08283ce..a98a2f5 100644
          notes: seed.notes,
          last_activity: new Date().toISOString(),
          created_at: new Date().toISOString()
+@@ -716,7 +727,7 @@ function registerCronJobs() {
+       const won = leads.filter(l => l.stage === 'Closed Won / Client');
+       const pipeline = leads.filter(l => l.stage !== 'Closed Won / Client');
+ 
+-      const report = `📊 *HUNTER Weekly Report*\n\n` +
++      const report = `📊 *Revenue Pipeline Weekly Report*\n\n` +
+         `🔥 Hot Leads: ${hot.length}\n` +
+         `💼 Pipeline: ${pipeline.length} leads (${formatCurrency(pipeline.reduce((s, l) => s + (l.estimated_value || 0), 0))})\n` +
+         `🏆 Closed Won: ${won.length}\n` +
+@@ -748,7 +759,7 @@ async function start() {
+       const { data } = await store.from('leads').select('id');
+       leads = data?.length ?? 0;
+     } catch (_) {}
+-    console.log(`🚀 HUNTER Autonomous OS running on port ${PORT}`);
++    console.log(`🚀 Revenue Pipeline System running on port ${PORT}`);
+     console.log(`📡 API: http://localhost:${PORT}/api  ·  Storage: ${store.mode}  ·  ${leads} leads loaded`);
+     if (store.supabaseIssues?.length) {
+       console.log('   Fix Supabase in .env to sync to cloud (local data/ works for launch)');
+@@ -757,6 +768,6 @@ async function start() {
+ }
+ 
+ start().catch((err) => {
+-  console.error('Failed to start HUNTER:', err);
++  console.error('Failed to start Revenue Pipeline System:', err);
+   process.exit(1);
+ });
+diff --git a/templates/email-sequences.md b/templates/email-sequences.md
+index 17dbd4f..81fcd89 100644
+--- a/templates/email-sequences.md
++++ b/templates/email-sequences.md
+@@ -1,7 +1,7 @@
+ # Email Sequence — Day 0: Initial Outreach
+ 
+ **Trigger:** Lead created or scored as HIGH/HOT
+-**Send via:** HUNTER Outreach Engine (Strategy A or B)
++**Send via:** Outreach Engine (Strategy A or B)
+ 
+ ---
+ 
+@@ -33,7 +33,7 @@ I put together a brief analysis — happy to share it, no strings attached.
+ Worth 15 minutes?
+ 
+ [Your Name]
+-HUNTER Intelligence
++Revenue Pipeline System
+ 
+ ---
+ 
+diff --git a/templates/msa-template.md b/templates/msa-template.md
+index ba75339..b2a1294 100644
+--- a/templates/msa-template.md
++++ b/templates/msa-template.md
+@@ -1,10 +1,10 @@
+ # Master Service Agreement (MSA) — Template
+ 
+-**HUNTER INTELLIGENCE — MASTER SERVICE AGREEMENT**
++**REVENUE PIPELINE SYSTEM — MASTER SERVICE AGREEMENT**
+ 
+ This Master Service Agreement ("Agreement") is entered into as of [DATE] between:
+ 
+-**Provider:** HUNTER Intelligence ("HUNTER")
++**Provider:** Revenue Pipeline System ("[YOUR BRAND]")
+ [Your Name / LLC Name]
+ [Address]
+ [Email]
+@@ -14,7 +14,7 @@ This Master Service Agreement ("Agreement") is entered into as of [DATE] between
+ [Contact Name, Title]
+ 
+ ## 1. Services
+-HUNTER provides operational intelligence and systems integration services as defined in individual Statements of Work ("SOWs") executed under this Agreement.
++[YOUR BRAND] provides operational intelligence and systems integration services as defined in individual Statements of Work ("SOWs") executed under this Agreement.
+ 
+ ## 2. Statements of Work
+ Each project is governed by a separate SOW specifying scope, deliverables, timeline, and fees. SOWs are incorporated into this Agreement by reference.
+@@ -26,16 +26,16 @@ Each project is governed by a separate SOW specifying scope, deliverables, timel
+ - Late payments accrue 1.5% monthly interest
+ 
+ ## 4. Intellectual Property
+-Upon full payment, Client receives ownership of all custom deliverables. HUNTER retains ownership of pre-existing tools, frameworks, and methodologies.
++Upon full payment, Client receives ownership of all custom deliverables. [YOUR BRAND] retains ownership of pre-existing tools, frameworks, and methodologies.
+ 
+ ## 5. Confidentiality
+ Both parties agree to protect confidential information disclosed during the engagement for a period of 3 years.
+ 
+ ## 6. Warranty
+-HUNTER warrants deliverables will materially conform to SOW specifications for 30 days post-delivery. HUNTER will remedy defects at no additional cost.
++[YOUR BRAND] warrants deliverables will materially conform to SOW specifications for 30 days post-delivery. [YOUR BRAND] will remedy defects at no additional cost.
+ 
+ ## 7. Limitation of Liability
+-HUNTER's total liability shall not exceed fees paid under the applicable SOW.
++[YOUR BRAND]'s total liability shall not exceed fees paid under the applicable SOW.
+ 
+ ## 8. Term & Termination
+ Either party may terminate with 30 days written notice. Client pays for work completed through termination date.
+diff --git a/templates/sow-template.md b/templates/sow-template.md
+index cda26eb..f86021b 100644
+--- a/templates/sow-template.md
++++ b/templates/sow-template.md
+@@ -7,10 +7,10 @@
+ **Project Value:** $[AMOUNT]
+ 
+ ## Scope
+-HUNTER Intelligence will deliver the [SERVICE NAME] for [COMPANY] as described below.
++Revenue Pipeline System will deliver the [SERVICE NAME] for [COMPANY] as described below.
+ 
+ ## Deliverables
+-[LIST FROM SERVICE CATALOG — copy from HUNTER OS service definition]
++[LIST FROM SERVICE CATALOG — copy from Revenue Pipeline System service definition]
+ 
+ ## Timeline
+ | Phase | Duration | Milestone |
+@@ -46,6 +46,6 @@ Scope changes require a written change order with adjusted timeline and fees.
+ 
+ ---
+ 
+-**HUNTER Intelligence:** _________________________ Date: _________
++**Revenue Pipeline System:** _________________________ Date: _________
+ 
+ **[COMPANY]:** _________________________ Date: _________
