@@ -9,3 +9,5 @@
 Full blueprint (optional reading): [HEAVY-OS-MASTER-PLAN.md](docs/HEAVY-OS-MASTER-PLAN.md)
 
 Hub ↔ skill map: [hub/MANIFEST.md](hub/MANIFEST.md)
+
+**Full file index (this repo):** [docs/REPO-FILE-INDEX.md](docs/REPO-FILE-INDEX.md) — regenerate with `python3 claude-skills/scripts/generate-repo-file-index.py`

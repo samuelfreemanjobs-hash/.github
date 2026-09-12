@@ -148,6 +148,7 @@ Each agent product includes: `agent/SOUL.md`, `DUTIES.md`, `core-config.xml`, `s
 1. When an artifact **ships**, set status **SHIP** and add repo path.  
 2. When listing for sale, add price + channel to §G.  
 3. Run quarterly: diff this file vs **PM BRIEFING** project list.  
-4. **Airtable:** `Artifacts` table `tblUaFGrktRDqFyur` linked to Projects — see [AIRTABLE-ARTIFACTS.md](./AIRTABLE-ARTIFACTS.md).
+4. **Airtable:** `Artifacts` table `tblUaFGrktRDqFyur` linked to Projects — see [AIRTABLE-ARTIFACTS.md](./AIRTABLE-ARTIFACTS.md).  
+5. **Repo walk:** Regenerate [REPO-FILE-INDEX.md](../docs/REPO-FILE-INDEX.md) with `python3 claude-skills/scripts/generate-repo-file-index.py` after large adds (393+ files in `claude-skills/` + `-build-ai-agents-with-claude/`).
 
 **Last sync:** 2026-09-12 (PM Agent IP Registry 70%; +claude-os, AI Proposals docs in Airtable)
