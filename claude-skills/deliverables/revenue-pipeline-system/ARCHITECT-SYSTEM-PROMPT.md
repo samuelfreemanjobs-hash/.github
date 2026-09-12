@@ -210,3 +210,7 @@ Score 1–10 each; **ship only if average ≥ 8.0 and no dimension &lt; 6**
 | `CANVA-DESIGN-PROMPTS.md` | Canva AI + overlay duplicate of mockup spec |
 
 **Example SKU:** Revenue Pipeline System → `ARCHITECT-BRIEF-RPS.md`, `MOCKUP-SPEC.md` in `deliverables/revenue-pipeline-system/`.
+
+**Blank template for new SKUs:** `claude-skills/templates/MOCKUP-SPEC-TEMPLATE.md`
+
+**Quick designer PDF:** `DESIGN-HANDOFF-ONE-PAGER.md` (one-page summary per product).

@@ -9,7 +9,9 @@
 | **`ETSY-PRODUCT-COPY.md`** | Short paste-ready Etsy listing |
 | **`CANVA-DESIGN-PROMPTS.md`** | Canva AI prompts (execute `MOCKUP-SPEC.md`) |
 | **`ETSY-LISTING-PACKAGE-FULL.md`** | Long listing + names + FAQ (legacy bundle) |
-| **`LISTING-GUMROAD.md`** | Gumroad copy |
+| **`DESIGN-HANDOFF-ONE-PAGER.md`** | Print/PDF for human designer |
+| **`LISTING-GUMROAD-ARCHITECT-V4.md`** | Gumroad body + gallery captions (matches 5 images) |
+| **`LISTING-GUMROAD.md`** | Gumroad notes (legacy) |
 | **`LISTING-ETSY.md`** | Pointer to paste files |
 | **`NICHE-POSITIONING.md`** | ICP and angles |
 
