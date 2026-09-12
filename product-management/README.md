@@ -9,8 +9,9 @@ Knowledge-bank–ready system for inventorying, scoring, and launching products 
 | [`REGISTRY.yaml`](REGISTRY.yaml) | Machine-readable source of truth (products, repos, paths, scores) |
 | [`PRODUCT_MATRIX.md`](PRODUCT_MATRIX.md) | Human CRO/PM view: % complete, heat, launch rank |
 | [`REPO_CATALOG.md`](REPO_CATALOG.md) | All ~140 repos classified (original vs fork vs reference) |
-| [`rules/PROJECT_MD_RULE.md`](rules/PROJECT_MD_RULE.md) | Canonical `project.md` rule (aligned to your SaaS Factory specs) |
-| [`templates/project.md`](templates/project.md) | Copy-paste template for any new product |
+| [`rules/PROJECT_MD_SESSION_PROMPTS.md`](rules/PROJECT_MD_SESSION_PROMPTS.md) | PROJECT NEW / UPDATE / STATUS session prompts |
+| [`rules/PROJECT_MD_RULE.md`](rules/PROJECT_MD_RULE.md) | Agent rules + where `project.md` lives |
+| [`templates/project.md`](templates/project.md) | Standard template (task-based % complete) |
 | [`prompts/ELITE_PORTFOLIO_CRO_AGENT.md`](prompts/ELITE_PORTFOLIO_CRO_AGENT.md) | Reusable elite agent prompt for future audits |
 | [`project-files/`](project-files/) | Pre-filled `project.md` per product (deploy into target repos) |
 

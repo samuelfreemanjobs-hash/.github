@@ -49,3 +49,17 @@ top-20-ai-agents-bundle
 ```
 
 Path prefix: `ai-agent-team/products/<folder>/`
+
+## project.md (bulk generated 2026-09-12)
+
+**28 SKUs** have task-based `project.md` in the KB (ready to copy into `push`):
+
+`product-management/project-files/push/cursor-etsy-store-automation-f219/ai-agent-team/products/<slug>/project.md`
+
+Manifest: [`ETSY_KITS_MANIFEST.yaml`](ETSY_KITS_MANIFEST.yaml)  
+Sync script: [`scripts/sync-etsy-project-md-to-push.sh`](scripts/sync-etsy-project-md-to-push.sh)
+
+```bash
+chmod +x product-management/scripts/sync-etsy-project-md-to-push.sh
+./product-management/scripts/sync-etsy-project-md-to-push.sh /path/to/push
+```
