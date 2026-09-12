@@ -6,7 +6,7 @@
 
 ## Tagline (subtitle)
 
-For consultants & boutique agencies: 100-point lead scoring in Airtable + Claude — know who to call first ($3K+ deals).
+Know who's HOT before Monday — 100-point Airtable scoring + Claude prompt for consultants ($3K+ deals).
 
 ## Price
 
@@ -39,7 +39,7 @@ For consultants & boutique agencies: 100-point lead scoring in Airtable + Claude
 
 **Stop guessing which prospect deserves your Monday.**
 
-The **Revenue Pipeline System (HUNTER CRM)** is a lightweight revenue stack for **consultants, boutique agencies, and fractional operators** selling **$3K+ projects and retainers** — not for ecommerce or teams already living in Salesforce.
+When every lead has the same priority in a spreadsheet, you sort by noise — not fit. This kit adds one mechanism: **evidence → score → tier → sort** (specs in the download: 7 dimensions · 100 points · HOT ≥90 · ~45 min Day 1 setup).
 
 ### What’s inside
 
