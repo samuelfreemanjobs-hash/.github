@@ -10,6 +10,9 @@ npm run build-etsy
 
 Upload **`dist/revenue-pipeline-system-etsy-digital.zip`**.
 
+**Preview download (this branch):**  
+https://raw.githubusercontent.com/samuelfreemanjobs-hash/.github/cursor/hunter-launch-prep-c763/products/hunter-revenue-pipeline/revenue-pipeline-system-etsy-digital.zip
+
 ## Listing copy (seller)
 
 `etsy-digital-product/ETSY-LISTING.md` in the monorepo — full title, description, tags, thank-you message.
