@@ -62,7 +62,7 @@
 
 ## Sam — Phase 0 review questions
 
-1. Does the system prompt match your live Gem v5.0 voice and research steps?
-2. Is Metro Detroit + compliance/cost-recovery scope correct, or should we widen/narrow?
+1. Confirm repo prompt matches Gem (merged 2026-09-12).
+2. Dogfood: 3 weekly runs with real `niche` / `icp` + web tools enabled.
 3. Preferred SKU price and channel (Gumroad vs Etsy vs bundle with HUNTER $97)?
-4. Any forbidden opportunity types (legal, HIPAA, government incentives) to hard-block?
+4. Any default `runtime_context` overrides (search_budget, confidence_gate, weights)?

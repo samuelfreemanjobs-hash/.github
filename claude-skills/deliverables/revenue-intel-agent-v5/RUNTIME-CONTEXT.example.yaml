@@ -1,32 +1,40 @@
 # Inject as <runtime_context> each run. Orchestrator fills all REQUIRED fields.
-# Do not let the model infer these values.
 
 today: "2026-09-12" # REQUIRED — YYYY-MM-DD
 
-niche: "" # REQUIRED — market / vertical label
-icp: "" # REQUIRED — ideal customer profile (role, firmographics, constraints)
+niche: "" # REQUIRED
+icp: "" # REQUIRED — role, firmographics, budget band
+icp_constraints: "" # geo, exclusions, industries to avoid
 
-output_modes: # Default: ExecutiveBriefMD only
+offer_catalog: [] # optional — { name, price_band } items you actually sell
+cadence: weekly # weekly | ad_hoc
+run_id: "" # orchestrator UUID for storage / dedupe
+
+output_modes:
   - ExecutiveBriefMD
   # - JSON
-  # - SummaryEmail
-  # - CSV
-  # - SheetsSpec
 
-search_budget: 24 # Max search + fetch calls this run (stop at 80% to consolidate)
+search_budget: 24 # each web search AND each URL fetch = 1 unit
 
 recency_window_days: 365
-evidence_exceptions: [] # source ids allowed outside recency window
+evidence_exceptions: []
 
-confidence_gate: 0.65 # Below → status Hypothesis + validation_plan
+confidence_gate: 0.65
 
-prior_run_opportunities: [] # Headlines or ids from prior weekly runs (Novelty gate)
+prior_run_opportunities: []
 
-owner_role: "" # Named role for Feasibility / Ease scoring
-owner_capabilities: "" # Stated skills, budget, tools (Ease gate)
+owner_role: ""
+owner_capabilities: ""
+
+score_weights:
+  confidence: 0.2
+  urgency: 0.2
+  revenue_potential: 0.2
+  icp_fit: 0.2
+  ease: 0.2
 
 min_opportunities: 0
-max_opportunities: 5 # Soft cap; never pad to reach count
+max_opportunities: 5
+allow_hypothesis_in_brief: false # if false, brief is Validated-only or empty + rejected
 
-# Optional HUNTER / pipeline handoff (Freeman Intelligence internal)
 hunter_handoff: false
