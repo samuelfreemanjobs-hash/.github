@@ -77,7 +77,7 @@ The **Revenue Pipeline System (HUNTER CRM)** is a lightweight revenue stack for 
 
 Single business license. Use with clients on your engagements; don’t resell the template as a competing product.
 
-Questions: `{SUPPORT_EMAIL}`
+Questions: samuelfreemanjobs@gmail.com
 
 ---
 
@@ -98,7 +98,7 @@ Body:
 Thanks for your purchase.
 
 1. **Download the ZIP** from this email (Setup Guide, Claude prompt, Quick Start).  
-2. **Copy the Airtable template:** `{TEMPLATE_LINK}`  
+2. **Copy the Airtable template:** _(paste your share link here before publish — see BUILD-AIRTABLE-IN-10-MIN.md)_
 3. Open **QUICK-START-ONE-PAGER.pdf** and complete Day 1 (45 min).
 
 Reply to this email if the template link fails.

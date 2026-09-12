@@ -12,4 +12,4 @@
 
 **Weekly:** Score new leads · Follow up Awaiting · Sort by Tier.
 
-**Product:** Revenue Pipeline System (HUNTER CRM) · Freeman Intelligence · `{SUPPORT_EMAIL}`
+**Product:** Revenue Pipeline System (HUNTER CRM) · Freeman Intelligence · samuelfreemanjobs@gmail.com

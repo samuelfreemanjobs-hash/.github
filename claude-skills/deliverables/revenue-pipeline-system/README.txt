@@ -6,4 +6,4 @@ For consultants & boutique agencies ($3K+ deals).
 2. SETUP-GUIDE.pdf — Airtable template link on page 1
 3. CLAUDE-SCORING-PROMPT + OUTREACH-TEMPLATES + FAQ
 
-Support: {SUPPORT_EMAIL}
+Support: samuelfreemanjobs@gmail.com

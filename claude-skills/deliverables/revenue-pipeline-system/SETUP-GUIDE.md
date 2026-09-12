@@ -16,7 +16,7 @@ Turn scattered **high-ticket B2B leads** (consultants, boutique agencies, fracti
 4. **This guide**
 5. **Bonus docs in ZIP:** outreach templates (A–F), scoring calibration, FAQ
 
-**Template link (replace before publish):** `{TEMPLATE_LINK}`
+**Template link:** Delivered in your Gumroad receipt after purchase. (Seller: create link via `BUILD-AIRTABLE-IN-10-MIN.md` — duplicate HUNTER base `appfxMz1jb2MAO15G`, share with copying enabled.)
 
 ---
 
@@ -143,7 +143,7 @@ Move stages only when the **event** happened (not when you *hope* it will).
 
 ## Support & license
 
-- **Support:** `{SUPPORT_EMAIL}` (replace before launch)
+- **Support:** samuelfreemanjobs@gmail.com
 - **License:** Single business use. Do not resell or redistribute the template as a competing product. Client work using the pipeline is allowed.
 
 ---
