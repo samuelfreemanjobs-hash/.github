@@ -34,8 +34,7 @@ Use these phrases in chat so any agent with Airtable (Zapier MCP or Airtable MCP
 | HIGH | PM Agent — Proactive Project Intelligence | YELLOW | 30 | PHASE 3: pm-agent-system-prompt |
 | MEDIUM | Agent IP Registry | GREEN | 70 | Paste TheFreemanFix + Clinical git URLs |
 | MEDIUM | HUNTER — Revenue Pipeline CRM | GREEN | 90 | List $97 product on Gumroad/Etsy |
-| MEDIUM | Revenue Intel Agent | YELLOW | 45 | **BUILD:** Etsy Shop Revenue Brief SKU — listing + Stats paste guide (due 2026-09-19) |
-| MEDIUM | Etsy Digital Agents Store | YELLOW | 40 | Queue: Etsy Shop Revenue Brief Agent listing (after copy) |
+| MEDIUM | Revenue Intel Agent | YELLOW | 48 | **BUILD:** Etsy Shop Revenue Brief (due 2026-09-19) · **FBA AI Agent Workbook** Etsy draft ready · **KDP outline** ready (FBA+AI agents run) |
 
 **Portfolio:** 15 active-ish rows · **Revenue unlock (human):** Clinical calls > Copy outreach > Etsy listings > HUNTER $97 listing.
 
