@@ -2,7 +2,7 @@
 
 > **Sources:** `claude-skills/` (this repo), Airtable PM **Projects** table (Freeman Intelligence — PM), portfolio notes as of 2026-09-12.  
 > **Purpose:** Single inventory of agent IP — named agents, squads, frameworks, and productized agents.  
-> **Not exhaustive:** OIS (60+ tools) and Etsy (40+ SKUs) are summarized by system; enumerate in product repos when listing for sale.
+> **Related:** [FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md](./FREEMAN-WORKING-ARTIFACTS-AND-PRODUCTS.md) — apps, sites, prompts, CRMs, bundles, SaaS scaffolds.
 
 ---
 
