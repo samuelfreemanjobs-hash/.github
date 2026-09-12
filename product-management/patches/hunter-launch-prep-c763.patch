@@ -1,0 +1,567 @@
+From 8d6b9258c886be1a8e41d9c231a33963596f3201 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Sat, 12 Sep 2026 19:14:25 +0000
+Subject: [PATCH] Prepare HUNTER Revenue Pipeline System for launch
+
+- Add GO_LIVE_RUNBOOK and project.md with launch criteria
+- Fix Docker image (content assets, seed data, wget for healthcheck)
+- Align Supabase migration docs to full + v3 outreach
+- Add verify-launch script and GitHub Actions CI
+- Refresh LAUNCH_STATUS for 2026-09-12 verification
+---
+ .github/workflows/ci.yml     |  36 +++++++++
+ Dockerfile                   |   4 +
+ GO_LIVE_RUNBOOK.md           | 150 +++++++++++++++++++++++++++++++++++
+ LAUNCH_STATUS.md             |  71 ++++++++++-------
+ README.md                    |  14 ++--
+ business/LAUNCH_CHECKLIST.md |   4 +-
+ package.json                 |   3 +-
+ project.md                   |  69 ++++++++++++++++
+ scripts/setup.sh             |   2 +-
+ scripts/verify-launch.sh     |  46 +++++++++++
+ 10 files changed, 361 insertions(+), 38 deletions(-)
+ create mode 100644 .github/workflows/ci.yml
+ create mode 100644 GO_LIVE_RUNBOOK.md
+ create mode 100644 project.md
+ create mode 100755 scripts/verify-launch.sh
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..60c43c5
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,36 @@
++name: HUNTER CI
++
++on:
++  push:
++    branches: [main, 'cursor/**']
++  pull_request:
++    branches: [main]
++
++jobs:
++  verify:
++    runs-on: ubuntu-latest
++    defaults:
++      run:
++        working-directory: .
++
++    steps:
++      - uses: actions/checkout@v4
++
++      - uses: actions/setup-node@v4
++        with:
++          node-version: '20'
++          cache: npm
++
++      - name: Install dependencies
++        run: npm ci
++
++      - name: Static launch verification
++        run: npm run verify-launch
++
++      - name: Start server and health check
++        run: |
++          node server.js &
++          sleep 3
++          npm run health
++          npm run seed
++          npm run health
+diff --git a/Dockerfile b/Dockerfile
+index a21dca0..cbd1bc0 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,5 +1,7 @@
+ FROM node:20-alpine
+ 
++RUN apk add --no-cache wget
++
+ WORKDIR /app
+ 
+ COPY package*.json ./
+@@ -8,9 +10,11 @@ RUN npm ci --only=production
+ COPY server.js ./
+ COPY lib/ ./lib/
+ COPY frontend/ ./frontend/
++COPY content/ ./content/
+ COPY business/ ./business/
+ COPY prompts/ ./prompts/
+ COPY templates/ ./templates/
++COPY data/seed-leads.json ./data/seed-leads.json
+ 
+ ENV NODE_ENV=production
+ ENV PORT=3001
+diff --git a/GO_LIVE_RUNBOOK.md b/GO_LIVE_RUNBOOK.md
+new file mode 100644
+index 0000000..f45778a
+--- /dev/null
++++ b/GO_LIVE_RUNBOOK.md
+@@ -0,0 +1,150 @@
++# HUNTER — Revenue Pipeline System · Go-Live Runbook
++
++**Product:** HUNTER Intelligence OS (aka **Revenue Pipeline System**)  
++**Repo branch:** `cursor/autonomous-hunter-os-54da` (launch prep: `cursor/hunter-launch-prep-c763`)  
++**Last verified:** 2026-09-12 — `npm run health` passes on local JSON storage with 10 seeded leads.
++
++---
++
++## What “launched” means
++
++| Criterion | Target |
++|-----------|--------|
++| Public API + landing | `PUBLIC_URL` serves `/` and `/api/health` returns 200 |
++| Pipeline loaded | ≥10 scored leads in CRM (seed or n8n) |
++| Booking | `BOOKING_URL` set on landing + outreach |
++| First outreach | ≥5 emails sent (manual or Resend batch) |
++| Automation | n8n discovery workflow **active** OR daily manual discovery |
++| Revenue signal | ≥1 diagnostic call booked **or** ≥1 proposal sent |
++
++Code-complete alone is not launch. Track outcomes in `frontend/operator.html`.
++
++---
++
++## Phase 0 — Local smoke (15 min, no keys)
++
++```bash
++npm ci
++cp .env.example .env   # keys optional for smoke test
++npm start              # or: npm run setup
++npm run seed
++npm run health
++```
++
++Open:
++
++| Screen | URL |
++|--------|-----|
++| Landing | http://localhost:3001/ |
++| Operator | http://localhost:3001/operator.html |
++| CRM | http://localhost:3001/hunter_crm.html |
++
++---
++
++## Phase 1 — Production database (Supabase)
++
++1. Create a Supabase project.
++2. In **SQL Editor**, run in order:
++   - `supabase/migration-full.sql`
++   - `supabase/migration-v3-outreach.sql` (Resend webhook / engagement columns)
++3. Copy **Project URL** + **anon public** key (starts with `eyJ…`) into `.env`:
++   - `SUPABASE_URL`
++   - `SUPABASE_ANON_KEY`
++4. Restart the app. `/api/health` should show Supabase storage.
++
++> **Note:** Local `data/*.json` does not auto-sync to Supabase. After switching, run `npm run seed` once against production or import via n8n.
++
++---
++
++## Phase 2 — Deploy backend (Railway / Render / Docker)
++
++### Railway (recommended)
++
++1. New project → deploy from GitHub branch `cursor/hunter-launch-prep-c763` (or merge to `main`).
++2. Set all variables from `.env.example`.
++3. `railway.json` configures Docker build + `/api/health` healthcheck.
++
++### Docker
++
++```bash
++docker compose up -d --build
++```
++
++Required env vars at minimum for production pipeline:
++
++| Variable | Purpose |
++|----------|---------|
++| `SUPABASE_URL`, `SUPABASE_ANON_KEY` | Persistent CRM |
++| `GEMINI_API_KEY` | Live scoring, proposals, diagnostics |
++| `RESEND_API_KEY`, `RESEND_FROM` | Outreach |
++| `BOOKING_URL` | Diagnostic booking CTA |
++| `PUBLIC_URL` | Links in emails and webhooks |
++| `SLACK_WEBHOOK` | HOT lead alerts (optional) |
++| `SPARK_WEBHOOK_SECRET` | Gemini Spark import (optional) |
++
++---
++
++## Phase 3 — Email & domain (Resend)
++
++1. Verify sending domain in Resend.
++2. Set `RESEND_FROM=HUNTER Intelligence <you@yourdomain.com>`.
++3. Configure Resend webhook → `POST {PUBLIC_URL}/api/webhooks/resend`  
++   See `docs/RESEND_WEBHOOK.md`.
++
++---
++
++## Phase 4 — Automation (n8n)
++
++1. Import `n8n/hunter-lead-discovery.json` and `n8n/hunter-follow-up-sequence.json`.
++2. Set `hunterApiUrl` to `{PUBLIC_URL}/api`.
++3. Add Apify token + Slack webhook in the Config node.
++4. Activate daily schedule (6 AM) or run manual test.
++
++Details: `n8n/README.md`.
++
++---
++
++## Phase 5 — GTM (day 1 revenue actions)
++
++1. **LinkedIn** — post `content/linkedin-post-001.md` (Tue 7 AM ET suggested).
++2. **Outreach** — send HOT lead first (Great Lakes Aerospace) from `content/outreach-batch-001.md`.
++3. **CRM** — move stages as replies arrive; use `/api/outreach/batch` with `dryRun: true` before live batch.
++4. **Operator** — daily briefing at `GET /api/operator/daily`.
++
++30-day checklist: `business/LAUNCH_CHECKLIST.md`.
++
++---
++
++## Phase 6 — Optional: Gemini Spark feed
++
++Webhook: `POST {PUBLIC_URL}/api/webhooks/spark` with `SPARK_WEBHOOK_SECRET`.  
++See `docs/SPARK_WEBHOOK.md`. Nightly JSON drops in `data/gemini-spark-import-*.json` can be replayed with `npm run import-spark`.
++
++---
++
++## Verification commands
++
++```bash
++npm run health                    # API + core routes
++npm run verify-launch             # Static assets, n8n JSON, migrations documented
++curl -s $PUBLIC_URL/api/health | jq .
++```
++
++---
++
++## Rollback
++
++- **App:** Redeploy previous Railway release or `docker compose` previous image.
++- **Data:** Supabase point-in-time recovery (if enabled) or export leads via `GET /api/leads`.
++- **Automation:** Deactivate n8n workflows (discovery stops; CRM data remains).
++
++---
++
++## Support files
++
++| Doc | Use |
++|-----|-----|
++| `LAUNCH_STATUS.md` | Checklist snapshot |
++| `business/PRICING.md` | Service catalog alignment |
++| `business/OPERATOR_PLAYBOOK.md` | Daily operator rhythm |
++| `README.md` | Architecture + API index |
+diff --git a/LAUNCH_STATUS.md b/LAUNCH_STATUS.md
+index 9d14499..2949463 100644
+--- a/LAUNCH_STATUS.md
++++ b/LAUNCH_STATUS.md
+@@ -1,30 +1,41 @@
+-# Launch Status — HUNTER Intelligence OS
++# Launch Status — HUNTER Intelligence OS (Revenue Pipeline System)
+ 
+-Last updated: 2026-08-29
++Last updated: **2026-09-12**  
++Branch: `cursor/hunter-launch-prep-c763`  
++Automated check: `npm run verify-launch` + `npm run health` (with server running)
++
++## Executive summary
++
++| Area | Status |
++|------|--------|
++| Application code | ✅ Ready — API, CRM, operator, scoring fallbacks verified |
++| Docker / Railway | ✅ Ready — Dockerfile includes static `content/` + seed data |
++| CI | ✅ GitHub Actions — install, verify-launch, health + seed |
++| Supabase schema | ✅ SQL ready — run `migration-full.sql` + `migration-v3-outreach.sql` |
++| n8n workflows | ✅ JSON validated — import + configure Apify |
++| GTM content | ✅ Outreach batch + LinkedIn post + give-before-ask assets |
++| **Your blockers** | ⚠️ Supabase keys, Resend domain, `BOOKING_URL`, production deploy URL |
++
++Full procedure: **[GO_LIVE_RUNBOOK.md](GO_LIVE_RUNBOOK.md)**
+ 
+ ## Launch Checklist Progress
+ 
+ | # | Task | Status | Notes |
+ |---|------|--------|-------|
+-| 1 | Set up Supabase | ⚠️ **Your action** | Run `supabase/migration-full.sql` in Supabase SQL Editor. Add `SUPABASE_URL` + `SUPABASE_ANON_KEY` to `.env` |
+-| 2 | Add API keys | ⚠️ **Your action** | Gemini, Resend, Slack keys go in `.env`. System runs locally without them (fallback mode). |
+-| 3 | Deploy | ✅ **Ready** | `docker compose up` or push to Railway (railway.json included). Dockerfile tested. |
+-| 4 | Import n8n workflows | ✅ **Ready** | `n8n/hunter-lead-discovery.json` + `n8n/hunter-follow-up-sequence.json` validated. Import into n8n cloud. |
+-| 5 | Seed 10 leads | ✅ **Done** | Run `npm run seed` or `POST /api/seed`. 10 scored manufacturing leads in `data/seed-leads.json`. |
+-| 6 | Outreach ready | ✅ **Done** | 10 personalized emails in `content/outreach-batch-001.md`. HOT lead first: Great Lakes Aerospace (91). |
+-| 7 | LinkedIn post ready | ✅ **Done** | Copy/paste from `content/linkedin-post-001.md`. Post Tuesday 7 AM. |
+-| 8 | Booking link | ⚠️ **Your action** | Create Cal.com or Calendly 15-min event. Set `BOOKING_URL` in `.env`. Landing page auto-shows button. |
+-
+-## What Works Right Now (No Keys Required)
+-
+-- ✅ Server starts with local JSON storage (`data/`)
+-- ✅ 10 pre-scored leads seedable via `npm run seed`
+-- ✅ Landing page with lead capture form
+-- ✅ Operator dashboard with daily briefing
+-- ✅ Full CRM pipeline
+-- ✅ AI scoring (fallback mode without Gemini)
+-- ✅ Proposal + diagnostic generation (fallback templates)
+-- ✅ Health check: `npm run health`
++| 1 | Set up Supabase | ⚠️ **Your action** | `migration-full.sql` then `migration-v3-outreach.sql` |
++| 2 | Add API keys | ⚠️ **Your action** | Gemini, Resend, Slack, `BOOKING_URL`, `PUBLIC_URL` |
++| 3 | Deploy | ✅ **Ready** | Railway (`railway.json`) or `docker compose up` |
++| 4 | Import n8n workflows | ✅ **Ready** | Discovery + follow-up sequences |
++| 5 | Seed 10 leads | ✅ **Done** | `npm run seed` / `POST /api/seed` |
++| 6 | Outreach ready | ✅ **Done** | `content/outreach-batch-001.md` |
++| 7 | LinkedIn post ready | ✅ **Done** | `content/linkedin-post-001.md` |
++| 8 | Booking link | ⚠️ **Your action** | Cal.com / Calendly → `BOOKING_URL` |
++
++## Verified locally (2026-09-12)
++
++- ✅ `npm run health` — all 6 endpoint checks pass
++- ✅ `npm run seed` — 10 manufacturing leads (incl. Great Lakes Aerospace HIGH)
++- ✅ Local JSON storage when Supabase not configured
+ 
+ ## What Needs Your Keys
+ 
+@@ -35,22 +46,24 @@ Last updated: 2026-08-29
+ | `RESEND_API_KEY` | Email outreach sending | resend.com |
+ | `SLACK_WEBHOOK` | HOT lead + daily alerts | api.slack.com/messaging/webhooks |
+ | `BOOKING_URL` | Diagnostic call booking on landing page | cal.com or calendly.com |
++| `PUBLIC_URL` | Production links + webhooks | Your Railway/Render URL |
+ 
+ ## Quick Commands
+ 
+ ```bash
+-npm run setup    # Full setup + seed + health check
+-npm start        # Start server
+-npm run seed     # Seed 10 leads
+-npm run health   # Validate all endpoints
++npm run setup          # Full setup + seed + health check
++npm start              # Start server
++npm run seed           # Seed 10 leads
++npm run health         # Validate all endpoints
++npm run verify-launch  # Static pre-flight (no server)
+ ```
+ 
+ ## Revenue Actions (Do Today)
+ 
+-1. **Post LinkedIn** → `content/linkedin-post-001.md`
+-2. **Send HOT outreach** → Great Lakes Aerospace email in `content/outreach-batch-001.md`
+-3. **Send 4 more HIGH outreach** → emails #1-4 in same file
+-4. **Set booking URL** → create Cal.com event, add to `.env`
++1. **Deploy** — follow Phase 2 in `GO_LIVE_RUNBOOK.md`
++2. **Post LinkedIn** → `content/linkedin-post-001.md`
++3. **Send HOT outreach** → Great Lakes Aerospace in `content/outreach-batch-001.md`
++4. **Set booking URL** → `BOOKING_URL` in production env
+ 5. **Import n8n** → activate daily discovery workflow
+ 
+ ## System URLs (Local)
+diff --git a/README.md b/README.md
+index 4f82a21..cd1d7e8 100644
+--- a/README.md
++++ b/README.md
+@@ -1,8 +1,10 @@
+-# Autonomous HUNTER OS — Complete Business Operating System
++# Autonomous HUNTER OS — Revenue Pipeline System
+ 
+ **One person. Full autonomous revenue machine. Launch-ready.**
+ 
+-HUNTER Intelligence is a complete business-in-a-box for solo operators selling operational intelligence to mid-market manufacturers. Every system — sales, delivery, finance, marketing, operations — is built, automated, and ready to profit.
++HUNTER Intelligence (aka **Revenue Pipeline System**) is a complete business-in-a-box for solo operators selling operational intelligence to mid-market manufacturers.
++
++**Go-live:** start with [`GO_LIVE_RUNBOOK.md`](GO_LIVE_RUNBOOK.md) · status snapshot in [`LAUNCH_STATUS.md`](LAUNCH_STATUS.md). Every system — sales, delivery, finance, marketing, operations — is built, automated, and ready to profit.
+ 
+ ## What You Get
+ 
+@@ -48,7 +50,7 @@ npm install
+ cp .env.example .env   # Fill in all keys
+ 
+ # 2. Database
+-# Run supabase/migration.sql then migration-v2-business.sql in Supabase SQL Editor
++# Run supabase/migration-full.sql then migration-v3-outreach.sql in Supabase SQL Editor
+ 
+ # 3. Start
+ npm start
+@@ -139,8 +141,10 @@ hunter-autonomous-os/
+ ├── prompts/                      # AI prompts for every business function
+ ├── templates/                    # MSA, SOW, email sequences
+ ├── supabase/
+-│   ├── migration.sql             # Core tables
+-│   └── migration-v2-business.sql # Clients, projects, invoices, tasks
++│   ├── migration-full.sql        # All core + business tables (preferred)
++│   ├── migration-v3-outreach.sql # Resend engagement columns (run after full)
++│   ├── migration.sql             # Legacy split (use migration-full instead)
++│   └── migration-v2-business.sql # Legacy split
+ ├── n8n/                          # Automation workflows
+ ├── Dockerfile + docker-compose.yml
+ └── .env.example
+diff --git a/business/LAUNCH_CHECKLIST.md b/business/LAUNCH_CHECKLIST.md
+index 0f58d70..defc5f8 100644
+--- a/business/LAUNCH_CHECKLIST.md
++++ b/business/LAUNCH_CHECKLIST.md
+@@ -4,7 +4,7 @@
+ 
+ ### Day 1: Infrastructure
+ - [ ] Create Supabase project
+-- [ ] Run `supabase/migration.sql` + `migration-v2-business.sql`
++- [ ] Run `supabase/migration-full.sql` + `migration-v3-outreach.sql`
+ - [ ] Deploy backend to Railway/Render
+ - [ ] Set all env vars (Supabase, Gemini, Resend, Slack)
+ - [ ] Verify `/api/health` returns all services green
+@@ -92,7 +92,7 @@
+ If you need to launch TODAY with the minimum:
+ 
+ 1. `npm install && cp .env.example .env` (fill keys)
+-2. Run both Supabase migrations
++2. Run `migration-full.sql` then `migration-v3-outreach.sql`
+ 3. `npm start`
+ 4. Deploy landing page
+ 5. Import n8n lead discovery workflow
+diff --git a/package.json b/package.json
+index f539c1c..4d9fd7f 100644
+--- a/package.json
++++ b/package.json
+@@ -9,7 +9,8 @@
+     "setup": "bash scripts/setup.sh",
+     "seed": "node scripts/seed-leads.js",
+     "import-spark": "node scripts/import-spark.js",
+-    "health": "node scripts/health-check.js"
++    "health": "node scripts/health-check.js",
++    "verify-launch": "bash scripts/verify-launch.sh"
+   },
+   "dependencies": {
+     "@google/generative-ai": "^0.15.0",
+diff --git a/project.md b/project.md
+new file mode 100644
+index 0000000..f54a7a8
+--- /dev/null
++++ b/project.md
+@@ -0,0 +1,69 @@
++# HUNTER Intelligence OS (Revenue Pipeline System)
++
++**Date:** 2026-09-12  |  **Urgency:** HIGH  |  **Progress:** 85%
++
++---
++
++## Scope
++
++End-to-end revenue pipeline for solo operators selling operational intelligence to mid-market manufacturers: lead discovery (n8n + Apify), AI scoring, CRM, outreach (Resend), proposals/diagnostics (Gemini), operator dashboard, and business metrics. Ships as a Node/Express monolith with Supabase persistence and static operator UIs.
++
++---
++
++## Proposed Outcome
++
++Production deployment with live pipeline (10+ leads), booking link on landing, first outreach batch sent, and n8n discovery running daily. “Launched” = ≥1 diagnostic booked or ≥1 proposal sent—not merely deployed.
++
++**For:** Samuel Freeman / HUNTER Intelligence GTM
++
++---
++
++## Opportunity Value
++
++Catalog services $18K–$45K per engagement; retainer $4.5K/mo. Target $25K collected in first 30 days per `business/LAUNCH_CHECKLIST.md`.
++
++---
++
++## ✅ Done
++
++- [x] Full API: leads, scoring, outreach, proposals, diagnostics, business metrics
++- [x] CRM + operator + landing frontends
++- [x] n8n discovery + follow-up workflow JSON
++- [x] Seed data + outreach/LinkedIn content
++- [x] Docker/Railway deploy config
++- [x] Go-live runbook + CI health checks (2026-09-12)
++
++---
++
++## ☐ To Do
++
++- [ ] Run Supabase migrations in production project
++- [ ] Deploy to Railway with all env vars
++- [ ] Verify Resend domain + webhook
++- [ ] Set `BOOKING_URL` and smoke-test landing capture
++- [ ] Activate n8n + send first 5 outreach emails
++- [ ] Merge launch branch to `main` or tag `v1.0.0-launch`
++
++---
++
++## Stack
++
++Node 20 · Express · Supabase · Gemini · Resend · n8n · Apify · static HTML CRM
++
++---
++
++## Artifacts
++
++| Path | Purpose |
++|------|---------|
++| `GO_LIVE_RUNBOOK.md` | Production launch steps |
++| `LAUNCH_STATUS.md` | Status snapshot |
++| `business/LAUNCH_CHECKLIST.md` | 30-day GTM plan |
++| `n8n/` | Automation imports |
++
++---
++
++## Repo
++
++`github.com/samuelfreemanjobs-hash/-build-ai-agents-with-claude`  
++Branches: `cursor/autonomous-hunter-os-54da` (base), `cursor/hunter-launch-prep-c763` (launch prep)
+diff --git a/scripts/setup.sh b/scripts/setup.sh
+index 27bc44b..2d8fa70 100755
+--- a/scripts/setup.sh
++++ b/scripts/setup.sh
+@@ -56,7 +56,7 @@ echo "  CRM:       http://localhost:3001/hunter_crm.html"
+ echo ""
+ echo "Next steps:"
+ echo "  1. Edit .env with Supabase, Gemini, Resend, Slack keys"
+-echo "  2. Run supabase/migration-full.sql in Supabase SQL Editor"
++echo "  2. Run supabase/migration-full.sql then migration-v3-outreach.sql in Supabase"
+ echo "  3. Set BOOKING_URL in .env (Cal.com or Calendly)"
+ echo "  4. Import n8n/*.json workflows"
+ echo "  5. Send outreach from content/outreach-batch-001.md"
+diff --git a/scripts/verify-launch.sh b/scripts/verify-launch.sh
+new file mode 100755
+index 0000000..59a4b78
+--- /dev/null
++++ b/scripts/verify-launch.sh
+@@ -0,0 +1,46 @@
++#!/usr/bin/env bash
++# Pre-launch static verification (no API keys required)
++set -euo pipefail
++ROOT="$(cd "$(dirname "$0")/.." && pwd)"
++cd "$ROOT"
++FAIL=0
++
++echo "🔎 HUNTER launch verification"
++echo "=============================="
++
++for f in .env.example Dockerfile docker-compose.yml railway.json \
++  supabase/migration-full.sql supabase/migration-v3-outreach.sql \
++  GO_LIVE_RUNBOOK.md LAUNCH_STATUS.md business/LAUNCH_CHECKLIST.md; do
++  if [[ -f "$f" ]]; then
++    echo "  ✅ $f"
++  else
++    echo "  ❌ missing: $f"
++    FAIL=$((FAIL + 1))
++  fi
++done
++
++echo ""
++echo "n8n workflows:"
++for f in n8n/*.json; do
++  if python3 -m json.tool "$f" > /dev/null 2>&1; then
++    echo "  ✅ $(basename "$f")"
++  else
++    echo "  ❌ invalid JSON: $f"
++    FAIL=$((FAIL + 1))
++  fi
++done
++
++echo ""
++echo "Frontend entrypoints:"
++for f in frontend/index.html frontend/operator.html frontend/hunter_crm.html; do
++  [[ -f "$f" ]] && echo "  ✅ $f" || { echo "  ❌ missing $f"; FAIL=$((FAIL + 1)); }
++done
++
++if [[ $FAIL -eq 0 ]]; then
++  echo ""
++  echo "✅ Static launch verification passed"
++  exit 0
++fi
++echo ""
++echo "⚠️  $FAIL issue(s) — fix before go-live"
++exit 1
+-- 
+2.43.0
+

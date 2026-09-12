@@ -35,6 +35,21 @@ products:
     spec: saas-factory/products/registry.yaml
     verify: "cd saas-factory && pip install -e '.[dev]' && saas-factory validate"
 
+  - id: autonomous-hunter-os
+    name: HUNTER Intelligence OS (Revenue Pipeline System)
+    tier: revenue_core
+    repo: "-build-ai-agents-with-claude"
+    branch: cursor/hunter-launch-prep-c763
+    path: ./
+    project_md: product-management/project-files/build-ai-agents-with-claude/autonomous-hunter-os/project.md
+    deploy_target: project.md
+    status: launch_ready
+    completion_pct: 85
+    heat: hot
+    launch_rank: 2
+    spec: null
+    verify: "npm ci && npm run verify-launch && npm start & sleep 3 && npm run health"
+
   - id: freeman-intel
     name: Freeman Intel
     tier: revenue_core
@@ -179,12 +194,13 @@ portfolio_lines:
     completion_pct: 45
     heat: warm
   - id: autonomous-hunter-os
-    name: Autonomous Hunter OS
+    name: HUNTER Revenue Pipeline System
     repo: "-build-ai-agents-with-claude"
-    branch: cursor/autonomous-hunter-os-54da
+    branch: cursor/hunter-launch-prep-c763
     path: ./
-    completion_pct: 50
-    heat: warm
+    completion_pct: 85
+    heat: hot
+    note: "Launch hub — products/hunter-revenue-pipeline/"
   - id: freeman-intelligence-wris
     name: Freeman Intelligence (WRIS)
     repo: "-build-ai-agents-with-claude"
