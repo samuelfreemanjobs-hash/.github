@@ -10,7 +10,7 @@
 |-------|----------|---------|------------|-------------|------------|
 | 2026-09-12 | HIGH | **Revenue Intel Agent** | **Etsy Shop Revenue Brief SKU** — Weekly brief agent for Etsy digital product sellers ($24 Etsy, v5.1 edition) | Draft Etsy listing + 1-page “paste from Shop Stats” guide · target live **2026-09-19** | `deliverables/revenue-intel-agent-v5/runs/2026-09-12-etsy-shop-revenue-brief.json` |
 | 2026-09-12 | HIGH | **Revenue Intel Agent** | **FBA AI Agent Workbook** (Etsy) — PDF + Notion + Loom scripts | **Listing draft ready** → Sam: policy/AI disclosure check · publish · run validation plan | `build/fba-ai-agents/LISTING-ETSY-FBA-AI-AGENT-WORKBOOK.md` · `runs/2026-09-12-fba-ai-agents-market-etsy.json` |
-| 2026-09-12 | HIGH | **Revenue Intel Agent** | **Run FBA with AI Agents** (KDP + Gumroad bundle) | **Outline ready** → draft Ch 1–3 + metadata · disclose MCP affiliates | `build/fba-ai-agents/KDP-OUTLINE-RUN-FBA-WITH-AI-AGENTS.md` · `runs/2026-09-12-fba-ai-agents-market-amazon.json` |
+| 2026-09-12 | HIGH | **Revenue Intel Agent** | **Run FBA with AI Agents** (KDP + Gumroad bundle) | **KDP + Gumroad listing draft ready** → Ch 1–3 manuscript · cover · disclose MCP affiliates | `build/fba-ai-agents/LISTING-KDP-AND-GUMROAD.md` · `KDP-OUTLINE-RUN-FBA-WITH-AI-AGENTS.md` · `runs/2026-09-12-fba-ai-agents-market-amazon.json` |
 | 2026-09-12 | MEDIUM | **Revenue Intel Agent** | Stats vs bank fee paragraph add-on (Hypothesis O2) | Dogfood with real Stats + Payments export | Same run JSON · O2 |
 | 2026-09-12 | MEDIUM | **Etsy Digital Agents Store** | List **Etsy Shop Revenue Brief Agent** (channel) | After listing copy approved · link from store hub | Shares SKU with Revenue Intel |
 | 2026-09-12 | MEDIUM | **Etsy Digital Agents Store** | List **FBA AI Agent Workbook** (channel) | After Sam publish · cross-link KDP when live | `build/fba-ai-agents/LISTING-ETSY-FBA-AI-AGENT-WORKBOOK.md` |
@@ -34,3 +34,5 @@
 **PM UPDATE:** Revenue Intel Agent — Notes = append: `FBA+AI agents triple-market run 2026-09-12 · Etsy workbook listing draft + KDP outline in build/fba-ai-agents/ · Amazon Validated · Etsy/eBay Hypothesis`
 
 **PM UPDATE:** Revenue Intel Agent — Next Action = `Queue: (1) Etsy Shop Revenue Brief due 2026-09-19 (2) FBA AI Agent Workbook publish (3) KDP Ch 1–3 draft from outline`
+
+**PM ARTIFACT ADD:** Run FBA with AI Agents (KDP + Gumroad listing draft) → Revenue Intel Agent · Path = `claude-skills/deliverables/revenue-intel-agent-v5/build/fba-ai-agents/LISTING-KDP-AND-GUMROAD.md`
