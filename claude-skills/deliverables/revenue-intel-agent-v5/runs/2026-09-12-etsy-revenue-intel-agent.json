@@ -1,0 +1,318 @@
+{
+  "run_meta": {
+    "run_id": "run-2026-09-12-etsy-ria",
+    "today": "2026-09-12",
+    "niche": "revenue intel agent",
+    "icp": "unknown (orchestrator: discover from Etsy market evidence)",
+    "market": "Etsy",
+    "cadence": "ad_hoc",
+    "brief_profile": "internal_lab",
+    "search_units_used": 8,
+    "confidence_gate": 0.65,
+    "score_weights": {
+      "confidence": 0.2,
+      "urgency": 0.2,
+      "revenue_potential": 0.2,
+      "icp_fit": 0.2,
+      "ease": 0.2
+    },
+    "notes": "ICP explicitly unknown; three persona hypotheses derived from retrieved Etsy-adjacent sources only. No live Etsy scrape (marketplace fetch unavailable)."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "Using AI for Etsy sellers — prompts and data limits",
+      "publisher": "Insight Agent",
+      "url": "https://www.insightagent.app/guides/using-ai-for-etsy-sellers",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.72,
+      "score_note": "Undated page; year inferred from 2026 guide framing — treat dates as weak",
+      "bias_note": "Sells AI Workspace with live Etsy data"
+    },
+    {
+      "id": "S2",
+      "title": "Do People Sell Claude Skills? (2026)",
+      "publisher": "ConnectLabz",
+      "url": "https://connectlabz.com/do-people-sell-claude-skills",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.7,
+      "score_note": "Article dated 2026 in title; day unknown",
+      "bias_note": "Sells systems at connectlabz"
+    },
+    {
+      "id": "S3",
+      "title": "How to Sell AI Prompts on Etsy (2026) — pricing guide",
+      "publisher": "Listify Studio",
+      "url": "https://listify.studio/guides/how-to-sell-prompts-on-etsy",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.68,
+      "score_note": "Guide claims 2026; exact publish date not retrieved",
+      "bias_note": "SEO guide for prompt sellers"
+    },
+    {
+      "id": "S4",
+      "title": "Etsy Keyword Research Tool — competing_listings_count, median_price fields",
+      "publisher": "Apify",
+      "url": "https://apify.com/axlymxp/etsy-keyword-research-tool",
+      "publication_date": "2026-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.45,
+      "score_note": "Product documentation",
+      "bias_note": "Tool vendor"
+    },
+    {
+      "id": "S5",
+      "title": "600 AI Prompts for Etsy & Online Sellers (product page)",
+      "publisher": "Payhip seller listing",
+      "url": "https://payhip.com/b/LqzUQ",
+      "publication_date": "2026-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.4,
+      "score_note": "Competitor SKU; date not on page",
+      "bias_note": "Commercial listing"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "Reframe listing for Etsy digital sellers — 'Shop Revenue Brief Agent' not B2B intel",
+      "status": "Hypothesis",
+      "mapped_offer": "Revenue Intel Agent — v5.1 ZIP (repositioned)",
+      "evidence_source_ids": ["S1", "S3", "S5"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.516,
+      "score_breakdown": {
+        "confidence_value": 0.58,
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "weights": {
+          "confidence": 0.2,
+          "urgency": 0.2,
+          "revenue_potential": 0.2,
+          "icp_fit": 0.2,
+          "ease": 0.2
+        },
+        "arithmetic": "0.2*(0.58+0.6+0.2+0.6+0.6)=0.516",
+        "priority_score": 0.516
+      },
+      "confidence": 0.58,
+      "urgency_label": "Medium",
+      "why_now": "2026 Etsy prompt category emphasizes niche packs and policy-aware AI listings (S5 cites 2026 AI disclosure framing); generic 'revenue intel' wording may not match buyer search intent on Etsy (S1, S3).",
+      "owner_role": "Sam Freeman — product/listing owner",
+      "timeline_weeks": { "min": 2, "max": 6 },
+      "dependencies": [
+        "Live Etsy keyword pull (eRank, Apify actor S4, or Insight Agent data)",
+        "ICP pick among hypotheses below"
+      ],
+      "compliance_regimes": ["Etsy AI disclosure / digital product policies — verify current Seller Handbook before listing"],
+      "offer": "Etsy SKU: weekly shop-revenue brief agent + setup PDF + validator script",
+      "wedge": "Systems-grade v5.1 prompt + validate_run.py vs 600 generic copy-paste prompts (S5)",
+      "moat": "Validator + runtime presets + two-pass doc bundled",
+      "channels": ["Etsy search", "Pinterest to Etsy", "Email list"],
+      "risks": ["ICP still unknown", "Price ceiling on Etsy vs $97 Gumroad positioning"],
+      "mitigations": ["Run Apify keyword seeds: shop revenue, etsy analytics ai", "A/B three listing titles"],
+      "assumptions": {
+        "units": 18,
+        "price_per_unit": 29,
+        "variable_cost_per_unit": 3,
+        "fixed_cost_90d": 120
+      },
+      "assumption_basis": {
+        "units": "18 sales in 90d (~1.4/wk) — conservative new listing without ads",
+        "price_per_unit": "Large prompt/agent bundle band S3 ($9.99–$29.99)",
+        "variable_cost_per_unit": "Etsy + payment fees ~10% blended",
+        "fixed_cost_90d": "Mockup tool + optional Etsy Ads test"
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 18,
+          "price_per_unit": 29,
+          "variable_cost_per_unit": 3,
+          "fixed_cost_90d": 120
+        },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "18 * (29 - 3) - 120 = 348",
+        "gross_profit": 348
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 295.2 },
+        { "case": "units_minus_20pct", "gross_profit": 201.6 }
+      ],
+      "cost_of_inaction_90d": null,
+      "estimated_payback_period_weeks": 4,
+      "evidence": [
+        {
+          "source_id": "S3",
+          "claim_supported": "Etsy prompt mega packs commonly priced $19.99–$29.99",
+          "fact_date": "2026-01-01"
+        },
+        {
+          "source_id": "S5",
+          "claim_supported": "Competing Etsy-seller prompt systems exist at ~$19.90 with 600 prompts",
+          "fact_date": "2026-01-01"
+        },
+        {
+          "source_id": "S1",
+          "claim_supported": "Etsy sellers need niche-specific prompts; generic AI lacks live Etsy volumes",
+          "fact_date": "2026-01-01"
+        }
+      ],
+      "validation_plan": [
+        {
+          "step": "Pull competing_listings_count for 5 seeds via Apify actor (S4)",
+          "owner": "Sam",
+          "cost_usd": 5,
+          "duration_days": 1,
+          "metric": "pass if median_price and competition_level captured for each seed"
+        },
+        {
+          "step": "Choose primary ICP from hypothesis list in run_meta notes",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 2,
+          "metric": "pass if one ICP selected with search evidence"
+        },
+        {
+          "step": "Publish draft Etsy listing A/B title; 14-day view-to-favorite rate",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 14,
+          "metric": "pass if favorites >= 5 or 1 sale"
+        }
+      ]
+    },
+    {
+      "id": "O2",
+      "headline": "Dual-channel: Etsy discovery SKU ($19) → Gumroad full Revenue Intel ($97)",
+      "status": "Hypothesis",
+      "mapped_offer": "custom",
+      "evidence_source_ids": ["S2", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.51,
+      "score_breakdown": {
+        "confidence_value": 0.55,
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "weights": {
+          "confidence": 0.2,
+          "urgency": 0.2,
+          "revenue_potential": 0.2,
+          "icp_fit": 0.2,
+          "ease": 0.2
+        },
+        "arithmetic": "0.2*(0.55+0.6+0.2+0.6+0.6)=0.51",
+        "priority_score": 0.51
+      },
+      "confidence": 0.55,
+      "urgency_label": "Medium",
+      "why_now": "ConnectLabz (2026) documents fragmented Claude/skill economy: impulse $5–$50 on marketplaces vs higher-trust owned checkout (S2).",
+      "owner_role": "Sam Freeman",
+      "timeline_weeks": { "min": 3, "max": 8 },
+      "dependencies": ["Gumroad receipt link in Etsy digital delivery", "Two ZIPs or upgrade coupon"],
+      "compliance_regimes": ["None applicable beyond marketplace ToS"],
+      "offer": "Etsy lite prompt + Gumroad upsell",
+      "wedge": "Etsy traffic; Gumroad margin on full agent system",
+      "moat": "Owned email from Gumroad receipts",
+      "channels": ["Etsy", "Gumroad receipt upsell"],
+      "risks": ["Etsy policy on off-platform upsell wording"],
+      "mitigations": ["State 'full version on Gumroad' per Etsy digital rules review"],
+      "assumptions": {
+        "units": 10,
+        "price_per_unit": 97,
+        "variable_cost_per_unit": 12,
+        "fixed_cost_90d": 80
+      },
+      "assumption_basis": {
+        "units": "10 Gumroad upgrades from Etsy buyers in 90d (optimistic without list)",
+        "price_per_unit": "Freeman HUNTER/Revenue Intel anchor $97",
+        "variable_cost_per_unit": "~12% Gumroad + processing (S2 adjacent blogs)",
+        "fixed_cost_90d": "Listing assets + Loom"
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 10,
+          "price_per_unit": 97,
+          "variable_cost_per_unit": 12,
+          "fixed_cost_90d": 80
+        },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "10 * (97 - 12) - 80 = 770",
+        "gross_profit": 770
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 673 },
+        { "case": "units_minus_20pct", "gross_profit": 556 }
+      ],
+      "cost_of_inaction_90d": null,
+      "estimated_payback_period_weeks": 6,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "claim_supported": "Marketplaces cluster $5–$50 impulse; higher-ticket needs owned channel",
+          "fact_date": "2026-01-01"
+        }
+      ],
+      "validation_plan": [
+        {
+          "step": "Legal read Etsy off-platform link rules",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 1,
+          "metric": "pass if allowed CTA pattern documented"
+        },
+        {
+          "step": "Ship lite ZIP on Etsy",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 7,
+          "metric": "pass if listing live"
+        },
+        {
+          "step": "Track upgrade rate 30d",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 30,
+          "metric": "pass if upgrade rate >= 5%"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "Sell full $97 Revenue Intel Agent cold on Etsy as primary SKU",
+      "reason": "Price band and buyer intent on Etsy skew to $9–$30 prompt packs (S3, S5); $97 system buyers likely off-Etsy (S2). Failed positioning without ICP proof.",
+      "gates_failed": ["ICPFit"]
+    },
+    {
+      "headline": "Target enterprise revenue analysts on Etsy",
+      "reason": "No evidence that enterprise ICP shops on Etsy for intel agents; ICP unknown and unsupported.",
+      "gates_failed": ["Evidence", "Feasibility"]
+    }
+  ],
+  "icp_hypotheses": [
+    "Etsy digital product sellers wanting shop revenue / listing optimization agents",
+    "Side-hustle creators buying prompt/agent kits to resell (meta)",
+    "Consultants (unlikely on Etsy) — route to Gumroad per S2"
+  ]
+}

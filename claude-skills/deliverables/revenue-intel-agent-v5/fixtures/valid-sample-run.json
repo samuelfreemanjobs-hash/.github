@@ -1,0 +1,146 @@
+{
+  "run_meta": {
+    "run_id": "fixture-001",
+    "today": "2026-09-12",
+    "niche": "Automotive tier-2 stamping suppliers",
+    "icp": "Fractional ops consultant selling $12K–$25K dashboard sprints",
+    "cadence": "weekly",
+    "search_units_used": 18,
+    "confidence_gate": 0.65,
+    "score_weights": {
+      "confidence": 0.0,
+      "urgency": 0.25,
+      "revenue_potential": 0.35,
+      "icp_fit": 0.25,
+      "ease": 0.15
+    },
+    "brief_profile": "client_facing",
+    "notes": "Fixture for validate_run.py — fictional company"
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "Sample OEM supplier quality manual excerpt",
+      "publisher": "Fictional OEM",
+      "url": "https://example.com/quality",
+      "publication_date": "2025-11-01",
+      "source_type": "primary",
+      "credibility_score": 0.95,
+      "score_note": null,
+      "bias_note": null
+    },
+    {
+      "id": "S2",
+      "title": "Industry week — OTIF pressure on stampers",
+      "publisher": "Fictional Trade Press",
+      "url": "https://example.com/otif",
+      "publication_date": "2026-03-15",
+      "source_type": "secondary",
+      "credibility_score": 0.72,
+      "score_note": null,
+      "bias_note": null
+    },
+    {
+      "id": "S3",
+      "title": "Michigan manufacturing employment report",
+      "publisher": "Fictional State Agency",
+      "url": "https://example.com/mfg",
+      "publication_date": "2026-06-01",
+      "source_type": "primary",
+      "credibility_score": 0.92,
+      "score_note": null,
+      "bias_note": null
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "OTIF reporting spreadsheet elimination for tier-2 stamper",
+      "status": "Validated",
+      "mapped_offer": "KPI Command Center & Executive Dashboard Sprint",
+      "evidence_source_ids": ["S1", "S2", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.67,
+      "score_breakdown": {
+        "confidence_value": 0.72,
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.8,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "weights": {
+          "confidence": 0.0,
+          "urgency": 0.25,
+          "revenue_potential": 0.35,
+          "icp_fit": 0.25,
+          "ease": 0.15
+        },
+        "arithmetic": "0*0.72 + 0.25*0.6 + 0.35*0.8 + 0.25*0.6 + 0.15*0.6 = 0.67",
+        "priority_score": 0.67
+      },
+      "confidence": 0.72,
+      "urgency_label": "Medium",
+      "why_now": "2026-03-15 trade coverage documents OEM OTIF enforcement tightening into Q3 contract cycles.",
+      "owner_role": "Fractional COO consultant",
+      "timeline_weeks": { "min": 8, "max": 12 },
+      "dependencies": ["Access to weekly OTIF export sample"],
+      "compliance_regimes": ["None applicable beyond customer contractual quality terms"],
+      "offer": "Executive KPI command center",
+      "wedge": "Replace manual OTIF workbook before chargeback season",
+      "moat": "Plant-specific metric definitions",
+      "channels": ["Warm intro via quality manager"],
+      "risks": ["ERP migration in progress"],
+      "mitigations": ["Phase 1 read-only dashboard"],
+      "assumptions": {
+        "units": 1,
+        "price_per_unit": 35000,
+        "variable_cost_per_unit": 2000,
+        "fixed_cost_90d": 1500
+      },
+      "assumption_basis": {
+        "units": "Single pilot plant engagement",
+        "price_per_unit": "Conservative vs catalog $12K–$25K band",
+        "variable_cost_per_unit": "Subcontracted BI labor",
+        "fixed_cost_90d": "Travel and tooling"
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 1,
+          "price_per_unit": 35000,
+          "variable_cost_per_unit": 2000,
+          "fixed_cost_90d": 1500
+        },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "1 * (35000 - 2000) - 1500 = 31500",
+        "gross_profit": 31500
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 12700 },
+        { "case": "units_minus_20pct", "gross_profit": 14500 }
+      ],
+      "cost_of_inaction_90d": null,
+      "estimated_payback_period_weeks": 6,
+      "evidence": [
+        {
+          "source_id": "S2",
+          "claim_supported": "OEMs increasing OTIF enforcement on stampers",
+          "fact_date": "2026-03-15"
+        }
+      ],
+      "validation_plan": []
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "Generic AI chatbot for plant floor",
+      "reason": "Failed Evidence gate — vendor-only sources",
+      "gates_failed": ["Evidence", "Bias"]
+    }
+  ]
+}

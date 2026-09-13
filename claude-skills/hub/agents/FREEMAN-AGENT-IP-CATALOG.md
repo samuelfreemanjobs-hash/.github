@@ -106,7 +106,7 @@
 
 | Agent / system | Version | Function | Parent project |
 |----------------|---------|----------|----------------|
-| **Revenue Intel Agent** | v5.0 | Metro Detroit compliance & cost-recovery opportunities; Gem port | Revenue Intel Agent |
+| **Revenue Intel Agent** | v5.0 | Metro Detroit compliance & cost-recovery opportunities; Gem port · `deliverables/revenue-intel-agent-v5/` · Phase 0 | Revenue Intel Agent |
 | **HUNTER** | CRM v1 | 7-dimension lead scoring prompt + Airtable pipeline (not a chat persona) | HUNTER — Revenue Pipeline CRM |
 | **Marketing AI Agent (Swipe File)** | WIP | DK/FK/God-of-Prompt corpora → email agent | Marketing AI Agent — Swipe File |
 
@@ -194,7 +194,7 @@
 | Clinical Revenue Systems Engineering | Scout, Closer, Dispatcher, Auditor |
 | OIS — OpExcel | 60+ tools / diagnostics |
 | TRON | Future ~5 core agents |
-| Revenue Intel Agent | Revenue Intel v5.0 |
+| Revenue Intel Agent | Revenue Intel Agent — v5.0 |
 | HUNTER | Scoring agent + CRM |
 | Marketing AI Agent — Swipe File | Email marketing agent |
 | PM Agent | Freeman PM Agent |

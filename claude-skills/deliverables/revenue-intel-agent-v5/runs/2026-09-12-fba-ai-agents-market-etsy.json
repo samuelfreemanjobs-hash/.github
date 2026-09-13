@@ -1,0 +1,123 @@
+{
+  "run_meta": {
+    "run_id": "run-2026-09-12-fba-ai-agents-etsy",
+    "today": "2026-09-12",
+    "niche": "how to run Amazon FBA with AI agents",
+    "icp": "solo business owners, startups, side hustlers, Amazon sellers",
+    "market": "Etsy",
+    "cadence": "ad_hoc",
+    "brief_profile": "client_facing",
+    "confidence_gate": 0.65,
+    "score_weights": { "confidence": 0.0, "urgency": 0.25, "revenue_potential": 0.35, "icp_fit": 0.25, "ease": 0.15 },
+    "notes": "Etsy: package as workbook/system PDF, not bare prompt dump; AI disclosure required."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "AI FOR AMAZON AND ETSY SELLERS (Kindle listing)",
+      "publisher": "Amazon.com",
+      "url": "https://www.amazon.com/dp/B0H8R8ZDBY",
+      "publication_date": "2026-07-14",
+      "source_type": "secondary",
+      "credibility_score": 0.7,
+      "bias_note": "Competitor book product"
+    },
+    {
+      "id": "S2",
+      "title": "Profitable AI Digital Product Workflows (Etsy & KDP)",
+      "publisher": "ZeroSkill AI",
+      "url": "https://zeroskillai.com/ai-digital-product-workflows-etsy-kdp/",
+      "publication_date": "2026-03-01",
+      "source_type": "vendor",
+      "credibility_score": 0.45,
+      "bias_note": "SEO/content marketing"
+    },
+    {
+      "id": "S3",
+      "title": "50+ AI Prompts for Etsy sellers",
+      "publisher": "Insight Agent",
+      "url": "https://www.insightagent.app/guides/using-ai-for-etsy-sellers",
+      "publication_date": "2026-01-01",
+      "source_type": "secondary",
+      "credibility_score": 0.72,
+      "bias_note": "Sells Etsy data tool"
+    },
+    {
+      "id": "S4",
+      "title": "AI Toolkit for E-Commerce Sellers",
+      "publisher": "Omni AI",
+      "url": "https://useomniai.com/ai-toolkit-ecommerce-sellers/",
+      "publication_date": "2025-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.42,
+      "bias_note": "Prompt pack competitor"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "Etsy SKU: 'FBA AI Agent Workbook' — templates + weekly ops checklists (not raw prompts only)",
+      "status": "Hypothesis",
+      "mapped_offer": "Digital download bundle",
+      "evidence_source_ids": ["S1", "S3", "S2"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.49,
+      "score_breakdown": {
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.8,
+        "arithmetic": "0.25*0.6+0.35*0.2+0.25*0.6+0.15*0.8=0.49",
+        "priority_score": 0.49
+      },
+      "confidence": 0.64,
+      "urgency_label": "Medium",
+      "why_now": "Demand for Amazon+Etsy AI seller education exists (S1 July 2026); Etsy prompt market is crowded (S3,S4) — differentiation is FBA-agent-specific workbook with disclosure-friendly finished product (S2 workflow framing).",
+      "owner_role": "Sam Freeman",
+      "timeline_weeks": { "min": 2, "max": 6 },
+      "dependencies": ["Verify current Etsy AI disclosure / digital product policy at list time", "Sample outputs in listing images"],
+      "compliance_regimes": ["Etsy AI disclosure", "No trademarked Amazon logos in thumbnails"],
+      "offer": "PDF workbook + Notion duplicate + 3 Loom walkthroughs",
+      "wedge": "FBA-only agent stack vs generic 50-prompt ecommerce kits (S4)",
+      "channels": ["Etsy", "Pinterest"],
+      "example_calc": {
+        "inputs": { "units": 25, "price_per_unit": 22, "variable_cost_per_unit": 2.5, "fixed_cost_90d": 75 },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "25*(22-2.5)-75=412.5",
+        "gross_profit": 412.5
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 357.5 },
+        { "case": "units_minus_20pct", "gross_profit": 305 }
+      ],
+      "evidence": [
+        { "source_id": "S1", "claim_supported": "Market lists AI prompts for Amazon+FBA side hustlers", "fact_date": "2026-07-14" },
+        { "source_id": "S3", "claim_supported": "Etsy sellers buy structured AI prompt systems when niche-specific", "fact_date": "2026-01-01" }
+      ],
+      "validation_plan": [
+        { "step": "Etsy search: FBA AI / Amazon agent PDF — count competing listings", "owner": "Sam", "cost_usd": 0, "duration_days": 1, "metric": "pass if <500 direct matches" },
+        { "step": "Policy read: digital + AI disclosure", "owner": "Sam", "cost_usd": 0, "duration_days": 1, "metric": "pass if workbook format allowed" },
+        { "step": "List draft SKU", "owner": "Sam", "cost_usd": 0, "duration_days": 7, "metric": "pass if live" }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "Bare '100 ChatGPT prompts' ZIP with no workbook framing",
+      "reason": "Commoditized (S4); higher policy/quality risk for Etsy digital AI products.",
+      "gates_failed": ["Novelty", "Compliance"]
+    },
+    {
+      "headline": "Target Etsy-only artisans with zero Amazon intent",
+      "reason": "ICP includes Amazon sellers; niche is FBA agents — weak fit.",
+      "gates_failed": ["ICPFit"]
+    }
+  ]
+}

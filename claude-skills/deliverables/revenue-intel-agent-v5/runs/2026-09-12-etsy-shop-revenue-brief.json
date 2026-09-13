@@ -1,0 +1,291 @@
+{
+  "run_meta": {
+    "run_id": "run-2026-09-12-etsy-shop-revenue-brief",
+    "today": "2026-09-12",
+    "niche": "Etsy shop revenue brief",
+    "icp": "Etsy digital product sellers",
+    "market": "Etsy",
+    "cadence": "weekly",
+    "brief_profile": "client_facing",
+    "search_units_used": 6,
+    "confidence_gate": 0.65,
+    "score_weights": {
+      "confidence": 0.0,
+      "urgency": 0.25,
+      "revenue_potential": 0.35,
+      "icp_fit": 0.25,
+      "ease": 0.15
+    },
+    "notes": "ICP and niche specified by orchestrator. Primary Etsy Help used for native Stats capabilities."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "How to Use Etsy Stats for Your Shop",
+      "publisher": "Etsy Help",
+      "url": "https://help.etsy.com/hc/en-us/articles/115015774268-How-to-Use-Etsy-Stats-for-Your-Shop",
+      "publication_date": "2024-06-01",
+      "source_type": "primary",
+      "credibility_score": 0.95,
+      "score_note": "Official seller documentation; exact revision date not fetched",
+      "bias_note": null
+    },
+    {
+      "id": "S2",
+      "title": "Etsy Stats Explained for Digital Product Sellers",
+      "publisher": "Sense Central",
+      "url": "https://sensecentral.com/etsy-stats-explained-for-digital-product-sellers/",
+      "publication_date": "2025-08-01",
+      "source_type": "secondary",
+      "credibility_score": 0.72,
+      "score_note": "Publish date estimated from content freshness",
+      "bias_note": null
+    },
+    {
+      "id": "S3",
+      "title": "Etsy Analytics Limitations: Every Gap and How to Fix Them",
+      "publisher": "Putler",
+      "url": "https://www.putler.com/etsy-analytics-limitations/",
+      "publication_date": "2025-03-01",
+      "source_type": "secondary",
+      "credibility_score": 0.7,
+      "score_note": "Vendor blog; cites August 2024 Search Visibility launch",
+      "bias_note": "Sells multi-channel analytics"
+    },
+    {
+      "id": "S4",
+      "title": "Etsy Stats vs What Actually Hits Your Bank",
+      "publisher": "Brimley",
+      "url": "https://getbrimley.com/blog/etsy-stats-vs-real-profit",
+      "publication_date": "2025-10-01",
+      "source_type": "secondary",
+      "credibility_score": 0.68,
+      "score_note": "Founder building profit analytics; dated from article context",
+      "bias_note": "Product development narrative"
+    },
+    {
+      "id": "S5",
+      "title": "Digital Product Profit Dashboard (Excel)",
+      "publisher": "Ardent Seller",
+      "url": "https://www.ardentseller.app/resources/digital-product-sellers-profit-dashboard",
+      "publication_date": "2026-01-01",
+      "source_type": "vendor",
+      "credibility_score": 0.45,
+      "score_note": "Competitor/substitute product",
+      "bias_note": "Free lead magnet for seller tools"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "Ship 'Weekly Etsy Shop Revenue Brief' agent — Stats paste-in → actions (not another spreadsheet)",
+      "status": "Validated",
+      "mapped_offer": "Revenue Intel Agent — v5.1 (Etsy Shop Revenue Brief edition)",
+      "evidence_source_ids": ["S1", "S2", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.59,
+      "score_breakdown": {
+        "confidence_value": 0.74,
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 1.0,
+        "ease_value": 0.8,
+        "weights": {
+          "confidence": 0.0,
+          "urgency": 0.25,
+          "revenue_potential": 0.35,
+          "icp_fit": 0.25,
+          "ease": 0.15
+        },
+        "arithmetic": "0.25*0.6 + 0.35*0.2 + 0.25*1.0 + 0.15*0.8 = 0.59",
+        "priority_score": 0.59
+      },
+      "confidence": 0.74,
+      "urgency_label": "Medium",
+      "why_now": "Etsy Shop Stats already exposes visits, orders, revenue, conversion, and listing-level performance (S1); digital sellers are told to run weekly reviews but native Stats show gross revenue, not net after fees (S2, S3) — a brief agent closes the ritual gap without manual spreadsheet upkeep.",
+      "owner_role": "Sam Freeman — product owner",
+      "timeline_weeks": { "min": 2, "max": 5 },
+      "dependencies": [
+        "Listing copy + 1-page 'paste from Shop Stats' guide",
+        "Optional: sample CSV export walkthrough (S1)"
+      ],
+      "compliance_regimes": ["Etsy digital product policies", "Etsy AI disclosure for listing copy — verify Seller Handbook at publish"],
+      "offer": "Digital download: v5.1 prompt tuned for Etsy sellers + weekly brief template + validate_run.py lite instructions",
+      "wedge": "10-minute weekly brief vs 12-tab spreadsheet maintenance (substitutes S5)",
+      "moat": "Evidence-gated v5.1 system + validator vs generic 'ChatGPT for Etsy' prompts",
+      "channels": ["Etsy search", "Pinterest", "Existing Freeman Etsy/Gumroad list"],
+      "risks": ["Sellers skip paste step if onboarding unclear", "Price ceiling vs $19 prompt packs"],
+      "mitigations": ["Ship SAMPLE brief in listing images", "Price $22–27 sweet spot per prior market scan"],
+      "assumptions": {
+        "units": 22,
+        "price_per_unit": 24,
+        "variable_cost_per_unit": 2.5,
+        "fixed_cost_90d": 90
+      },
+      "assumption_basis": {
+        "units": "22 Etsy sales in 90d (~1.7/wk) for new SKU with existing audience",
+        "price_per_unit": "Between large prompt bundle and mini system",
+        "variable_cost_per_unit": "~10% Etsy + payment fees",
+        "fixed_cost_90d": "Mockups + optional $5/day ads test"
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 22,
+          "price_per_unit": 24,
+          "variable_cost_per_unit": 2.5,
+          "fixed_cost_90d": 90
+        },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "22 * (24 - 2.5) - 90 = 383",
+        "gross_profit": 383
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 335.2 },
+        { "case": "units_minus_20pct", "gross_profit": 277.6 }
+      ],
+      "cost_of_inaction_90d": null,
+      "estimated_payback_period_weeks": 3,
+      "evidence": [
+        {
+          "source_id": "S1",
+          "claim_supported": "Shop Stats provides visits, orders, revenue, conversion, listing stats",
+          "fact_date": "2024-06-01"
+        },
+        {
+          "source_id": "S2",
+          "claim_supported": "Digital sellers need weekly combined metrics review, not daily panic",
+          "fact_date": "2025-08-01"
+        },
+        {
+          "source_id": "S3",
+          "claim_supported": "Etsy dashboard lacks profit/margin visibility after fees",
+          "fact_date": "2025-03-01"
+        }
+      ],
+      "validation_plan": []
+    },
+    {
+      "id": "O2",
+      "headline": "Add 'Stats vs bank' module — fee-adjusted takeaway paragraph in every brief",
+      "status": "Hypothesis",
+      "mapped_offer": "custom module atop O1 SKU",
+      "evidence_source_ids": ["S1", "S4", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "priority_score": 0.46,
+      "score_breakdown": {
+        "confidence_value": 0.62,
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.2,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "weights": {
+          "confidence": 0.0,
+          "urgency": 0.25,
+          "revenue_potential": 0.35,
+          "icp_fit": 0.25,
+          "ease": 0.15
+        },
+        "arithmetic": "0.25*0.6 + 0.35*0.2 + 0.25*0.6 + 0.15*0.6 = 0.46",
+        "priority_score": 0.46
+      },
+      "confidence": 0.62,
+      "urgency_label": "Medium",
+      "why_now": "Official Stats revenue excludes fee breakdown in the seller view sellers use daily (S1); independent write-ups document Payments CSV / fee stacking pain including Offsite Ads (S4, S3).",
+      "owner_role": "Sam Freeman",
+      "timeline_weeks": { "min": 3, "max": 8 },
+      "dependencies": ["Prompt appendix: optional Finances CSV columns", "Disclaimer: not tax advice"],
+      "compliance_regimes": ["None applicable beyond marketplace ToS; include not-tax-advice disclaimer"],
+      "offer": "Upsell PDF add-on or +$7 bundle tier",
+      "wedge": "Names the gap Stats Revenue vs net payout",
+      "moat": "Tied to v5.1 evidence rules — no invented fee totals",
+      "channels": ["Email to O1 buyers"],
+      "risks": ["Users paste incomplete finance data"],
+      "mitigations": ["Require minimum fields checklist"],
+      "assumptions": {
+        "units": 8,
+        "price_per_unit": 12,
+        "variable_cost_per_unit": 1.5,
+        "fixed_cost_90d": 40
+      },
+      "assumption_basis": {
+        "units": "8 upsells to existing O1 buyers in 90d",
+        "price_per_unit": "Add-on tier",
+        "variable_cost_per_unit": "Digital marginal cost",
+        "fixed_cost_90d": "Copy + diagram"
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 8,
+          "price_per_unit": 12,
+          "variable_cost_per_unit": 1.5,
+          "fixed_cost_90d": 40
+        },
+        "formula": "units * (price_per_unit - variable_cost_per_unit) - fixed_cost_90d",
+        "substitution": "8 * (12 - 1.5) - 40 = 44",
+        "gross_profit": 44
+      },
+      "sensitivity": [
+        { "case": "price_minus_10pct", "gross_profit": 34.4 },
+        { "case": "units_minus_20pct", "gross_profit": 23.2 }
+      ],
+      "cost_of_inaction_90d": null,
+      "estimated_payback_period_weeks": 8,
+      "evidence": [
+        {
+          "source_id": "S4",
+          "claim_supported": "Shop Stats revenue disagrees with payout/fees sellers experience",
+          "fact_date": "2025-10-01"
+        }
+      ],
+      "validation_plan": [
+        {
+          "step": "Dogfood brief with one real Shop Stats + Payments export",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 3,
+          "metric": "pass if fee paragraph matches CSV within rounding"
+        },
+        {
+          "step": "Beta reader survey: clarity 1-5",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 7,
+          "metric": "pass if median >= 4"
+        },
+        {
+          "step": "Ship as v1.1 add-on if pass",
+          "owner": "Sam",
+          "cost_usd": 0,
+          "duration_days": 7,
+          "metric": "pass if listed"
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "headline": "Build Brimley-style profit SaaS for Etsy in 90 days",
+      "reason": "Scope exceeds 90-day feasibility for solo ship; competes with funded analytics.",
+      "gates_failed": ["Feasibility"]
+    },
+    {
+      "headline": "Target physical handmade sellers first",
+      "reason": "ICP specified digital product sellers; COGS/shipping noise differs (S3).",
+      "gates_failed": ["ICPFit"]
+    }
+  ]
+}

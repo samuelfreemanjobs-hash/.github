@@ -6,7 +6,8 @@
 
 | SKU | Name | Type | Price | Variant | Fulfillment | Active |
 |-----|------|------|-------|---------|-------------|--------|
-| | | digital/physical/service | | | | Y/N |
+| RIA-v5 | Revenue Intel Agent — v5.0 | digital (prompt pack) | $97 (draft) | Metro Detroit industrial | ZIP + PDF | N (Phase 0) |
+| RPS-HUNTER-v1 | Revenue Pipeline System (HUNTER CRM) | digital | $97 | Consultant edition | ZIP + Airtable link | Y (prep) |
 
 ## Bundles
 

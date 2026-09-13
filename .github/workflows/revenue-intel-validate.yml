@@ -1,0 +1,18 @@
+name: Revenue Intel — validate fixtures
+
+on:
+  push:
+    paths:
+      - "claude-skills/deliverables/revenue-intel-agent-v5/**"
+      - ".github/workflows/revenue-intel-validate.yml"
+  pull_request:
+    paths:
+      - "claude-skills/deliverables/revenue-intel-agent-v5/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run validator tests
+        run: bash claude-skills/deliverables/revenue-intel-agent-v5/scripts/run_validation_tests.sh

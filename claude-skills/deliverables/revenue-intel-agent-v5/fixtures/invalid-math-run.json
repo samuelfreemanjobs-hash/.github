@@ -1,0 +1,43 @@
+{
+  "run_meta": { "today": "2026-09-12", "niche": "x", "icp": "y" },
+  "source_ledger": [
+    { "id": "S1", "source_type": "primary", "credibility_score": 0.95 },
+    { "id": "S2", "source_type": "primary", "credibility_score": 0.91 },
+    { "id": "S3", "source_type": "secondary", "credibility_score": 0.7 }
+  ],
+  "opportunities": [
+    {
+      "id": "O1",
+      "headline": "Bad math",
+      "status": "Validated",
+      "evidence_source_ids": ["S1", "S2", "S3"],
+      "gate_results": {
+        "Evidence": "pass",
+        "Bias": "pass",
+        "Math": "pass",
+        "Feasibility": "pass",
+        "Compliance": "pass",
+        "Novelty": "pass"
+      },
+      "confidence": 0.9,
+      "priority_score": 0.5,
+      "score_breakdown": {
+        "urgency_value": 0.6,
+        "revenue_potential_value": 0.5,
+        "icp_fit_value": 0.6,
+        "ease_value": 0.6,
+        "confidence_value": 0.9
+      },
+      "example_calc": {
+        "inputs": {
+          "units": 1,
+          "price_per_unit": 10000,
+          "variable_cost_per_unit": 1000,
+          "fixed_cost_90d": 0
+        },
+        "gross_profit": 99999
+      }
+    }
+  ],
+  "rejected": []
+}

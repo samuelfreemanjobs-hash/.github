@@ -1,0 +1,43 @@
+# Merge into runtime via: python3 scripts/apply_presets.py --brief client_facing
+#
+# Design: confidence always gates Validated status. Whether confidence affects
+# RANKING is the tension — see DESIGN-TENSION-CONFIDENCE.md
+
+client_facing:
+  description: >
+    Default for Gumroad buyers and client-facing weekly briefs. Validated-only
+    narrative; confidence affects pass/fail, not priority ranking (avoids
+    double-penalty in sort order).
+  allow_hypothesis_in_brief: false
+  confidence_gate: 0.70
+  score_weights:
+    confidence: 0.0
+    urgency: 0.25
+    revenue_potential: 0.35
+    icp_fit: 0.25
+    ease: 0.15
+
+internal_lab:
+  description: >
+    Sam / internal weekly prioritization. Hypothesis rows visible in scorecard;
+    confidence shapes ranking (research-grade sorting).
+  allow_hypothesis_in_brief: true
+  confidence_gate: 0.65
+  score_weights:
+    confidence: 0.2
+    urgency: 0.2
+    revenue_potential: 0.2
+    icp_fit: 0.2
+    ease: 0.2
+
+balanced:
+  description: >
+    Compromise preset if unsure — moderate gate, low confidence weight in ranking.
+  allow_hypothesis_in_brief: false
+  confidence_gate: 0.68
+  score_weights:
+    confidence: 0.1
+    urgency: 0.225
+    revenue_potential: 0.325
+    icp_fit: 0.225
+    ease: 0.125

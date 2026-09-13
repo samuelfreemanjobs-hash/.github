@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Revenue Intel Agent — v5.0 — Review Portal</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --accent: #3d9eff;
+      --accent-dim: #2563a8;
+      --text: #e8eef4;
+      --muted: #8b9cb3;
+      --ok: #3dd68c;
+      --warn: #f5a623;
+      --border: #2a3544;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #15202b 0%, #1a2332 100%);
+    }
+    header h1 { margin: 0 0 0.25rem; font-size: 1.35rem; font-weight: 600; }
+    header p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    .badge {
+      display: inline-block;
+      background: var(--accent-dim);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    nav button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0a0f14;
+      font-weight: 600;
+    }
+    main { padding: 1.25rem 1.5rem 3rem; max-width: 960px; }
+    section { display: none; }
+    section.active { display: block; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    h2 { font-size: 1.1rem; margin-top: 0; }
+    ul.checklist { list-style: none; padding: 0; }
+    ul.checklist li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    ul.checklist input { margin-top: 0.35rem; }
+    pre {
+      background: #0a0f14;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+      overflow: auto;
+      font-size: 0.78rem;
+      max-height: 420px;
+    }
+    a { color: var(--accent); }
+    .status-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .stat {
+      flex: 1;
+      min-width: 140px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+    }
+    .stat strong { display: block; font-size: 1.4rem; color: var(--ok); }
+    .stat span { color: var(--muted); font-size: 0.8rem; }
+    footer {
+      padding: 1rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Revenue Intel Agent — v5.0</h1>
+    <p>Freeman Intelligence · Product review & Phase 0 · Generated 2026-09-12</p>
+  </header>
+  <nav>
+    <button type="button" class="active" data-tab="overview">Overview</button>
+    <button type="button" data-tab="phase0">Phase 0</button>
+    <button type="button" data-tab="prompt">System prompt</button>
+    <button type="button" data-tab="sample">Sample brief</button>
+    <button type="button" data-tab="launch">Launch prep</button>
+  </nav>
+  <main>
+    <section id="overview" class="active">
+      <div class="status-row">
+        <div class="stat"><strong>Phase 0</strong><span>In progress — review gate open</span></div>
+        <div class="stat"><strong>$97</strong><span>Recommended Gumroad anchor</span></div>
+        <div class="stat"><strong>HUNTER</strong><span>Handoff schema included</span></div>
+      </div>
+      <div class="card">
+        <h2>What this product is</h2>
+        <p><strong>Weekly monetization briefs</strong> for any injected <strong>niche + ICP</strong> — evidence gates, ROI modeling, optional JSON/CSV. Ships as a <strong>system prompt pack</strong> + runtime template — not a hosted app.</p>
+        <p><strong>Repo path:</strong> <code>claude-skills/deliverables/revenue-intel-agent-v5/</code></p>
+        <p><strong>Invoke in Business OS:</strong> <code>/revenue-intel-agent</code> (skill at <code>claude-skills/revenue-intel-agent/SKILL.md</code>)</p>
+      </div>
+      <div class="card">
+        <h2>Distinct from Freeman Intel (plant inbound SaaS)</h2>
+        <p><em>Freeman Intel</em> in the factory repo is email-first dock/ASN readiness. <strong>Revenue Intel Agent — v5.0</strong> is sales intel for consultants — different SKU, different buyer.</p>
+      </div>
+      <div class="card">
+        <h2>Your next actions</h2>
+        <ol>
+          <li>Read the system prompt tab — compare to your live Gem v5.0.</li>
+          <li>Complete Phase 0 checklist (dogfood 3 targets).</li>
+          <li>Reply <strong>Phase 0 approved</strong> to unlock ZIP + Gumroad (Phase 1).</li>
+        </ol>
+      </div>
+    </section>
+    <section id="phase0">
+      <div class="card">
+        <h2>Phase 0 exit checklist (Sam)</h2>
+        <ul class="checklist">
+          <li><input type="checkbox" id="c1" /> <label for="c1">System prompt matches live Gem v5.0 (or deltas pasted)</label></li>
+          <li><input type="checkbox" id="c2" /> <label for="c2">ICP / niche positioning approved</label></li>
+          <li><input type="checkbox" id="c3" /> <label for="c3">3 real targets dogfooded with human verification</label></li>
+          <li><input type="checkbox" id="c4" /> <label for="c4">Price SKU chosen ($47 / $97 / $147 bundle)</label></li>
+          <li><input type="checkbox" id="c5" /> <label for="c5">Disclaimers OK for listing</label></li>
+        </ul>
+        <p>Full runbook: <code>../PHASE-0.md</code></p>
+      </div>
+    </section>
+    <section id="prompt">
+      <div class="card">
+        <h2>System prompt (embedded excerpt)</h2>
+        <p>Full file: <a href="../REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md">REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md</a></p>
+        <pre id="prompt-preview">Loading…</pre>
+      </div>
+    </section>
+    <section id="sample">
+      <div class="card">
+        <h2>Sample opportunity brief (fictional)</h2>
+        <pre id="sample-preview">Loading…</pre>
+      </div>
+    </section>
+    <section id="launch">
+      <div class="card">
+        <h2>Phase 1 — customer purchase (prepared, not live)</h2>
+        <ul>
+          <li><code>LISTING-GUMROAD.md</code> — draft copy & price options</li>
+          <li><code>SETUP-GUIDE.md</code> + <code>QUICK-START-ONE-PAGER.md</code> — export to PDF at launch</li>
+          <li><code>LAUNCH-CHECKLIST.md</code> — QA before Gumroad</li>
+          <li>ZIP name: <code>Revenue-Intel-Agent-v5.0.zip</code></li>
+        </ul>
+        <p><strong>Blocked:</strong> Airtable PM sync via Zapier (task limit) — update Next Action manually.</p>
+      </div>
+    </section>
+  </main>
+  <footer>Freeman Intelligence · Internal review portal · Not for customer distribution</footer>
+  <script>
+    const tabs = document.querySelectorAll("nav button");
+    const sections = document.querySelectorAll("main section");
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabs.forEach((b) => b.classList.remove("active"));
+        sections.forEach((s) => s.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+    async function loadText(url, elId, maxChars) {
+      const el = document.getElementById(elId);
+      try {
+        const r = await fetch(url);
+        let t = await r.text();
+        if (maxChars && t.length > maxChars) t = t.slice(0, maxChars) + "\n\n… [truncated — open full file in repo]";
+        el.textContent = t;
+      } catch (e) {
+        el.textContent = "Open " + url + " from the repo (fetch blocked if opened as file://).";
+      }
+    }
+    loadText("../REVENUE-INTEL-AGENT-v5.0-SYSTEM-PROMPT.md", "prompt-preview", 12000);
+    loadText("../examples/sample-opportunity-brief.md", "sample-preview", 8000);
+  </script>
+</body>
+</html>
